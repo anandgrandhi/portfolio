@@ -1,7 +1,8 @@
 {
   "intro": [
     "I’m Anand Grandhi. I work at the intersection of product strategy, business operations and <strong class='blue'>applied AI.</strong>",
-    "Previously at <strong class='blue'>Amazon</strong> (L6) and BYJU’S, I worked on product initiatives, customer experiences and operations at scale. Today, through <strong class='blue'>ARCHMATION</strong>, I work on intelligent workflows and business transformation."
+    "I joined <strong class='blue'>BYJU’S</strong> in 2015, the year its flagship learning app launched, and helped build and scale its learning products during five years of rapid growth. At <strong class='blue'>Amazon</strong> (L6), I worked on product adoption, customer experience and operational transformation.",
+    "Today, through <strong class='blue'>ARCHMATION</strong>, I apply that experience to intelligent workflows and complex business problems."
   ],
   "projects": [
     {
@@ -75,18 +76,19 @@
       "images": []
     },
     {
-      "company": "BYJU’S · Product innovation",
-      "title": "Scaling interactive STEM experiences across a curriculum",
+      "company": "BYJU’S · Product innovation & scale",
+      "title": "Building interactive learning products during hypergrowth",
       "metric": "300+",
       "unit": "Interactive applets",
-      "problem": "Interactive learning requires subject expertise, design, art, software development and production to work together. Building every experience independently makes scale difficult.",
-      "discovery": "The challenge was as much about coordinating specialist teams and reusable learning patterns as it was about creating individual experiences.",
-      "decision": "I focused on learning objectives and repeatable interactive experience patterns that teams could execute at scale.",
-      "approach": "I worked across pedagogy, design, development and production to deliver interactive STEM experiences.",
-      "outcome": "The initiative delivered more than 300 applets and 150 games.",
-      "assurance": "Learning objectives and subject-matter review formed part of the content development approach.",
+      "problem": "As BYJU’S grew from its 2015 app launch into a mass-market learning platform, the challenge was to turn subject expertise into engaging digital experiences that could scale across subjects and grades.",
+      "discovery": "Scaling interactive experiences required a multidisciplinary production system, not just more individual lessons.",
+      "decision": "I focused on testable learning objectives and repeatable interaction patterns that could be implemented by specialist teams.",
+      "approach": "I worked across subject experts, product, design, art, engineering, production and vendor teams on interactive STEM experiences including applets, games and virtual labs.",
+      "outcome": "Reported programme outputs include 300+ applets, 150+ games and 20+ virtual labs. These are team outputs, not individual production counts.",
+      "assurance": "Learning objectives, subject-matter review and cross-functional production coordination formed the foundation of the approach.",
       "status": "Delivered product initiative",
-      "images": []
+      "images": [],
+      "context": "Company context: BYJU’S launched its flagship learning app in 2015. By June 2020, it had reported more than 57 million registered users, 3.5 million paid subscribers and a reported $10.5 billion funding-round valuation. These historical company-level milestones provide context for the growth environment, not outcomes attributable to my work."
     },
     {
       "company": "Amazon · Customer experience",
@@ -119,15 +121,43 @@
     {
       "company": "BYJU’S / Amazon · Knowledge systems",
       "title": "Turning fragmented content into structured knowledge",
-      "metric": "",
-      "unit": "Knowledge graphs",
+      "metric": "50k–75k",
+      "unit": "BYJU’S knowledge graph nodes",
       "problem": "Large learning libraries are difficult to personalise when content lacks a shared map of concepts and prerequisites.",
       "discovery": "A structured representation of learning objectives can connect content, assessment, remediation and progression.",
       "decision": "I focused on defining testable learning objectives and their relationships, including prerequisites and misconception mappings.",
-      "approach": "I worked on knowledge-graph structures and content tagging across curricula to support learning pathways.",
-      "outcome": "The structures enabled more systematic content discovery and pathway design.",
+      "approach": "I worked on testable learning objectives, prerequisite and thematic relationships, and content tagging across curricula, connecting learning assets and assessments to a shared conceptual structure.",
+      "outcome": "The BYJU’S K–12 knowledge graph comprised an estimated 50,000–75,000 nodes across PCMB. These programme-scale structures supported content tagging, discovery and learning pathway design; related work continued at Amazon.",
       "assurance": "Subject-matter expertise and content mapping were foundational to the approach.",
       "status": "Delivered knowledge-system initiative",
+      "images": []
+    },
+    {
+      "company": "BYJU’S · Production systems",
+      "title": "Scaling learning content without scaling complexity",
+      "metric": "25k+",
+      "unit": "Animated videos in programme library",
+      "problem": "A rapidly expanding digital learning platform needed consistent content across subjects, grades and formats, requiring coordination between subject experts, creative teams and production partners.",
+      "discovery": "The bottleneck was not simply the availability of subject expertise; it was the ability to translate that expertise into repeatable production workflows.",
+      "decision": "The focus was to standardise learning specifications, content handoffs and quality expectations across disciplines.",
+      "approach": "I contributed to product development and content production initiatives across learning assets, assessments and solutions, collaborating with multidisciplinary teams.",
+      "outcome": "Reported programme-library scale included 25,000+ animated videos, 3.5 million+ assessment assets and 100,000+ solutions. These describe wider programme scale, not assets personally produced.",
+      "assurance": "Subject-matter accuracy and consistent learning objectives were essential to the production approach.",
+      "status": "Delivered programme contribution",
+      "images": []
+    },
+    {
+      "company": "BYJU’S · Personalised learning",
+      "title": "Turning passive video lessons into guided learning journeys",
+      "metric": "",
+      "unit": "Guided learning experience",
+      "problem": "Watching a lesson does not necessarily reveal whether a learner has understood the material or is ready to progress.",
+      "discovery": "Learning experiences needed opportunities to practise, retrieve knowledge and check understanding within the journey.",
+      "decision": "I focused on guided learning journeys that combined explanations with questions, flashcards and checkpoints.",
+      "approach": "I worked on chemistry learning journeys for competitive exam preparation, defining the instructional sequence and interactive checkpoints.",
+      "outcome": "The work established a structured learning experience combining instruction and practice. Quantified adoption or learning improvement is not available here.",
+      "assurance": "The experience was grounded in subject-matter objectives and checkpoints rather than video completion alone.",
+      "status": "Product development initiative",
       "images": []
     }
   ],
@@ -144,8 +174,8 @@
     ],
     [
       "BYJU’S",
-      "Product development",
-      "2016–2019"
+      "Product development & learning systems",
+      "2015–2020"
     ],
     [
       "IIT Kanpur",
