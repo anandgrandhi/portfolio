@@ -13,7 +13,7 @@ function referenceMarkup(id){
  const r=references[id];if(!r)return '';
  return '<div class="reference-photos '+(r.images.length>1?'pair':'')+'">'+r.images.map(src=>'<img loading="lazy" decoding="async" referrerpolicy="no-referrer" src="'+esc(src)+'" alt="'+esc(r.caption)+'">').join('')+'</div><div class="reference-credit"><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.caption)+'</a></div>';
 }
-function bindImageFallbacks(root){root.querySelectorAll('img').forEach(img=>{const fail=()=>{img.style.display='none';const group=img.closest('.reference-photos');if(group&&[...group.querySelectorAll('img')].every(x=>x.style.display==='none'))group.innerHTML='<p style="font-size:13px;color:#5f6368;padding:20px;text-align:center">Reference image unavailable. Open the source link below.</p>'};img.addEventListener('error',fail,{once:true});if(img.complete&&!img.naturalWidth)fail()})}
+function bindImageFallbacks(root){root.querySelectorAll('img').forEach(img=>{const fail=()=>{img.style.display='none';const group=img.closest('.reference-photos');if(group&&[...group.querySelectorAll('img')].every(x=>x.style.display==='none'))group.innerHTML='<p style="font-size:13px;color:#777777;padding:20px;text-align:center">Reference image unavailable. Open the source link below.</p>'};img.addEventListener('error',fail,{once:true});if(img.complete&&!img.naturalWidth)fail()})}
 function paintVisual(i,force=false){
  if(i===visualIndex&&!force)return;
  visualIndex=i;
