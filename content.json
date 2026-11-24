@@ -1,0 +1,132 @@
+{
+  "intro": [
+    "I’m Anand Grandhi. I work across product strategy, learning systems and AI-enabled business operations.",
+    "Previously at <em class='blue'>Amazon Academy</em> and <em class='blue'>BYJU’S</em>, I worked on products and operating systems at scale. Today, through <em class='blue'>ARCHMATION Studios</em>, I focus on turning complex business problems into practical solutions."
+  ],
+  "projects": [
+    {
+      "title": "Turning declining engagement into a daily learning habit",
+      "company": "Amazon Academy · Product adoption",
+      "metric": "35k → 80k+",
+      "unit": "Daily active users",
+      "problem": "Daily Digest engagement was declining despite an extensive content library.",
+      "approach": "Identified engagement bottlenecks, proposed personalised micro-sessions and defined the product behaviour with design and engineering.",
+      "outcome": "Reported daily active users rose from 35,000 to over 80,000 following the revamp.",
+      "images": []
+    },
+    {
+      "title": "Reducing a six-hour content workflow to under an hour",
+      "company": "ARCHMATION Studios · Workflow automation",
+      "metric": "6.5h → 45m",
+      "unit": "Production time",
+      "problem": "Research, writing and publishing required repetitive manual coordination.",
+      "approach": "Designed an AI-assisted content pipeline with structured inputs and review checkpoints.",
+      "outcome": "Reported production time fell to 45 minutes per article.",
+      "images": []
+    },
+    {
+      "title": "Making interactive STEM learning scalable",
+      "company": "BYJU’S · Product development",
+      "metric": "300+",
+      "unit": "Applets",
+      "problem": "Interactive learning experiences required coordination across multiple specialist teams.",
+      "approach": "Worked across pedagogy, design, development and production to deliver reusable interactive experiences.",
+      "outcome": "The initiative delivered hundreds of applets and more than 150 games.",
+      "images": []
+    },
+    {
+      "title": "Reducing editorial bottlenecks without compromising quality",
+      "company": "Amazon Academy · Operations",
+      "metric": "−40%",
+      "unit": "Publishing turnaround",
+      "problem": "Repeated review cycles slowed publication.",
+      "approach": "Redesigned review and quality workflows.",
+      "outcome": "Reported publishing turnaround decreased by 40%.",
+      "images": []
+    },
+    {
+      "title": "Turning fragmented learning content into structured knowledge",
+      "company": "BYJU’S / Amazon Academy · Knowledge systems",
+      "metric": "",
+      "unit": "",
+      "problem": "Content was difficult to personalise without a shared model of concepts and prerequisites.",
+      "approach": "Defined learning objectives, relationships and content tagging across curricula.",
+      "outcome": "Enabled structured content discovery and learning pathway design.",
+      "images": []
+    },
+    {
+      "title": "Making historical counselling knowledge useful in daily decisions",
+      "company": "AI consulting · Reference prototype",
+      "metric": "",
+      "unit": "",
+      "problem": "Counselling knowledge is dispersed across records, documents and conversations.",
+      "approach": "Explored transcript intelligence, structured workbooks and personalised planning with human review.",
+      "outcome": "Reference prototype; deployment outcomes are not claimed.",
+      "images": []
+    }
+  ],
+  "jobs": [
+    [
+      "ARCHMATION Studios",
+      "Consulting & AI solutions",
+      "Current"
+    ],
+    [
+      "Amazon Academy",
+      "Product initiatives & operations",
+      "2020–2023"
+    ],
+    [
+      "BYJU’S",
+      "Product development",
+      "2016–2019"
+    ],
+    [
+      "IIT Kanpur",
+      "Integrated MSc, Chemistry",
+      ""
+    ]
+  ],
+  "books": [
+    [
+      "Thinking in Systems",
+      "Donella Meadows",
+      "#e4f7d3"
+    ],
+    [
+      "The Design of Everyday Things",
+      "Don Norman",
+      "#cfe0ff"
+    ],
+    [
+      "The Goal",
+      "Eliyahu Goldratt",
+      "#ffc0a4"
+    ],
+    [
+      "Inspired",
+      "Marty Cagan",
+      "#f0dcff"
+    ],
+    [
+      "Designing Machine Learning Systems",
+      "Chip Huyen",
+      "#e6eef6"
+    ],
+    [
+      "The Myth of Sisyphus",
+      "Albert Camus",
+      "#fff6d3"
+    ]
+  ],
+  "notes": [
+    [
+      "AI Tutor Notes",
+      "https://anandgrandhi.github.io/ai-tutor/"
+    ],
+    [
+      "Building effective agents",
+      "https://www.anthropic.com/research/building-effective-agents"
+    ]
+  ]
+}
