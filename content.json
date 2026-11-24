@@ -1,13 +1,13 @@
 {
   "intro": [
-    "I’m Anand Grandhi. I work at the intersection of <strong>product strategy, business operations and applied AI.</strong>",
-    "My work has ranged from improving product adoption and designing learning experiences to transforming manual workflows and building knowledge systems.",
-    "Previously at <a href='https://www.amazon.in/'>Amazon Academy</a> and <span class='blue'>BYJU’S</span>. Today, through <span class='blue'>ARCHMATION Studios</span>, I help businesses rethink how they operate using intelligent software."
+    "I’m Anand Grandhi. Previously at <strong class='blue'>Amazon</strong> (L6), I led product initiatives and learning operations, working across customer experience, personalisation and operational transformation.",
+    "Today, at <strong class='blue'>ARCHMATION</strong>, I bring that experience to <strong class='blue'>AI product strategy</strong>, intelligent workflows and business automation.",
+    "Earlier, at BYJU’S, I worked on interactive learning products at scale."
   ],
   "projects": [
     {
-      "company": "Operational efficiency · ARCHMATION Studios",
-      "title": "Taking a six-hour content workflow down to 45 minutes",
+      "company": "ARCHMATION · AI & operational efficiency",
+      "title": "Using AI to take a six-hour workflow down to 45 minutes",
       "metric": "6.5h → 45m",
       "unit": "Per article",
       "problem": "Publishing a single article meant researching, drafting, reviewing and moving information between multiple tools. The production process was consuming hours of skilled team time.",
@@ -20,7 +20,7 @@
       "images": []
     },
     {
-      "company": "Growth & adoption · Amazon Academy",
+      "company": "Amazon · Product growth & personalisation",
       "title": "Turning a declining product into a daily user habit",
       "metric": "35k → 80k+",
       "unit": "Daily active users",
@@ -34,8 +34,8 @@
       "images": []
     },
     {
-      "company": "Knowledge intelligence · Education consulting",
-      "title": "Making years of institutional knowledge useful at the point of decision",
+      "company": "AI · Institutional knowledge intelligence",
+      "title": "Making institutional knowledge actionable with AI",
       "metric": "",
       "unit": "Reference prototype",
       "problem": "Counsellors work with information scattered across conversations, historical records and student planning documents. Valuable institutional knowledge is difficult to reuse consistently.",
@@ -48,8 +48,8 @@
       "images": []
     },
     {
-      "company": "Growth operations · Startup AI systems",
-      "title": "Making customer acquisition systematic and evidence-driven",
+      "company": "AI · Agentic growth operations",
+      "title": "Building a trustworthy AI workflow for customer acquisition",
       "metric": "",
       "unit": "Prototype",
       "problem": "Early-stage growth teams need to research potential customers, qualify opportunities and coordinate follow-up without losing track of evidence or decisions.",
@@ -62,7 +62,7 @@
       "images": []
     },
     {
-      "company": "Quality & scale · Amazon Academy",
+      "company": "Amazon · Operational excellence",
       "title": "Publishing faster without sacrificing editorial accuracy",
       "metric": "−40%",
       "unit": "Publishing turnaround",
@@ -76,7 +76,7 @@
       "images": []
     },
     {
-      "company": "Product innovation · BYJU’S",
+      "company": "BYJU’S · Product innovation",
       "title": "Scaling interactive STEM experiences across a curriculum",
       "metric": "300+",
       "unit": "Interactive applets",
@@ -90,7 +90,7 @@
       "images": []
     },
     {
-      "company": "Customer experience · Amazon Academy",
+      "company": "Amazon · Customer experience",
       "title": "Removing friction from the student doubt-resolution journey",
       "metric": "50k+",
       "unit": "Queries in three months",
@@ -104,7 +104,7 @@
       "images": []
     },
     {
-      "company": "Decision support · Amazon Academy",
+      "company": "Amazon · Decision intelligence",
       "title": "Helping teachers see where students were actually struggling",
       "metric": "",
       "unit": "Teacher insights",
@@ -118,7 +118,7 @@
       "images": []
     },
     {
-      "company": "Knowledge systems · BYJU’S / Amazon Academy",
+      "company": "BYJU’S / Amazon · Knowledge systems",
       "title": "Turning fragmented content into structured knowledge",
       "metric": "",
       "unit": "Knowledge graphs",
@@ -134,12 +134,12 @@
   ],
   "jobs": [
     [
-      "ARCHMATION Studios",
+      "ARCHMATION",
       "Consulting & AI solutions",
       "Current"
     ],
     [
-      "Amazon Academy",
+      "Amazon",
       "Product initiatives & operations",
       "2020–2023"
     ],
