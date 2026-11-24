@@ -75,3 +75,5 @@ function animateOrbits(){
  document.querySelectorAll('.motion-orbit').forEach(el=>observer.observe(el));document.addEventListener('visibilitychange',()=>{if(!document.hidden&&visible.length&&!orbitRAF)orbitRAF=requestAnimationFrame(frame)});
 }
 installOrbitArtwork();animateOrbits();
+
+let enhancementsInstalled=false;function initializeEnhancements(){if(enhancementsInstalled||!window.portfolioContentReady)return;enhancementsInstalled=true;installVisuals();installCases(window.portfolioContentReady)}document.addEventListener('portfolio-content-ready',initializeEnhancements);initializeEnhancements();
