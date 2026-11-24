@@ -46,3 +46,15 @@ body,.hero-reel h1{font-family:"Suisse Portfolio","Suisse Intl","Suisse Internat
 .more{margin-top:90px;padding-top:55px}.more-list .case-launch{padding:29px 0}.more-list .row-title{line-height:1.35;font-size:clamp(19px,2vw,24px)}
 @media(max-width:800px){.hero-reel .hero-inner{min-height:0;padding:80px 24px 55px;gap:45px}.hero-reel h1{font-size:36px}.hero-world{width:100%}.world-labels{display:none}.work{padding-top:60px;padding-bottom:65px}.work .section-head{margin-bottom:40px}.journey{display:block}.chapter,.chapter:first-child{min-height:0;padding:40px 0 50px}.chapter h3{font-size:32px}.chapter>p{font-size:16px}.more{margin-top:35px}.more-list .case-launch{padding:23px 0}}
 @media(prefers-reduced-motion:reduce){.hero-world,.hero-world *{animation:none!important}.hero-world animateMotion{display:none}}
+
+.hero.wrap.hero-reel{position:relative;overflow:hidden;isolation:isolate}
+.hero-reel .hero-inner{position:relative;min-height:calc(88svh - 65px);justify-content:center;padding:110px 28px 120px;gap:0}
+.hero-reel .hero-copy{position:relative;z-index:2;max-width:min(700px,56%);margin:auto}
+.hero-reel h1{font-size:clamp(34px,3.7vw,56px);margin-bottom:0}
+.hero-reel .hero-world{position:absolute;inset:0;width:100%;max-width:none;height:100%;pointer-events:none;z-index:0;margin:0}
+.hero-world svg{width:100%;height:100%;overflow:visible}
+.hero-reel .hero-links{margin-top:32px}
+.about-bridge{max-width:1000px;padding-top:85px;padding-bottom:75px;text-align:center}
+.about-bridge .hero-sub{font-size:clamp(19px,2vw,26px);line-height:1.6;letter-spacing:-.02em;color:#5f6368;max-width:760px;margin:0 auto}
+.about-bridge a{color:#1a73e8;text-decoration:none}
+@media(max-width:800px){.hero-reel .hero-inner{min-height:72svh;padding:135px 22px 130px}.hero-reel .hero-copy{max-width:100%}.hero-reel h1{font-size:clamp(32px,7.4vw,43px)}.hero-reel .hero-world{opacity:.85}.hero-world svg>g:nth-of-type(2),.hero-world svg>g:nth-of-type(4){display:none}.hero-world svg{height:100%}.about-bridge{padding:55px 25px 45px}.about-bridge .hero-sub{font-size:19px}}
