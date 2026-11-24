@@ -1,0 +1,1 @@
+Upload images here. Add each image to the relevant project's images array in content.json using src and caption fields.
