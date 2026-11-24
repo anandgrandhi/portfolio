@@ -1,0 +1,2 @@
+# Portfolio
+Edit content.json to change projects, reading and experience. Upload photographs into images/ and reference them in the project images array with src and caption. GitHub Pages: deploy main / root. Draft content and reported metrics require review before external sharing.
