@@ -32,7 +32,65 @@
       "assurance": "I monitored engagement and retention after launch and used the results to prioritise improvements. Leadership made final feature decisions.",
       "status": "Delivered product initiative",
       "images": [],
-      "summary": "Despite having an extensive learning library, Amazon Academy struggled to bring students back regularly. I identified an opportunity to transform Question of the Day into a personalised daily experience that reduced the effort required to get started. I defined the core journey, personalisation logic, behavioural nudges and content strategy, working with product, research, design and engineering teams to increase visit frequency, encourage meaningful practice and drive adoption of other product features."
+      "summary": "Despite having an extensive learning library, Amazon Academy struggled to bring students back regularly. I identified an opportunity to transform Question of the Day into a personalised daily experience that reduced the effort required to get started. I defined the core journey, personalisation logic, behavioural nudges and content strategy, working with product, research, design and engineering teams to increase visit frequency, encourage meaningful practice and drive adoption of other product features.",
+      "chapters": [
+        {
+          "label": "Challenge",
+          "title": "The problem was not a shortage of content.",
+          "paragraphs": [
+            "Amazon Academy had practice questions, tests, lessons, videos and remediation resources. Yet students were not returning consistently. Question of the Day gave them a reason to open the app, but an isolated question could not address the different needs of a beginner, a student struggling with a chapter or someone revising before an examination.",
+            "I saw an opportunity to change the purpose of the daily feature: instead of measuring success only through attempts at a question, use it to connect students with the most valuable action they could take that day."
+          ]
+        },
+        {
+          "label": "Discovery",
+          "title": "What stopped students from using the product?",
+          "paragraphs": [
+            "User research indicated that students valued the learning material but struggled to find time alongside school and coaching. They wanted specific help with accuracy, doubts, weak topics and avoidable mistakes, not another large collection of resources to browse.",
+            "The early Daily Digest funnel also revealed a distinction between attracting attention and delivering value. In August–September 2020, approximately 13% of recipients opened the digest, and about 40% of those who opened progressed to the question screen. We needed to improve both entry into the experience and progression through it."
+          ]
+        },
+        {
+          "label": "Redesign",
+          "title": "Make the first few minutes useful.",
+          "paragraphs": [
+            "I proposed a short daily session built around a relevant activity rather than a fixed question. The design combined an entry point through notifications or the dashboard, a short learning item, follow-up practice and a completion experience with feedback.",
+            "The session was designed to take about 7–10 minutes in the later specification. A student who needed more help could continue into chapter practice, remediation, videos or tests. Daily Digest became a way to surface existing product capabilities in the context of an immediate need, instead of expecting students to discover them independently."
+          ]
+        },
+        {
+          "label": "Behaviour",
+          "title": "Build a reason to return tomorrow.",
+          "paragraphs": [
+            "I worked on the sequence of prompt, achievable activity, feedback and repeat engagement. Short tasks reduced the effort of starting; visible progress and streaks gave students a reason to maintain a routine. Notification preferences and timing were part of the design, alongside avoiding excessive reminders.",
+            "The objective was not to reward opening the app for its own sake. The reward needed to be connected to useful preparation: understanding a concept, correcting a mistake or improving accuracy. More elaborate goal setting, badges and leaderboards were roadmap ideas, rather than all being treated as launched features."
+          ]
+        },
+        {
+          "label": "Personalisation",
+          "title": "Different students need different daily actions.",
+          "paragraphs": [
+            "I defined the content and routing requirements around recent activity, performance, preparation stage and exam proximity. For a Grade 11 student starting JEE preparation, a refresher could combine a short conceptual video with recall questions. A student who had recently completed a chapter could receive an accuracy challenge. Someone nearing the examination could receive revision material or flashcards.",
+            "A student who performed poorly in a test could be directed towards relevant remediation, with the reason for the recommendation made visible. The proposed routing logic connected learning resources to the student's circumstances rather than simply ranking popular content."
+          ]
+        },
+        {
+          "label": "Iteration",
+          "title": "A high open rate did not necessarily mean a good experience.",
+          "paragraphs": [
+            "We examined open rates, progression to questions and positive feedback separately. Early content experiments reported up to 44% higher opens for exam-question-led digests and a 39% increase for a common-mistakes digest. These were observational comparisons; the team did not yet have the technical support for controlled A/B testing of those experiments.",
+            "Shortcut-oriented titles could attract opens but receive weaker feedback, while complex text could discourage completion. We refined content guidelines around usefulness, appeal, comprehensibility and engagement. I worked with product, UX, research, data, ML, engineering and content teams on requirements, reviews and improvements; leadership made final feature decisions."
+          ]
+        },
+        {
+          "label": "Outcomes",
+          "title": "Measure usage beyond the daily notification.",
+          "paragraphs": [
+            "The product objective was repeat visits, meaningful session activity and discovery of other features. The early programme recorded approximately 13% opens, 40% progression from the digest information card to questions and 94% positive ratings among customers who submitted feedback in August–September 2020.",
+            "Later reported DAU milestones moved from approximately 35,000 to 80,000+. This is an observational platform-level change, not a controlled estimate of Daily Digest's independent impact. My contribution was defining the experience and content logic, monitoring performance and using the signals to guide subsequent improvements."
+          ]
+        }
+      ]
     },
     {
       "company": "Athena Education · AI product strategy",
@@ -47,7 +105,57 @@
       "outcome": "The advisory deliverables define an interconnected product architecture and implementation direction for Athena’s teams. Deployment and commercial impact are not claimed.",
       "status": "AI product strategy & advisory",
       "images": [],
-      "summary": "Athena had accumulated nearly a decade of counselling knowledge across documents, recordings and student records. I developed an AI product strategy to make this expertise accessible during everyday counselling. The solution connects conversation intelligence, evolving student profiles and personalised planning, enabling counsellors to make better-informed recommendations. My advisory work covered product requirements, decision logic, knowledge architecture, evaluation criteria and implementation planning, with counsellors retaining control over consequential decisions."
+      "summary": "Athena had accumulated nearly a decade of counselling knowledge across documents, recordings and student records. I developed an AI product strategy to make this expertise accessible during everyday counselling. The solution connects conversation intelligence, evolving student profiles and personalised planning, enabling counsellors to make better-informed recommendations. My advisory work covered product requirements, decision logic, knowledge architecture, evaluation criteria and implementation planning, with counsellors retaining control over consequential decisions.",
+      "chapters": [
+        {
+          "label": "Context",
+          "title": "Make ten years of counselling expertise usable.",
+          "paragraphs": [
+            "University admissions counselling involves understanding a student's academic profile, ambitions, activities, deadlines and constraints over many conversations. Athena had accumulated roughly a decade of experience in documents, recordings and Airtable records.",
+            "The challenge was to make relevant historical knowledge available when a counsellor needed it, without losing the individual student's context or reducing counselling to a standard checklist. My approximately 40-day paid advisory engagement focused on product strategy and implementation requirements."
+          ]
+        },
+        {
+          "label": "Strategy",
+          "title": "Connect conversations, records and decisions.",
+          "paragraphs": [
+            "I separated the problem into three connected product capabilities: Transcript Intelligence, Intelligent Counselor Workbook and Personalized Student Planning Engine. Each addressed a different part of the counsellor's work, while sharing a consistent student record.",
+            "Rather than proposing a general chatbot, I defined what each capability should receive, what it should produce, what information could be trusted and where a counsellor needed to intervene."
+          ]
+        },
+        {
+          "label": "Transcripts",
+          "title": "Turn a conversation into reviewable information.",
+          "paragraphs": [
+            "Transcript Intelligence was designed to identify candidate goals, decisions, commitments, deadlines and follow-ups from counselling conversations. Each proposed fact should retain a link to its source so a counsellor can check the original statement.",
+            "For example, if a student mentions an interest in research and a possible summer commitment, those are candidates for review rather than automatically established goals or confirmed dates. Missing or contradictory information should be flagged instead of silently completed by AI."
+          ]
+        },
+        {
+          "label": "Workbook",
+          "title": "Maintain a student record that evolves over time.",
+          "paragraphs": [
+            "The Intelligent Counselor Workbook was designed as a structured working record: confirmed goals, open questions, current commitments, milestones and relevant institutional guidance. New information would be reviewed before modifying the confirmed state.",
+            "A counsellor preparing for a follow-up could see what was agreed previously, what remained unresolved and which approved institutional resources were relevant. The design treats this record as shared context for subsequent decisions, not just a collection of meeting summaries."
+          ]
+        },
+        {
+          "label": "Planning",
+          "title": "Recommend a feasible plan, not a generic activity list.",
+          "paragraphs": [
+            "The planning engine was specified to consider a student's goals, eligibility, prerequisites, available time and deadlines before recommending activities. It should explain the rationale and show the evidence behind the recommendation.",
+            "For example, an illustrative student with only three hours available per week should not receive an overloaded schedule simply because several opportunities match their interests. If required eligibility or workload information is missing, the system should request clarification or defer the recommendation. The counsellor approves the final plan."
+          ]
+        },
+        {
+          "label": "Delivery",
+          "title": "Define what the technical team needs to build and evaluate.",
+          "paragraphs": [
+            "My contribution was product architecture, workflow requirements, decision logic, knowledge requirements, evaluation criteria and implementation planning. I specified traceability, privacy, handling contradictory information, and human approval for consequential decisions.",
+            "The advisory deliverables provide a coherent direction for implementation: how the three capabilities exchange information, which decisions remain human-owned, and how the team can assess whether recommendations are grounded and feasible. This was advisory delivery, not a claim of production deployment."
+          ]
+        }
+      ]
     },
     {
       "company": "WhiteTable · AI product & solutions",
@@ -62,7 +170,65 @@
       "outcome": "Functional prototypes and product specifications demonstrated selected workflows, including planning, validation and approval. Broader production integration remained a separate engineering responsibility.",
       "status": "Solution design & functional prototyping",
       "images": [],
-      "summary": "At WhiteTable, I identified opportunities to increase execution capacity across a small organisation without proportionally expanding its teams. I designed a shared knowledge foundation, an employee assistant, reusable agents for internal operations and software development, and an evidence-led customer acquisition workflow. Through AI-assisted prototyping, I explored how these systems could retrieve company context, prepare requirements, organise work and qualify prospects while maintaining source accuracy, validation and human approval."
+      "summary": "At WhiteTable, I identified opportunities to increase execution capacity across a small organisation without proportionally expanding its teams. I designed a shared knowledge foundation, an employee assistant, reusable agents for internal operations and software development, and an evidence-led customer acquisition workflow. Through AI-assisted prototyping, I explored how these systems could retrieve company context, prepare requirements, organise work and qualify prospects while maintaining source accuracy, validation and human approval.",
+      "chapters": [
+        {
+          "label": "Context",
+          "title": "Increase execution capacity without multiplying tools.",
+          "paragraphs": [
+            "WhiteTable is an early-stage recruitment technology startup. I explored how AI could help a small team access shared knowledge, prepare product and engineering work, and pursue qualified customer acquisition without repeating the same research and coordination.",
+            "I organised the work around four connected workstreams: organisational knowledge and employee assistance, an Agent Backbone for operations, an Agent Backbone for software development and GrowthOS for acquisition."
+          ]
+        },
+        {
+          "label": "Knowledge",
+          "title": "Give employees answers grounded in company information.",
+          "paragraphs": [
+            "I defined a knowledge foundation organised around company context, products, processes and technical information, with a conversational interface for retrieving relevant material. The assistant was expected to answer with sources and decline when the available documents did not support an answer.",
+            "A reference assistant was developed and tested against representative questions. Retrieval failures informed changes to the organisation and selection of context. The aim was to make the knowledge base useful to both employees and downstream agents, rather than maintain separate copies of company information."
+          ]
+        },
+        {
+          "label": "Operations",
+          "title": "Turn repetitive preparation into reusable workflows.",
+          "paragraphs": [
+            "I designed a reusable agent model in which a task has an explicit input, relevant company context, a bounded responsibility, a structured output and an approval boundary. The initial focus was work that could be inspected before any consequential action was taken.",
+            "A requirements-drafting workflow, for example, can collect the relevant product context, clarify the problem and generate a PRD draft against agreed acceptance requirements. The employee remains responsible for approving the output. The broader operations-agent catalogue was a proposed extension, not a claim that every function was automated."
+          ]
+        },
+        {
+          "label": "Development",
+          "title": "Connect a product requirement to a reviewable work plan.",
+          "paragraphs": [
+            "The software-development workstream focused on making the handoff from requirements to engineering more structured. A work-planning prototype translated requirements into tasks, dependencies and acceptance criteria, while preserving links to the original requirement.",
+            "I defined the product workflow, expected outputs and validation boundaries and used AI-assisted development to exercise representative scenarios. Full autonomous software delivery and production integration were outside the demonstrated scope."
+          ]
+        },
+        {
+          "label": "Acquisition",
+          "title": "Find prospects with evidence, not invented relevance.",
+          "paragraphs": [
+            "For GrowthOS, I selected recruitment and staffing agencies as an initial targeting hypothesis. The workflow separates discovery, research, qualification, outreach preparation and review. It records supporting evidence rather than treating plausible generated statements as facts.",
+            "A prospect should qualify because the available evidence supports the criteria, not because an LLM produces a persuasive explanation. The prototype exercised representative synthetic scenarios, with human approval before outreach. Live acquisition and activation results are not established."
+          ]
+        },
+        {
+          "label": "Reliability",
+          "title": "Make failures visible and correctable.",
+          "paragraphs": [
+            "I treated reliability as a product requirement across the workstreams. Retrieval evaluations checked whether the assistant found relevant sources and declined unsupported questions. Deterministic checks tested structured outputs, qualification rules and unsupported claims.",
+            "The approach was to inspect failed cases, revise retrieval or workflow logic, and rerun the relevant test suite. Human approval remained the boundary for consequential actions. Passing a bounded prototype test suite does not establish production accuracy."
+          ]
+        },
+        {
+          "label": "Delivery",
+          "title": "Product specifications and functional prototypes.",
+          "paragraphs": [
+            "My contribution combined problem formulation, use-case prioritisation, workflow design, acceptance criteria, evaluation requirements and AI-assisted prototyping. Representative workflows included the employee assistant, requirements drafting, work planning and evidence-led prospect research.",
+            "The work established a reusable design for extending AI capabilities across a small organisation, with selected functional demonstrations. Broader deployment, engineering integration and commercial outcomes remain separate from the prototype evidence."
+          ]
+        }
+      ]
     },
     {
       "company": "Amazon · Operational excellence",
@@ -92,7 +258,57 @@
       "status": "Delivered product initiative",
       "images": [],
       "context": "Company context: BYJU’S launched its flagship learning app in 2015. By June 2020, it had reported more than 57 million registered users, 3.5 million paid subscribers and a reported $10.5 billion funding-round valuation. These historical company-level milestones provide context for the growth environment, not outcomes attributable to my work.",
-      "summary": "During BYJU’S rapid expansion, I led initiatives that connected academic expertise with digital product development. I proposed structuring curricula into granular concepts and relationships, connecting them to assessments, instructional content and guided learning journeys. My work extended into interactive STEM, simulations, educational games, virtual laboratories and experiential learning programmes. I coordinated subject experts, designers, developers and media specialists, establishing repeatable development processes across multiple product initiatives."
+      "summary": "During BYJU’S rapid expansion, I led initiatives that connected academic expertise with digital product development. I proposed structuring curricula into granular concepts and relationships, connecting them to assessments, instructional content and guided learning journeys. My work extended into interactive STEM, simulations, educational games, virtual laboratories and experiential learning programmes. I coordinated subject experts, designers, developers and media specialists, establishing repeatable development processes across multiple product initiatives.",
+      "chapters": [
+        {
+          "label": "Context",
+          "title": "Build the capabilities behind a rapidly growing learning product.",
+          "paragraphs": [
+            "I joined BYJU’S before the launch of its flagship learning app and worked across multiple product-development initiatives during its rapid expansion. The challenge was not merely to produce more videos or questions. Different teams needed a common way to define what students should learn, how it should be represented and how understanding should be assessed.",
+            "My work connected academic expertise, product design and multidisciplinary production, with an emphasis on repeatable development processes."
+          ]
+        },
+        {
+          "label": "Knowledge",
+          "title": "Structure the subject before scaling production.",
+          "paragraphs": [
+            "I proposed organising academic knowledge into granular concepts and prerequisite relationships. I led subject experts across Physics, Chemistry, Mathematics and Biology in building a Classes 11–12 knowledge structure and mapping learning resources to it.",
+            "Consider Newton's second law: force, mass and acceleration are related concepts, each with prerequisite knowledge and relevant learning resources. A concept-level structure allows a video, worked example, question and simulation to be organised around the same learning objective instead of being isolated files. This supported structured learning journeys and assessment design."
+          ]
+        },
+        {
+          "label": "Learning journeys",
+          "title": "Connect explanation, practice and feedback.",
+          "paragraphs": [
+            "I contributed to designing Chemistry learning journeys around instructional units, worked examples, practice and feedback. Rather than leaving students to choose among disconnected resources, the experience could give them a coherent sequence of learning activities.",
+            "My assessment work included exam-standard questions, detailed solutions, hints and weakness analysis for the All India Test Series. The underlying principle was to make a learner's response useful for understanding learning needs, rather than simply recording a score. More advanced adaptive routing belongs to subsequent Amazon work."
+          ]
+        },
+        {
+          "label": "Innovation",
+          "title": "Make abstract ideas interactive.",
+          "paragraphs": [
+            "I helped translate scientific and mathematical ideas into applets, educational games, simulations and virtual laboratories. This involved defining what the learner should manipulate, observe and understand, then collaborating with subject experts, designers, media specialists and developers.",
+            "For example, an illustrative mechanics applet can let a student change force and mass and observe the resulting acceleration. The interaction communicates a relationship that is difficult to experience through static explanation alone. I also originated an experiential learning programme integrating physical experiments into classroom instruction and led flipped-classroom pilots."
+          ]
+        },
+        {
+          "label": "Leadership",
+          "title": "Build a repeatable multidisciplinary operating model.",
+          "paragraphs": [
+            "My management scope included approximately five direct reports and project structures involving around forty subject experts and twenty media specialists. I coordinated work across domain requirements, design, production, development and quality review.",
+            "The emphasis was on shared specifications, clear responsibilities and consistent review, so that different teams could produce resources that fit into the same learning product. The contribution was building organisational capabilities as well as individual product features."
+          ]
+        },
+        {
+          "label": "Contribution",
+          "title": "Scale through structure, not only headcount.",
+          "paragraphs": [
+            "Across these initiatives, my role was to identify product opportunities, define learning and content requirements, coordinate teams and create development processes that could support expansion.",
+            "The work supported structured knowledge, guided learning, assessment and interactive STEM capabilities. Programme-wide production figures are not attributed to my individual output. The approach established a foundation for my subsequent work in personalisation, product intelligence and operational design."
+          ]
+        }
+      ]
     },
     {
       "company": "Amazon · Customer experience",
@@ -177,7 +393,49 @@
       "outcome": "The workflow design establishes a practical implementation direction using existing tools. Deployment, adoption and quantified savings are not asserted.",
       "status": "AI workflow consulting & solution design",
       "images": [],
-      "summary": "Rather than introducing a complex new platform, I focused on three everyday operational challenges: employee onboarding, access to internal procedures and follow-up on pending work. I designed workflows that organise approved training materials, provide conversational access to SOPs and connect task trackers with automated WhatsApp and Gmail reminders through n8n. The approach prioritises existing tools, minimal maintenance and clear employee accountability."
+      "summary": "Rather than introducing a complex new platform, I focused on three everyday operational challenges: employee onboarding, access to internal procedures and follow-up on pending work. I designed workflows that organise approved training materials, provide conversational access to SOPs and connect task trackers with automated WhatsApp and Gmail reminders through n8n. The approach prioritises existing tools, minimal maintenance and clear employee accountability.",
+      "chapters": [
+        {
+          "label": "Challenge",
+          "title": "Reduce routine internal coordination.",
+          "paragraphs": [
+            "For EMotorad, I focused on employee-facing operations rather than marketing or customer acquisition. The opportunity was to make training materials and procedures easier to find and outstanding work easier to track, without adding a complicated new operating system.",
+            "I selected three everyday workflows for solution design: onboarding and training, access to internal SOPs, and pending-work reminders."
+          ]
+        },
+        {
+          "label": "Onboarding",
+          "title": "Help new employees find the right material.",
+          "paragraphs": [
+            "The proposed design organises approved training material in a shared workspace, with a searchable entry point for employees. Rather than relying on repeated explanations from colleagues, employees could locate the relevant instruction or training resource when needed.",
+            "The source documents remain the authoritative training material. The design keeps updates with the people responsible for the process instead of creating another independent copy of the information."
+          ]
+        },
+        {
+          "label": "SOP access",
+          "title": "Answer routine process questions from approved sources.",
+          "paragraphs": [
+            "The internal SOP workflow allows employees to ask a question in ordinary language and retrieve the relevant procedure, with a reference to the approved document.",
+            "If an answer is unavailable, unclear or outside the documented process, the workflow should escalate to the appropriate owner rather than invent a policy. The objective is easier access to existing instructions, not autonomous operational decision-making."
+          ]
+        },
+        {
+          "label": "Pending work",
+          "title": "Use reminders where employees already communicate.",
+          "paragraphs": [
+            "The task workflow uses a central tracker containing the task, owner, due date and completion status. n8n is the proposed automation layer for checking relevant dates and routing reminders through WhatsApp and Gmail according to agreed rules.",
+            "WhatsApp is a notification channel, not the training repository or task database. Employees update completion in the authoritative tracker, while managers retain responsibility for exceptions and overdue work. The workflow avoids adding another application simply to send reminders."
+          ]
+        },
+        {
+          "label": "Delivery",
+          "title": "Keep automation proportionate to the problem.",
+          "paragraphs": [
+            "My contribution covered workflow formulation, tool selection, automation design and operational requirements. I prioritised existing collaboration tools, one authoritative record, clear ownership and low maintenance.",
+            "These designs provide an implementation direction for the three workflows. Deployment, adoption and quantified time savings have not been established, so the case study presents the solution design rather than unsupported performance claims."
+          ]
+        }
+      ]
     },
     {
       "company": "AI · Agentic growth operations",

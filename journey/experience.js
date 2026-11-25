@@ -45,15 +45,18 @@ function openPortfolioCase(id,opener){
  const p=portfolioData?.projects[id];if(!p)return;caseOpener=opener||document.activeElement;
  const i=featuredIds.indexOf(id),visual=i>=0?art(p,i):diagram(['Business problem','Product decisions','Execution','Outcome']);
  const metric=p.metric?'<div class="cv-stat">'+esc(p.metric)+'</div><div class="cv-stat-label">'+esc(p.unit)+'</div>':diagram(['Project objective','Evaluation','Outcome']);
- const pages=[
+ let pages=[
   page('01 / The challenge',p.title,para(p.problem)+'<p class="cv-context">'+esc(p.status||'')+'</p>',visual,true),
   page('02 / Discovery','Understanding the problem',para(p.discovery),diagram(['Customer or operational need','Evidence and constraints','Prioritised opportunity'])),
   page('03 / Product decisions','Choosing what to build',para(p.decision),diagram(['Define the desired outcome','Choose the intervention','Align execution'])),
   page('04 / Execution','Making the solution work',para(p.approach)+(p.assurance?'<h3>Reliability and quality</h3>'+para(p.assurance):''),references[id]?referenceMarkup(id):diagram(['Product definition','Collaborative execution','Quality review'])),
   page('05 / Outcomes','What changed',para(p.outcome)+(p.context?'<p class="cv-context">'+esc(p.context)+'</p>':''),metric)
  ];
+ const custom=Array.isArray(p.chapters)&&p.chapters.length>0;
+ const labels=custom?p.chapters.map(c=>c.label):['Challenge','Discovery','Decisions','Execution','Outcomes'];
+ if(custom)pages=p.chapters.map((c,n)=>page(String(n+1).padStart(2,'0')+' / '+c.label,c.title,c.paragraphs.map(para).join(''),'',n===0).replace('class="cv-page"','class="cv-page cv-text-only"'));
  $('#cvCompany').textContent=p.company;scroller.innerHTML=pages.join('');pageCount=pages.length;pageIndex=0;
- $('#cvSteps').innerHTML=pages.map((_,n)=>'<button type="button" aria-label="Go to chapter '+(n+1)+': '+['Challenge','Discovery','Decisions','Execution','Outcomes'][n]+'" data-page="'+n+'">'+['Challenge','Discovery','Decisions','Execution','Outcomes'][n]+'</button>').join('');
+ $('#cvSteps').innerHTML=pages.map((_,n)=>'<button type="button" aria-label="Go to chapter '+(n+1)+': '+esc(labels[n])+'" data-page="'+n+'">'+esc(labels[n])+'</button>').join('');
  $('#cvSteps').querySelectorAll('button').forEach(b=>b.onclick=()=>goPage(Number(b.dataset.page)));
  bindImageFallbacks(scroller);viewer.showModal();document.body.style.overflow='hidden';scroller.scrollLeft=0;updateViewer(0);requestAnimationFrame(()=>$('.cv-close').focus());
 }
@@ -77,3 +80,6 @@ function animateOrbits(){
 installOrbitArtwork();animateOrbits();
 
 let enhancementsInstalled=false;function initializeEnhancements(){if(enhancementsInstalled||!window.portfolioContentReady)return;enhancementsInstalled=true;installVisuals();installCases(window.portfolioContentReady)}document.addEventListener('portfolio-content-ready',initializeEnhancements);initializeEnhancements();
+
+/* Text-first chapters until final artifacts are integrated. */
+(()=>{const style=document.createElement('style');style.textContent='.cv-page.cv-text-only{display:block!important;padding:clamp(28px,5vw,72px)!important;overflow-y:auto!important}.cv-page.cv-text-only>div:first-child{max-width:790px;width:100%;margin:0 auto}.cv-page.cv-text-only .cv-art{display:none}.cv-page.cv-text-only h2{max-width:740px;margin-bottom:24px}.cv-page.cv-text-only p{max-width:760px;line-height:1.7;margin-bottom:18px}.cv-steps{overflow-x:auto;min-width:0}.cv-steps button{flex-shrink:0;white-space:nowrap}';document.head.append(style)})();
