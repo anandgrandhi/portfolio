@@ -45,3 +45,9 @@
 .stage-offscreen .scene-art *{animation-play-state:paused!important}
 .scene-ready .canvas:hover{rotate:none;box-shadow:var(--depth-shadow)}
 @media(prefers-reduced-motion:reduce){.scene-ready .canvas>svg{transition:none!important}}
+
+/* Show the headline immediately; introduce the symbol afterwards. */
+.relate-hero .hero-copy,.relate-hero .hero-links{animation:none!important;opacity:1!important;transform:none!important}
+.relate-hero .relate-symbol{animation:relateIn .85s .35s both}
+.relate-hero .relate-start span{animation:none!important}
+@media(prefers-reduced-motion:reduce){.relate-hero .relate-symbol{animation:none!important}}

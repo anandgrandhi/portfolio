@@ -2,11 +2,11 @@
   "intro": [
     "I’m Anand Grandhi. I work at the intersection of product strategy, business operations and <strong class='blue'>applied AI.</strong>",
     "I joined <strong class='blue'>BYJU’S</strong> in 2015, before its flagship learning app launched, and helped build and scale its learning products during five years of rapid growth. At <strong class='blue'>Amazon</strong>, I worked on product adoption, customer experience and operational transformation.",
-    "Today, through <strong class='blue'>ARCHMATION</strong>, I apply that experience to intelligent workflows and complex business problems."
+    "Today, through <strong class='blue'>Archmation</strong>, I apply that experience to intelligent workflows and complex business problems."
   ],
   "projects": [
     {
-      "company": "ARCHMATION · AI & operational efficiency",
+      "company": "Archmation · AI & operational efficiency",
       "title": "Using AI to take a six-hour workflow down to 45 minutes",
       "metric": "6.5h → 45m",
       "unit": "Per article",
@@ -20,8 +20,8 @@
       "images": []
     },
     {
-      "company": "Amazon · Product growth & personalisation",
-      "title": "From Question of the Day to a daily learning habit",
+      "company": "Amazon · Daily Digest",
+      "title": "Turning a declining product into a daily user habit",
       "metric": "35k → 80k+",
       "unit": "Daily active users",
       "problem": "Daily engagement was declining: active users had fallen from approximately 50,000 to 35,000. The original Question of the Day offered a reason to open the app, but did not consistently connect that visit with meaningful progress.",
@@ -36,8 +36,8 @@
     {
       "company": "Athena Education · AI product strategy",
       "title": "Designing intelligence for personalised counselling",
-      "metric": "3",
-      "unit": "Connected product capabilities",
+      "metric": "",
+      "unit": "",
       "problem": "Personalised university admissions counselling relies on evolving student context and institutional expertise accumulated over roughly a decade across documents, recordings and Airtable records.",
       "discovery": "Counsellors need to retrieve relevant institutional knowledge, maintain a consistent student record and turn conversations into informed next steps, without repeatedly reconstructing context.",
       "decision": "I defined three connected capabilities: Transcript Intelligence, Intelligent Counselor Workbook and Personalized Student Planning Engine.",
@@ -50,8 +50,8 @@
     {
       "company": "WhiteTable · AI product & solutions",
       "title": "AI transformation for an early-stage startup",
-      "metric": "4",
-      "unit": "Connected workstreams",
+      "metric": "",
+      "unit": "",
       "problem": "A recruitment technology startup needed to make institutional knowledge easier to access, reduce repetitive coordination and establish a more systematic approach to early customer adoption.",
       "discovery": "The opportunity was to create reusable AI capabilities across teams rather than disconnected prompts, with explicit ownership, approval and evidence requirements.",
       "decision": "I structured the work around an intelligent knowledge base and employee assistant, an Agent Backbone for operations, an Agent Backbone for software development, and GrowthOS for acquisition.",
@@ -163,8 +163,8 @@
     {
       "company": "EMotorad · Internal operations",
       "title": "Simplifying internal operations with AI",
-      "metric": "3",
-      "unit": "Focused workflows",
+      "metric": "",
+      "unit": "",
       "problem": "Routine internal questions, scattered procedures and outstanding task follow-ups consume employee and manager attention.",
       "discovery": "The opportunity is to improve access to approved information and task visibility without introducing another complex operating system.",
       "decision": "I formulated three lightweight workflows: employee onboarding and training, searchable internal SOPs, and task visibility with reminders.",
@@ -191,7 +191,7 @@
   ],
   "jobs": [
     [
-      "ARCHMATION",
+      "Archmation",
       "Consulting & AI solutions",
       "Current"
     ],
