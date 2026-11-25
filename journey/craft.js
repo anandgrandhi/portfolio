@@ -12,3 +12,5 @@ if(!motion.matches&&'IntersectionObserver'in window){const obs=new IntersectionO
 }
 document.addEventListener('portfolio-content-ready',init);init();
 })();
+/* Career-only enhancement; leave the project controller unchanged. */
+(()=>{const script=document.createElement('script');script.src=new URL('career-sync.js',document.currentScript.src).href;document.head.append(script)})();
