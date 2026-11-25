@@ -32,62 +32,48 @@
       "assurance": "I monitored engagement and retention after launch and used the results to prioritise improvements. Leadership made final feature decisions.",
       "status": "Delivered product initiative",
       "images": [],
-      "summary": "Despite having an extensive learning library, Amazon Academy struggled to bring students back regularly. I identified an opportunity to transform Question of the Day into a personalised daily experience that reduced the effort required to get started. I defined the core journey, personalisation logic, behavioural nudges and content strategy, working with product, research, design and engineering teams to increase visit frequency, encourage meaningful practice and drive adoption of other product features.",
+      "summary": "Despite having an extensive learning library, Amazon struggled to bring students back regularly. I identified an opportunity to transform Question of the Day into a personalised daily experience that reduced the effort required to get started. I defined the core journey, personalisation logic, behavioural nudges and content strategy, working with product, research, design and engineering teams to increase visit frequency, encourage meaningful practice and drive adoption of other product features.",
       "chapters": [
         {
-          "label": "Challenge",
-          "title": "The problem was not a shortage of content.",
+          "label": "Product context",
+          "title": "Product context",
           "paragraphs": [
-            "Amazon Academy had practice questions, tests, lessons, videos and remediation resources. Yet students were not returning consistently. Question of the Day gave them a reason to open the app, but an isolated question could not address the different needs of a beginner, a student struggling with a chapter or someone revising before an examination.",
-            "I saw an opportunity to change the purpose of the daily feature: instead of measuring success only through attempts at a question, use it to connect students with the most valuable action they could take that day."
+            "Daily active users had declined from approximately 50,000 to 35,000. The existing **Question of the Day** encouraged repeat visits but offered limited personalisation or connection to other features. I identified an opportunity to improve visit frequency, retention and wider product adoption through a redesigned daily experience."
           ]
         },
         {
-          "label": "Discovery",
-          "title": "What stopped students from using the product?",
+          "label": "Customer research",
+          "title": "Customer research",
           "paragraphs": [
-            "User research indicated that students valued the learning material but struggled to find time alongside school and coaching. They wanted specific help with accuracy, doubts, weak topics and avoidable mistakes, not another large collection of resources to browse.",
-            "The early Daily Digest funnel also revealed a distinction between attracting attention and delivering value. In August–September 2020, approximately 13% of recipients opened the digest, and about 40% of those who opened progressed to the question screen. We needed to improve both entry into the experience and progression through it."
+            "User research found that students valued the learning library but struggled to use it alongside school and coaching. I focused on **time constraints, difficulty choosing relevant content and inconsistent engagement**. Students wanted specific help with accuracy, speed, weak concepts and common examination mistakes."
           ]
         },
         {
-          "label": "Redesign",
-          "title": "Make the first few minutes useful.",
+          "label": "Behavioural science",
+          "title": "Behavioural science",
           "paragraphs": [
-            "I proposed a short daily session built around a relevant activity rather than a fixed question. The design combined an entry point through notifications or the dashboard, a short learning item, follow-up practice and a completion experience with feedback.",
-            "The session was designed to take about 7–10 minutes in the later specification. A student who needed more help could continue into chapter practice, remediation, videos or tests. Daily Digest became a way to surface existing product capabilities in the context of an immediate need, instead of expecting students to discover them independently."
-          ]
-        },
-        {
-          "label": "Behaviour",
-          "title": "Build a reason to return tomorrow.",
-          "paragraphs": [
-            "I worked on the sequence of prompt, achievable activity, feedback and repeat engagement. Short tasks reduced the effort of starting; visible progress and streaks gave students a reason to maintain a routine. Notification preferences and timing were part of the design, alongside avoiding excessive reminders.",
-            "The objective was not to reward opening the app for its own sake. The reward needed to be connected to useful preparation: understanding a concept, correcting a mistake or improving accuracy. More elaborate goal setting, badges and leaderboards were roadmap ideas, rather than all being treated as launched features."
+            "I incorporated **habit formation, contextual nudges, cognitive load reduction and immediate reinforcement** into the experience. Short, achievable activities reduced the effort of getting started; personalised notifications, streaks and progress feedback encouraged regular participation. Notification design considered timing, relevance and customer response."
           ]
         },
         {
           "label": "Personalisation",
-          "title": "Different students need different daily actions.",
+          "title": "Personalisation and product design",
           "paragraphs": [
-            "I defined the content and routing requirements around recent activity, performance, preparation stage and exam proximity. For a Grade 11 student starting JEE preparation, a refresher could combine a short conceptual video with recall questions. A student who had recently completed a chapter could receive an accuracy challenge. Someone nearing the examination could receive revision material or flashcards.",
-            "A student who performed poorly in a test could be directed towards relevant remediation, with the reason for the recommendation made visible. The proposed routing logic connected learning resources to the student's circumstances rather than simply ranking popular content."
+            "I defined the **recommendation logic** using recent activity, assessment performance, learning gaps and preparation stage. Activities ranged from conceptual refreshers and accuracy challenges to targeted remediation and revision. Each 7–10-minute session included relevant next actions, connecting students to practice, assessments and other product features."
           ]
         },
         {
-          "label": "Iteration",
-          "title": "A high open rate did not necessarily mean a good experience.",
+          "label": "Execution",
+          "title": "Execution and optimisation",
           "paragraphs": [
-            "We examined open rates, progression to questions and positive feedback separately. Early content experiments reported up to 44% higher opens for exam-question-led digests and a 39% increase for a common-mistakes digest. These were observational comparisons; the team did not yet have the technical support for controlled A/B testing of those experiments.",
-            "Shortcut-oriented titles could attract opens but receive weaker feedback, while complex text could discourage completion. We refined content guidelines around usefulness, appeal, comprehensibility and engagement. I worked with product, UX, research, data, ML, engineering and content teams on requirements, reviews and improvements; leadership made final feature decisions."
+            "I defined user journeys, content strategy and quality requirements, collaborating with product, UX, research, ML, engineering and academic teams. Observational experiments found up to **44% higher open rates** for examination-question-led notifications. Shortcut-oriented titles attracted opens but received weaker feedback, informing subsequent content and notification decisions."
           ]
         },
         {
           "label": "Outcomes",
-          "title": "Measure usage beyond the daily notification.",
+          "title": "Product outcomes",
           "paragraphs": [
-            "The product objective was repeat visits, meaningful session activity and discovery of other features. The early programme recorded approximately 13% opens, 40% progression from the digest information card to questions and 94% positive ratings among customers who submitted feedback in August–September 2020.",
-            "Later reported DAU milestones moved from approximately 35,000 to 80,000+. This is an observational platform-level change, not a controlled estimate of Daily Digest's independent impact. My contribution was defining the experience and content logic, monitoring performance and using the signals to guide subsequent improvements."
+            "Daily Digest expanded a standalone engagement feature into a personalised entry point for regular practice and wider product discovery. The early funnel measurements below come from August–September 2020. The later DAU figures are reported platform-level milestones, not a controlled estimate of the feature’s impact."
           ]
         }
       ]
