@@ -1,43 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400&family=Manrope:wght@400&display=swap');@import url('https://rsms.me/inter/inter.css');
-body,button,input,select,summary,.hero-reel h1{font-family:var(--portfolio-font,"Google Sans",Arial,sans-serif)!important;}
+body,button,input,select,summary,.hero-reel h1{font-family:var(--portfolio-font,"Google Sans",Arial,sans-serif)!important;font-weight:400!important}
 .relate-hero .hero-inner{min-height:calc(94svh - 65px);display:flex;flex-direction:column;justify-content:center;gap:22px;padding:65px 24px 75px}.relate-hero .hero-copy{max-width:740px;width:100%;text-align:center}.relate-hero h1{font-size:clamp(30px,3.2vw,48px);line-height:1.2;letter-spacing:-.035em;margin:0}.relate-symbol{width:clamp(170px,18vw,260px);flex:none}.relate-symbol svg{width:100%;display:block;overflow:visible}.relate-orbit{transform-origin:140px 140px;animation:relateOrbit 35s linear infinite}.relate-symbol{animation:relateIn 1.1s cubic-bezier(.2,.7,.2,1) both}.relate-hero .hero-copy{animation:relateIn .9s .15s both}.relate-start{display:inline-flex;gap:15px;align-items:center;color:#1a73e8;padding:10px 18px;font-size:15px}.relate-start span{font-size:20px;animation:relateArrow 2.5s ease-in-out infinite}.relate-hero .hero-links{margin-top:22px}.font-control{position:fixed;bottom:16px;right:18px;z-index:20;background:#fff;border:1px solid #dadce0;border-radius:20px;padding:8px 12px;box-shadow:0 3px 20px #20212412;display:flex;gap:8px;align-items:center;font-size:12px}.font-control select{border:0;background:transparent;font-size:13px;max-width:150px}.font-control small{max-width:100px;color:#5f6368;font-size:10px}.font-control small:empty{display:none}.font-control button{border:0;background:none;cursor:pointer}.font-control[hidden]{display:none}.relate-reopen{position:fixed;bottom:16px;right:18px;z-index:20;border:1px solid #dadce0;background:white;border-radius:30px;padding:8px 14px;font-size:12px}.relate-reopen[hidden]{display:none}
 @keyframes relateOrbit{to{transform:rotate(360deg)}}@keyframes relateIn{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}@keyframes relateArrow{50%{translate:0 4px}}
 @media(max-width:800px){.relate-hero .hero-inner{min-height:78svh;padding:40px 22px 60px;gap:18px}.relate-hero .hero-copy{max-width:100%}.relate-hero h1{font-size:clamp(29px,7vw,40px)}}@media(prefers-reduced-motion:reduce){.relate-symbol,.relate-orbit,.relate-start span,.relate-hero .hero-copy{animation:none!important}}
 
-/* Apple Environment-inspired editorial scale. Preserve Journey layout and motion. */
-:root{--bg:#fff;--ink:#1d1d1f;--muted:#6e6e73;--primary:#0071e3;--surface:#f5f5f7;--line:#d2d2d7;--pad:clamp(24px,5.5vw,88px)}
-body{color:var(--ink);font-size:17px;line-height:1.47}
-header{padding-block:16px;background:#fffffff2;border-bottom:1px solid #e8e8ed}header>a{font-size:19px;letter-spacing:-.025em}header nav{font-size:14px;gap:30px}
-.wrap{max-width:1440px}
-.relate-hero .hero-inner{min-height:calc(94svh - 65px);gap:30px;padding:76px 28px 90px}
-.relate-hero .hero-copy{max-width:940px}
-.relate-hero h1{max-width:940px;font-size:clamp(36px,4.65vw,68px);line-height:1.075;letter-spacing:-.045em;color:#1d1d1f;text-wrap:balance}
-.relate-hero .hero-links{margin-top:30px}.relate-start{color:#0071e3;font-size:17px}
-.relate-symbol{width:clamp(145px,15vw,220px)}
-.about-bridge{padding-block:clamp(75px,9vw,140px);max-width:1100px}
-.about-bridge .hero-sub{max-width:800px;font-size:clamp(22px,2.35vw,32px);line-height:1.35;letter-spacing:-.025em;color:#6e6e73}
-.about-bridge a{color:#1d1d1f}
-.work.wrap{max-width:1440px;padding-top:clamp(70px,9vw,135px);padding-bottom:clamp(80px,9vw,135px)}
-.work .section-head,.career .section-head{margin-bottom:clamp(50px,6vw,92px)}
-.section-head .pill,.notes .pill{background:transparent;padding:0;color:#6e6e73;font-size:15px}
-.work .section-head h2,.career .section-head h2,.notes h2{font-size:clamp(36px,4.4vw,64px);letter-spacing:-.04em;line-height:1.1;color:#1d1d1f;margin-top:14px}
-.section-head p,.work .section-head p{font-size:17px;line-height:1.47;color:#6e6e73;max-width:320px}
-.journey{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(48px,7.5vw,112px)}
-.chapter,.chapter:first-child{min-height:clamp(475px,65vh,620px);padding:55px 0 62px;border-top:0}
-.chapter .meta{font-size:14px;color:#6e6e73;margin-bottom:18px}
-.chapter .meta .num{color:#86868b}
-.chapter h3{font-size:clamp(31px,3.3vw,47px);line-height:1.12;letter-spacing:-.035em;color:#1d1d1f;margin-bottom:24px}
-.chapter .metric{font-size:clamp(42px,4.9vw,70px);line-height:1.04;letter-spacing:-.045em;margin:0}
-.chapter .unit{font-size:15px;color:#6e6e73;margin:10px 0 19px}
-.chapter>p{font-size:19px;line-height:1.5;color:#6e6e73;max-width:480px;margin-top:8px}
-.chapter .case-launch{background:#0071e3;color:white;border:0;padding:11px 19px;font-size:15px;margin-top:30px}
-.chapter .case-launch:hover{background:#0077ed}.chapter .case-launch span:last-child{color:white}
-.canvas{border-radius:30px;box-shadow:none;background:#f5f5f7}
-.stage{top:100px}.stage-bottom,.visual-toggle{color:#6e6e73}
-.more{margin-top:clamp(65px,8vw,115px);padding-top:45px;border-top-color:#e8e8ed}.more h3{font-size:clamp(30px,3.2vw,45px);line-height:1.15;letter-spacing:-.03em}
-.more-list .case-launch{padding:27px 0;color:#1d1d1f;border-color:#e8e8ed}.more-list .row-title{font-size:clamp(19px,2vw,26px);line-height:1.3}
-.career{padding-block:clamp(80px,9vw,135px);background:#fff}.era-copy h3{font-size:clamp(30px,3.5vw,48px);line-height:1.12;letter-spacing:-.035em;color:#1d1d1f}.era-copy p{font-size:18px;line-height:1.5;color:#6e6e73}.era-copy .role{font-size:14px;color:#6e6e73}
-.notes{padding-block:90px}.notes-links .link{background:#f5f5f7;border:0;padding:14px 20px}
-footer{background:#f5f5f7;color:#6e6e73;border-top:0}
-.cv-page h2{font-size:clamp(32px,4.2vw,60px);line-height:1.1;color:#1d1d1f}.cv-page p{color:#6e6e73;line-height:1.5}.cv-art{background:#f5f5f7;border-radius:28px}.cv-kicker{background:#f5f5f7}.cv-stat{color:#0071e3}
-@media(max-width:800px){header nav{gap:12px;font-size:13px}.relate-hero .hero-inner{min-height:78svh;padding:45px 24px 65px;gap:25px}.relate-hero h1{font-size:clamp(32px,7.5vw,46px)}.about-bridge{padding-block:55px}.work.wrap{padding-block:55px 70px}.journey{display:block}.chapter,.chapter:first-child{min-height:0;padding:35px 0 48px}.chapter h3{font-size:34px}.chapter>p{font-size:17px}.more{margin-top:35px}.career{padding-block:65px}.era-copy h3{font-size:30px}.era-copy p{font-size:16px}.notes{padding-block:55px}.cv-page h2{font-size:34px}}
