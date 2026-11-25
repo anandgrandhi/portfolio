@@ -33,3 +33,15 @@
 .scene-ready .canvas:hover{box-shadow:0 12px 24px #0000001a,0 38px 38px #00000017,0 85px 51px #0000000d}
 }
 @media(max-width:700px){.exploring-grid{grid-template-columns:1fr;row-gap:8px}.exploring-topic{padding:20px 0}.exploring .section-head{margin-bottom:24px}}
+
+/* Scroll performance: avoid easing a continuously updated scroll position. */
+.scene-ready .chapter>*,.scene-ready .era-copy>*{transition:none;transition-delay:0ms}
+.scene-ready .canvas{transition:background .24s ease;will-change:transform}
+.scene-ready .canvas>svg.incoming,.scene-ready .canvas>svg.outgoing{transition:opacity .18s ease-out,transform .24s var(--scene-ease)}
+.scene-ready .canvas>svg.incoming{transform:translateX(12px) scale(.985)}
+.scene-ready .canvas>svg.ready{transform:none}
+.scene-ready .canvas>svg.outgoing{transform:translateX(-8px) scale(.99)}
+.scene-ready .scene-art .assemble,.scene-ready .scene-art .trace,.scene-ready .scene-art .signal-card,.scene-ready .scene-art .phone-body{animation-duration:.32s;animation-delay:0ms}
+.stage-offscreen .scene-art *{animation-play-state:paused!important}
+.scene-ready .canvas:hover{rotate:none;box-shadow:var(--depth-shadow)}
+@media(prefers-reduced-motion:reduce){.scene-ready .canvas>svg{transition:none!important}}
