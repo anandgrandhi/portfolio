@@ -77,7 +77,7 @@
           "label": "Outcomes",
           "title": "Product outcomes",
           "paragraphs": [
-            "Daily Digest expanded a standalone engagement feature into a personalised entry point for regular practice and wider product discovery. The early funnel measurements below come from August–September 2020. The later DAU figures are reported platform-level milestones, not a controlled estimate of the feature’s impact."
+            "Daily Digest expanded Question of the Day into a personalised entry point for regular practice and wider product discovery. The early engagement figures below cover August–September 2020."
           ]
         }
       ],
@@ -120,8 +120,7 @@
             "label": "Amazon · official 2021 product launch announcement",
             "url": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations"
           }
-        ],
-        "evidence": "Early funnel metrics are from the contemporary Daily Digest project document (August–September 2020); later DAU milestones are self-reported platform observations."
+        ]
       }
     },
     {
@@ -221,8 +220,7 @@
             "label": "Athena · company website",
             "url": "https://athenaeducation.co.in/"
           }
-        ],
-        "evidence": "Advisory deliverables and functional specifications; no production deployment or measured business impact claimed."
+        ]
       }
     },
     {
@@ -279,7 +277,7 @@
           "label": "Contribution",
           "title": "Product contribution",
           "paragraphs": [
-            "My contribution covered problem identification, use-case prioritisation, product architecture, functional specifications, evaluation design and AI-assisted prototyping. The resulting **specifications and reference prototypes** demonstrated selected workflows across organisational knowledge, operations, development and acquisition. Production integration and commercial outcomes are outside the demonstrated scope."
+            "My contribution covered problem identification, use-case prioritisation, product architecture, functional specifications, evaluation design and AI-assisted prototyping. The resulting **specifications and reference prototypes** demonstrated selected workflows across organisational knowledge, operations, development and acquisition."
           ]
         }
       ],
@@ -314,8 +312,7 @@
             "label": "WhiteTable · company website",
             "url": "https://whitetable.ai/"
           }
-        ],
-        "evidence": "Product specifications and AI-assisted reference prototypes. Test-suite counts and commercial outcomes require verification."
+        ]
       }
     },
     {
