@@ -21,7 +21,7 @@
     },
     {
       "company": "Amazon · Daily Digest",
-      "title": "Turning a declining product into a daily user habit",
+      "title": "Turning declining engagement into sustained product usage.",
       "metric": "35k → 80k+",
       "unit": "Daily active users",
       "problem": "Daily engagement was declining: active users had fallen from approximately 50,000 to 35,000. The original Question of the Day offered a reason to open the app, but did not consistently connect that visit with meaningful progress.",
@@ -31,11 +31,12 @@
       "outcome": "Previously reported DAU recovered from approximately 35,000 to 80,000+. Reported retention increased by 32% and session duration by 64%. These are observational product metrics, not controlled causal estimates.",
       "assurance": "I monitored engagement and retention after launch and used the results to prioritise improvements. Leadership made final feature decisions.",
       "status": "Delivered product initiative",
-      "images": []
+      "images": [],
+      "summary": "Despite having an extensive learning library, Amazon Academy struggled to bring students back regularly. I identified an opportunity to transform Question of the Day into a personalised daily experience that reduced the effort required to get started. I defined the core journey, personalisation logic, behavioural nudges and content strategy, working with product, research, design and engineering teams to increase visit frequency, encourage meaningful practice and drive adoption of other product features."
     },
     {
       "company": "Athena Education · AI product strategy",
-      "title": "Designing intelligence for personalised counselling",
+      "title": "Scaling personalised counselling through AI.",
       "metric": "",
       "unit": "",
       "problem": "Personalised university admissions counselling relies on evolving student context and institutional expertise accumulated over roughly a decade across documents, recordings and Airtable records.",
@@ -45,11 +46,12 @@
       "assurance": "Source traceability, privacy, incomplete or contradictory information, feasible recommendations and counsellor approval were explicit product requirements.",
       "outcome": "The advisory deliverables define an interconnected product architecture and implementation direction for Athena’s teams. Deployment and commercial impact are not claimed.",
       "status": "AI product strategy & advisory",
-      "images": []
+      "images": [],
+      "summary": "Athena had accumulated nearly a decade of counselling knowledge across documents, recordings and student records. I developed an AI product strategy to make this expertise accessible during everyday counselling. The solution connects conversation intelligence, evolving student profiles and personalised planning, enabling counsellors to make better-informed recommendations. My advisory work covered product requirements, decision logic, knowledge architecture, evaluation criteria and implementation planning, with counsellors retaining control over consequential decisions."
     },
     {
       "company": "WhiteTable · AI product & solutions",
-      "title": "AI transformation for an early-stage startup",
+      "title": "AI transformation for an early-stage startup.",
       "metric": "",
       "unit": "",
       "problem": "A recruitment technology startup needed to make institutional knowledge easier to access, reduce repetitive coordination and establish a more systematic approach to early customer adoption.",
@@ -59,7 +61,8 @@
       "assurance": "The common reliability approach included source grounding, deterministic validation, human approval and representative tests. Commercial acquisition and deployment outcomes are not established.",
       "outcome": "Functional prototypes and product specifications demonstrated selected workflows, including planning, validation and approval. Broader production integration remained a separate engineering responsibility.",
       "status": "Solution design & functional prototyping",
-      "images": []
+      "images": [],
+      "summary": "At WhiteTable, I identified opportunities to increase execution capacity across a small organisation without proportionally expanding its teams. I designed a shared knowledge foundation, an employee assistant, reusable agents for internal operations and software development, and an evidence-led customer acquisition workflow. Through AI-assisted prototyping, I explored how these systems could retrieve company context, prepare requirements, organise work and qualify prospects while maintaining source accuracy, validation and human approval."
     },
     {
       "company": "Amazon · Operational excellence",
@@ -77,7 +80,7 @@
     },
     {
       "company": "BYJU’S · Product innovation & scale",
-      "title": "Building and scaling digital learning products",
+      "title": "Building intelligent learning products at scale.",
       "metric": "",
       "unit": "Product leadership & scale",
       "problem": "During BYJU’S rapid expansion from its flagship app launch, the product needed consistent learning experiences across subjects, grades and formats while coordinating multidisciplinary teams.",
@@ -88,7 +91,8 @@
       "assurance": "Subject-matter validation, common specifications and coordinated quality reviews were foundational.",
       "status": "Delivered product initiative",
       "images": [],
-      "context": "Company context: BYJU’S launched its flagship learning app in 2015. By June 2020, it had reported more than 57 million registered users, 3.5 million paid subscribers and a reported $10.5 billion funding-round valuation. These historical company-level milestones provide context for the growth environment, not outcomes attributable to my work."
+      "context": "Company context: BYJU’S launched its flagship learning app in 2015. By June 2020, it had reported more than 57 million registered users, 3.5 million paid subscribers and a reported $10.5 billion funding-round valuation. These historical company-level milestones provide context for the growth environment, not outcomes attributable to my work.",
+      "summary": "During BYJU’S rapid expansion, I led initiatives that connected academic expertise with digital product development. I proposed structuring curricula into granular concepts and relationships, connecting them to assessments, instructional content and guided learning journeys. My work extended into interactive STEM, simulations, educational games, virtual laboratories and experiential learning programmes. I coordinated subject experts, designers, developers and media specialists, establishing repeatable development processes across multiple product initiatives."
     },
     {
       "company": "Amazon · Customer experience",
@@ -162,7 +166,7 @@
     },
     {
       "company": "EMotorad · Internal operations",
-      "title": "Simplifying internal operations with AI",
+      "title": "Simplifying everyday operations with AI.",
       "metric": "",
       "unit": "",
       "problem": "Routine internal questions, scattered procedures and outstanding task follow-ups consume employee and manager attention.",
@@ -172,7 +176,8 @@
       "assurance": "Approved sources, escalation for unanswered questions, a single authoritative task record and human responsibility for completion and exceptions.",
       "outcome": "The workflow design establishes a practical implementation direction using existing tools. Deployment, adoption and quantified savings are not asserted.",
       "status": "AI workflow consulting & solution design",
-      "images": []
+      "images": [],
+      "summary": "Rather than introducing a complex new platform, I focused on three everyday operational challenges: employee onboarding, access to internal procedures and follow-up on pending work. I designed workflows that organise approved training materials, provide conversational access to SOPs and connect task trackers with automated WhatsApp and Gmail reminders through n8n. The approach prioritises existing tools, minimal maintenance and clear employee accountability."
     },
     {
       "company": "AI · Agentic growth operations",
