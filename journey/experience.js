@@ -45,9 +45,11 @@ function para(s){return s?'<p>'+esc(s)+'</p>':''}
 function amazonArticle(p,opener){
  viewer.classList.add('cv-article-mode');
  const emph=t=>esc(t).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+ const artifacts={2:['Behavioural design and daily user journey',''],3:['Personalisation and recommendation logic','']};
+ const artifact=n=>artifacts[n]?'<figure class="cv-article-figure"><div class="cv-article-placeholder" data-artifact="amazon-'+n+'"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></svg><span>Artifact placeholder</span></div><figcaption>'+esc(artifacts[n][0])+'</figcaption></figure>':'';
  const stats='<div class="cv-article-metrics"><div><b>13%</b><span>Early open rate</span></div><div><b>40%</b><span>Progression to questions</span></div><div><b>94%</b><span>Positive feedback among raters</span></div></div>';
  $('#cvCompany').textContent='Amazon · Case study';
- scroller.innerHTML='<div class="cv-article-layout"><nav class="cv-article-nav" aria-label="Contents"><span>CONTENTS</span>'+p.chapters.map((c,n)=>'<button type="button" data-section="'+n+'">'+esc(c.label)+'</button>').join('')+'</nav><article class="cv-article"><header><span class="cv-article-meta">2020–2023 · Product engagement</span><h2 id="cvTitle">Daily Digest</h2><p class="cv-article-sub">Behavioural science and personalisation</p><div class="cv-article-hero-metric"><b>'+esc(p.metric)+'</b><span>Reported daily active users</span></div></header>'+p.chapters.map((c,n)=>'<section class="cv-article-section" id="cvAmazon'+n+'"><h3><span>'+String(n+1).padStart(2,'0')+'</span>'+esc(c.title)+'</h3>'+c.paragraphs.map(t=>'<p>'+emph(t)+'</p>').join('')+(n===5?stats:'')+'</section>').join('')+'</article></div>';
+ scroller.innerHTML='<div class="cv-article-layout"><nav class="cv-article-nav" aria-label="Contents"><span>CONTENTS</span>'+p.chapters.map((c,n)=>'<button type="button" data-section="'+n+'">'+esc(c.label)+'</button>').join('')+'</nav><article class="cv-article"><div class="cv-article-intro"><span class="cv-article-meta">2020–2023 · Product engagement</span><h2 id="cvTitle">Daily Digest</h2><p class="cv-article-sub">Behavioural science and personalisation</p><div class="cv-article-hero-metric"><b>'+esc(p.metric)+'</b><span>Reported daily active users</span></div></div>'+p.chapters.map((c,n)=>'<section class="cv-article-section" id="cvAmazon'+n+'"><h3><span>'+String(n+1).padStart(2,'0')+'</span>'+esc(c.title)+'</h3>'+c.paragraphs.map(t=>'<p>'+emph(t)+'</p>').join('')+(n===5?stats:'')+artifact(n)+'</section>').join('')+'</article></div>';
  const buttons=[...scroller.querySelectorAll('[data-section]')];
  buttons.forEach((b,n)=>b.onclick=()=>scroller.querySelector('#cvAmazon'+n).scrollIntoView({block:'start',behavior:reduce.matches?'instant':'smooth'}));
  pageCount=0;pageIndex=0;viewer.showModal();document.body.style.overflow='hidden';scroller.scrollTop=0;scroller.scrollLeft=0;buttons[0]?.setAttribute('aria-current','location');requestAnimationFrame(()=>$('.cv-close').focus());
@@ -111,9 +113,9 @@ let enhancementsInstalled=false;function initializeEnhancements(){if(enhancement
 .cv-article-nav button{font:inherit;font-size:13px;text-align:left;background:none;border:0;border-left:2px solid transparent;padding:8px 10px;color:inherit;opacity:.6;cursor:pointer}
 .cv-article-nav button[aria-current]{opacity:1;border-left-color:#199aff;font-weight:500}
 .cv-article{min-width:0;max-width:680px}
-.cv-article header{padding:0 0 36px;border-bottom:1px solid rgba(127,127,127,.22)}
+.cv-article-intro{padding:0 0 36px;border-bottom:1px solid rgba(127,127,127,.22)}
 .cv-article-meta{font-size:13px;opacity:.65}
-.cv-article header h2{font-size:clamp(36px,5vw,60px);font-weight:500;letter-spacing:-.045em;line-height:1.1;margin:14px 0 8px}
+.cv-article-intro h2{font-size:clamp(36px,5vw,60px);font-weight:500;letter-spacing:-.045em;line-height:1.1;margin:14px 0 8px}
 .cv-article-sub{font-size:17px;opacity:.75;margin:0}
 .cv-article-hero-metric{margin-top:30px;display:flex;flex-direction:column;gap:6px}
 .cv-article-hero-metric b{font-size:clamp(30px,4vw,46px);font-weight:500;letter-spacing:-.04em}
@@ -127,4 +129,18 @@ let enhancementsInstalled=false;function initializeEnhancements(){if(enhancement
 .cv-article-metrics>div{display:flex;flex-direction:column;gap:5px}
 .cv-article-metrics b{font-size:28px;font-weight:500;letter-spacing:-.03em}
 @media(max-width:680px){.cv-article-layout{display:block;padding:22px 20px 44px}.cv-article-nav{position:static;display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;margin-bottom:22px;padding:0}.cv-article-nav>span{display:none}.cv-article-nav button{font-size:11px;padding:5px 7px;border-left:0;border-bottom:2px solid transparent}.cv-article-nav button[aria-current]{border-bottom-color:#199aff}.cv-article-section{padding:24px 0}.cv-article-section p{font-size:15px}.cv-article-section h3{font-size:19px}.cv-article-metrics{gap:12px}.cv-article-metrics b{font-size:24px}}
+`;document.head.append(style)})();
+
+/* Amazon article: isolate introductory content from the site's sticky masthead. */
+(()=>{const style=document.createElement('style');style.textContent=`
+#caseViewer.cv-article-mode .cv-article-intro{position:static;display:block;background:none;backdrop-filter:none;z-index:auto;min-width:0;padding:0 0 32px;margin:0}
+#caseViewer.cv-article-mode .cv-article-intro h2{font-size:clamp(34px,4.5vw,52px);margin:12px 0 8px;line-height:1.15;font-weight:500}
+#caseViewer.cv-article-mode .cv-article-meta{display:block}
+#caseViewer.cv-article-mode .cv-article-hero-metric{margin-top:24px}
+#caseViewer.cv-article-mode .cv-article-hero-metric b{white-space:nowrap;font-size:clamp(28px,4vw,42px)}
+#caseViewer.cv-article-mode .cv-article-section strong{font-weight:600}
+.cv-article-figure{margin:24px 0 4px}
+.cv-article-placeholder{aspect-ratio:16/9;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;background:#f7f8fa;border:1px dashed #c9ced6;border-radius:10px;color:#717780;font-size:12px}
+.cv-article-figure figcaption{font-size:12px;line-height:1.5;color:#727272;margin-top:10px}
+@media(max-width:680px){#caseViewer.cv-article-mode .cv-article-intro{padding-bottom:24px}.cv-article-figure{margin-top:18px}}
 `;document.head.append(style)})();
