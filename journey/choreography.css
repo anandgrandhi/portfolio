@@ -14,3 +14,22 @@
 .scene-mode{position:fixed;bottom:18px;left:18px;z-index:13;border:1px solid #e8e8e8;background:white;border-radius:99px;padding:8px 13px;font:12px system-ui;color:#555;cursor:pointer;box-shadow:0 4px 16px #0000000c}.scene-mode:hover{background:#f5f5f5}
 @media(max-width:800px){.scene-ready .chapter>*,.scene-ready .era-copy>*{opacity:1;translate:none}.scene-ready .era-illustration{opacity:1}.scene-mode{bottom:8px;left:8px}}
 @media(prefers-reduced-motion:reduce){.motion-word,.scene-art *{animation:none!important;opacity:1!important}.scene-ready .chapter>*,.scene-ready .era-copy>*{opacity:1;translate:none}.scene-ready .canvas{transform:none!important}.scene-art .phone-body{transform:rotate(-5deg)}}
+
+/* Text-only exploration section, preserving the existing visual language. */
+.exploring{padding-block:clamp(64px,9vw,128px);scroll-margin-top:90px;background:#fff}
+.exploring .section-head{margin-bottom:clamp(34px,5vw,64px)}
+.exploring-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,7vw,120px);row-gap:30px}
+.exploring-topic{border-top:1px solid var(--line);padding:26px 0 15px}
+.exploring-topic h3{font-size:clamp(23px,2.65vw,35px);font-weight:400;letter-spacing:-.035em;line-height:1.18;margin:0 0 14px}
+.exploring-topic p{color:var(--muted);font-size:16px;line-height:1.65;max-width:480px;margin:0}
+/* Small interaction refinements; no layout or artwork replacement. */
+@media(prefers-reduced-motion:no-preference){
+.scene-ready .chapter>*{transition:opacity .38s var(--scene-ease),translate .65s var(--scene-ease);transition-delay:calc(var(--child-order,0)*35ms)}
+.scene-ready .chapter>h3{--child-order:1}.scene-ready .chapter>.metric{--child-order:2}.scene-ready .chapter>.unit{--child-order:3}.scene-ready .chapter>p{--child-order:4}
+.scene-ready .case-launch,.scene-ready .link,.scene-ready .cv-arrow,.scene-ready .cv-close{transition:background .22s ease,box-shadow .35s var(--scene-ease),scale .28s var(--scene-ease)}
+.scene-ready .case-launch:active,.scene-ready .link:active,.scene-ready .cv-arrow:active,.scene-ready .cv-close:active{scale:.97}
+.scene-ready .craft-project .craft-arrow{transition:translate .4s var(--scene-ease)}.scene-ready .craft-project:hover .craft-arrow{translate:3px -3px}
+.scene-ready .about-bridge a{transition:text-decoration-color .25s,color .25s}
+.scene-ready .canvas:hover{box-shadow:0 12px 24px #0000001a,0 38px 38px #00000017,0 85px 51px #0000000d}
+}
+@media(max-width:700px){.exploring-grid{grid-template-columns:1fr;row-gap:8px}.exploring-topic{padding:20px 0}.exploring .section-head{margin-bottom:24px}}
