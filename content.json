@@ -284,7 +284,7 @@
         }
       ],
       "organisation": "WhiteTable",
-      "companyUrl": "https://whitetable.io/",
+      "companyUrl": "https://whitetable.ai/",
       "engagement": "AI solutions consulting · 2026",
       "evidenceType": "Functional prototypes",
       "article": {
@@ -311,8 +311,8 @@
         ],
         "sources": [
           {
-            "label": "WhiteTable · supplied company website",
-            "url": "https://whitetable.io/"
+            "label": "WhiteTable · company website",
+            "url": "https://whitetable.ai/"
           }
         ],
         "evidence": "Product specifications and AI-assisted reference prototypes. Test-suite counts and commercial outcomes require verification."
@@ -571,7 +571,7 @@
       "status": "Reference prototype",
       "images": [],
       "organisation": "WhiteTable",
-      "companyUrl": "https://whitetable.io/",
+      "companyUrl": "https://whitetable.ai/",
       "engagement": "GrowthOS · reference prototype",
       "evidenceType": "Prototype evidence"
     }
