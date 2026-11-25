@@ -53,11 +53,11 @@ function openPortfolioCase(id,opener){
   page('05 / Outcomes','What changed',para(p.outcome)+(p.context?'<p class="cv-context">'+esc(p.context)+'</p>':''),metric)
  ];
  $('#cvCompany').textContent=p.company;scroller.innerHTML=pages.join('');pageCount=pages.length;pageIndex=0;
- $('#cvSteps').innerHTML=pages.map((_,n)=>'<button type="button" aria-label="Go to chapter '+(n+1)+'" data-page="'+n+'"></button>').join('');
+ $('#cvSteps').innerHTML=pages.map((_,n)=>'<button type="button" aria-label="Go to chapter '+(n+1)+': '+['Challenge','Discovery','Decisions','Execution','Outcomes'][n]+'" data-page="'+n+'">'+['Challenge','Discovery','Decisions','Execution','Outcomes'][n]+'</button>').join('');
  $('#cvSteps').querySelectorAll('button').forEach(b=>b.onclick=()=>goPage(Number(b.dataset.page)));
  bindImageFallbacks(scroller);viewer.showModal();document.body.style.overflow='hidden';scroller.scrollLeft=0;updateViewer(0);requestAnimationFrame(()=>$('.cv-close').focus());
 }
-function updateViewer(n){pageIndex=Math.max(0,Math.min(pageCount-1,n));$('#cvPrev').disabled=pageIndex===0;$('#cvNext').disabled=pageIndex===pageCount-1;$('#cvCount').textContent=(pageIndex+1)+' / '+pageCount;$('#cvSteps').querySelectorAll('button').forEach((b,j)=>{b.classList.toggle('active',j===pageIndex);if(j===pageIndex)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')})}
+function updateViewer(n){pageIndex=Math.max(0,Math.min(pageCount-1,n));[...scroller.children].forEach((el,j)=>{el.classList.toggle('craft-active',j===pageIndex);el.classList.toggle('craft-inactive',j!==pageIndex)});$('#cvPrev').disabled=pageIndex===0;$('#cvNext').disabled=pageIndex===pageCount-1;$('#cvCount').textContent=(pageIndex+1)+' / '+pageCount;$('#cvSteps').querySelectorAll('button').forEach((b,j)=>{b.classList.toggle('active',j===pageIndex);if(j===pageIndex)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')})}
 function goPage(n){n=Math.max(0,Math.min(pageCount-1,n));scroller.scrollTo({left:n*scroller.clientWidth,behavior:reduce.matches?'instant':'smooth'});updateViewer(n)}
 $('#cvPrev').onclick=()=>goPage(pageIndex-1);$('#cvNext').onclick=()=>goPage(pageIndex+1);$('.cv-close').onclick=()=>viewer.close();
 viewer.addEventListener('close',()=>{document.body.style.overflow='';caseOpener?.focus({preventScroll:true})});
