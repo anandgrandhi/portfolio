@@ -1,0 +1,19 @@
+
+/* White editorial canvas; shadow taken from the supplied Spencer archive.
+   Artwork palette and motion are original adaptations, not copied artwork. */
+:root{--depth-shadow:0px 9px 21px rgba(0,0,0,.1),0px 38px 38px rgba(0,0,0,.09),0px 85px 51px rgba(0,0,0,.05);--depth-ease:cubic-bezier(.22,1,.36,1);--depth-muted:#6f6f6f;--depth-ghost:#e5e5e5}
+body{background:#fff;color:#2c2c2c}.career,.hero,.about-bridge,.work{background:#fff}
+.canvas{border-radius:32px;box-shadow:var(--depth-shadow);transition:background .55s ease,translate .8s var(--depth-ease),rotate .8s var(--depth-ease);animation:depthFloat 8s ease-in-out infinite}
+.canvas .reference-scene{padding:30px;transition:opacity .4s ease,transform .6s var(--depth-ease)}.canvas .reference-photos img,.cv-art .reference-photos img{border-radius:20px;box-shadow:var(--depth-shadow)}
+.canvas .reference-scene .reference-photos img{transition:scale .8s var(--depth-ease),rotate .8s var(--depth-ease)}.canvas .reference-photos.pair img:first-child{rotate:-3deg}.canvas .reference-photos.pair img:last-child{rotate:3deg}.canvas .reference-photos.pair img:hover{rotate:0deg;scale:1.035}
+.stage-bottom{margin-top:32px}.stage{padding-bottom:25px}
+.relate-symbol svg>circle{filter:drop-shadow(0 9px 10px #00000019) drop-shadow(0 22px 19px #00000012)}
+.era-illustration>svg:not(.motion-orbit){border-radius:28px;animation:depthFloat 7s ease-in-out infinite;filter:drop-shadow(0 12px 12px #00000013) drop-shadow(0 25px 22px #00000010);transition:scale .8s var(--depth-ease)}.era-row:nth-child(even) .era-illustration>svg:not(.motion-orbit){animation-delay:-3.5s}
+.cv-art{border-radius:28px;box-shadow:var(--depth-shadow);margin-bottom:24px}
+.cv-close,.cv-arrow:not(:disabled){border:0;background:#cbcbcb;box-shadow:0 9px 21px rgba(0,0,0,.1),0 22px 28px rgba(0,0,0,.07);transition:scale .8s var(--depth-ease),background .2s}.cv-close:hover,.cv-arrow:not(:disabled):hover{background:#d9d9d9;scale:1.05}.cv-close:active,.cv-arrow:not(:disabled):active{scale:.95}
+dialog#caseViewer{border-radius:32px;box-shadow:var(--depth-shadow)}dialog#caseViewer::backdrop{background:#2c2c2c78;backdrop-filter:blur(8px)}dialog#caseViewer[open]{animation:depthModal .6s var(--depth-ease) both}
+.work .section-head,.career .section-head{position:relative;isolation:isolate}.work .section-head:before,.career .section-head:before{position:absolute;z-index:-1;right:0;top:50%;transform:translateY(-50%);font-size:clamp(65px,12vw,170px);line-height:.9;letter-spacing:-.07em;color:var(--depth-ghost);pointer-events:none;user-select:none;opacity:.4;white-space:nowrap}.work .section-head:before{content:"WORK"}.career .section-head:before{content:"JOURNEY"}
+@keyframes depthFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}@keyframes depthModal{from{opacity:0;scale:.94}to{opacity:1;scale:1}}
+@media(any-hover:hover){.canvas:hover{rotate:-.45deg}.era-illustration>svg:not(.motion-orbit):hover{scale:1.025}}
+@media(max-width:800px){.canvas,.cv-art{border-radius:22px}.cv-art{box-shadow:0 9px 21px #00000012;margin-bottom:10px}.stage-bottom{margin-top:16px}.mobileart,.mobile-ref{border-radius:24px;box-shadow:0 9px 21px #00000015,0 22px 32px #0000000d;margin-block:18px 30px}.work .section-head:before,.career .section-head:before{display:none}dialog#caseViewer{border-radius:0}.era-illustration>svg:not(.motion-orbit){animation:none}}
+@media(prefers-reduced-motion:reduce){.canvas,.era-illustration>svg:not(.motion-orbit){animation:none!important;translate:none!important;rotate:none!important;scale:none!important}}
