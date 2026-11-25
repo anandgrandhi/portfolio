@@ -1,6 +1,6 @@
 /* Minimal introduction and comfortable project reading rhythm. */
-@font-face{font-family:"Suisse Portfolio";src:local("Suisse Intl Regular"),local("SuisseIntl-Regular"),local("Suisse International Regular"),local("Suisse Intl");font-style:normal;font-weight:400;font-display:swap}
-body,.hero-reel h1{font-family:"Suisse Portfolio","Suisse Intl","Suisse International","Helvetica Neue",Arial,sans-serif!important}
+
+body,.hero-reel h1{font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
 .hero.wrap.hero-reel{display:block;width:100%;max-width:none;padding:0;background:#fff}
 .hero-reel .hero-inner{display:flex;justify-content:center;align-items:center;min-height:calc(88svh - 65px);max-width:1100px;margin:0 auto;padding:100px 32px 115px}
 .hero-reel .hero-copy{width:100%;max-width:790px;text-align:center;animation:heroAppear .8s ease-out both}
