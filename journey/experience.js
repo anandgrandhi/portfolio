@@ -6,7 +6,7 @@ const references={
   5:{images:['https://play-lh.googleusercontent.com/2M21Po1MtqiRtXjyCxLu4WdJ5F2ZmOIH0zwihMTApyi4nEsrZGcj356D9aAyF1cvD8BnSc5y2uXn6fg0w6hKaUE=w526-h296','https://play-lh.googleusercontent.com/4i90DrXcb9EFhoQWLweMVePEYY2vd9LvQ5M1Yx0bCx__U-2cwO4O3_WzGPcGUaBlZCiG3pIMfXYgnQVV-PNBeA=w526-h296'],caption:'BYJU’S public app-store screenshots · reference, not evidence of my specific work or its historical release',url:'https://play.google.com/store/apps/details?id=com.byjus.thelearningapp'},
   2:{images:['https://www.gstatic.com/bricks/image/8263978f-3a9f-4f6f-9779-3633a036bc4d.jpg'],caption:'OfficeRnD dashboard · unrelated visual reference, not the education consulting prototype',url:'https://cloud.google.com/customers/officernd'}
 };
-const featuredIds=[1,0,5,2];
+const featuredIds=[1,2,3,5,11];
 let portfolioData=null, visualMode='auto', visualIndex=-1, caseOpener=null, pageIndex=0, pageCount=0, viewerRAF=0;
 const clamp01=x=>Math.max(0,Math.min(1,x));
 function referenceMarkup(id){
@@ -18,14 +18,14 @@ function paintVisual(i,force=false){
  if(i===visualIndex&&!force)return;
  visualIndex=i;
  const canvas=$('#canvas'),id=featuredIds[i],p=featured[i];if(!p)return;
- const mode=visualMode==='auto'?([0,5].includes(id)?'reference':'illustration'):visualMode;
+ const mode=!references[id]?'illustration':visualMode==='auto'?([0,5].includes(id)?'reference':'illustration'):visualMode;
  canvas.querySelectorAll('.reference-scene').forEach(el=>{el.classList.add('outgoing');setTimeout(()=>el.remove(),500)});
  canvas.querySelectorAll('svg:not(.outgoing)').forEach(el=>{el.style.opacity=mode==='reference'?'0':'1'});
  if(mode==='reference'&&references[id]){
    const layer=document.createElement('div');layer.className='reference-scene';layer.innerHTML=referenceMarkup(id);canvas.append(layer);bindImageFallbacks(layer);requestAnimationFrame(()=>requestAnimationFrame(()=>layer.classList.add('ready')));
  }
  $('#visualIllustration').setAttribute('aria-pressed',String(mode==='illustration'));
- $('#visualReference').setAttribute('aria-pressed',String(mode==='reference'));
+ $('#visualReference').setAttribute('aria-pressed',String(mode==='reference'));$('#visualReference').disabled=!references[id];
 }
 function installVisuals(){
  const stage=$('.stage');if(!stage)return;
@@ -65,7 +65,7 @@ viewer.addEventListener('click',e=>{if(e.target===viewer){const r=viewer.getBoun
 viewer.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();goPage(e.key==='Home'?0:e.key==='End'?pageCount-1:pageIndex+(e.key==='ArrowRight'?1:-1))}});
 scroller.addEventListener('scroll',()=>{if(viewerRAF)return;viewerRAF=requestAnimationFrame(()=>{viewerRAF=0;if(scroller.clientWidth)updateViewer(Math.round(scroller.scrollLeft/scroller.clientWidth))})},{passive:true});
 let wheelGate=0;scroller.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey||Math.abs(e.deltaX)>=Math.abs(e.deltaY))return;const current=scroller.children[pageIndex];if(current&&current.scrollHeight>current.clientHeight+8)return;if(Math.abs(e.deltaY)<8)return;e.preventDefault();const now=performance.now();if(now-wheelGate>450){wheelGate=now;goPage(pageIndex+Math.sign(e.deltaY))}},{passive:false});
-function installCases(d){portfolioData=d;document.querySelectorAll('#chapters .chapter').forEach((el,i)=>{const old=el.querySelector('details');if(old){const b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<span>View case study</span><span>↗</span>';b.onclick=()=>openPortfolioCase(featuredIds[i],b);old.replaceWith(b)}if(references[featuredIds[i]]){const ref=document.createElement('div');ref.className='mobile-ref';ref.innerHTML=referenceMarkup(featuredIds[i]);el.querySelector('.mobileart')?.after(ref);bindImageFallbacks(ref)}});const remaining=[4,9,3,6,8,7,10];document.querySelectorAll('#more details').forEach((el,i)=>{const p=d.projects[remaining[i]],b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<div><div class="meta">'+esc(p.company)+'</div><div class="row-title">'+esc(p.title)+'</div></div><span class="row-metric">'+esc(p.metric)+'</span><span>↗</span>';b.onclick=()=>openPortfolioCase(remaining[i],b);el.replaceWith(b)})}
+function installCases(d){portfolioData=d;document.querySelectorAll('#chapters .chapter').forEach((el,i)=>{const old=el.querySelector('details');if(old){const b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<span>View case study</span><span>↗</span>';b.onclick=()=>openPortfolioCase(featuredIds[i],b);old.replaceWith(b)}if(references[featuredIds[i]]){const ref=document.createElement('div');ref.className='mobile-ref';ref.innerHTML=referenceMarkup(featuredIds[i]);el.querySelector('.mobileart')?.after(ref);bindImageFallbacks(ref)}});const remaining=[4,9,12,6,8,7,10,0];document.querySelectorAll('#more details').forEach((el,i)=>{const p=d.projects[remaining[i]],b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<div><div class="meta">'+esc(p.company)+'</div><div class="row-title">'+esc(p.title)+'</div></div><span class="row-metric">'+esc(p.metric)+'</span><span>↗</span>';b.onclick=()=>openPortfolioCase(remaining[i],b);el.replaceWith(b)})}
 function installOrbitArtwork(){
  document.querySelectorAll('.era-illustration').forEach((el,i)=>{const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('class','motion-orbit');svg.setAttribute('viewBox','0 0 300 210');svg.setAttribute('aria-hidden','true');let html='';for(let j=0;j<3;j++){const rx=90+j*22,ry=31+j*13;html+='<ellipse cx="150" cy="105" rx="'+rx+'" ry="'+ry+'" transform="rotate('+(-24+j*24)+' 150 105)" fill="none" stroke="'+eraColors[i]+'" stroke-opacity=".10" stroke-width="1"/>'}for(let j=0;j<9;j++)html+='<circle data-orbit="'+j+'" r="'+(j%3===0?2.8:1.7)+'" fill="'+eraColors[i]+'" opacity="'+(.22+(j%3)*.14)+'"/>';svg.innerHTML=html;el.prepend(svg)})
 }
