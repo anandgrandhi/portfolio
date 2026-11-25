@@ -24,3 +24,8 @@
 .cine-scene .moving-packet{animation:cinePulse 2.4s ease-in-out infinite;animation-play-state:paused}.cine-scene.is-active .moving-packet{animation-play-state:running}@keyframes cinePulse{0%,100%{opacity:.4}50%{opacity:1}}
 }
 @media(prefers-reduced-motion:reduce){.cine-stage{display:none!important}}
+
+@media(min-width:1000px) and (min-height:650px) and (prefers-reduced-motion:no-preference){.cinematic #eraRows{padding-bottom:25vh}.cine-visual svg{filter:drop-shadow(0 9px 18px #00000010) drop-shadow(0 28px 26px #0000000d)}.cine-nav button:hover:not(:disabled){scale:1.07;background:#e7e7e7}.cine-nav button:active{scale:.94}.cine-nav button{transition:scale .45s cubic-bezier(.22,1,.36,1),background .2s}.cine-nav:focus-within{outline:1px solid #bbb}}
+.scene-ready .scene-art .phone-body{animation:phoneArrival 1.8s var(--scene-ease) both,phoneBreath 8s 1.8s ease-in-out infinite}.scene-ready .scene-art .moving-project-packet{filter:drop-shadow(0 1px 2px #00000020)}
+@keyframes phoneBreath{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -6px;rotate:1.2deg}}
+@media(prefers-reduced-motion:reduce){.scene-ready .scene-art .phone-body{animation:none!important}}
