@@ -615,7 +615,149 @@
       "organisation": "BYJU’S",
       "companyUrl": "https://byjus.com/",
       "engagement": "Product development · 2015–2020",
-      "evidenceType": "Programme contribution"
+      "evidenceType": "Programme contribution",
+      "article": {
+        "title": "Building intelligent learning products at scale",
+        "subtitle": "Knowledge architecture, guided learning and interactive STEM",
+        "meta": "2015–2020 · Product development",
+        "metric": "",
+        "metricLabel": "",
+        "stats": [
+          [
+            "5",
+            "Approx. direct reports"
+          ],
+          [
+            "40",
+            "Approx. subject experts in project structures"
+          ],
+          [
+            "20",
+            "Approx. media specialists in project structures"
+          ]
+        ],
+        "sources": [
+          {
+            "label": "BYJU’S · company website",
+            "url": "https://byjus.com/"
+          }
+        ],
+        "referenceTitle": "References",
+        "artifacts": {
+          "0": {
+            "src": "assets/byjus/product-evolution.webp",
+            "caption": "Visual learning and personalised journeys"
+          },
+          "1": {
+            "src": "assets/byjus/knowledge-graph.webp",
+            "caption": "Concept relationships illustrated through a knowledge graph"
+          }
+        },
+        "galleries": {
+          "2": {
+            "caption": "Guided learning experiences",
+            "images": [
+              {
+                "src": "assets/byjus/mobile-journeys.webp",
+                "title": "Learning library, concept map and video lessons"
+              },
+              {
+                "src": "assets/byjus/biology-journey.webp",
+                "title": "Biology library and guided journey"
+              }
+            ]
+          },
+          "3": {
+            "caption": "Interactive STEM and virtual laboratories",
+            "images": [
+              {
+                "src": "assets/byjus/interactive-light.webp",
+                "title": "Exploring light reflection through interaction"
+              },
+              {
+                "src": "assets/byjus/interactive-maths.webp",
+                "title": "Interactive mathematics activities"
+              },
+              {
+                "src": "assets/byjus/lab-observation.webp",
+                "title": "Virtual laboratory — observation"
+              },
+              {
+                "src": "assets/byjus/lab-conclusion.webp",
+                "title": "Virtual laboratory — conclusion"
+              },
+              {
+                "src": "assets/byjus/lab-viva.webp",
+                "title": "Virtual laboratory — viva and guided feedback"
+              }
+            ]
+          }
+        },
+        "frameworks": {
+          "1": {
+            "title": "Knowledge architecture",
+            "steps": [
+              [
+                "Curriculum structure",
+                "Organise subject areas into meaningful learning concepts."
+              ],
+              [
+                "Concept relationships",
+                "Map prerequisite and related concepts."
+              ],
+              [
+                "Learning assets",
+                "Connect explanations, practice, interactive activities and assessments to concepts."
+              ]
+            ],
+            "caption": "High-level explanatory framework."
+          },
+          "2": {
+            "title": "Guided learning logic",
+            "steps": [
+              [
+                "Define the learning objective",
+                "Identify the concept to be understood."
+              ],
+              [
+                "Sequence learning activities",
+                "Connect explanations, worked examples and practice."
+              ],
+              [
+                "Assess understanding",
+                "Use responses and feedback to identify learning needs."
+              ],
+              [
+                "Guide the next step",
+                "Continue the structured learning journey."
+              ]
+            ],
+            "caption": "Conceptual representation of guided learning."
+          },
+          "4": {
+            "title": "Scaling learning product development",
+            "steps": [
+              [
+                "Curriculum and pedagogy",
+                "Learning objectives and concept mapping."
+              ],
+              [
+                "Product and experience design",
+                "Learning formats and interaction design."
+              ],
+              [
+                "Multidisciplinary production",
+                "Content, design, animation and development."
+              ],
+              [
+                "Quality and delivery",
+                "Review, validation and publishing."
+              ]
+            ],
+            "caption": "High-level product development framework."
+          }
+        }
+      }
     },
     {
       "company": "EMotorad · Internal operations",
