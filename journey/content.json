@@ -2,7 +2,7 @@
   "intro": [
     "I’m Anand Grandhi. I work at the intersection of product strategy, business operations and <strong class='blue'>applied AI.</strong>",
     "I joined <strong class='blue'>BYJU’S</strong> in 2015, before its flagship learning app launched, and helped build and scale its learning products during five years of rapid growth. At <strong class='blue'>Amazon</strong>, I worked on product adoption, customer experience and operational transformation.",
-    "Today, through <strong class='blue'>ARCHMATION</strong>, I design intelligent workflows and AI solutions for complex business problems."
+    "Today, through <strong class='blue'>Archmation</strong>, I design intelligent workflows and AI solutions for complex business problems."
   ],
   "projects": [
     {
@@ -420,11 +420,11 @@
       "evidenceType": "Proposed workflow design"
     },
     {
-      "company": "ARCHMATION",
-      "organisation": "ARCHMATION",
+      "company": "Archmation",
+      "organisation": "Archmation",
       "companyUrl": "https://archmation.com/about-us",
       "title": "Transforming creative production with generative AI",
-      "metric": "11 workflows",
+      "metric": "",
       "unit": "",
       "problem": "Developed 11 specialised workflows for product photography, video production, virtual try-on, garment replacement, architectural visualisation and 3D assets.",
       "summary": "Developed 11 specialised workflows for product photography, video production, virtual try-on, garment replacement, architectural visualisation and 3D assets. Applications ranged from publication-ready assets to internal design workflows, campaign exploration and client briefs. Built using ComfyUI, ControlNet, LoRA and generative video models. Many of these workflows were in commercial demand at the time and have since been superseded by newer models.",
@@ -468,8 +468,8 @@
       ]
     },
     {
-      "company": "ARCHMATION",
-      "organisation": "ARCHMATION",
+      "company": "Archmation",
+      "organisation": "Archmation",
       "companyUrl": "https://archmation.com/about-us",
       "title": "Building a unified operating system for creative teams",
       "metric": "",
@@ -518,7 +518,7 @@
       "organisation": "Amazon",
       "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
       "title": "Streamlining operations and improving efficiency at scale",
-      "metric": "40%",
+      "metric": "",
       "unit": "",
       "problem": "Redesigned editorial production and quality assessment processes across multiple content formats.",
       "summary": "Redesigned editorial production and quality assessment processes across multiple content formats. Developed evaluation rubrics, error taxonomies, automated validation rules and structured feedback mechanisms. Explored ML-assisted defect classification and used recurring quality issues to inform creator training.",
@@ -543,7 +543,7 @@
   ],
   "jobs": [
     [
-      "ARCHMATION",
+      "Archmation",
       "Consulting & AI solutions",
       "Current"
     ],
