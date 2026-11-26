@@ -35,7 +35,7 @@ function resize(){
  const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw(reduced.matches?7:cycleTime(elapsed),reduced.matches?20:elapsed);mount.classList.add('intelligence-ready');
 }
 // Play forward, hold the resolved form, then restart from the opening.
-const cycleTime=clock=>Math.min(clock%11,7);
+const cycleTime=clock=>Math.min(clock%8,7);
 function draw(t,clock=t){
  if(!w||!h)return;
  const settled=ease((t-4.6)/2.4),organise=ease((t-.3)/2.3),assemble=ease((t-2.4)/3.3),intro=ease(t/.6);
@@ -65,7 +65,7 @@ function draw(t,clock=t){
   x=mix(x,n.x*1.55,disperse);y=mix(y,n.y*1.4,disperse);z=mix(z,n.z*1.3,disperse);
   return {...project(x,y,z,yaw,pitch,roll,scale,cx,cy,dist),n};
  });
- const cycle=clock%11,fade=reduced.matches?1:(.15+.85*ease(cycle/.45))*(1-ease((cycle-10.3)/.7));
+ const cycle=clock%8,fade=reduced.matches?1:(.15+.85*ease(cycle/.45))*(1-ease((cycle-7.65)/.35));
  const alpha=fade*(.72+.28*intro)*(1-.72*disperse);
  // Render translucent orbit trails as continuous spatial curves, with depth-dependent line opacity.
  for(let g=0;g<4;g++){
