@@ -1,0 +1,91 @@
+/* Material-inspired tonal surfaces. Existing geometry, content and scroll controllers are retained. */
+:root{
+ --surface-white:#fff;
+ --surface-base:#F8F9FA;
+ --surface-low:#F2F4F6;
+ --surface-high:#E9EDF1;
+ --surface-sky:#CFE8F9;
+ --surface-sky-ink:#173D55;
+ --surface-edge:rgba(42,48,54,.13);
+ --surface-inner-edge:rgba(255,255,255,.8);
+ --surface-radius-large:30px;
+ --surface-radius-medium:18px;
+ --surface-radius-small:12px;
+ --surface-shadow-low:0 1px 2px rgba(34,39,46,.08),0 3px 7px rgba(34,39,46,.05);
+ --surface-shadow-raised:0 2px 4px rgba(34,39,46,.09),0 9px 24px rgba(34,39,46,.07),0 20px 44px -20px rgba(34,39,46,.12);
+ --surface-shadow-dialog:0 2px 6px rgba(30,35,42,.12),0 18px 45px rgba(30,35,42,.14),0 40px 100px rgba(30,35,42,.13);
+ --depth-shadow:var(--surface-shadow-raised);
+}
+body>header{background:rgba(255,255,255,.94);border-bottom-color:var(--surface-edge);box-shadow:0 1px 3px rgba(34,39,46,.025)}
+body>header nav a{border-radius:999px;transition:background-color .18s,color .18s;outline-offset:4px}
+body>header nav a:hover,body>header nav a:focus-visible{background:var(--surface-sky);color:var(--surface-sky-ink);text-decoration:none;box-shadow:0 0 0 7px var(--surface-sky)}
+.pill,.cv-kicker{background:var(--surface-low);border:1px solid rgba(42,48,54,.06);border-radius:999px}
+.hero .pill{background:var(--surface-sky);color:var(--surface-sky-ink)}
+/* Contact shadow plus broad ambient shadow, with a hairline edge that does not resize the scene. */
+body .canvas,body .mobileart{
+ border-radius:var(--surface-radius-large);
+ outline:1px solid var(--surface-edge);outline-offset:-1px;
+ box-shadow:inset 0 1px 0 var(--surface-inner-edge),var(--surface-shadow-raised);
+ overflow:hidden;background-clip:padding-box;
+}
+body.scene-ready .canvas:hover{box-shadow:inset 0 1px 0 var(--surface-inner-edge),var(--surface-shadow-raised)}
+.canvas>svg,.mobileart>svg{border-radius:inherit}
+body .cv-art,body .mobile-ref{border-radius:var(--surface-radius-large);outline:1px solid var(--surface-edge);outline-offset:-1px;background:#F2F4F5;box-shadow:var(--surface-shadow-low);overflow:hidden}
+body .canvas .reference-photos img,body .cv-art .reference-photos img,body .mobile-ref img{
+ border-radius:var(--surface-radius-medium);outline:1px solid var(--surface-edge);outline-offset:-1px;box-shadow:var(--surface-shadow-low)
+}
+body .chapter .case-launch,body .relate-start,body .link:not(.primary),body .era-jumps a{
+ border-radius:999px;border:1px solid var(--surface-edge);
+ background:var(--surface-low);color:#26333D;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.75),var(--surface-shadow-low);
+ text-decoration:none;
+}
+body .chapter .case-launch:hover,body .relate-start:hover,body .link:not(.primary):hover,body .era-jumps a:hover{
+ background:var(--surface-sky);color:var(--surface-sky-ink);border-color:rgba(23,61,85,.12);box-shadow:var(--surface-shadow-raised);text-decoration:none
+}
+body .chapter .case-launch:active,body .relate-start:active{box-shadow:inset 0 1px 2px rgba(34,39,46,.12)}
+body .craft-project{border-radius:var(--surface-radius-medium);background:transparent}
+body .craft-project:hover,body .craft-project:focus-visible{background:var(--surface-low)}
+body #more .case-launch{border-radius:var(--surface-radius-small);background:transparent}
+body #more .case-launch:hover{background:var(--surface-low)}
+body .craft-map .craft-tip{border-radius:var(--surface-radius-small);box-shadow:var(--surface-shadow-low)}
+body .stepnav a{background:#E1E5E9;border-radius:999px}
+body .stepnav a.active{background:#739DBA}
+body .relate-symbol svg>circle{filter:drop-shadow(0 2px 3px rgba(34,39,46,.12)) drop-shadow(0 8px 10px rgba(34,39,46,.09))}
+body .era-illustration>svg:not(.motion-orbit){filter:drop-shadow(0 2px 3px rgba(34,39,46,.06)) drop-shadow(0 7px 10px rgba(34,39,46,.06))}
+dialog#caseViewer{
+ border:1px solid var(--surface-edge);
+ border-radius:var(--surface-radius-large);
+ box-shadow:var(--surface-shadow-dialog);
+ background:var(--surface-white);
+}
+dialog#caseViewer::backdrop{background:rgba(35,40,46,.34);backdrop-filter:blur(8px)}
+#caseViewer .cv-header,#caseViewer .cv-footer{background:#F9FAFB;border-color:var(--surface-edge)}
+#caseViewer .cv-close,#caseViewer .cv-arrow:not(:disabled){
+ border:1px solid var(--surface-edge);border-radius:50%;background:var(--surface-low);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.8),var(--surface-shadow-low);color:#303B45
+}
+#caseViewer .cv-close:hover,#caseViewer .cv-arrow:not(:disabled):hover{background:var(--surface-sky);box-shadow:var(--surface-shadow-raised)}
+#caseViewer .cv-steps button{border-radius:999px}
+#caseViewer .cv-steps button.active{background:var(--surface-sky)!important;color:var(--surface-sky-ink)}
+#caseViewer .cv-article-nav button{border:1px solid transparent;border-radius:999px;opacity:.85;transition:background-color .18s,color .18s}
+#caseViewer .cv-article-nav button:hover{background:var(--surface-low);opacity:1}
+#caseViewer .cv-article-nav button[aria-current]{background:var(--surface-sky);border-color:rgba(23,61,85,.09);color:var(--surface-sky-ink);opacity:1}
+#caseViewer .cv-article-placeholder{background:#F1EDF6;border:1px solid #DFD8E8;border-radius:var(--surface-radius-medium);color:#655B73;box-shadow:inset 0 1px 0 rgba(255,255,255,.85)}
+#caseViewer .cv-article-figure img{display:block;max-width:100%;height:auto;border-radius:var(--surface-radius-medium);outline:1px solid var(--surface-edge);outline-offset:-1px;box-shadow:var(--surface-shadow-low)}
+#caseViewer .cv-article-metrics>div{background:#F0F4EA;border:1px solid rgba(50,76,44,.09);border-radius:var(--surface-radius-medium);padding:14px 12px;min-width:0}
+#caseViewer .cv-article-metrics>div:nth-child(2){background:#F0EDF5;border-color:#E1DCE7}
+#caseViewer .cv-article-metrics>div:nth-child(3){background:#EAF2F7;border-color:#D9E4EC}
+#caseViewer .cv-article-metrics span{overflow-wrap:anywhere}
+#caseViewer .cv-diagram div{border-radius:var(--surface-radius-medium);border-color:var(--surface-edge);box-shadow:var(--surface-shadow-low)}
+body a:focus-visible,body button:focus-visible,body summary:focus-visible{outline:2px solid #4A86AD;outline-offset:4px}
+@media(max-width:800px){
+ body .mobileart,body .cv-art{border-radius:24px;box-shadow:var(--surface-shadow-low)}
+ dialog#caseViewer{border-radius:0;border:0}
+ #caseViewer .cv-steps button.active{background:#739DBA!important}
+}
+@media(max-width:680px){
+ #caseViewer .cv-article-nav button{padding:5px 8px}
+ #caseViewer .cv-article-metrics>div{padding:10px 8px;border-radius:12px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}

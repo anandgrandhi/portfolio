@@ -1,6 +1,6 @@
 
 (()=>{const reduced=matchMedia('(prefers-reduced-motion: reduce)');const clamp=x=>Math.max(0,Math.min(1,x));let enabled=!reduced.matches,installed=false,raf=0,last=0;const states=new WeakMap();
-const C={ink:'#2c2c2c',blue:'#199aff',lime:'#d6fe6a',green:'#426400',yellow:'#ffd100',pink:'#fbe3e8',coral:'#fe5241',line:'#cbcbcb'};
+const C={ink:'#2c2c2c',blue:'#8DBCE1',lime:'#E4EFD9',green:'#42653D',yellow:'#F4E7BF',pink:'#F7E1E3',coral:'#B96F76',line:'#D0D4D7'};
 const t=(x,y,s,n=14,a='middle',c=C.ink)=>'<text x="'+x+'" y="'+y+'" font-size="'+n+'" text-anchor="'+a+'" fill="'+c+'">'+esc(s)+'</text>';
 const group=(s,i=0,cls='assemble')=>'<g class="'+cls+'" style="--delay:'+i*130+'ms">'+s+'</g>';
 const rect=(x,y,w,h,fill='white',rx=12)=>'<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+rx+'" fill="'+fill+'"/>';
