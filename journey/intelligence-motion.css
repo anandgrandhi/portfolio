@@ -17,3 +17,13 @@
 #top.relate-hero .hero-inner{gap:8px;padding-block:32px 48px}
 @media(max-width:800px){#top .kinetic-headline{font-size:clamp(26px,6.2vw,39px);line-height:1.2}#top .kinetic-line{display:inline;overflow:visible}#top .kinetic-line>span{display:inline}#top.relate-hero .relate-symbol.intelligence-scene{width:min(100%,390px);height:clamp(195px,56vw,260px)}}
 @media(prefers-reduced-motion:reduce){#top .kinetic-line>span{transform:none!important;opacity:1!important}}
+
+/* Repeating accent sequence, independent of the first-load masked reveal. */
+#top .kinetic-line>span{position:relative;--accent-progress:0}
+#top .kinetic-line>span::after{content:"";display:block;position:absolute;height:2px;border-radius:2px;left:0;right:0;bottom:-.035em;background:#199aff;transform:scaleX(var(--accent-progress));transform-origin:center;opacity:calc(var(--accent-progress)*.8);pointer-events:none}
+#top .kinetic-line:nth-child(2)>span::after{background:#709942}
+#top .kinetic-line:nth-child(3)>span::after{background:#fe5241}
+#top .hero-motion-toggle{border:0;background:transparent;color:#777;font-size:11px;padding:4px 10px;margin-top:-8px;cursor:pointer;line-height:1.5}
+#top .hero-motion-toggle:hover{text-decoration:underline}
+@media(max-width:800px){#top .kinetic-line>span::after{display:none}}
+@media(prefers-reduced-motion:reduce){#top .hero-motion-toggle,#top .kinetic-line>span::after{display:none}}

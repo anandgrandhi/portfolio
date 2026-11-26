@@ -9,6 +9,8 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 canvas.setAttribute('aria-hidden','true');canvas.className='intelligence-canvas';
 mount.append(canvas);mount.classList.add('intelligence-scene');
 const headline=hero.querySelector('.kinetic-headline');const lines=[...hero.querySelectorAll('.kinetic-line>span')];
+let paused=false;const motionToggle=document.createElement('button');motionToggle.type='button';motionToggle.className='hero-motion-toggle';motionToggle.textContent='Pause motion';motionToggle.setAttribute('aria-pressed','false');mount.after(motionToggle);
+motionToggle.addEventListener('click',()=>{paused=!paused;motionToggle.textContent=paused?'Play motion':'Pause motion';motionToggle.setAttribute('aria-pressed',String(paused));if(paused){if(raf)cancelAnimationFrame(raf);raf=0;last=0;draw(7,Math.max(elapsed,2));}else activate();});
 const TAU=Math.PI*2,clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)},mix=(a,b,t)=>a+(b-a)*t;
 const palette=['#199aff','#fe5241','#e1b600','#709942'];
 const count=192,per=48,rand=i=>{const x=Math.sin(i*127.1+78.233)*43758.5453;return x-Math.floor(x)};
@@ -32,14 +34,16 @@ const project=(x,y,z,yaw,pitch,roll,scale,cx,cy,dist)=>{
  return {x:cx+(X*cr-Y*sr)*scale*f,y:cy+(X*sr+Y*cr)*scale*f,z:D,f};
 };
 function resize(){
- const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw(reduced.matches?9.5:elapsed);mount.classList.add('intelligence-ready');
+ const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw(reduced.matches||paused?7:cycleTime(elapsed),reduced.matches||paused?20:elapsed);mount.classList.add('intelligence-ready');
 }
-function draw(t){
+// A continuous forward / settle / return timeline; endpoints have zero velocity.
+const cycleTime=clock=>{const c=clock%16;return c<7?7*ease(c/7):c<10?7:7*(1-ease((c-10)/6));};
+function draw(t,clock=t){
  if(!w||!h)return;
  const settled=ease((t-4.6)/2.4),organise=ease((t-.3)/2.3),assemble=ease((t-2.4)/3.3),intro=ease(t/.6);
- const wordProgress=[ease((t-.08)/.85),ease((t-.3)/.95),ease((t-.55)/1.05)];
- if(headline)lines.forEach((el,i)=>{const p=wordProgress[i];el.style.transform='translate3d(0,'+((1-p)*.82)+'em,0)';el.style.opacity=String(.12+.88*p)});
- const idle=Math.max(0,t-7),view=clamp(scroll),disperse=ease(view*.95);
+ const wordProgress=[ease((clock-.08)/.85),ease((clock-.3)/.95),ease((clock-.55)/1.05)];
+ if(headline)lines.forEach((el,i)=>{const p=wordProgress[i],phase=clock%16,begin=[.2,2.6,5][i],accent=reduced.matches||paused?0:ease((phase-begin)/.8)*(1-ease((phase-begin-1.4)/.9));el.style.transform='translate3d(0,'+((1-p)*.82-accent*.035)+'em,0)';el.style.opacity=String(.12+.88*p);el.style.setProperty('--accent-progress',String(accent));});
+ const idle=0,view=clamp(scroll),disperse=ease(view*.95);
  const yaw=mix(-.88,.98,ease(t/6.8))+.22*Math.sin(idle*.23)+pointerX*.2;
  const pitch=mix(.48,-.32,ease((t-.4)/5.8))+.10*Math.sin(idle*.24)+pointerY*.12;
  const roll=mix(-.19,.06,ease(t/7.5));
@@ -77,7 +81,7 @@ function draw(t){
   if(d>Math.min(w,h)*.83)continue;
   ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(mix(a.x,b.x,reveal),mix(a.y,b.y,reveal));ctx.lineWidth=e.kind===0?.8:.55;ctx.strokeStyle=e.kind===2?'#81909f':a.n.color;ctx.globalAlpha=fade*reveal*alpha*clamp(1-(a.z+b.z)/520);ctx.stroke();
   if(e.kind===0&&e.i%4===0&&assemble>.15){
-   const f=(t*.25+e.phase)%1;ctx.fillStyle=a.n.color;ctx.globalAlpha=assemble*.85*alpha;ctx.beginPath();ctx.arc(mix(a.x,b.x,f),mix(a.y,b.y,f),2.1*scale,0,TAU);ctx.fill();
+   const f=(clock*.25+e.phase)%1;ctx.fillStyle=a.n.color;ctx.globalAlpha=assemble*.85*alpha;ctx.beginPath();ctx.arc(mix(a.x,b.x,f),mix(a.y,b.y,f),2.1*scale,0,TAU);ctx.fill();
   }
  }
  // The central point represents a decision made from distributed information.
@@ -95,14 +99,14 @@ function draw(t){
  ctx.globalAlpha=1;
 }
 function frame(now){
- raf=0;if(!visible||document.hidden||reduced.matches){last=0;return;}
+ raf=0;if(!visible||document.hidden||reduced.matches||paused){last=0;return;}
  const dt=last?Math.min(.05,(now-last)/1000):0;last=now;elapsed+=dt;
  const damping=1-Math.exp(-dt*5);pointerX=mix(pointerX,targetX,damping);pointerY=mix(pointerY,targetY,damping);
  scroll=clamp(-hero.getBoundingClientRect().top/Math.max(1,hero.offsetHeight));
- draw(elapsed);raf=requestAnimationFrame(frame);
+ draw(cycleTime(elapsed),elapsed);raf=requestAnimationFrame(frame);
 }
-function activate(){if(!raf&&visible&&!document.hidden&&!reduced.matches){last=0;raf=requestAnimationFrame(frame);}}
-function resetMotion(){if(raf){cancelAnimationFrame(raf);raf=0;}last=0;if(reduced.matches){pointerX=pointerY=scroll=0;draw(9.5);}else activate();}
+function activate(){if(!raf&&visible&&!document.hidden&&!reduced.matches&&!paused){last=0;raf=requestAnimationFrame(frame);}}
+function resetMotion(){if(raf){cancelAnimationFrame(raf);raf=0;}last=0;if(reduced.matches){pointerX=pointerY=scroll=0;draw(7,20);}else activate();}
 hero.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const b=hero.getBoundingClientRect();targetX=Math.max(-1,Math.min(1,(e.clientX-b.left-b.width/2)/(b.width/2)));targetY=Math.max(-1,Math.min(1,(e.clientY-b.top-b.height/2)/(b.height/2)));},{passive:true});
 hero.addEventListener('pointerleave',()=>{targetX=targetY=0;});
 if('ResizeObserver'in window)new ResizeObserver(resize).observe(mount);else addEventListener('resize',resize,{passive:true});
