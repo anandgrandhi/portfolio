@@ -1081,8 +1081,64 @@
             "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
             "Owned the product requirements, metric definitions, information architecture and dashboard design. Worked with engineering and design teams to connect these insights to lesson planning, cohort-level decisions and individual interventions."
           ]
+        },
+        {
+          "label": "Cohort intelligence",
+          "title": "Identify concepts requiring additional instruction",
+          "paragraphs": [
+            "Concept-level proficiency and assessment results provide a basis for identifying common learning gaps and prioritising lesson preparation. The dashboard connects cohort-level patterns to teaching decisions."
+          ]
+        },
+        {
+          "label": "Student intelligence",
+          "title": "Connect engagement and progress to interventions",
+          "paragraphs": [
+            "Learning activity and proficiency provide complementary signals for understanding student needs. The aim is to help teachers identify students who may require additional support and plan targeted interventions."
+          ]
+        },
+        {
+          "label": "Assessment intelligence",
+          "title": "Understand performance beyond the overall score",
+          "paragraphs": [
+            "Question-level response patterns can help distinguish difficult concepts from questions that may need further review. This is an example of the decision-making capability that assessment analytics can support."
+          ]
         }
-      ]
+      ],
+      "article": {
+        "title": "Turning complex data into actionable decisions",
+        "subtitle": "Teacher insights, learning analytics and assessment intelligence",
+        "meta": "Amazon · Product design",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": [
+          {
+            "label": "Khan Academy · teacher reporting examples",
+            "url": "https://support.khanacademy.org/hc/en-us/articles/360031052391-How-do-I-use-Reports-to-view-Activity-Skills-and-Assignment-score-reports"
+          },
+          {
+            "label": "Instructure · Canvas item analysis example",
+            "url": "https://www.instructure.com/resources/blog/year-review-canvas-new-quizzes-enhancements-2023"
+          }
+        ],
+        "artifacts": {
+          "1": {
+            "src": "https://support.khanacademy.org/hc/article_attachments/47595182930317",
+            "caption": "Concept-level mastery distribution",
+            "kind": "External example · Khan Academy"
+          },
+          "2": {
+            "src": "https://support.khanacademy.org/hc/article_attachments/47595182928909",
+            "caption": "Learning activity and skill progression",
+            "kind": "External example · Khan Academy"
+          },
+          "3": {
+            "src": "https://www.instructure.com/sites/default/files/image/2023-12/improved_item_analysis.jpg",
+            "caption": "Question difficulty and answer-frequency analysis",
+            "kind": "External example · Canvas"
+          }
+        }
+      }
     },
     {
       "company": "Archmation",
