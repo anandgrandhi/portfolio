@@ -1111,33 +1111,7 @@
         "metric": "",
         "metricLabel": "",
         "hideReferences": true,
-        "sources": [
-          {
-            "label": "Khan Academy · teacher reporting examples",
-            "url": "https://support.khanacademy.org/hc/en-us/articles/360031052391-How-do-I-use-Reports-to-view-Activity-Skills-and-Assignment-score-reports"
-          },
-          {
-            "label": "Instructure · Canvas item analysis example",
-            "url": "https://www.instructure.com/resources/blog/year-review-canvas-new-quizzes-enhancements-2023"
-          }
-        ],
-        "artifacts": {
-          "1": {
-            "src": "https://support.khanacademy.org/hc/article_attachments/47595182930317",
-            "caption": "Concept-level mastery distribution",
-            "kind": "External example · Khan Academy"
-          },
-          "2": {
-            "src": "https://support.khanacademy.org/hc/article_attachments/47595182928909",
-            "caption": "Learning activity and skill progression",
-            "kind": "External example · Khan Academy"
-          },
-          "3": {
-            "src": "https://www.instructure.com/sites/default/files/image/2023-12/improved_item_analysis.jpg",
-            "caption": "Question difficulty and answer-frequency analysis",
-            "kind": "External example · Canvas"
-          }
-        }
+        "sources": []
       }
     },
     {
