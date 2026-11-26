@@ -972,16 +972,12 @@
                 "title": "Multi-angle sportswear generation workflow"
               },
               {
-                "src": "assets/archmation-creative/posters/body-4.webp",
                 "title": "Apparel display video",
-                "webm": "assets/archmation-creative/webm/body-4.webm",
-                "mp4": "assets/archmation-creative/mp4/body-4.mp4"
+                "webm": "assets/archmation-creative/body-4.webm"
               },
               {
-                "src": "assets/archmation-creative/posters/screen-recording-2025-09-20-at-10-20-43-am.webp",
                 "title": "Fashion motion demonstration",
-                "webm": "assets/archmation-creative/webm/screen-recording-2025-09-20-at-10-20-43-am.webm",
-                "mp4": "assets/archmation-creative/mp4/screen-recording-2025-09-20-at-10-20-43-am.mp4"
+                "webm": "assets/archmation-creative/screen-recording-2025-09-20-at-10-20-43-am.webm"
               }
             ]
           },
@@ -1018,10 +1014,8 @@
                 "title": "Alternative furniture staging workflow"
               },
               {
-                "src": "assets/archmation-creative/posters/screen-recording-2025-09-26-at-4-23-20-pm.webp",
                 "title": "Furniture staging workflow recording",
-                "webm": "assets/archmation-creative/webm/screen-recording-2025-09-26-at-4-23-20-pm.webm",
-                "mp4": "assets/archmation-creative/mp4/screen-recording-2025-09-26-at-4-23-20-pm.mp4"
+                "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-4-23-20-pm.webm"
               }
             ]
           },
@@ -1037,10 +1031,8 @@
                 "title": "Alternative character and model comparison"
               },
               {
-                "src": "assets/archmation-creative/posters/screen-recording-2025-09-26-at-5-05-59-pm.webp",
                 "title": "Multi-view 3D workflow recording",
-                "webm": "assets/archmation-creative/webm/screen-recording-2025-09-26-at-5-05-59-pm.webm",
-                "mp4": "assets/archmation-creative/mp4/screen-recording-2025-09-26-at-5-05-59-pm.mp4"
+                "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-5-05-59-pm.webm"
               }
             ]
           },
@@ -1052,22 +1044,16 @@
                 "title": "UGC-style product placement demonstration"
               },
               {
-                "src": "assets/archmation-creative/posters/body-3.webp",
                 "title": "UGC unboxing video workflow",
-                "webm": "assets/archmation-creative/webm/body-3.webm",
-                "mp4": "assets/archmation-creative/mp4/body-3.mp4"
+                "webm": "assets/archmation-creative/body-3.webm"
               },
               {
-                "src": "assets/archmation-creative/posters/body-mp4.webp",
                 "title": "Character replacement video",
-                "webm": "assets/archmation-creative/webm/body-mp4.webm",
-                "mp4": "assets/archmation-creative/mp4/body-mp4.mp4"
+                "webm": "assets/archmation-creative/body-mp4.webm"
               },
               {
-                "src": "assets/archmation-creative/posters/body-2.webp",
                 "title": "Text-to-3D CAD prototype demonstration",
-                "webm": "assets/archmation-creative/webm/body-2.webm",
-                "mp4": "assets/archmation-creative/mp4/body-2.mp4"
+                "webm": "assets/archmation-creative/body-2.webm"
               }
             ]
           }
