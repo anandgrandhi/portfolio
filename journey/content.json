@@ -144,7 +144,27 @@
             "caption": "Retrospective product synthesis informed by Harry Fletcher-Wood’s Habits of Success."
           }
         },
-        "referenceTitle": "References"
+        "referenceTitle": "References",
+        "slideshows": {
+          "2": [
+            {
+              "src": "assets/daily-digest/behaviour-motivation.webp",
+              "title": "Motivating students to change their behaviour"
+            },
+            {
+              "src": "assets/daily-digest/behaviour-commitment.webp",
+              "title": "Helping students commit to action"
+            },
+            {
+              "src": "assets/daily-digest/behaviour-initiation.webp",
+              "title": "Reducing barriers to starting"
+            },
+            {
+              "src": "assets/daily-digest/behaviour-continuation.webp",
+              "title": "Supporting sustained participation"
+            }
+          ]
+        }
       }
     },
     {
