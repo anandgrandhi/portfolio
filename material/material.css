@@ -1,9 +1,9 @@
 /* Independent Material 3 Expressive visual system. Shared scroll and case controllers unchanged. */
 :root{
- --m-bg:#fcf8fd;--m-surface:#f5f0f8;--m-low:#eee9f3;--m-mid:#e5dfed;--m-high:#ded8e9;--m-ink:#292630;--m-muted:#645f6d;--m-primary:#66518d;--m-primary-container:#ddd2f7;--m-outline:#d5cedc;--m-edge:rgba(55,44,68,.10);
+ --m-bg:#FCFAFA;--m-surface:#FAF1F0;--m-low:#F5E5E4;--m-mid:#F0DAD9;--m-high:#EBD0D0;--m-ink:#302526;--m-muted:#69595B;--m-primary:#97505C;--m-primary-container:#F6C8CD;--m-outline:#E4D0D0;--m-edge:rgba(92,60,64,.10);
  --m-large:32px;--m-medium:24px;--m-small:16px;
- --m-elevated:0 2px 3px rgba(43,30,54,.12),0 5px 10px rgba(43,30,54,.10);
- --m-modal:0 3px 6px rgba(43,30,54,.13),0 16px 36px rgba(43,30,54,.16);
+ --m-elevated:0 2px 3px rgba(65,38,42,.12),0 5px 10px rgba(65,38,42,.10);
+ --m-modal:0 3px 6px rgba(65,38,42,.13),0 16px 36px rgba(65,38,42,.16);
  --bg:var(--m-bg);--ink:var(--m-ink);--muted:var(--m-muted);--line:var(--m-outline);--surface:var(--m-surface);--primary:var(--m-primary);--depth-shadow:var(--m-elevated);
 }
 html body.material-portfolio{background:var(--m-bg);color:var(--m-ink)}
@@ -13,40 +13,40 @@ body.material-portfolio>header nav a{padding:8px 18px;border-radius:999px;transi
 body.material-portfolio>header nav a:hover,body.material-portfolio>header nav a:focus-visible{background:var(--m-primary-container);text-decoration:none}
 body.material-portfolio .hero.wrap.hero-reel{background:var(--m-bg);overflow:visible}
 body.material-portfolio .hero-reel .hero-inner{
- background:#e2dff4;border-radius:40px;position:relative;isolation:isolate;
+ background:#FDD8D8;border-radius:40px;position:relative;isolation:isolate;
  width:calc(100% - 2 * var(--pad));max-width:1240px;
  min-height:calc(88svh - 65px);margin:20px auto 0;
  padding:clamp(50px,7vw,100px) clamp(26px,7vw,112px);
 }
-body.material-portfolio .hero-reel .hero-inner:before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;overflow:hidden;background:radial-gradient(ellipse at 95% 0%,#cfc4ed 0 23%,transparent 23.4%),radial-gradient(ellipse at 0% 100%,#d4e2c7 0 18%,transparent 18.4%);pointer-events:none}
+body.material-portfolio .hero-reel .hero-inner:before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;overflow:hidden;background:radial-gradient(ellipse at 95% 0%,#F3C2C6 0 23%,transparent 23.4%),radial-gradient(ellipse at 0% 100%,#F9E4E3 0 18%,transparent 18.4%);pointer-events:none}
 body.material-portfolio .relate-hero .hero-copy{max-width:790px}
-body.material-portfolio .relate-symbol{padding:14px;border-radius:36px;background:#f5f0fa;box-shadow:var(--m-elevated)}
-body.material-portfolio .relate-symbol svg>circle{fill:#69548e;filter:none}
-body.material-portfolio .relate-symbol .relate-orbit circle{fill:#8d79bd}
-body.material-portfolio .relate-start{background:#66518d;color:white;border-radius:999px;padding:13px 24px;border:0;box-shadow:var(--m-elevated)}
-body.material-portfolio .relate-start:hover{background:#58437e;text-decoration:none}
+body.material-portfolio .relate-symbol{padding:14px;border-radius:36px;background:#FFF2F1;box-shadow:var(--m-elevated)}
+body.material-portfolio .relate-symbol svg>circle{fill:#97505C;filter:none}
+body.material-portfolio .relate-symbol .relate-orbit circle{fill:#B66D78}
+body.material-portfolio .relate-start{background:#97505C;color:white;border-radius:999px;padding:13px 24px;border:0;box-shadow:var(--m-elevated)}
+body.material-portfolio .relate-start:hover{background:#80414C;text-decoration:none}
 body.material-portfolio .about-bridge{background:var(--m-bg)}
-body.material-portfolio .about-bridge .hero-sub{background:#f0edf4;padding:clamp(22px,4vw,42px);border-radius:32px;color:var(--m-muted)}
-body.material-portfolio .about-bridge a{color:#4e3b72;text-decoration:underline;text-underline-offset:4px}
+body.material-portfolio .about-bridge .hero-sub{background:#F7EBEA;padding:clamp(22px,4vw,42px);border-radius:32px;color:var(--m-muted)}
+body.material-portfolio .about-bridge a{color:#733E46;text-decoration:underline;text-underline-offset:4px}
 body.material-portfolio .work,body.material-portfolio .career,body.material-portfolio .exploring{background:transparent}
-body.material-portfolio .pill{background:var(--m-primary-container);border-radius:999px;color:#493568;padding:7px 17px}
+body.material-portfolio .pill{background:var(--m-primary-container);border-radius:999px;color:#733E46;padding:7px 17px}
 body.material-portfolio .canvas,body.material-portfolio .mobileart{border-radius:32px;outline:1px solid var(--m-edge);outline-offset:-1px;box-shadow:none;overflow:hidden}
 body.material-portfolio .scene-ready .canvas:hover{box-shadow:none}
 body.material-portfolio.scene-ready .canvas:hover{box-shadow:none}
-body.material-portfolio .canvas svg rect,body.material-portfolio .mobileart svg rect{stroke:rgba(53,43,66,.07);stroke-width:.65}
-body.material-portfolio .canvas svg .signal-card rect,body.material-portfolio .mobileart svg .signal-card rect{filter:drop-shadow(0 2px 2px rgba(43,30,54,.14))}
-body.material-portfolio .canvas svg .phone-body,body.material-portfolio .mobileart svg .phone-body{filter:drop-shadow(0 4px 4px rgba(43,30,54,.15))}
+body.material-portfolio .canvas svg rect,body.material-portfolio .mobileart svg rect{stroke:rgba(92,60,64,.07);stroke-width:.65}
+body.material-portfolio .canvas svg .signal-card rect,body.material-portfolio .mobileart svg .signal-card rect{filter:drop-shadow(0 2px 2px rgba(65,38,42,.14))}
+body.material-portfolio .canvas svg .phone-body,body.material-portfolio .mobileart svg .phone-body{filter:drop-shadow(0 4px 4px rgba(65,38,42,.15))}
 body.material-portfolio .stage-bottom{background:var(--m-low);padding:12px 17px;border-radius:999px;margin-top:15px;color:var(--m-muted)}
 body.material-portfolio .stepnav a{background:var(--m-mid);height:6px;border-radius:999px}
 body.material-portfolio .stepnav a.active{background:var(--m-primary)}
 body.material-portfolio .chapter{border-top-color:var(--m-outline)}
-body.material-portfolio .chapter .meta .num{background:var(--m-primary-container);border-radius:50%;width:30px;height:30px;display:inline-grid;place-items:center;color:#4e3b72}
-body.material-portfolio .chapter .case-launch{background:var(--m-primary-container);color:#473567;border:0;box-shadow:none;border-radius:999px;padding:12px 22px}
-body.material-portfolio .chapter .case-launch:hover{background:#d0c2ef;box-shadow:var(--m-elevated)}
+body.material-portfolio .chapter .meta .num{background:var(--m-primary-container);border-radius:50%;width:30px;height:30px;display:inline-grid;place-items:center;color:#733E46}
+body.material-portfolio .chapter .case-launch{background:var(--m-primary-container);color:#733E46;border:0;box-shadow:none;border-radius:999px;padding:12px 22px}
+body.material-portfolio .chapter .case-launch:hover{background:#F0B9C1;box-shadow:var(--m-elevated)}
 body.material-portfolio .craft-index{border:0;background:var(--m-low);border-radius:28px;padding:0 16px}
 body.material-portfolio .craft-index summary{border:0;padding:18px 8px}
 body.material-portfolio .craft-index-list{gap:5px;padding-bottom:12px}
-body.material-portfolio .craft-project{border-radius:20px;background:#faf7fc}
+body.material-portfolio .craft-project{border-radius:20px;background:#FFFAF9}
 body.material-portfolio .craft-project:hover{background:var(--m-primary-container)}
 body.material-portfolio .more{border-top-color:var(--m-outline)}
 body.material-portfolio #more{display:flex;flex-direction:column;gap:5px}
@@ -57,35 +57,35 @@ body.material-portfolio #more .linked-project-row:focus-within,body.material-por
 body.material-portfolio #more .case-launch{background:transparent}
 body.material-portfolio .era-jumps a{background:var(--m-low);border:0;border-radius:999px;padding:10px 18px}
 body.material-portfolio .era-jumps a:hover{background:var(--m-primary-container);text-decoration:none}
-body.material-portfolio .era-illustration{border-radius:32px;background:#e2dff4;min-height:210px}
-body.material-portfolio .era-row:nth-child(2) .era-illustration{background:#d8e5cb}
-body.material-portfolio .era-row:nth-child(3) .era-illustration{background:#f9d9da}
-body.material-portfolio .era-row:nth-child(4) .era-illustration{background:#d4e8f5}
+body.material-portfolio .era-illustration{border-radius:32px;background:#FDD8D8;min-height:210px}
+body.material-portfolio .era-row:nth-child(2) .era-illustration{background:#F5DFDF}
+body.material-portfolio .era-row:nth-child(3) .era-illustration{background:#FDD8D8}
+body.material-portfolio .era-row:nth-child(4) .era-illustration{background:#FAE5E4}
 body.material-portfolio .era-illustration>svg:not(.motion-orbit){filter:none}
 body.material-portfolio .exploring-topic{background:var(--m-low);border:0;border-radius:26px;padding:25px}
 body.material-portfolio footer{background:var(--m-low);border-top:0}
 body.material-portfolio dialog#caseViewer{background:var(--m-surface);border:1px solid var(--m-edge);border-radius:32px;box-shadow:var(--m-modal)}
-body.material-portfolio dialog#caseViewer::backdrop{background:rgba(35,29,44,.35);backdrop-filter:blur(7px)}
+body.material-portfolio dialog#caseViewer::backdrop{background:rgba(48,32,35,.35);backdrop-filter:blur(7px)}
 body.material-portfolio #caseViewer .cv-header,body.material-portfolio #caseViewer .cv-footer{background:var(--m-low);border:0}
-body.material-portfolio #caseViewer .cv-close,body.material-portfolio #caseViewer .cv-arrow:not(:disabled){background:var(--m-primary-container);border:0;color:#493568;box-shadow:none}
+body.material-portfolio #caseViewer .cv-close,body.material-portfolio #caseViewer .cv-arrow:not(:disabled){background:var(--m-primary-container);border:0;color:#733E46;box-shadow:none}
 body.material-portfolio #caseViewer .cv-close:hover,body.material-portfolio #caseViewer .cv-arrow:not(:disabled):hover{box-shadow:var(--m-elevated)}
 body.material-portfolio #caseViewer .cv-article-layout{gap:clamp(18px,3vw,44px)}
 body.material-portfolio #caseViewer .cv-article-nav{background:var(--m-low);padding:14px 8px;border-radius:28px}
 body.material-portfolio #caseViewer .cv-article-nav>span{padding-left:10px}
 body.material-portfolio #caseViewer .cv-article-nav button{border:0;border-radius:999px;opacity:1;color:var(--m-muted)}
-body.material-portfolio #caseViewer .cv-article-nav button[aria-current]{background:var(--m-primary-container);color:#473567}
+body.material-portfolio #caseViewer .cv-article-nav button[aria-current]{background:var(--m-primary-container);color:#733E46}
 body.material-portfolio #caseViewer .cv-article-nav button:hover{background:var(--m-mid)}
 body.material-portfolio #caseViewer .cv-article{background:#fff;border-radius:28px;padding:clamp(22px,3vw,40px)}
-body.material-portfolio #caseViewer .cv-article-intro{background:#e2dff4;padding:28px!important;border:0;border-radius:26px}
-body.material-portfolio #caseViewer .cv-article-hero-metric{background:#f8f5fc;padding:18px;border-radius:20px;box-shadow:none}
-body.material-portfolio #caseViewer .cv-article-placeholder{background:#f0edf6;border:1px solid #e0d9e9;border-radius:24px}
-body.material-portfolio #caseViewer .cv-article-metrics>div{background:#e9efdf;border-radius:20px;padding:14px;min-width:0}
-body.material-portfolio #caseViewer .cv-article-metrics>div:nth-child(2){background:#e7e0f0}
-body.material-portfolio #caseViewer .cv-article-metrics>div:nth-child(3){background:#e0edf6}
+body.material-portfolio #caseViewer .cv-article-intro{background:#FDD8D8;padding:28px!important;border:0;border-radius:26px}
+body.material-portfolio #caseViewer .cv-article-hero-metric{background:#FFF6F5;padding:18px;border-radius:20px;box-shadow:none}
+body.material-portfolio #caseViewer .cv-article-placeholder{background:#F9E9E8;border:1px solid #EAD1D1;border-radius:24px}
+body.material-portfolio #caseViewer .cv-article-metrics>div{background:#F7DDDD;border-radius:20px;padding:14px;min-width:0}
+body.material-portfolio #caseViewer .cv-article-metrics>div:nth-child(2){background:#F3E3E2}
+body.material-portfolio #caseViewer .cv-article-metrics>div:nth-child(3){background:#FAEEED}
 body.material-portfolio #caseViewer .cv-page.cv-text-only>div:first-child{background:white;padding:clamp(20px,3vw,36px);border-radius:28px}
 body.material-portfolio #caseViewer .cv-steps button{border-radius:999px}
-body.material-portfolio #caseViewer .cv-steps button.active{background:var(--m-primary-container)!important;color:#473567}
-body.material-portfolio .cv-kicker{background:var(--m-primary-container);color:#473567}
+body.material-portfolio #caseViewer .cv-steps button.active{background:var(--m-primary-container)!important;color:#733E46}
+body.material-portfolio .cv-kicker{background:var(--m-primary-container);color:#733E46}
 body.material-portfolio a:focus-visible,body.material-portfolio button:focus-visible{outline:2px solid var(--m-primary);outline-offset:4px}
 @media(max-width:800px){
  body.material-portfolio>header nav a{padding:6px 9px}
@@ -104,3 +104,39 @@ body.material-portfolio a:focus-visible,body.material-portfolio button:focus-vis
  body.material-portfolio #caseViewer .cv-article-metrics>div{padding:8px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+/* Rose surface finish: low-contrast translucent keyline and inner light edge. */
+body.material-portfolio .hero-reel .hero-inner,
+body.material-portfolio .canvas,
+body.material-portfolio .mobileart,
+body.material-portfolio .era-illustration,
+body.material-portfolio .about-bridge .hero-sub,
+body.material-portfolio .craft-index,
+body.material-portfolio .exploring-topic{
+ outline:1px solid rgba(114,79,80,.14);
+ outline-offset:-1px;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -1px 0 rgba(114,79,80,.045);
+ background-clip:padding-box;
+}
+body.material-portfolio .hero-reel .hero-inner:before{
+ background:radial-gradient(ellipse at 95% 0%,rgba(237,160,170,.28) 0 23%,transparent 23.4%),radial-gradient(ellipse at 0% 100%,rgba(255,249,246,.44) 0 18%,transparent 18.4%);
+}
+body.material-portfolio .relate-symbol{
+ outline:1px solid rgba(255,255,255,.64);outline-offset:-1px;
+ box-shadow:inset 0 1px 1px rgba(255,255,255,.9),0 2px 3px rgba(65,38,42,.12),0 7px 15px rgba(65,38,42,.12);
+}
+body.material-portfolio .chapter .case-launch,body.material-portfolio .relate-start{
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 1px 2px rgba(65,38,42,.09);
+}
+body.material-portfolio #caseViewer .cv-article-intro,
+body.material-portfolio #caseViewer .cv-article-hero-metric,
+body.material-portfolio #caseViewer .cv-article-placeholder,
+body.material-portfolio #caseViewer .cv-article-metrics>div{
+ outline:1px solid rgba(114,79,80,.12);outline-offset:-1px;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+}
+body.material-portfolio dialog#caseViewer{border:1px solid rgba(255,255,255,.62)}
+body.material-portfolio #caseViewer .cv-article-nav button[aria-current]:hover{background:var(--m-primary-container)}
+body.material-portfolio .craft-map a[aria-current=true] i,body.material-portfolio .craft-map-progress b{background:var(--m-primary)}
+body.material-portfolio #careerGhost{stroke:#F0DADB}
+@media(max-width:800px){body.material-portfolio dialog#caseViewer{border:0}}
