@@ -26,19 +26,24 @@ function paintVisual(i,force=false){
 const athenaVisual='<div class="athena-composition"><img class="athena-wheel" src="assets/athena/ecosystem.webp" alt="Athena counselling ecosystem"><img class="athena-phone" src="assets/athena/dashboard.webp" alt="Arete dashboard"></div>';
 function installDailyDigestVisual(i){
  const canvas=$('#canvas');
- canvas.dataset.projectVisual=i===0||i===1?'photo':'pending';
- canvas.querySelectorAll('.dd-stage').forEach(e=>e.remove());
- if(i!==0&&i!==1)return;
- const layer=document.createElement('div');layer.className='dd-stage';layer.innerHTML=i===0?dailyDigestVisual:athenaVisual;
- canvas.append(layer);
+ if(!canvas.querySelector('.project-photo-layer')){
+  featured.forEach((p,n)=>{
+   const layer=document.createElement('div');layer.className='project-photo-layer';layer.dataset.visualIndex=String(n);
+   if(n===0||n===1)layer.innerHTML=n===0?dailyDigestVisual:athenaVisual;
+   else layer.classList.add('project-photo-pending');
+   layer.querySelectorAll('img').forEach(img=>{img.loading='eager';img.decoding='async'});
+   canvas.append(layer);
+  });
+ }
+ canvas.querySelectorAll('.project-photo-layer').forEach(el=>{const selected=Number(el.dataset.visualIndex)===i;el.classList.toggle('photo-active',selected);el.setAttribute('aria-hidden',String(!selected))});
 }
 function installVisuals(){
- const stage=$('.stage');if(!stage)return;
- const controls=document.createElement('div');controls.className='visual-toggle';controls.innerHTML='<button id="visualIllustration" type="button">Illustration</button><button id="visualReference" type="button">Reference image</button>';/* Reference controls intentionally omitted; only original conceptual visuals are displayed. */
- controls.querySelector('#visualIllustration').onclick=()=>{visualMode='illustration';paintVisual(active,true)};
- controls.querySelector('#visualReference').onclick=()=>{visualMode='reference';paintVisual(active,true)};
- const original=setActive;setActive=function(i){const changed=i!==active;original(i);if(changed){visualMode='auto';paintVisual(i,true);installDailyDigestVisual(i)}};
- paintVisual(active,true);installDailyDigestVisual(active);
+ const canvas=$('#canvas');if(!canvas)return;
+ canvas.classList.add('original-photo-canvas');
+ const original=setActive;
+ setActive=function(i){if(i===active||!featured[i])return;active=i;const p=featured[i];installDailyDigestVisual(i);$('#stageLabel').textContent=p.company;$('#counter').textContent=String(i+1).padStart(2,'0')+' / '+String(featured.length).padStart(2,'0');document.querySelectorAll('.stepnav a').forEach((a,n)=>{a.classList.toggle('active',n===i);if(n===i)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})};
+ canvas.querySelectorAll('svg,.reference-scene,.dd-stage').forEach(el=>el.remove());
+ installDailyDigestVisual(active);
 }
 const dialogMarkup='<dialog id="caseViewer" aria-labelledby="cvTitle"><div class="cv-header"><div class="cv-company" id="cvCompany"></div><button class="cv-close" type="button" aria-label="Close case study">×</button></div><div class="cv-scroll" id="cvScroll" tabindex="0" aria-label="Case study chapters"></div><div class="cv-footer"><div class="cv-arrows"><button class="cv-arrow" id="cvPrev" aria-label="Previous chapter">←</button><button class="cv-arrow" id="cvNext" aria-label="Next chapter">→</button></div><div class="cv-steps" id="cvSteps" aria-label="Case study navigation"></div><div class="cv-count" id="cvCount" aria-live="polite"></div></div></dialog>';
 document.body.insertAdjacentHTML('beforeend',dialogMarkup);
@@ -215,4 +220,13 @@ let enhancementsInstalled=false;function initializeEnhancements(){if(enhancement
 #canvas>svg,.chapter .mobileart>svg{display:none!important}
 #canvas[data-project-visual="pending"]{background:#f8f8f8!important}
 .chapter .mobileart.visual-pending{display:none!important}
+`;document.head.append(style)})();
+
+(()=>{const style=document.createElement('style');style.textContent=`
+#canvas.original-photo-canvas{background:#f8f8f8!important;transform:none!important;rotate:none!important;translate:none!important;scale:none!important;animation:none!important;transition:none!important;will-change:auto!important}
+#canvas.original-photo-canvas:hover{transform:none!important;rotate:none!important}
+#canvas .project-photo-layer{position:absolute;inset:0;opacity:0;pointer-events:none;background:#f8f8f8;transition:opacity 420ms cubic-bezier(.4,0,.2,1);animation:none!important}
+#canvas .project-photo-layer.photo-active{opacity:1;pointer-events:auto}
+#canvas .project-photo-layer img{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){#canvas .project-photo-layer{transition:none!important}}
 `;document.head.append(style)})();
