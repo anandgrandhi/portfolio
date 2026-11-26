@@ -1,7 +1,7 @@
 
 /* Original portfolio motion implementation; architecture inspired by the supplied AI Journey archive. */
 const references={};
-const dailyDigestVisual='<div class="dd-composition"><img class="dd-flow" src="assets/daily-digest/product-flow.webp" alt="Daily Digest product flow"><img class="dd-reminder" src="assets/daily-digest/reminder.webp" alt="Reminder and Tip of the Day product experience"></div>';
+const dailyDigestVisual='<div class="selected-card single"><img src="assets/daily-digest/product-flow.webp" alt="Daily Digest product flow"></div>';
 const featuredIds=[0,1,2,5,3,4];
 let portfolioData=null, visualMode='auto', visualIndex=-1, caseOpener=null, pageIndex=0, pageCount=0, viewerRAF=0;
 const clamp01=x=>Math.max(0,Math.min(1,x));
@@ -23,11 +23,11 @@ function paintVisual(i,force=false){
  $('#visualIllustration')?.setAttribute('aria-pressed',String(mode==='illustration'));
  $('#visualReference')?.setAttribute('aria-pressed',String(mode==='reference'));if($('#visualReference'))$('#visualReference').disabled=!references[id];
 }
-const athenaVisual='<div class="athena-composition"><img class="athena-wheel" src="assets/athena/ecosystem.webp" alt="Athena counselling ecosystem"><img class="athena-phone" src="assets/athena/dashboard.webp" alt="Arete dashboard"></div>';
+const athenaVisual='<div class="selected-card pair"><img src="assets/athena/dashboard.webp" alt="Arete dashboard"><img src="assets/athena/tasks.webp" alt="Arete tasks"></div>';
 const whiteTableVisual='<div class="wt-composition"><img class="wt-architecture" src="assets/whitetable/architecture.webp" alt="GrowthOS orchestration and data flow"><img class="wt-assistant" src="assets/whitetable/assistant.webp" alt="WhiteTable Intelligence interface with internal details masked"></div>';
 const byjusVisual='<div class="byjus-composition"><img class="byjus-mobile" src="assets/byjus/mobile-journeys.webp" alt="BYJU’S learning journeys"><img class="byjus-graph" src="assets/byjus/knowledge-graph.webp" alt="Knowledge graph concept visual"><img class="byjus-tablet" src="assets/byjus/interactive-light.webp" alt="Interactive light reflection activity"></div>';
-const emotoradVisual="<div class=\"em-workflows\"><div><img referrerpolicy=\"no-referrer\" src=\"https://miro.medium.com/v2/resize%3Afit%3A1400/1%2APC7cYhrIRZ1DkdGVDLUZAg.png\" alt=\"HR onboarding example\"></div><div><img referrerpolicy=\"no-referrer\" src=\"https://learnn8nautomation.com/images/rag.png\" alt=\"Document retrieval example\"></div><div><img referrerpolicy=\"no-referrer\" src=\"https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png\" alt=\"Task email alert example\"></div><span>Workflow examples</span></div>";
-const archmationVisual="<div class=\"arch-hero\"><img class=\"arch-fashion\" src=\"assets/archmation-creative/virtual-photoshoot.webp\" alt=\"Virtual photoshoot inputs and generated poses\"><img class=\"arch-three\" src=\"assets/archmation-creative/character-3d.webp\" alt=\"Multi-view character and 3D generation workflow\"><video class=\"arch-hero-video\" muted playsinline loop preload=\"none\" aria-label=\"Furniture staging workflow\"><source data-src=\"assets/archmation-creative/screen-recording-2025-09-26-at-4-23-20-pm.webm\" type=\"video/webm\"></video></div>";
+const emotoradVisual="<div class=\"em-workflows\"><div><img referrerpolicy=\"no-referrer\" src=\"https://miro.medium.com/v2/resize%3Afit%3A1400/1%2APC7cYhrIRZ1DkdGVDLUZAg.png\" alt=\"HR onboarding example\"></div><div><img referrerpolicy=\"no-referrer\" src=\"assets/sop-flow.svg\" alt=\"Document retrieval example\"></div><div><img referrerpolicy=\"no-referrer\" src=\"https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png\" alt=\"Task email alert example\"></div><span>Workflow examples</span></div>";
+const archmationVisual='<div class="selected-card single"><video class="arch-hero-video" muted playsinline loop preload="none" controls aria-label="Furniture staging workflow"><source data-src="assets/archmation-creative/screen-recording-2025-09-26-at-4-23-20-pm.webm" type="video/webm"></video></div>';
 function installDailyDigestVisual(i){
  const canvas=$('#canvas');
  if(!canvas.querySelector('.project-photo-layer')){
