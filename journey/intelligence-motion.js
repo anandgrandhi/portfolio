@@ -9,10 +9,8 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 canvas.setAttribute('aria-hidden','true');canvas.className='intelligence-canvas';
 mount.append(canvas);mount.classList.add('intelligence-scene');
 const headline=hero.querySelector('.kinetic-headline');const lines=[...hero.querySelectorAll('.kinetic-line>span')];
-let paused=false;const motionToggle=document.createElement('button');motionToggle.type='button';motionToggle.className='hero-motion-toggle';motionToggle.textContent='Pause motion';motionToggle.setAttribute('aria-pressed','false');mount.after(motionToggle);
-motionToggle.addEventListener('click',()=>{paused=!paused;motionToggle.textContent=paused?'Play motion':'Pause motion';motionToggle.setAttribute('aria-pressed',String(paused));if(paused){if(raf)cancelAnimationFrame(raf);raf=0;last=0;draw(7,Math.max(elapsed,2));}else activate();});
 const TAU=Math.PI*2,clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)},mix=(a,b,t)=>a+(b-a)*t;
-const palette=['#199aff','#fe5241','#e1b600','#709942'];
+const palette=['#8DBCE1','#B96F76','#E2CB88','#42653D'];
 const count=192,per=48,rand=i=>{const x=Math.sin(i*127.1+78.233)*43758.5453;return x-Math.floor(x)};
 const particles=Array.from({length:count},(_,i)=>{
  const g=Math.floor(i/per),k=i%per,a=k*2.3999632297,b=Math.acos(1-2*(k+.5)/per),phase=rand(i+400)*TAU;
@@ -34,15 +32,15 @@ const project=(x,y,z,yaw,pitch,roll,scale,cx,cy,dist)=>{
  return {x:cx+(X*cr-Y*sr)*scale*f,y:cy+(X*sr+Y*cr)*scale*f,z:D,f};
 };
 function resize(){
- const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw(reduced.matches||paused?7:cycleTime(elapsed),reduced.matches||paused?20:elapsed);mount.classList.add('intelligence-ready');
+ const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);draw(reduced.matches?7:cycleTime(elapsed),reduced.matches?20:elapsed);mount.classList.add('intelligence-ready');
 }
-// A continuous forward / settle / return timeline; endpoints have zero velocity.
-const cycleTime=clock=>{const c=clock%16;return c<7?7*ease(c/7):c<10?7:7*(1-ease((c-10)/6));};
+// Play forward, hold the resolved form, then restart from the opening.
+const cycleTime=clock=>Math.min(clock%11,7);
 function draw(t,clock=t){
  if(!w||!h)return;
  const settled=ease((t-4.6)/2.4),organise=ease((t-.3)/2.3),assemble=ease((t-2.4)/3.3),intro=ease(t/.6);
  const wordProgress=[ease((clock-.08)/.85),ease((clock-.3)/.95),ease((clock-.55)/1.05)];
- if(headline)lines.forEach((el,i)=>{const p=wordProgress[i],phase=clock%16,begin=[.2,2.6,5][i],accent=reduced.matches||paused?0:ease((phase-begin)/.8)*(1-ease((phase-begin-1.4)/.9));el.style.transform='translate3d(0,'+((1-p)*.82-accent*.035)+'em,0)';el.style.opacity=String(.12+.88*p);el.style.setProperty('--accent-progress',String(accent));});
+ if(headline)lines.forEach((el,i)=>{const p=wordProgress[i];el.style.transform='translate3d(0,'+((1-p)*.82)+'em,0)';el.style.opacity=String(.12+.88*p);});
  const idle=0,view=clamp(scroll),disperse=ease(view*.95);
  const yaw=mix(-.88,.98,ease(t/6.8))+.22*Math.sin(idle*.23)+pointerX*.2;
  const pitch=mix(.48,-.32,ease((t-.4)/5.8))+.10*Math.sin(idle*.24)+pointerY*.12;
@@ -67,12 +65,13 @@ function draw(t,clock=t){
   x=mix(x,n.x*1.55,disperse);y=mix(y,n.y*1.4,disperse);z=mix(z,n.z*1.3,disperse);
   return {...project(x,y,z,yaw,pitch,roll,scale,cx,cy,dist),n};
  });
- const alpha=(.72+.28*intro)*(1-.72*disperse);
+ const cycle=clock%11,fade=reduced.matches?1:(.15+.85*ease(cycle/.45))*(1-ease((cycle-10.3)/.7));
+ const alpha=fade*(.72+.28*intro)*(1-.72*disperse);
  // Render translucent orbit trails as continuous spatial curves, with depth-dependent line opacity.
  for(let g=0;g<4;g++){
   const radius=83+g*12,tilt=[-.9,-.27,.38,.99][g];ctx.beginPath();
   for(let k=0;k<=100;k++){const a=k/100*TAU,band=radius+7*Math.sin(a*2+g*.55),p=project(band*Math.cos(a),band*Math.sin(a)*Math.cos(tilt),band*Math.sin(a)*Math.sin(tilt),yaw,pitch,roll,scale,cx,cy,dist);if(k)ctx.lineTo(p.x,p.y);else ctx.moveTo(p.x,p.y);}
-  ctx.strokeStyle=palette[g];ctx.globalAlpha=assemble*.065*alpha;ctx.lineWidth=8*scale;ctx.stroke();ctx.globalAlpha=assemble*.28*alpha;ctx.lineWidth=1.15*scale;ctx.stroke();
+  ctx.strokeStyle=palette[g];ctx.globalAlpha=assemble*.22*alpha;ctx.lineWidth=.8*scale;ctx.stroke();
  }
  for(const e of edges){
   const a=pts[e.i],b=pts[e.j],d=Math.hypot(a.x-b.x,a.y-b.y);
@@ -85,27 +84,22 @@ function draw(t,clock=t){
   }
  }
  // The central point represents a decision made from distributed information.
- const core=project(0,0,0,yaw,pitch,roll,scale,cx,cy,dist),coreAlpha=ease((t-4.1)/1.7)*alpha;
- ctx.globalAlpha=coreAlpha*.1;ctx.fillStyle='#199aff';ctx.beginPath();ctx.arc(core.x,core.y,20*scale,0,TAU);ctx.fill();
- ctx.globalAlpha=coreAlpha*.2;ctx.strokeStyle='#199aff';ctx.lineWidth=.7;ctx.beginPath();ctx.arc(core.x,core.y,(23+Math.sin(t*1.25)*1.3)*scale,0,TAU);ctx.stroke();
- ctx.globalAlpha=coreAlpha;ctx.fillStyle='#2c2c2c';ctx.beginPath();ctx.arc(core.x,core.y,5.8*scale,0,TAU);ctx.fill();
- // Back-to-front particle compositing supplies depth without expensive blur or external dependencies.
+ const core=project(0,0,0,yaw,pitch,roll,scale,cx,cy,dist);ctx.globalAlpha=ease((t-4.1)/1.7)*alpha;ctx.fillStyle='#173D55';ctx.beginPath();ctx.arc(core.x,core.y,4.5*scale,0,TAU);ctx.fill();
+ // Flat, solid dots; perspective changes positions only.
  pts.sort((a,b)=>b.z-a.z);
  for(const p of pts){
-  const depth=clamp((180-p.z)/360),radius=Math.max(.8,p.n.size*p.f*scale*(.72+.4*depth));
-  ctx.globalAlpha=alpha*(.33+.67*depth);ctx.fillStyle=p.n.color;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,TAU);ctx.fill();
-  if(depth>.55&&radius>2){ctx.globalAlpha=alpha*.38;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(p.x-radius*.24,p.y-radius*.24,radius*.29,0,TAU);ctx.fill();}
+  const radius=Math.max(1.2,p.n.size*scale);ctx.globalAlpha=alpha;ctx.fillStyle=p.n.color;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,TAU);ctx.fill();
  }
  ctx.globalAlpha=1;
 }
 function frame(now){
- raf=0;if(!visible||document.hidden||reduced.matches||paused){last=0;return;}
+ raf=0;if(!visible||document.hidden||reduced.matches){last=0;return;}
  const dt=last?Math.min(.05,(now-last)/1000):0;last=now;elapsed+=dt;
  const damping=1-Math.exp(-dt*5);pointerX=mix(pointerX,targetX,damping);pointerY=mix(pointerY,targetY,damping);
  scroll=clamp(-hero.getBoundingClientRect().top/Math.max(1,hero.offsetHeight));
  draw(cycleTime(elapsed),elapsed);raf=requestAnimationFrame(frame);
 }
-function activate(){if(!raf&&visible&&!document.hidden&&!reduced.matches&&!paused){last=0;raf=requestAnimationFrame(frame);}}
+function activate(){if(!raf&&visible&&!document.hidden&&!reduced.matches){last=0;raf=requestAnimationFrame(frame);}}
 function resetMotion(){if(raf){cancelAnimationFrame(raf);raf=0;}last=0;if(reduced.matches){pointerX=pointerY=scroll=0;draw(7,20);}else activate();}
 hero.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const b=hero.getBoundingClientRect();targetX=Math.max(-1,Math.min(1,(e.clientX-b.left-b.width/2)/(b.width/2)));targetY=Math.max(-1,Math.min(1,(e.clientY-b.top-b.height/2)/(b.height/2)));},{passive:true});
 hero.addEventListener('pointerleave',()=>{targetX=targetY=0;});
