@@ -371,10 +371,19 @@
           ]
         },
         {
-          "label": "Agent Backbone",
-          "title": "Agent Backbone",
+          "label": "Business operations",
+          "title": "Agent Backbone — Business Operations",
           "paragraphs": [
-            "I designed reusable workflows across **business operations and software development**, covering research, documentation, requirements preparation, task decomposition, work planning and acceptance criteria. The framework incorporated structured inputs, organisational context, validation and human approval."
+            "I designed a reusable agent backbone to reduce repetitive coordination and make organisational knowledge available within everyday workflows. The design used specialised agents, shared skills, structured inputs and outputs, and explicit approval boundaries.",
+            "Business operations use cases included meeting intelligence, research, documentation and follow-up preparation. Agents were designed to produce reviewable outputs rather than execute consequential external actions without approval."
+          ]
+        },
+        {
+          "label": "Software development",
+          "title": "Agent Backbone — Software Development",
+          "paragraphs": [
+            "I defined a workflow connecting the **PRD Creator and Work Planner** agents with Google Drive and Jira. The PRD Creator converts a short Jira request into a draft specification using the team's templates and examples. Human review resolves product decisions before the document is created.",
+            "The Work Planner extracts requirements, creates a reviewable task plan with acceptance criteria and dependencies, checks Jira capabilities and flags unknowns. A separate live integration test created an Epic and two Tasks, linked their dependency and read them back for verification. Approval gates and duplicate detection protect against unintended writes."
           ]
         },
         {
@@ -415,11 +424,11 @@
             "src": "assets/whitetable/assistant.webp",
             "caption": "WhiteTable Intelligence — conversational access to organisational knowledge (internal details masked)"
           },
-          "2": {
+          "3": {
             "src": "assets/whitetable/prd-workflow.webp",
             "caption": "PRD Creator and Work Planner — requirements, human decisions and structured task planning"
           },
-          "3": {
+          "4": {
             "src": "assets/whitetable/architecture.webp",
             "caption": "GrowthOS orchestration, discovery pipeline and human approval boundaries"
           }
@@ -445,7 +454,7 @@
           }
         ],
         "galleries": {
-          "2": {
+          "3": {
             "caption": "Software development workflow — supporting delivery evidence",
             "images": [
               {
@@ -454,7 +463,7 @@
               }
             ]
           },
-          "3": {
+          "4": {
             "caption": "GrowthOS specialist agent catalogue",
             "images": [
               {
@@ -467,7 +476,7 @@
               }
             ]
           },
-          "4": {
+          "5": {
             "caption": "Evaluation evidence and iterative improvement",
             "images": [
               {
@@ -485,7 +494,57 @@
             ]
           }
         },
-        "referenceTitle": "References"
+        "referenceTitle": "References",
+        "frameworks": {
+          "2": {
+            "title": "Reusable agent backbone",
+            "steps": [
+              [
+                "Shared context",
+                "Company knowledge, workflow requirements and reusable skills"
+              ],
+              [
+                "Specialised agents",
+                "Research, meeting intelligence, documentation and operational planning"
+              ],
+              [
+                "Structured handoff",
+                "Reviewable outputs and explicit validation requirements"
+              ],
+              [
+                "Approval boundary",
+                "Human decisions before consequential actions"
+              ]
+            ],
+            "caption": "Summary of the agent backbone design."
+          },
+          "3": {
+            "title": "From request to engineering work",
+            "steps": [
+              [
+                "Jira request",
+                "Identify the problem and required outcome"
+              ],
+              [
+                "PRD Creator",
+                "Draft specification using team context and templates"
+              ],
+              [
+                "Human review",
+                "Resolve product decisions and approve requirements"
+              ],
+              [
+                "Work Planner",
+                "Decompose requirements into tasks, acceptance criteria and dependencies"
+              ],
+              [
+                "Jira integration",
+                "Approved creation and read-back verification"
+              ]
+            ],
+            "caption": "PRD Creator and Work Planner workflow."
+          }
+        }
       }
     },
     {
