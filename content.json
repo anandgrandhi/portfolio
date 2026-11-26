@@ -562,6 +562,124 @@
       "companyUrl": "https://whitetable.ai/",
       "engagement": "GrowthOS · reference prototype",
       "evidenceType": "Prototype evidence"
+    },
+    {
+      "company": "ARCHMATION",
+      "organisation": "ARCHMATION",
+      "title": "Transforming creative production with generative AI",
+      "metric": "11",
+      "unit": "workflows",
+      "problem": "Developed 11 specialised workflows for product photography, video production, virtual try-on, garment replacement, architectural visualisation and 3D assets.",
+      "summary": "Developed 11 specialised workflows for product photography, video production, virtual try-on, garment replacement, architectural visualisation and 3D assets.",
+      "outcome": "",
+      "status": "",
+      "images": [],
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Transforming creative production with generative AI",
+          "paragraphs": [
+            "Developed 11 specialised workflows for product photography, video production, virtual try-on, garment replacement, architectural visualisation and 3D assets.",
+            "Applications ranged from publication-ready assets to internal design workflows, campaign exploration and client briefs.",
+            "Built using ComfyUI, ControlNet, LoRA and generative video models. Many of these workflows were in commercial demand at the time and have since been superseded by newer models.",
+            "11 workflows · 45% reduction in video production costs"
+          ]
+        }
+      ],
+      "secondary": true
+    },
+    {
+      "company": "Amazon",
+      "organisation": "Amazon",
+      "title": "Turning complex data into actionable decisions",
+      "metric": "",
+      "unit": "",
+      "problem": "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
+      "summary": "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
+      "outcome": "",
+      "status": "",
+      "images": [],
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Turning complex data into actionable decisions",
+          "paragraphs": [
+            "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
+            "Owned the product requirements, metric definitions, information architecture and dashboard design. Worked with engineering and design teams to connect these insights to lesson planning, cohort-level decisions and individual interventions."
+          ]
+        }
+      ],
+      "secondary": true
+    },
+    {
+      "company": "ARCHMATION",
+      "organisation": "ARCHMATION",
+      "title": "Building a unified operating system for creative teams",
+      "metric": "",
+      "unit": "",
+      "problem": "Built an Airtable-based system to manage client briefs, project schedules, resource allocation, production tasks and approvals.",
+      "summary": "Built an Airtable-based system to manage client briefs, project schedules, resource allocation, production tasks and approvals.",
+      "outcome": "",
+      "status": "",
+      "images": [],
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Building a unified operating system for creative teams",
+          "paragraphs": [
+            "Built an Airtable-based system to manage client briefs, project schedules, resource allocation, production tasks and approvals.",
+            "Designed the database structure, interfaces, automated notifications and review workflows. Connected client requirements, internal teams and external vendors within a single workspace."
+          ]
+        }
+      ],
+      "secondary": true
+    },
+    {
+      "company": "Amazon",
+      "organisation": "Amazon",
+      "title": "Designing personalised and adaptive user journeys",
+      "metric": "",
+      "unit": "",
+      "problem": "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
+      "summary": "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
+      "outcome": "",
+      "status": "",
+      "images": [],
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Designing personalised and adaptive user journeys",
+          "paragraphs": [
+            "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
+            "Defined diagnostic assessments, recommendation logic, content sequencing, mastery requirements and intervention rules. Used knowledge graphs to map prerequisites and guide progression through different learning pathways."
+          ]
+        }
+      ],
+      "secondary": true
+    },
+    {
+      "company": "Amazon",
+      "organisation": "Amazon",
+      "title": "Streamlining operations and improving efficiency at scale",
+      "metric": "−40%",
+      "unit": "publishing turnaround time",
+      "problem": "Redesigned editorial production and quality assessment processes across multiple content formats.",
+      "summary": "Redesigned editorial production and quality assessment processes across multiple content formats.",
+      "outcome": "",
+      "status": "",
+      "images": [],
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Streamlining operations and improving efficiency at scale",
+          "paragraphs": [
+            "Redesigned editorial production and quality assessment processes across multiple content formats.",
+            "Developed evaluation rubrics, error taxonomies, automated validation rules and structured feedback mechanisms. Explored ML-assisted defect classification and used recurring quality issues to inform creator training.",
+            "35% → 82% first-draft acceptance · 8 → 3 review iterations · 40% reduction in publishing turnaround time · 98% editorial accuracy"
+          ]
+        }
+      ],
+      "secondary": true
     }
   ],
   "jobs": [
