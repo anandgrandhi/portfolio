@@ -2,7 +2,7 @@
   "intro": [
     "I’m Anand Grandhi. I work at the intersection of product strategy, business operations and <strong class='blue'>applied AI.</strong>",
     "I joined <strong class='blue'>BYJU’S</strong> in 2015, before its flagship learning app launched, and helped build and scale its learning products during five years of rapid growth. At <strong class='blue'>Amazon</strong>, I worked on product adoption, customer experience and operational transformation.",
-    "Today, through <strong class='blue'>Archmation</strong>, I apply that experience to intelligent workflows and complex business problems."
+    "Today, through <strong class='blue'>Archmation</strong>, I design intelligent workflows and AI solutions for complex business problems."
   ],
   "projects": [
     {
@@ -131,7 +131,7 @@
       "problem": "Scaling individual university admissions counselling requires reducing repetitive documentation and planning effort without compromising personalisation or counsellor judgement.",
       "discovery": "I examined student profiling, consultations, documentation, planning and follow-ups to identify opportunities for context-aware decision support.",
       "decision": "I defined three connected capabilities: Transcript Intelligence, Intelligent Counselor Workbook and Personalized Student Planning Engine.",
-      "approach": "During an approximately 40-day paid advisory engagement, I developed product strategy, workflow requirements, decision logic, evaluation requirements and implementation planning. The planning engine proposes feasible next steps based on goals, eligibility, prerequisites and time constraints.",
+      "approach": "I developed product strategy, workflow requirements, decision logic, evaluation requirements and implementation planning. The planning engine proposes feasible next steps based on goals, eligibility, prerequisites and time constraints.",
       "assurance": "Source traceability, privacy, incomplete or contradictory information, feasible recommendations and counsellor approval were explicit product requirements.",
       "outcome": "The advisory deliverables define an interconnected product architecture and implementation direction for Athena’s teams. Deployment and commercial impact are not claimed.",
       "status": "AI product strategy & advisory",
@@ -177,7 +177,7 @@
           "label": "Deliverables",
           "title": "Consulting deliverables",
           "paragraphs": [
-            "The approximately 40-day paid advisory engagement covered **product strategy, workflow redesign, functional specifications, decision requirements and evaluation design**, alongside an implementation roadmap for Athena’s technical teams. The deliverables establish the proposed product and implementation direction."
+            "My advisory work covered **product strategy, workflow redesign, functional specifications, decision requirements and evaluation design**, alongside an implementation roadmap for Athena’s technical teams. The deliverables establish the proposed product and implementation direction."
           ]
         }
       ],
@@ -189,8 +189,8 @@
         "title": "Counselling intelligence",
         "subtitle": "AI product strategy for scaling personalised counselling",
         "meta": "2026 · Paid advisory engagement",
-        "metric": "~40 days",
-        "metricLabel": "Consulting engagement",
+        "metric": "3",
+        "metricLabel": "Connected product capabilities",
         "artifacts": {
           "2": {
             "caption": "Proposed AI-enabled counsellor workflow",
@@ -201,16 +201,7 @@
             "kind": "Product architecture"
           }
         },
-        "stats": [
-          [
-            "3",
-            "Connected product capabilities"
-          ],
-          [
-            "40 days",
-            "Approximate engagement duration"
-          ]
-        ],
+        "stats": [],
         "sources": [
           {
             "label": "Athena · official admissions journey",
