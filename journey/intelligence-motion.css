@@ -7,3 +7,13 @@
 #top.relate-hero .hero-inner{gap:12px;padding-block:45px 60px}
 @media(max-width:800px){#top.relate-hero .relate-symbol.intelligence-scene{width:min(100%,390px);height:clamp(195px,58vw,260px)}#top.relate-hero .hero-inner{gap:16px;padding-block:38px 55px}}
 @media(prefers-reduced-motion:reduce){#top.relate-hero .relate-symbol.intelligence-scene{animation:none!important}}
+
+/* Kinetic typography: the complete headline stays in the document and ends in a stable composition. */
+#top .kinetic-headline{max-width:840px;margin-inline:auto;font-size:clamp(30px,3.45vw,49px);line-height:1.19;letter-spacing:-.041em}
+#top .kinetic-line{display:block;overflow:hidden;padding:0 0 .08em;margin:0 0 -.08em}
+#top .kinetic-line>span{display:inline-block;will-change:transform,opacity}
+#top.relate-hero .hero-copy{max-width:min(880px,100%);width:100%}
+#top.relate-hero .relate-symbol.intelligence-scene{width:min(100%,570px);height:clamp(220px,30vw,355px)}
+#top.relate-hero .hero-inner{gap:8px;padding-block:32px 48px}
+@media(max-width:800px){#top .kinetic-headline{font-size:clamp(26px,6.2vw,39px);line-height:1.2}#top .kinetic-line{display:inline;overflow:visible}#top .kinetic-line>span{display:inline}#top.relate-hero .relate-symbol.intelligence-scene{width:min(100%,390px);height:clamp(195px,56vw,260px)}}
+@media(prefers-reduced-motion:reduce){#top .kinetic-line>span{transform:none!important;opacity:1!important}}

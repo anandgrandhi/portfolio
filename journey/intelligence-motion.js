@@ -8,9 +8,10 @@ if(!ctx)return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 canvas.setAttribute('aria-hidden','true');canvas.className='intelligence-canvas';
 mount.append(canvas);mount.classList.add('intelligence-scene');
+const headline=hero.querySelector('.kinetic-headline');const lines=[...hero.querySelectorAll('.kinetic-line>span')];
 const TAU=Math.PI*2,clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*x*(x*(6*x-15)+10)},mix=(a,b,t)=>a+(b-a)*t;
 const palette=['#199aff','#fe5241','#e1b600','#709942'];
-const count=144,per=36,rand=i=>{const x=Math.sin(i*127.1+78.233)*43758.5453;return x-Math.floor(x)};
+const count=192,per=48,rand=i=>{const x=Math.sin(i*127.1+78.233)*43758.5453;return x-Math.floor(x)};
 const particles=Array.from({length:count},(_,i)=>{
  const g=Math.floor(i/per),k=i%per,a=k*2.3999632297,b=Math.acos(1-2*(k+.5)/per),phase=rand(i+400)*TAU;
  const v=Math.acos(1-2*(i+.5)/count),u=i*2.3999632297;
@@ -35,12 +36,14 @@ function resize(){
 }
 function draw(t){
  if(!w||!h)return;
- const settled=ease((t-6.2)/2.7),organise=ease((t-.5)/3.2),assemble=ease((t-3.4)/3.7),intro=ease(t/.7);
- const idle=Math.max(0,t-9),view=clamp(scroll),disperse=ease(view*.95);
- const yaw=mix(-.78,1.45,ease(t/8.5))+.16*Math.sin(idle*.35)+pointerX*.22;
- const pitch=mix(.49,-.24,ease((t-.6)/5.8))+.09*Math.sin(idle*.28)+pointerY*.14;
+ const settled=ease((t-4.6)/2.4),organise=ease((t-.3)/2.3),assemble=ease((t-2.4)/3.3),intro=ease(t/.6);
+ const wordProgress=[ease((t-.08)/.85),ease((t-.3)/.95),ease((t-.55)/1.05)];
+ if(headline)lines.forEach((el,i)=>{const p=wordProgress[i];el.style.transform='translate3d(0,'+((1-p)*.82)+'em,0)';el.style.opacity=String(.12+.88*p)});
+ const idle=Math.max(0,t-7),view=clamp(scroll),disperse=ease(view*.95);
+ const yaw=mix(-.88,.98,ease(t/6.8))+.22*Math.sin(idle*.23)+pointerX*.2;
+ const pitch=mix(.48,-.32,ease((t-.4)/5.8))+.10*Math.sin(idle*.24)+pointerY*.12;
  const roll=mix(-.19,.06,ease(t/7.5));
- const scale=Math.min(w/420,h/310)*mix(1.25,.96,ease(t/3.7))*(1-.19*disperse);
+ const scale=Math.min(w/380,h/300)*mix(1.12,1.04,ease(t/3.4))*(1-.16*disperse);
  const cx=w/2,cy=h/2+view*9,dist=mix(430,670,ease(t/4.1));
  ctx.clearRect(0,0,w,h);
  const pts=particles.map(n=>{
@@ -48,10 +51,10 @@ function draw(t){
   const tx=Math.cos(groupAngle)*clusterRadius+Math.sin(n.b)*Math.cos(n.a)*29;
   const ty=Math.sin(groupAngle)*clusterRadius+Math.cos(n.b)*29;
   const tz=Math.sin(n.b)*Math.sin(n.a)*29;
-  const p=ease((t-.5-n.delay)/2.9),q=ease((t-3.3-n.delay)/3.4);
+  const p=ease((t-.25-n.delay)/2.15),q=ease((t-2.35-n.delay)/3.1);
   const a=n.k/per*TAU+n.g*.14,tilt=[-.9,-.27,.38,.99][n.g],radius=83+n.g*12;
-  const orbitPhase=a+.025*Math.sin(idle*.65+n.phase);
-  const ox=radius*Math.cos(orbitPhase),oy=radius*Math.sin(orbitPhase)*Math.cos(tilt),oz=radius*Math.sin(orbitPhase)*Math.sin(tilt);
+  const orbitPhase=a+.09*Math.sin(idle*.24+n.g)+.018*Math.sin(idle*.65+n.phase);
+  const turn=orbitPhase*2+n.g*.55,band=radius+7*Math.sin(turn);const ox=band*Math.cos(orbitPhase),oy=band*Math.sin(orbitPhase)*Math.cos(tilt),oz=band*Math.sin(orbitPhase)*Math.sin(tilt);
   const drift=(1-p)*10+p*(1-q)*3+settled*1.25;
   let x=mix(n.x,tx,p),y=mix(n.y,ty,p),z=mix(n.z,tz,p);
   x=mix(x,ox,q)+Math.sin(t*.83+n.phase)*drift;
@@ -64,13 +67,13 @@ function draw(t){
  // Render translucent orbit trails as continuous spatial curves, with depth-dependent line opacity.
  for(let g=0;g<4;g++){
   const radius=83+g*12,tilt=[-.9,-.27,.38,.99][g];ctx.beginPath();
-  for(let k=0;k<=100;k++){const a=k/100*TAU,p=project(radius*Math.cos(a),radius*Math.sin(a)*Math.cos(tilt),radius*Math.sin(a)*Math.sin(tilt),yaw,pitch,roll,scale,cx,cy,dist);if(k)ctx.lineTo(p.x,p.y);else ctx.moveTo(p.x,p.y);}
-  ctx.strokeStyle=palette[g];ctx.globalAlpha=assemble*.12*alpha;ctx.lineWidth=.7;ctx.stroke();
+  for(let k=0;k<=100;k++){const a=k/100*TAU,band=radius+7*Math.sin(a*2+g*.55),p=project(band*Math.cos(a),band*Math.sin(a)*Math.cos(tilt),band*Math.sin(a)*Math.sin(tilt),yaw,pitch,roll,scale,cx,cy,dist);if(k)ctx.lineTo(p.x,p.y);else ctx.moveTo(p.x,p.y);}
+  ctx.strokeStyle=palette[g];ctx.globalAlpha=assemble*.065*alpha;ctx.lineWidth=8*scale;ctx.stroke();ctx.globalAlpha=assemble*.28*alpha;ctx.lineWidth=1.15*scale;ctx.stroke();
  }
  for(const e of edges){
   const a=pts[e.i],b=pts[e.j],d=Math.hypot(a.x-b.x,a.y-b.y);
   const fade=e.kind===0?mix(.16,.48,assemble)*organise:e.kind===1?.16*organise*(1-.7*assemble):.12*assemble;
-  const reveal=ease((t-2.1-e.phase*1.4)/2.2);
+  const reveal=ease((t-1.35-e.phase*1.2)/1.8);
   if(d>Math.min(w,h)*.83)continue;
   ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(mix(a.x,b.x,reveal),mix(a.y,b.y,reveal));ctx.lineWidth=e.kind===0?.8:.55;ctx.strokeStyle=e.kind===2?'#81909f':a.n.color;ctx.globalAlpha=fade*reveal*alpha*clamp(1-(a.z+b.z)/520);ctx.stroke();
   if(e.kind===0&&e.i%4===0&&assemble>.15){
@@ -78,7 +81,7 @@ function draw(t){
   }
  }
  // The central point represents a decision made from distributed information.
- const core=project(0,0,0,yaw,pitch,roll,scale,cx,cy,dist),coreAlpha=ease((t-5.6)/2.2)*alpha;
+ const core=project(0,0,0,yaw,pitch,roll,scale,cx,cy,dist),coreAlpha=ease((t-4.1)/1.7)*alpha;
  ctx.globalAlpha=coreAlpha*.1;ctx.fillStyle='#199aff';ctx.beginPath();ctx.arc(core.x,core.y,20*scale,0,TAU);ctx.fill();
  ctx.globalAlpha=coreAlpha*.2;ctx.strokeStyle='#199aff';ctx.lineWidth=.7;ctx.beginPath();ctx.arc(core.x,core.y,(23+Math.sin(t*1.25)*1.3)*scale,0,TAU);ctx.stroke();
  ctx.globalAlpha=coreAlpha;ctx.fillStyle='#2c2c2c';ctx.beginPath();ctx.arc(core.x,core.y,5.8*scale,0,TAU);ctx.fill();
@@ -87,7 +90,7 @@ function draw(t){
  for(const p of pts){
   const depth=clamp((180-p.z)/360),radius=Math.max(.8,p.n.size*p.f*scale*(.72+.4*depth));
   ctx.globalAlpha=alpha*(.33+.67*depth);ctx.fillStyle=p.n.color;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,TAU);ctx.fill();
-  if(depth>.65&&radius>2.2){ctx.globalAlpha=alpha*.21;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(p.x-radius*.24,p.y-radius*.24,radius*.3,0,TAU);ctx.fill();}
+  if(depth>.55&&radius>2){ctx.globalAlpha=alpha*.38;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(p.x-radius*.24,p.y-radius*.24,radius*.29,0,TAU);ctx.fill();}
  }
  ctx.globalAlpha=1;
 }
