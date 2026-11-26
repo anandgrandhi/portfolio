@@ -1166,7 +1166,51 @@
         "metric": "",
         "metricLabel": "",
         "hideReferences": true,
-        "sources": []
+        "sources": [],
+        "galleries": {
+          "1": {
+            "caption": "Collateral Flow — request intake, production and approvals",
+            "images": [
+              {
+                "src": "assets/archmation-operations/request-form.webp",
+                "title": "Structured request intake"
+              },
+              {
+                "src": "assets/archmation-operations/brief-validation.webp",
+                "title": "Brief completeness and missing information"
+              },
+              {
+                "src": "assets/archmation-operations/request-review.webp",
+                "title": "Flagged requests for review"
+              },
+              {
+                "src": "assets/archmation-operations/production-board.webp",
+                "title": "Production status and estimated effort"
+              },
+              {
+                "src": "assets/archmation-operations/approval-management.webp",
+                "title": "Linked approval rounds and invoicing"
+              }
+            ]
+          },
+          "2": {
+            "caption": "Marketing Visual Library — discovery and AI enrichment",
+            "images": [
+              {
+                "src": "assets/archmation-operations/asset-gallery.webp",
+                "title": "Visual asset gallery"
+              },
+              {
+                "src": "assets/archmation-operations/asset-categories.webp",
+                "title": "Category-based browsing"
+              },
+              {
+                "src": "assets/archmation-operations/asset-enrichment.webp",
+                "title": "AI-assisted summaries and suggested categories"
+              }
+            ]
+          }
+        }
       }
     },
     {
