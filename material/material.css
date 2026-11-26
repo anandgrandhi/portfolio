@@ -1,0 +1,106 @@
+/* Independent Material 3 Expressive visual system. Shared scroll and case controllers unchanged. */
+:root{
+ --m-bg:#fcf8fd;--m-surface:#f5f0f8;--m-low:#eee9f3;--m-mid:#e5dfed;--m-high:#ded8e9;--m-ink:#292630;--m-muted:#645f6d;--m-primary:#66518d;--m-primary-container:#ddd2f7;--m-outline:#d5cedc;--m-edge:rgba(55,44,68,.10);
+ --m-large:32px;--m-medium:24px;--m-small:16px;
+ --m-elevated:0 2px 3px rgba(43,30,54,.12),0 5px 10px rgba(43,30,54,.10);
+ --m-modal:0 3px 6px rgba(43,30,54,.13),0 16px 36px rgba(43,30,54,.16);
+ --bg:var(--m-bg);--ink:var(--m-ink);--muted:var(--m-muted);--line:var(--m-outline);--surface:var(--m-surface);--primary:var(--m-primary);--depth-shadow:var(--m-elevated);
+}
+html body.material-portfolio{background:var(--m-bg);color:var(--m-ink)}
+body.material-portfolio>header{background:var(--m-surface);border-bottom:0;box-shadow:none}
+body.material-portfolio>header nav{gap:4px;background:var(--m-mid);padding:4px;border-radius:999px}
+body.material-portfolio>header nav a{padding:8px 18px;border-radius:999px;transition:background .18s;color:var(--m-ink)}
+body.material-portfolio>header nav a:hover,body.material-portfolio>header nav a:focus-visible{background:var(--m-primary-container);text-decoration:none}
+body.material-portfolio .hero.wrap.hero-reel{background:var(--m-bg);overflow:visible}
+body.material-portfolio .hero-reel .hero-inner{
+ background:#e2dff4;border-radius:40px;position:relative;isolation:isolate;
+ width:calc(100% - 2 * var(--pad));max-width:1240px;
+ min-height:calc(88svh - 65px);margin:20px auto 0;
+ padding:clamp(50px,7vw,100px) clamp(26px,7vw,112px);
+}
+body.material-portfolio .hero-reel .hero-inner:before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;overflow:hidden;background:radial-gradient(ellipse at 95% 0%,#cfc4ed 0 23%,transparent 23.4%),radial-gradient(ellipse at 0% 100%,#d4e2c7 0 18%,transparent 18.4%);pointer-events:none}
+body.material-portfolio .relate-hero .hero-copy{max-width:790px}
+body.material-portfolio .relate-symbol{padding:14px;border-radius:36px;background:#f5f0fa;box-shadow:var(--m-elevated)}
+body.material-portfolio .relate-symbol svg>circle{fill:#69548e;filter:none}
+body.material-portfolio .relate-symbol .relate-orbit circle{fill:#8d79bd}
+body.material-portfolio .relate-start{background:#66518d;color:white;border-radius:999px;padding:13px 24px;border:0;box-shadow:var(--m-elevated)}
+body.material-portfolio .relate-start:hover{background:#58437e;text-decoration:none}
+body.material-portfolio .about-bridge{background:var(--m-bg)}
+body.material-portfolio .about-bridge .hero-sub{background:#f0edf4;padding:clamp(22px,4vw,42px);border-radius:32px;color:var(--m-muted)}
+body.material-portfolio .about-bridge a{color:#4e3b72;text-decoration:underline;text-underline-offset:4px}
+body.material-portfolio .work,body.material-portfolio .career,body.material-portfolio .exploring{background:transparent}
+body.material-portfolio .pill{background:var(--m-primary-container);border-radius:999px;color:#493568;padding:7px 17px}
+body.material-portfolio .canvas,body.material-portfolio .mobileart{border-radius:32px;outline:1px solid var(--m-edge);outline-offset:-1px;box-shadow:none;overflow:hidden}
+body.material-portfolio .scene-ready .canvas:hover{box-shadow:none}
+body.material-portfolio.scene-ready .canvas:hover{box-shadow:none}
+body.material-portfolio .canvas svg rect,body.material-portfolio .mobileart svg rect{stroke:rgba(53,43,66,.07);stroke-width:.65}
+body.material-portfolio .canvas svg .signal-card rect,body.material-portfolio .mobileart svg .signal-card rect{filter:drop-shadow(0 2px 2px rgba(43,30,54,.14))}
+body.material-portfolio .canvas svg .phone-body,body.material-portfolio .mobileart svg .phone-body{filter:drop-shadow(0 4px 4px rgba(43,30,54,.15))}
+body.material-portfolio .stage-bottom{background:var(--m-low);padding:12px 17px;border-radius:999px;margin-top:15px;color:var(--m-muted)}
+body.material-portfolio .stepnav a{background:var(--m-mid);height:6px;border-radius:999px}
+body.material-portfolio .stepnav a.active{background:var(--m-primary)}
+body.material-portfolio .chapter{border-top-color:var(--m-outline)}
+body.material-portfolio .chapter .meta .num{background:var(--m-primary-container);border-radius:50%;width:30px;height:30px;display:inline-grid;place-items:center;color:#4e3b72}
+body.material-portfolio .chapter .case-launch{background:var(--m-primary-container);color:#473567;border:0;box-shadow:none;border-radius:999px;padding:12px 22px}
+body.material-portfolio .chapter .case-launch:hover{background:#d0c2ef;box-shadow:var(--m-elevated)}
+body.material-portfolio .craft-index{border:0;background:var(--m-low);border-radius:28px;padding:0 16px}
+body.material-portfolio .craft-index summary{border:0;padding:18px 8px}
+body.material-portfolio .craft-index-list{gap:5px;padding-bottom:12px}
+body.material-portfolio .craft-project{border-radius:20px;background:#faf7fc}
+body.material-portfolio .craft-project:hover{background:var(--m-primary-container)}
+body.material-portfolio .more{border-top-color:var(--m-outline)}
+body.material-portfolio #more{display:flex;flex-direction:column;gap:5px}
+body.material-portfolio #more .linked-project-row{background:var(--m-low);border:0;border-radius:9px;padding:0 20px}
+body.material-portfolio #more .linked-project-row:first-child{border-radius:26px 26px 9px 9px}
+body.material-portfolio #more .linked-project-row:last-child{border-radius:9px 9px 26px 26px}
+body.material-portfolio #more .linked-project-row:focus-within,body.material-portfolio #more .linked-project-row:hover{background:var(--m-mid)}
+body.material-portfolio #more .case-launch{background:transparent}
+body.material-portfolio .era-jumps a{background:var(--m-low);border:0;border-radius:999px;padding:10px 18px}
+body.material-portfolio .era-jumps a:hover{background:var(--m-primary-container);text-decoration:none}
+body.material-portfolio .era-illustration{border-radius:32px;background:#e2dff4;min-height:210px}
+body.material-portfolio .era-row:nth-child(2) .era-illustration{background:#d8e5cb}
+body.material-portfolio .era-row:nth-child(3) .era-illustration{background:#f9d9da}
+body.material-portfolio .era-row:nth-child(4) .era-illustration{background:#d4e8f5}
+body.material-portfolio .era-illustration>svg:not(.motion-orbit){filter:none}
+body.material-portfolio .exploring-topic{background:var(--m-low);border:0;border-radius:26px;padding:25px}
+body.material-portfolio footer{background:var(--m-low);border-top:0}
+body.material-portfolio dialog#caseViewer{background:var(--m-surface);border:1px solid var(--m-edge);border-radius:32px;box-shadow:var(--m-modal)}
+body.material-portfolio dialog#caseViewer::backdrop{background:rgba(35,29,44,.35);backdrop-filter:blur(7px)}
+body.material-portfolio #caseViewer .cv-header,body.material-portfolio #caseViewer .cv-footer{background:var(--m-low);border:0}
+body.material-portfolio #caseViewer .cv-close,body.material-portfolio #caseViewer .cv-arrow:not(:disabled){background:var(--m-primary-container);border:0;color:#493568;box-shadow:none}
+body.material-portfolio #caseViewer .cv-close:hover,body.material-portfolio #caseViewer .cv-arrow:not(:disabled):hover{box-shadow:var(--m-elevated)}
+body.material-portfolio #caseViewer .cv-article-layout{gap:clamp(18px,3vw,44px)}
+body.material-portfolio #caseViewer .cv-article-nav{background:var(--m-low);padding:14px 8px;border-radius:28px}
+body.material-portfolio #caseViewer .cv-article-nav>span{padding-left:10px}
+body.material-portfolio #caseViewer .cv-article-nav button{border:0;border-radius:999px;opacity:1;color:var(--m-muted)}
+body.material-portfolio #caseViewer .cv-article-nav button[aria-current]{background:var(--m-primary-container);color:#473567}
+body.material-portfolio #caseViewer .cv-article-nav button:hover{background:var(--m-mid)}
+body.material-portfolio #caseViewer .cv-article{background:#fff;border-radius:28px;padding:clamp(22px,3vw,40px)}
+body.material-portfolio #caseViewer .cv-article-intro{background:#e2dff4;padding:28px!important;border:0;border-radius:26px}
+body.material-portfolio #caseViewer .cv-article-hero-metric{background:#f8f5fc;padding:18px;border-radius:20px;box-shadow:none}
+body.material-portfolio #caseViewer .cv-article-placeholder{background:#f0edf6;border:1px solid #e0d9e9;border-radius:24px}
+body.material-portfolio #caseViewer .cv-article-metrics>div{background:#e9efdf;border-radius:20px;padding:14px;min-width:0}
+body.material-portfolio #caseViewer .cv-article-metrics>div:nth-child(2){background:#e7e0f0}
+body.material-portfolio #caseViewer .cv-article-metrics>div:nth-child(3){background:#e0edf6}
+body.material-portfolio #caseViewer .cv-page.cv-text-only>div:first-child{background:white;padding:clamp(20px,3vw,36px);border-radius:28px}
+body.material-portfolio #caseViewer .cv-steps button{border-radius:999px}
+body.material-portfolio #caseViewer .cv-steps button.active{background:var(--m-primary-container)!important;color:#473567}
+body.material-portfolio .cv-kicker{background:var(--m-primary-container);color:#473567}
+body.material-portfolio a:focus-visible,body.material-portfolio button:focus-visible{outline:2px solid var(--m-primary);outline-offset:4px}
+@media(max-width:800px){
+ body.material-portfolio>header nav a{padding:6px 9px}
+ body.material-portfolio .hero-reel .hero-inner{width:calc(100% - 24px);border-radius:30px;min-height:0;padding:50px 20px}
+ body.material-portfolio .hero-reel .hero-inner:before{opacity:.55}
+ body.material-portfolio .relate-symbol{padding:8px;border-radius:28px}
+ body.material-portfolio .about-bridge .hero-sub{padding:20px;border-radius:24px}
+ body.material-portfolio .mobileart{border-radius:28px;box-shadow:none}
+ body.material-portfolio .era-illustration{min-height:0;border-radius:24px;padding:8px}
+ body.material-portfolio #more .linked-project-row{padding:0 10px}
+ body.material-portfolio dialog#caseViewer{border-radius:0;border:0}
+ body.material-portfolio #caseViewer .cv-article{padding:16px}
+ body.material-portfolio #caseViewer .cv-article-intro{padding:18px!important}
+ body.material-portfolio #caseViewer .cv-article-layout{padding:12px}
+ body.material-portfolio #caseViewer .cv-article-nav{padding:6px;margin-bottom:12px}
+ body.material-portfolio #caseViewer .cv-article-metrics>div{padding:8px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
