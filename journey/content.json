@@ -1233,8 +1233,31 @@
             "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
             "Defined diagnostic assessments, recommendation logic, content sequencing, mastery requirements and intervention rules. Used knowledge graphs to map prerequisites and guide progression through different learning pathways."
           ]
+        },
+        {
+          "label": "Learning pathways",
+          "title": "Different routes for different learning needs",
+          "paragraphs": [
+            "Defined persona-based pathways for Momentum, Consolidator, Explorer and Struggler learners, adapting the sequence and difficulty of learning activities to their needs.",
+            "Used diagnostic checkpoints, prerequisite relationships and remediation rules to guide progression. Strict mastery requirements and softer checkpoints served different learning objectives."
+          ]
         }
-      ]
+      ],
+      "article": {
+        "title": "Designing personalised and adaptive user journeys",
+        "subtitle": "Knowledge graphs, diagnostic assessments and personalised pathways",
+        "meta": "Amazon · Product design",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": [],
+        "artifacts": {
+          "0": {
+            "src": "assets/daily-digest/product-flow.webp",
+            "caption": "Learning activities and pathways to further practice — Amazon product context"
+          }
+        }
+      }
     },
     {
       "company": "Amazon",
@@ -1261,7 +1284,40 @@
             "98% — Editorial accuracy"
           ]
         }
-      ]
+      ],
+      "article": {
+        "title": "Streamlining operations and improving efficiency at scale",
+        "subtitle": "Quality systems and scalable editorial operations",
+        "meta": "Amazon · Operations",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": [],
+        "stats": [
+          [
+            "35% → 82%",
+            "First-draft acceptance"
+          ],
+          [
+            "8 → 3",
+            "Review iterations"
+          ],
+          [
+            "40%",
+            "Reduction in publishing turnaround time"
+          ],
+          [
+            "98%",
+            "Editorial accuracy"
+          ]
+        ],
+        "artifacts": {
+          "0": {
+            "src": "assets/daily-digest/learning-tips.webp",
+            "caption": "Example of Amazon learning content"
+          }
+        }
+      }
     }
   ],
   "jobs": [
