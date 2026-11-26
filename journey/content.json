@@ -38,7 +38,8 @@
           "label": "Behavioural science",
           "title": "Behavioural science",
           "paragraphs": [
-            "I incorporated **habit formation, contextual nudges, cognitive load reduction and immediate reinforcement** into the experience. Short, achievable activities reduced the effort of getting started; personalised notifications, streaks and progress feedback encouraged regular participation. Notification design considered timing, relevance and customer response."
+            "I drew on behavioural science research, particularly Harry Fletcher-Wood's Habits of Success, to inform the habit formation and notification strategy for Daily Digest. I translated principles of motivation, commitment, action initiation and sustained participation into product interventions: personalised activities increased relevance, short sessions reduced the friction of getting started, and contextual notifications, streaks and progress feedback supported regular participation.",
+            "The objective was not simply to increase notification opens, but to establish a recurring learning behaviour that led to meaningful product usage."
           ]
         },
         {
@@ -76,23 +77,19 @@
         "artifacts": {
           "0": {
             "src": "assets/daily-digest/product-ecosystem.webp",
-            "caption": "Daily Digest alongside practice questions and assessments",
-            "kind": "Original product promotional visual"
+            "caption": "Daily Digest within the learning ecosystem"
           },
           "2": {
             "src": "assets/daily-digest/reminder.webp",
-            "caption": "Reminder and Tip of the Day experience",
-            "kind": "Original product promotional visual"
+            "caption": "Contextual nudges to encourage daily participation"
           },
           "3": {
             "src": "assets/daily-digest/product-flow.webp",
-            "caption": "Entry points, daily activity formats and recommended next steps",
-            "kind": "Original product flow, internal terminology redacted"
+            "caption": "Daily activities and pathways to further practice"
           },
           "4": {
             "src": "assets/daily-digest/learning-tips.webp",
-            "caption": "Learning formats: shortcuts, mnemonics and exam tips",
-            "kind": "Original product promotional visual"
+            "caption": "Microlearning through shortcuts, mnemonics and exam strategies"
           }
         },
         "stats": [
@@ -113,8 +110,41 @@
           {
             "label": "Amazon · official 2021 product launch announcement",
             "url": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations"
+          },
+          {
+            "label": "Harry Fletcher-Wood · Habits of Success: Getting Every Student Learning",
+            "url": "https://improvingteaching.co.uk/habits-of-success/"
           }
-        ]
+        ],
+        "frameworks": {
+          "2": {
+            "title": "Applying behavioural science to Daily Digest",
+            "steps": [
+              [
+                "Identify the desired behaviour",
+                "Regular, meaningful learning activity"
+              ],
+              [
+                "Build motivation",
+                "Relevant exam tips, personalised learning and immediate value"
+              ],
+              [
+                "Encourage commitment",
+                "Daily routines, notification timing and reminders"
+              ],
+              [
+                "Make starting easier",
+                "Short activities, curated tasks and reduced decision effort"
+              ],
+              [
+                "Sustain participation",
+                "Streaks, progress feedback and relevant next actions"
+              ]
+            ],
+            "caption": "Retrospective product synthesis informed by Harry Fletcher-Wood’s Habits of Success."
+          }
+        },
+        "referenceTitle": "References"
       }
     },
     {
