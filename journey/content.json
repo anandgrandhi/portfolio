@@ -835,17 +835,17 @@
           "1": {
             "src": "https://miro.medium.com/v2/resize%3Afit%3A1400/1%2APC7cYhrIRZ1DkdGVDLUZAg.png",
             "caption": "HR onboarding automation with Google Drive",
-            "kind": "Public workflow reference · Nishanthini"
+            "kind": "Workflow example"
           },
           "2": {
             "src": "https://learnn8nautomation.com/images/rag.png",
             "caption": "Document ingestion and retrieval pipeline",
-            "kind": "Public workflow reference · The AI Operator Method"
+            "kind": "Workflow example"
           },
           "3": {
             "src": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png",
             "caption": "Task-tracker alerts using Google Sheets and Gmail",
-            "kind": "Public workflow reference · n8n community template"
+            "kind": "Workflow example"
           }
         },
         "referenceTitle": "References",
@@ -870,7 +870,8 @@
             "label": "n8n · WhatsApp pending-task reminder template",
             "url": "https://n8n.io/workflows/19104-send-daily-whatsapp-task-reminders-from-google-sheets-via-waha/"
           }
-        ]
+        ],
+        "hideReferences": true
       }
     },
     {
