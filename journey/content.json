@@ -875,8 +875,8 @@
       }
     },
     {
-      "company": "Archmation",
-      "organisation": "Archmation",
+      "company": "ARCHMATION",
+      "organisation": "ARCHMATION",
       "companyUrl": "https://archmation.com/about-us",
       "title": "Transforming creative production with generative AI",
       "metric": "",
@@ -893,11 +893,152 @@
           "paragraphs": [
             "Developed 11 specialised workflows for product photography, video production, virtual try-on, garment replacement, architectural visualisation and 3D assets.",
             "Applications ranged from publication-ready assets to internal design workflows, campaign exploration and client briefs.",
-            "Built using ComfyUI, ControlNet, LoRA and generative video models. Many of these workflows were in commercial demand at the time and have since been superseded by newer models.",
-            "11 workflows · 45% reduction in video production costs"
+            "Built using ComfyUI, ControlNet, LoRA and generative video models. Many of these workflows were in commercial demand at the time and have since been superseded by newer models."
+          ]
+        },
+        {
+          "label": "Fashion",
+          "title": "Virtual photoshoots and garment replacement",
+          "paragraphs": [
+            "The workflow uses garment and model references to generate coordinated outfits, multiple poses and product-detail views. This supports catalogue production and creative exploration without rebuilding every scene from scratch."
+          ]
+        },
+        {
+          "label": "Product imagery",
+          "title": "Commercial product and food photography",
+          "paragraphs": [
+            "Separate product assets, background generation, composition, relighting and upscaling into controllable stages. This makes it possible to compare outputs and refine individual elements before final review."
+          ]
+        },
+        {
+          "label": "Furniture",
+          "title": "Lifestyle visualisation and image-to-video",
+          "paragraphs": [
+            "Isolate furniture from reference images, compose products into a scene, generate a contextual room and use the resulting image as an input for camera-motion video generation."
+          ]
+        },
+        {
+          "label": "3D",
+          "title": "Multi-view character and 3D asset production",
+          "paragraphs": [
+            "Generate consistent front, side and rear character views, then compare outputs across image-to-3D models. The workflow supports rapid exploration of candidate assets."
+          ]
+        },
+        {
+          "label": "Experiments",
+          "title": "Creative video and rapid product prototyping",
+          "paragraphs": [
+            "Additional demonstrations explored UGC-style product placement, character replacement in video using ComfyUI and WAN 2.2 Animate, and a text-to-3D CAD interface prototype. Branded examples demonstrate capabilities rather than establish commissioned work for the depicted brands."
           ]
         }
-      ]
+      ],
+      "article": {
+        "title": "Transforming creative production with generative AI",
+        "subtitle": "Repeatable AI workflows for commercial creative production",
+        "meta": "ARCHMATION · Creative technology",
+        "metric": "",
+        "metricLabel": "",
+        "stats": [
+          [
+            "11",
+            "Specialised workflows"
+          ],
+          [
+            "45%",
+            "Reported reduction in video production costs"
+          ]
+        ],
+        "hideReferences": true,
+        "sources": [
+          {
+            "label": "ARCHMATION",
+            "url": "https://archmation.com/about-us"
+          }
+        ],
+        "galleries": {
+          "1": {
+            "caption": "Virtual photography workflows",
+            "images": [
+              {
+                "src": "assets/archmation-creative/virtual-photoshoot.webp",
+                "title": "Garment inputs to multi-pose output demonstration"
+              },
+              {
+                "src": "assets/archmation-creative/fashion-workflow.webp",
+                "title": "Fashion and animation workflow"
+              },
+              {
+                "src": "assets/archmation-creative/sportswear-workflow.webp",
+                "title": "Multi-angle sportswear generation workflow"
+              }
+            ]
+          },
+          "2": {
+            "caption": "Product and food imagery",
+            "images": [
+              {
+                "src": "assets/archmation-creative/food-workflow.webp",
+                "title": "End-to-end commercial composition workflow"
+              },
+              {
+                "src": "assets/archmation-creative/ingredient-composition.webp",
+                "title": "Ingredient generation and isolation"
+              },
+              {
+                "src": "assets/archmation-creative/food-refinement.webp",
+                "title": "Relighting and upscaling comparison"
+              },
+              {
+                "src": "assets/archmation-creative/product-refinement.webp",
+                "title": "Composition and output refinement"
+              }
+            ]
+          },
+          "3": {
+            "caption": "Furniture visualisation",
+            "images": [
+              {
+                "src": "assets/archmation-creative/furniture-workflow.webp",
+                "title": "Product isolation to staged scene and video"
+              },
+              {
+                "src": "assets/archmation-creative/furniture-video.webp",
+                "title": "Alternative furniture staging workflow"
+              }
+            ]
+          },
+          "4": {
+            "caption": "3D asset generation",
+            "images": [
+              {
+                "src": "assets/archmation-creative/character-3d.webp",
+                "title": "Character views and parallel 3D model outputs"
+              },
+              {
+                "src": "assets/archmation-creative/character-3d-alternative.webp",
+                "title": "Alternative character and model comparison"
+              }
+            ]
+          },
+          "5": {
+            "caption": "Selected capability demonstrations",
+            "images": [
+              {
+                "src": "assets/archmation-creative/ugc-demo.webp",
+                "title": "UGC-style product placement demonstration"
+              },
+              {
+                "src": "assets/archmation-creative/character-replacement.webp",
+                "title": "Video character replacement demonstration"
+              },
+              {
+                "src": "assets/archmation-creative/cad-prototype.webp",
+                "title": "Text-to-3D CAD prototype interface"
+              }
+            ]
+          }
+        }
+      }
     },
     {
       "company": "Amazon",
