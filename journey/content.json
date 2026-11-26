@@ -1118,24 +1118,56 @@
       "company": "Archmation",
       "organisation": "Archmation",
       "companyUrl": "https://archmation.com/about-us",
-      "title": "Building a unified operating system for creative teams",
+      "title": "Building an operating system for creative and marketing teams",
       "metric": "",
       "unit": "",
-      "problem": "Built an Airtable-based system to manage client briefs, project schedules, resource allocation, production tasks and approvals.",
-      "summary": "Built an Airtable-based system to manage client briefs, project schedules, resource allocation, production tasks and approvals. Designed the database structure, interfaces, automated notifications and review workflows. Connected client requirements, internal teams and external vendors within a single workspace.",
+      "problem": "Fragmented creative briefs, production tracking, approvals and asset storage created coordination overhead and made work difficult to monitor.",
+      "summary": "Designed two connected operational systems in Airtable: Collateral Flow for managing creative requests through production, approvals and invoicing, and Marketing Visual Library for discovering, organising and reusing creative assets.",
       "status": "",
       "images": [],
       "compact": true,
       "chapters": [
         {
-          "label": "Overview",
-          "title": "Building a unified operating system for creative teams",
+          "label": "Problem",
+          "title": "From fragmented coordination to structured operations",
           "paragraphs": [
-            "Built an Airtable-based system to manage client briefs, project schedules, resource allocation, production tasks and approvals.",
-            "Designed the database structure, interfaces, automated notifications and review workflows. Connected client requirements, internal teams and external vendors within a single workspace."
+            "Fragmented creative briefs, production tracking, approvals and asset storage created coordination overhead and made work difficult to monitor.",
+            "The design focused on improving input quality, making ownership and deadlines visible, recording review decisions and reducing duplicated creative work."
+          ]
+        },
+        {
+          "label": "Collateral Flow",
+          "title": "Managing the creative production lifecycle",
+          "paragraphs": [
+            "Structured request forms capture creative briefs, audience, channels, reference assets, priorities and deadlines. Brief completeness scores and missing-information flags help reviewers identify requests that need clarification before production.",
+            "Production boards connect designer assignment, estimated hours and task status. Approval records track review rounds, decisions and feedback, while linked invoices provide payment-status visibility. Status-triggered email notifications were designed to support handoffs."
+          ]
+        },
+        {
+          "label": "Visual Library",
+          "title": "Making creative assets discoverable and reusable",
+          "paragraphs": [
+            "A centralised marketing visual library organises assets through categories, tags, gallery views and asset details. Download and shareable links support reuse.",
+            "AI-assisted visual summaries and suggested categories support metadata enrichment and classification."
+          ]
+        },
+        {
+          "label": "Operating model",
+          "title": "A single view of work and reusable assets",
+          "paragraphs": [
+            "The two systems address complementary needs: coordination of work in progress and management of reusable creative outputs. The design brings structured information and review checkpoints into everyday creative operations."
           ]
         }
-      ]
+      ],
+      "article": {
+        "title": "Building an operating system for creative and marketing teams",
+        "subtitle": "Collateral Flow and Marketing Visual Library",
+        "meta": "Archmation · Creative operations and workflow intelligence",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": []
+      }
     },
     {
       "company": "Amazon",
