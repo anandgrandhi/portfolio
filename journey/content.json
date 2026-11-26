@@ -74,13 +74,25 @@
         "metric": "35k → 80k+",
         "metricLabel": "Reported daily active users",
         "artifacts": {
+          "0": {
+            "src": "assets/daily-digest/product-ecosystem.webp",
+            "caption": "Daily Digest alongside practice questions and assessments",
+            "kind": "Original product promotional visual"
+          },
           "2": {
-            "caption": "Behavioural design and daily user journey",
-            "kind": "Reconstructed product design"
+            "src": "assets/daily-digest/reminder.webp",
+            "caption": "Reminder and Tip of the Day experience",
+            "kind": "Original product promotional visual"
           },
           "3": {
-            "caption": "Personalisation and recommendation logic",
-            "kind": "Reconstructed product design"
+            "src": "assets/daily-digest/product-flow.webp",
+            "caption": "Entry points, daily activity formats and recommended next steps",
+            "kind": "Original product flow, internal terminology redacted"
+          },
+          "4": {
+            "src": "assets/daily-digest/learning-tips.webp",
+            "caption": "Learning formats: shortcuts, mnemonics and exam tips",
+            "kind": "Original product promotional visual"
           }
         },
         "stats": [
