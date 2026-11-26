@@ -388,7 +388,8 @@
           "label": "Evaluations",
           "title": "Evaluations and reliability",
           "paragraphs": [
-            "I established evaluation requirements for retrieval accuracy, source grounding, task completion, output quality and unsupported claims. Functional prototypes were tested against representative scenarios. Failures informed improvements to retrieval, contextual information, workflow logic and validation rules."
+            "I established evaluation requirements for retrieval accuracy, source grounding, task completion, output quality and unsupported claims. Functional prototypes were tested against representative scenarios. Failures informed improvements to retrieval, contextual information, workflow logic and validation rules.",
+            "The employee assistant passed 26/26 scenarios in a single builder-authored evaluation against the live retrieval pipeline, including 21/21 retrieval and grounded citation checks and 5/5 correct abstentions. Correctness was assessed through required-fact checks, not comprehensive human grading. The GrowthOS scorecard recorded 45/45 deterministic synthetic scenarios; five additional judged or live-agent scenarios were defined but not run. These results describe the tested prototypes, not production performance."
           ]
         },
         {
@@ -410,19 +411,31 @@
         "metric": "",
         "metricLabel": "",
         "artifacts": {
+          "1": {
+            "src": "assets/whitetable/assistant.webp",
+            "caption": "WhiteTable Intelligence — conversational access to organisational knowledge (internal details masked)"
+          },
           "2": {
-            "caption": "Shared organisational knowledge and agent architecture",
-            "kind": "Reference architecture"
+            "src": "assets/whitetable/prd-workflow.webp",
+            "caption": "PRD Creator and Work Planner — requirements, human decisions and structured task planning"
           },
           "3": {
-            "caption": "GrowthOS — customer acquisition and validation workflow",
-            "kind": "Reference prototype"
+            "src": "assets/whitetable/architecture.webp",
+            "caption": "GrowthOS orchestration, discovery pipeline and human approval boundaries"
           }
         },
         "stats": [
           [
             "4",
             "Connected workstreams"
+          ],
+          [
+            "26/26",
+            "Assistant evaluation scenarios"
+          ],
+          [
+            "45/45",
+            "GrowthOS deterministic scenarios"
           ]
         ],
         "sources": [
@@ -430,7 +443,49 @@
             "label": "WhiteTable · company website",
             "url": "https://whitetable.ai/"
           }
-        ]
+        ],
+        "galleries": {
+          "2": {
+            "caption": "Software development workflow — supporting delivery evidence",
+            "images": [
+              {
+                "src": "assets/whitetable/work-planner-board.webp",
+                "title": "Work Planner project board"
+              }
+            ]
+          },
+          "3": {
+            "caption": "GrowthOS specialist agent catalogue",
+            "images": [
+              {
+                "src": "assets/whitetable/agent-catalogue-1.webp",
+                "title": "Coordination, market strategy and lead qualification"
+              },
+              {
+                "src": "assets/whitetable/agent-catalogue-2.webp",
+                "title": "Outreach, CRM, onboarding and growth analysis"
+              }
+            ]
+          },
+          "4": {
+            "caption": "Evaluation evidence and iterative improvement",
+            "images": [
+              {
+                "src": "assets/whitetable/assistant-eval.webp",
+                "title": "Employee assistant evaluation — 26-question test set"
+              },
+              {
+                "src": "assets/whitetable/answer-quality.webp",
+                "title": "Before and after answer quality and retrieval improvements"
+              },
+              {
+                "src": "assets/whitetable/growth-eval.webp",
+                "title": "GrowthOS deterministic guardrail scenarios and evaluation limitations"
+              }
+            ]
+          }
+        },
+        "referenceTitle": "References"
       }
     },
     {
