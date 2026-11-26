@@ -1,6 +1,7 @@
 
 /* Original portfolio motion implementation; architecture inspired by the supplied AI Journey archive. */
 const references={};
+const dailyDigestVisual='<div class="dd-composition"><img class="dd-flow" src="assets/daily-digest/product-flow.webp" alt="Daily Digest product flow"><img class="dd-reminder" src="assets/daily-digest/reminder.webp" alt="Reminder and Tip of the Day product experience"></div>';
 const featuredIds=[0,1,2,3,4];
 let portfolioData=null, visualMode='auto', visualIndex=-1, caseOpener=null, pageIndex=0, pageCount=0, viewerRAF=0;
 const clamp01=x=>Math.max(0,Math.min(1,x));
@@ -22,13 +23,19 @@ function paintVisual(i,force=false){
  $('#visualIllustration')?.setAttribute('aria-pressed',String(mode==='illustration'));
  $('#visualReference')?.setAttribute('aria-pressed',String(mode==='reference'));if($('#visualReference'))$('#visualReference').disabled=!references[id];
 }
+function installDailyDigestVisual(i){
+ const canvas=$('#canvas');canvas.querySelectorAll('.dd-stage').forEach(e=>e.remove());
+ if(i!==0)return;
+ const layer=document.createElement('div');layer.className='dd-stage';layer.innerHTML=dailyDigestVisual;
+ const images=[...layer.querySelectorAll('img')];Promise.all(images.map(img=>img.decode())).then(()=>{if(active!==0)return;canvas.querySelectorAll('.dd-stage').forEach(e=>e.remove());canvas.append(layer)}).catch(()=>{});
+}
 function installVisuals(){
  const stage=$('.stage');if(!stage)return;
  const controls=document.createElement('div');controls.className='visual-toggle';controls.innerHTML='<button id="visualIllustration" type="button">Illustration</button><button id="visualReference" type="button">Reference image</button>';/* Reference controls intentionally omitted; only original conceptual visuals are displayed. */
  controls.querySelector('#visualIllustration').onclick=()=>{visualMode='illustration';paintVisual(active,true)};
  controls.querySelector('#visualReference').onclick=()=>{visualMode='reference';paintVisual(active,true)};
- const original=setActive;setActive=function(i){const changed=i!==active;original(i);if(changed){visualMode='auto';paintVisual(i,true)}};
- paintVisual(active,true);
+ const original=setActive;setActive=function(i){const changed=i!==active;original(i);if(changed){visualMode='auto';paintVisual(i,true);installDailyDigestVisual(i)}};
+ paintVisual(active,true);installDailyDigestVisual(active);
 }
 const dialogMarkup='<dialog id="caseViewer" aria-labelledby="cvTitle"><div class="cv-header"><div class="cv-company" id="cvCompany"></div><button class="cv-close" type="button" aria-label="Close case study">×</button></div><div class="cv-scroll" id="cvScroll" tabindex="0" aria-label="Case study chapters"></div><div class="cv-footer"><div class="cv-arrows"><button class="cv-arrow" id="cvPrev" aria-label="Previous chapter">←</button><button class="cv-arrow" id="cvNext" aria-label="Next chapter">→</button></div><div class="cv-steps" id="cvSteps" aria-label="Case study navigation"></div><div class="cv-count" id="cvCount" aria-live="polite"></div></div></dialog>';
 document.body.insertAdjacentHTML('beforeend',dialogMarkup);
@@ -40,7 +47,7 @@ function para(s){return s?'<p>'+esc(s)+'</p>':''}
 function portfolioArticle(p,id){
  viewer.classList.add('cv-article-mode');
  const a=p.article,emph=t=>esc(t).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
- const artifact=n=>{const f=a.artifacts?.[n];return f?'<figure class="cv-article-figure"><div class="cv-article-placeholder" data-artifact="project-'+id+'-'+n+'"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></svg><span>Artifact placeholder</span></div><figcaption>'+esc(f.caption)+' · '+esc(f.kind)+'</figcaption></figure>':''};
+ const artifact=n=>{const f=a.artifacts?.[n];return f?.src?'<figure class="cv-article-figure"><img class="dd-article-img" loading="lazy" decoding="async" src="'+esc(f.src)+'" alt="'+esc(f.caption)+'"><figcaption>'+esc(f.caption)+' · '+esc(f.kind)+'</figcaption></figure>':f?'<figure class="cv-article-figure"><div class="cv-article-placeholder" data-artifact="project-'+id+'-'+n+'"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></svg><span>Artifact placeholder</span></div><figcaption>'+esc(f.caption)+' · '+esc(f.kind)+'</figcaption></figure>':''};
  const stats=a.stats?.length?'<div class="cv-article-metrics">'+a.stats.map(([v,l])=>'<div><b>'+esc(v)+'</b><span>'+esc(l)+'</span></div>').join('')+'</div>':'';
  const links=a.sources.map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.label)+' ↗</a>').join('');
  $('#cvCompany').textContent=p.organisation+' · Case study';
@@ -83,7 +90,7 @@ viewer.addEventListener('click',e=>{if(e.target===viewer){const r=viewer.getBoun
 viewer.addEventListener('keydown',e=>{if(viewer.classList.contains('cv-article-mode'))return;if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();goPage(e.key==='Home'?0:e.key==='End'?pageCount-1:pageIndex+(e.key==='ArrowRight'?1:-1))}});
 scroller.addEventListener('scroll',()=>{if(viewer.classList.contains('cv-article-mode')){updateArticleNav();return;}if(viewerRAF)return;viewerRAF=requestAnimationFrame(()=>{viewerRAF=0;if(scroller.clientWidth)updateViewer(Math.round(scroller.scrollLeft/scroller.clientWidth))})},{passive:true});
 let wheelGate=0;scroller.addEventListener('wheel',e=>{if(viewer.classList.contains('cv-article-mode'))return;if(e.ctrlKey||e.metaKey||Math.abs(e.deltaX)>=Math.abs(e.deltaY))return;const current=scroller.children[pageIndex];if(current&&current.scrollHeight>current.clientHeight+8)return;if(Math.abs(e.deltaY)<8)return;e.preventDefault();const now=performance.now();if(now-wheelGate>450){wheelGate=now;goPage(pageIndex+Math.sign(e.deltaY))}},{passive:false});
-function installCases(d){portfolioData=d;document.querySelectorAll('#chapters .chapter').forEach((el,i)=>{const p=d.projects[featuredIds[i]];const meta=el.querySelector('.meta');if(meta&&p.companyUrl){const link=document.createElement('a');link.className='project-company-link';link.href=p.companyUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent=p.company+' ↗';meta.lastElementChild?.replaceWith(link);const status=document.createElement('span');status.className='project-scope';status.textContent=p.engagement;meta.after(status)}const old=el.querySelector('details');if(old){const b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<span>View case study</span><span>↗</span>';b.onclick=()=>openPortfolioCase(featuredIds[i],b);old.replaceWith(b)}if(references[featuredIds[i]]){const ref=document.createElement('div');ref.className='mobile-ref';ref.innerHTML=referenceMarkup(featuredIds[i]);el.querySelector('.mobileart')?.after(ref);bindImageFallbacks(ref)}});const remaining=[5,6,7,8,9];document.querySelectorAll('#more details').forEach((el,i)=>{const p=d.projects[remaining[i]],b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<div><div class="meta">'+esc(p.company)+'</div><div class="row-title">'+esc(p.title)+'</div></div><span class="row-metric">'+esc(p.metric)+'</span><span>↗</span>';b.onclick=()=>openPortfolioCase(remaining[i],b);const row=document.createElement('div');row.className='linked-project-row';row.append(b);if(p.companyUrl){const a=document.createElement('a');a.href=p.companyUrl;a.target='_blank';a.rel='noopener noreferrer';a.className='project-company-link';a.textContent=p.organisation+' ↗';a.setAttribute('aria-label','Company context: '+p.organisation);row.append(a)}el.replaceWith(row)})}
+function installCases(d){portfolioData=d;document.querySelectorAll('#chapters .chapter').forEach((el,i)=>{const p=d.projects[featuredIds[i]];if(i===0){const mobile=el.querySelector('.mobileart');if(mobile){const layer=document.createElement('div');layer.innerHTML=dailyDigestVisual;const imgs=[...layer.querySelectorAll('img')];Promise.all(imgs.map(img=>img.decode())).then(()=>{mobile.innerHTML=dailyDigestVisual;mobile.classList.add('dd-mobile')}).catch(()=>{})}}const meta=el.querySelector('.meta');if(meta&&p.companyUrl){const link=document.createElement('a');link.className='project-company-link';link.href=p.companyUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent=p.company+' ↗';meta.lastElementChild?.replaceWith(link);const status=document.createElement('span');status.className='project-scope';status.textContent=p.engagement;meta.after(status)}const old=el.querySelector('details');if(old){const b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<span>View case study</span><span>↗</span>';b.onclick=()=>openPortfolioCase(featuredIds[i],b);old.replaceWith(b)}if(references[featuredIds[i]]){const ref=document.createElement('div');ref.className='mobile-ref';ref.innerHTML=referenceMarkup(featuredIds[i]);el.querySelector('.mobileart')?.after(ref);bindImageFallbacks(ref)}});const remaining=[5,6,7,8,9];document.querySelectorAll('#more details').forEach((el,i)=>{const p=d.projects[remaining[i]],b=document.createElement('button');b.type='button';b.className='case-launch';b.innerHTML='<div><div class="meta">'+esc(p.company)+'</div><div class="row-title">'+esc(p.title)+'</div></div><span class="row-metric">'+esc(p.metric)+'</span><span>↗</span>';b.onclick=()=>openPortfolioCase(remaining[i],b);const row=document.createElement('div');row.className='linked-project-row';row.append(b);if(p.companyUrl){const a=document.createElement('a');a.href=p.companyUrl;a.target='_blank';a.rel='noopener noreferrer';a.className='project-company-link';a.textContent=p.organisation+' ↗';a.setAttribute('aria-label','Company context: '+p.organisation);row.append(a)}el.replaceWith(row)})}
 function installOrbitArtwork(){
  document.querySelectorAll('.era-illustration').forEach((el,i)=>{const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('class','motion-orbit');svg.setAttribute('viewBox','0 0 300 210');svg.setAttribute('aria-hidden','true');let html='';for(let j=0;j<3;j++){const rx=90+j*22,ry=31+j*13;html+='<ellipse cx="150" cy="105" rx="'+rx+'" ry="'+ry+'" transform="rotate('+(-24+j*24)+' 150 105)" fill="none" stroke="'+eraColors[i]+'" stroke-opacity=".10" stroke-width="1"/>'}for(let j=0;j<9;j++)html+='<circle data-orbit="'+j+'" r="'+(j%3===0?2.8:1.7)+'" fill="'+eraColors[i]+'" opacity="'+(.22+(j%3)*.14)+'"/>';svg.innerHTML=html;el.prepend(svg)})
 }
@@ -152,4 +159,14 @@ let enhancementsInstalled=false;function initializeEnhancements(){if(enhancement
 .cv-evidence p{line-height:1.55;margin-bottom:12px}
 .cv-evidence a{display:block;text-decoration:underline;text-underline-offset:3px;margin-top:8px}
 @media(max-width:680px){.linked-project-row{gap:8px}.linked-project-row>.project-company-link{font-size:10px}}
+`;document.head.append(style)})();
+
+(()=>{const style=document.createElement('style');style.textContent=`
+.dd-stage{position:absolute;inset:0;z-index:2;background:#f3f6f8;animation:reveal .45s ease both}
+.dd-composition{position:relative;width:100%;height:100%;display:grid;place-items:center;background:#f3f6f8}
+.dd-flow{position:absolute;left:3%;top:4%;width:94%;height:77%;object-fit:contain;object-position:top center}
+.dd-reminder{position:absolute;right:4%;bottom:4%;width:39%;height:auto;border-radius:8px;box-shadow:0 4px 16px #0002;border:2px solid white}
+.dd-mobile{aspect-ratio:1.17!important}
+.dd-article-img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid #e5e5e5}
+@media(prefers-reduced-motion:reduce){.dd-stage{animation:none}}
 `;document.head.append(style)})();
