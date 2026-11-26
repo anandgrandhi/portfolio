@@ -236,13 +236,9 @@
         "metric": "3",
         "metricLabel": "Connected product capabilities",
         "artifacts": {
-          "2": {
-            "caption": "Proposed AI-enabled counsellor workflow",
-            "kind": "Solution design"
-          },
-          "3": {
-            "caption": "Student intelligence and personalised planning architecture",
-            "kind": "Product architecture"
+          "0": {
+            "src": "assets/athena/ecosystem.webp",
+            "caption": "Athena's personalised counselling ecosystem"
           }
         },
         "stats": [],
@@ -255,7 +251,94 @@
             "label": "Athena · company website",
             "url": "https://athenaeducation.co.in/"
           }
-        ]
+        ],
+        "galleries": {
+          "1": {
+            "portrait": true,
+            "caption": "Arete — the student experience",
+            "images": [
+              {
+                "src": "assets/athena/dashboard.webp",
+                "title": "Personalised plan and dashboard"
+              },
+              {
+                "src": "assets/athena/meeting.webp",
+                "title": "Meeting scheduling and coordination"
+              },
+              {
+                "src": "assets/athena/projects.webp",
+                "title": "Project progress tracking"
+              },
+              {
+                "src": "assets/athena/tasks.webp",
+                "title": "Task management"
+              }
+            ]
+          },
+          "3": {
+            "caption": "Grade-specific student development journeys",
+            "images": [
+              {
+                "src": "assets/athena/grade-9.webp",
+                "title": "Grade 9 · Discover"
+              },
+              {
+                "src": "assets/athena/grade-12.webp",
+                "title": "Grade 12 · Demonstrate"
+              }
+            ]
+          }
+        },
+        "frameworks": {
+          "2": {
+            "title": "Counselling intelligence architecture",
+            "steps": [
+              [
+                "Transcript Intelligence",
+                "Extract decisions, commitments and follow-ups from counselling conversations."
+              ],
+              [
+                "Intelligent Counselor Workbook",
+                "Maintain evolving student context, goals and milestones."
+              ],
+              [
+                "Personalized Student Planning Engine",
+                "Combine student context and institutional knowledge to recommend feasible actions."
+              ],
+              [
+                "Counsellor review",
+                "Review and approve consequential recommendations."
+              ]
+            ],
+            "caption": "Proposed AI product architecture."
+          },
+          "3": {
+            "title": "Personalised planning logic",
+            "steps": [
+              [
+                "Understand student context",
+                "Aspirations, interests and academic profile."
+              ],
+              [
+                "Retrieve institutional knowledge",
+                "Relevant programmes, projects and guidance."
+              ],
+              [
+                "Evaluate feasibility",
+                "Eligibility, prerequisites, commitments and available time."
+              ],
+              [
+                "Recommend next actions",
+                "Prioritised and actionable student plan."
+              ],
+              [
+                "Counsellor approval",
+                "Review, refine and approve."
+              ]
+            ],
+            "caption": "Proposed product decision framework."
+          }
+        }
       }
     },
     {
