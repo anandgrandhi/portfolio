@@ -2,7 +2,7 @@
   "intro": [
     "I’m Anand Grandhi. I work at the intersection of product strategy, business operations and <strong class='blue'>applied AI.</strong>",
     "I joined <strong class='blue'>BYJU’S</strong> in 2015, before its flagship learning app launched, and helped build and scale its learning products during five years of rapid growth. At <strong class='blue'>Amazon</strong>, I worked on product adoption, customer experience and operational transformation.",
-    "Today, I design intelligent workflows and AI solutions that make organisations more effective."
+    "Today, I help companies identify where AI can make a difference and how to put it into practice."
   ],
   "projects": [
     {
@@ -838,9 +838,9 @@
             "kind": "Workflow example"
           },
           "2": {
-            "src": "https://learnn8nautomation.com/images/rag.png",
-            "caption": "Document ingestion and retrieval pipeline",
-            "kind": "Workflow example"
+            "src": "assets/sop-flow.svg",
+            "caption": "Illustrative SOP retrieval workflow",
+            "kind": "Conceptual workflow"
           },
           "3": {
             "src": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png",
