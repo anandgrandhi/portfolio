@@ -875,8 +875,8 @@
       }
     },
     {
-      "company": "ARCHMATION",
-      "organisation": "ARCHMATION",
+      "company": "Archmation",
+      "organisation": "Archmation",
       "companyUrl": "https://archmation.com/about-us",
       "title": "Transforming creative production with generative AI",
       "metric": "",
@@ -935,7 +935,7 @@
       "article": {
         "title": "Transforming creative production with generative AI",
         "subtitle": "Repeatable AI workflows for commercial creative production",
-        "meta": "ARCHMATION · Creative technology",
+        "meta": "Archmation · Creative technology",
         "metric": "",
         "metricLabel": "",
         "stats": [
@@ -951,7 +951,7 @@
         "hideReferences": true,
         "sources": [
           {
-            "label": "ARCHMATION",
+            "label": "Archmation",
             "url": "https://archmation.com/about-us"
           }
         ],
@@ -1058,7 +1058,8 @@
             ]
           }
         }
-      }
+      },
+      "engagement": "Creative technology · AI workflow design"
     },
     {
       "company": "Amazon",
