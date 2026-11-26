@@ -1,0 +1,9 @@
+/* Intro only: retain typography and all existing content. */
+#top.relate-hero .relate-symbol.intelligence-scene{position:relative;width:min(100%,520px);height:clamp(220px,29vw,325px);flex:none;animation:none;opacity:1;translate:none;transform:none}
+#top.relate-hero .intelligence-scene>.intelligence-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+#top.relate-hero .intelligence-scene>svg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+#top.relate-hero .intelligence-ready>svg{display:none}
+#top.relate-hero .hero-copy{animation:none!important;opacity:1!important;transform:none!important;translate:none!important}
+#top.relate-hero .hero-inner{gap:12px;padding-block:45px 60px}
+@media(max-width:800px){#top.relate-hero .relate-symbol.intelligence-scene{width:min(100%,390px);height:clamp(195px,58vw,260px)}#top.relate-hero .hero-inner{gap:16px;padding-block:38px 55px}}
+@media(prefers-reduced-motion:reduce){#top.relate-hero .relate-symbol.intelligence-scene{animation:none!important}}
