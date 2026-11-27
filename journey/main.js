@@ -32,11 +32,11 @@ function animate(fn){tickers.add(fn);queue()}
 let data=null, chapters=[], stageLayers=[], progress=[], marker=null, markerX=null, markerTarget=0, active=-1, raf=0, layout=true, opener=null, copyTimer=0;
 /* Google text motion: split a block into word spans; CSS staggers them by --i. Text content is unchanged. */
 function splitWords(el,kind,base){if(!el||el.dataset.split)return;el.dataset.split=kind;const words=el.textContent.trim().split(/\s+/);el.setAttribute('aria-label',el.textContent.trim());el.innerHTML=words.map((w,i)=>'<span class="word" aria-hidden="true" style="--i:'+i+'">'+esc(w)+(i<words.length-1?' ':'')+'</span>').join('');el.classList.add('split','split-'+kind);if(base)el.style.setProperty('--base',base)}
-const media=(src,alt,first=false)=>'<img src="'+esc(src)+'" alt="'+esc(alt)+'" width="800" height="600" loading="'+(first?'eager':'lazy')+'" decoding="async">';
+const media=(src,alt,first=false)=>'<img src="'+esc(src)+'" alt="'+esc(alt)+'" width="800" height="600" loading="eager" decoding="async">';
 const cover=(id,first=false)=>'<div class="visual '+(covers[id].length>1?'pair':'')+'">'+covers[id].map(([s,a])=>media(s,a,first)).join('')+'</div>';
 const company=p=>p.companyUrl?'<a class="company-link" href="'+esc(p.companyUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(p.organisation||p.company)+' ↗</a>':'<span class="company-name">'+esc(p.organisation||p.company)+'</span>';
 function bindMedia(root){
-  $$('img',root).forEach(img=>{const fail=()=>{if(!img.isConnected)return;const msg=document.createElement('span');msg.className='media-failure';msg.textContent=img.alt+' — image unavailable';img.replaceWith(msg)};img.addEventListener('error',fail,{once:true});if(img.complete&&!img.naturalWidth)fail()});
+  $$('img',root).forEach(img=>{const fail=()=>{if(!img.isConnected)return;const msg=document.createElement('span');msg.className='media-failure';msg.textContent=img.alt+' — image unavailable';img.replaceWith(msg)};img.addEventListener('error',fail,{once:true});if(img.complete&&!img.naturalWidth&&img.currentSrc&&img.loading!=='lazy')fail()});
 }
 function render(d){
   data=d;

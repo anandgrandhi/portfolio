@@ -1,1694 +1,1702 @@
 {
- "intro": [
-  "I’m Anand Grandhi. I work at the intersection of product strategy, business operations and <strong class='blue'>applied AI.</strong>",
-  "I joined <strong class='blue'>BYJU’S</strong> in 2015, before its flagship learning app launched, and helped build and scale its learning products during five years of rapid growth. At <strong class='blue'>Amazon</strong>, I worked on product adoption, customer experience and operational transformation.",
-  "Today, I help companies identify where AI can make a difference and how to put it into practice."
- ],
- "projects": [
-  {
-   "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
-   "company": "Amazon",
-   "organisation": "Amazon",
-   "title": "Turning declining engagement into sustained product usage.",
-   "category": "Product Strategy · Engagement & Retention",
-   "summary": "I transformed a declining daily engagement feature into a personalised experience, increasing return visits, retention and adoption of other product features.",
-   "outcomes": [
-    [
-     "35k → 80k+",
-     "Daily active users"
-    ],
-    [
-     "+32%",
-     "Retention uplift"
-    ],
-    [
-     "+64%",
-     "Session duration"
-    ]
-   ],
-   "case": {
-    "sections": [
-     {
-      "title": "Executive summary",
-      "nav": "Executive summary",
-      "blocks": [
-       {
-        "p": "Amazon had built an extensive learning ecosystem, but getting students to return regularly and discover relevant product features remained a challenge."
-       },
-       {
-        "p": "I identified the underlying barriers and proposed Daily Digest, a personalised daily experience combining behavioural science, relevant recommendations and short, actionable activities. I led the definition of the product logic and user journeys, collaborating with cross-functional teams on execution and continuous improvement."
-       }
-      ]
-     },
-     {
-      "title": "Product context",
-      "nav": "Product context",
-      "blocks": [
-       {
-        "p": "Daily active users had declined from approximately 50,000 to 35,000. The existing Question of the Day served as an entry point to the product but lacked personalisation and meaningful connections to other features. I saw an opportunity to transform it into a driver of customer engagement, retention and broader product adoption."
-       },
-       {
-        "figure": {
-         "src": "assets/daily-digest/product-ecosystem.webp",
-         "caption": "Daily Digest within the learning ecosystem"
-        }
-       }
-      ]
-     },
-     {
-      "title": "Customer research",
-      "nav": "Customer research",
-      "blocks": [
-       {
-        "p": "I analysed customer behaviour and research findings to understand why students were not engaging consistently despite having access to an extensive learning library."
-       },
-       {
-        "p": "Three primary barriers emerged:"
-       },
-       {
-        "item": [
-         "Time constraints",
-         "Students were balancing school, coaching and examination preparation."
-        ]
-       },
-       {
-        "item": [
-         "Decision friction",
-         "Students struggled to identify what to study or practise next."
-        ]
-       },
-       {
-        "item": [
-         "Perceived value",
-         "Students wanted immediate, relevant assistance with their individual weaknesses and examination preparation."
-        ]
-       },
-       {
-        "p": "These insights informed the core product requirements for Daily Digest."
-       }
-      ]
-     },
-     {
-      "title": "Behavioural science and habit formation",
-      "nav": "Behavioural science",
-      "blocks": [
-       {
-        "p": "I translated customer pain points into specific behavioural interventions:"
-       },
-       {
-        "table": {
-         "head": [
-          "Customer barrier",
-          "Product intervention"
-         ],
-         "rows": [
-          [
-           "Limited time",
-           "Short, 7–10-minute daily sessions"
-          ],
-          [
-           "Decision fatigue",
-           "Curated, personalised daily activities"
-          ],
-          [
-           "Low perceived value",
-           "Recommendations addressing individual weaknesses"
-          ],
-          [
-           "Inconsistent engagement",
-           "Streaks, progress indicators and timely nudges"
-          ],
-          [
-           "Limited feature discovery",
-           "Contextual entry points into relevant product features"
-          ],
-          [
-           "Notification fatigue",
-           "Segmented notifications and frequency controls"
-          ]
-         ]
-        }
-       },
-       {
-        "p": "The objective was to make returning to the product easy, relevant and rewarding."
-       },
-       {
-        "figure": {
-         "src": "assets/daily-digest/reminder.webp",
-         "caption": "Contextual nudges to encourage daily participation"
-        }
-       },
-       {
-        "gallery": {
-         "caption": "Research reference diagrams · Harry Fletcher-Wood, Habits of Success",
-         "images": [
-          {
-           "src": "assets/daily-digest/behaviour-motivation.webp",
-           "title": "Motivating students to change their behaviour"
-          },
-          {
-           "src": "assets/daily-digest/behaviour-commitment.webp",
-           "title": "Helping students commit to action"
-          },
-          {
-           "src": "assets/daily-digest/behaviour-initiation.webp",
-           "title": "Reducing barriers to starting"
-          },
-          {
-           "src": "assets/daily-digest/behaviour-continuation.webp",
-           "title": "Supporting sustained participation"
-          }
-         ]
-        }
-       }
-      ]
-     },
-     {
-      "title": "Personalisation and product intelligence",
-      "nav": "Personalisation",
-      "blocks": [
-       {
-        "p": "I defined the recommendation framework around three components:"
-       },
-       {
-        "recframework": {
-         "columns": [
-          {
-           "n": "01",
-           "title": "User signals",
-           "items": [
-            "Recent activity",
-            "Assessment performance",
-            "Individual goals",
-            "Knowledge gaps",
-            "Preparation stage",
-            "Learning progress"
-           ],
-           "exit": []
-          },
-          {
-           "n": "02",
-           "title": "Personalisation logic",
-           "items": [
-            "Activity relevance",
-            "Difficulty",
-            "Time constraints",
-            "User priorities"
-           ],
-           "exit": []
-          },
-          {
-           "n": "03",
-           "title": "Personalised daily experience",
-           "items": [
-            "Conceptual refreshers",
-            "Accuracy challenges",
-            "Targeted remediation",
-            "Revision activities"
-           ],
-           "exit": [
-            "Contextual recommendations to other product features"
-           ]
-          }
-         ],
-         "caption": "Conceptual representation of the recommendation framework."
-        }
-       },
-       {
-        "p": "The objective was to make each interaction relevant to the individual user while encouraging deeper engagement with the wider product."
-       },
-       {
-        "figure": {
-         "src": "assets/daily-digest/product-flow.webp",
-         "caption": "Daily activities and pathways to further practice"
-        }
-       },
-       {
-        "figure": {
-         "src": "assets/daily-digest/learning-tips.webp",
-         "caption": "Microlearning through shortcuts, mnemonics and exam strategies"
-        }
-       }
-      ]
-     },
-     {
-      "title": "Cross-functional execution and continuous improvement",
-      "nav": "Execution",
-      "blocks": [
-       {
-        "p": "My responsibilities extended from problem identification and product definition to cross-functional execution and post-launch optimisation."
-       },
-       {
-        "p": "I worked with product, research, design, machine learning and engineering teams to translate customer insights into product requirements, define the personalisation framework and refine the experience based on usage data and customer feedback."
-       }
-      ]
-     },
-     {
-      "title": "Product outcomes",
-      "nav": "Outcomes",
-      "blocks": [
-       {
-        "outcomes": [
-         [
-          "Daily active users",
-          "35k → 80k+"
-         ],
-         [
-          "Retention uplift",
-          "+32%"
-         ],
-         [
-          "Session duration",
-          "+64%"
-         ],
-         [
-          "Streak participation",
-          "+72%"
-         ],
-         [
-          "Practice activity",
-          "2.5×"
-         ],
-         [
-          "Chapter assessment usage",
-          "+60%"
-         ]
-        ]
-       },
-       {
-        "p": "Daily Digest evolved from a standalone engagement feature into an entry point for the wider product ecosystem, helping users discover relevant activities and engage more consistently."
-       }
-      ]
-     }
-    ],
-    "sources": [
-     {
-      "label": "Amazon · official 2021 product launch announcement",
-      "url": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations"
-     },
-     {
-      "label": "Harry Fletcher-Wood · Habits of Success: Getting Every Student Learning",
-      "url": "https://improvingteaching.co.uk/habits-of-success/"
-     }
-    ],
-    "referenceTitle": "References",
-    "title": "Turning declining engagement into sustained product usage.",
-    "category": "Product Strategy · Engagement & Retention",
-    "breadcrumb": "Amazon · Daily Digest",
-    "stats": [
-     [
-      "35k → 80k+",
-      "Daily active users"
-     ],
-     [
-      "+32%",
-      "Retention uplift"
-     ],
-     [
-      "+64%",
-      "Session duration"
-     ]
-    ]
-   }
-  },
-  {
-   "companyUrl": "https://athenaeducation.co.in/",
-   "company": "Athena Education",
-   "organisation": "Athena Education",
-   "title": "Scaling personalised counselling through AI.",
-   "category": "AI Strategy · Solution Architecture",
-   "summary": "I developed an AI product strategy to increase counselling capacity without compromising personalisation. The strategy focused on reducing repetitive work, leveraging institutional knowledge and enabling better student-specific decisions.",
-   "outcomes": [
-    [
-     "Workflow automation",
-     "Operational efficiency"
-    ],
-    [
-     "Institutional intelligence",
-     "Knowledge utilisation"
-    ],
-    [
-     "Personalised planning",
-     "Decision support"
-    ]
-   ],
-   "case": {
-    "sections": [
-     {
-      "title": "The business challenge",
-      "nav": "The business challenge",
-      "blocks": [
-       {
-        "p": "Athena’s college admissions counselling model relies on understanding each student individually and guiding their academic and extracurricular development over several years. Increasing counselling capacity without compromising this personalisation was the central business challenge."
-       },
-       {
-        "figure": {
-         "src": "assets/athena/ecosystem.webp",
-         "caption": "Athena's personalised counselling ecosystem"
-        }
-       },
-       {
-        "gallery": {
-         "caption": "Grade-specific student development journeys",
-         "images": [
-          {
-           "src": "assets/athena/grade-9.webp",
-           "title": "Grade 9 · Discover"
-          },
-          {
-           "src": "assets/athena/grade-12.webp",
-           "title": "Grade 12 · Demonstrate"
-          }
-         ]
-        }
-       }
-      ]
-     },
-     {
-      "title": "Understanding the problem",
-      "nav": "Understanding the problem",
-      "blocks": [
-       {
-        "p": "I examined the activities surrounding each counselling session. Counsellors spent time reviewing previous discussions, documenting conversations, updating Airtable records, tracking student commitments and researching suitable academic and extracurricular opportunities."
-       },
-       {
-        "gallery": {
-         "portrait": true,
-         "caption": "Arete — the student experience",
-         "images": [
-          {
-           "src": "assets/athena/dashboard.webp",
-           "title": "Personalised plan and dashboard"
-          },
-          {
-           "src": "assets/athena/meeting.webp",
-           "title": "Meeting scheduling and coordination"
-          },
-          {
-           "src": "assets/athena/projects.webp",
-           "title": "Project progress tracking"
-          },
-          {
-           "src": "assets/athena/tasks.webp",
-           "title": "Task management"
-          }
-         ]
-        }
-       },
-       {
-        "p": "Another opportunity was Athena’s accumulated knowledge: approximately ten years of counselling recordings, documents and student records that could inform future counselling decisions."
-       }
-      ]
-     },
-     {
-      "title": "Defining the solutions",
-      "nav": "Defining the solutions",
-      "blocks": [
-       {
-        "p": "I identified three specific areas where AI could support counsellors."
-       },
-       {
-        "item": [
-         "Transcript Intelligence",
-         "Convert counselling recordings into structured session summaries, extracting student interests, decisions, commitments and deadlines. Counsellors review the extracted information before updating student records."
-        ]
-       },
-       {
-        "item": [
-         "Intelligent Counsellor Workbook",
-         "Maintain an evolving student profile covering academic progress, interests, achievements and pending activities. Before each session, counsellors receive a summary of previous discussions, outstanding commitments and changes in student circumstances."
-        ]
-       },
-       {
-        "item": [
-         "Personalised Student Planning Engine",
-         "Recommend courses, competitions, internships and research opportunities based on student interests, academic goals, existing skills and availability. Check eligibility, prerequisites and deadlines before generating individual activity plans."
-        ]
-       },
-       {
-        "framework": {
-         "title": "Personalised planning logic",
-         "steps": [
-          [
-           "Understand student context",
-           "Aspirations, interests and academic profile."
-          ],
-          [
-           "Retrieve institutional knowledge",
-           "Relevant programmes, projects and guidance."
-          ],
-          [
-           "Evaluate feasibility",
-           "Eligibility, prerequisites, commitments and available time."
-          ],
-          [
-           "Recommend next actions",
-           "Prioritised and actionable student plan."
-          ],
-          [
-           "Counsellor approval",
-           "Review, refine and approve."
-          ]
-         ],
-         "caption": "Proposed product decision framework."
-        }
-       }
-      ]
-     },
-     {
-      "title": "Architecture and product decisions",
-      "nav": "Architecture and product decisions",
-      "blocks": [
-       {
-        "p": "I proposed structured databases for student records, RAG for retrieving historical counselling knowledge and explicit business rules for eligibility and activity scheduling."
-       },
-       {
-        "p": "The reliability requirements addressed specific failures: invented student information, contradictory records, unsuitable opportunities and unrealistic time commitments. Consequential recommendations and record changes required counsellor approval."
-       },
-       {
-        "framework": {
-         "title": "Counselling intelligence architecture",
-         "steps": [
-          [
-           "Transcript Intelligence",
-           "Extract decisions, commitments and follow-ups from counselling conversations."
-          ],
-          [
-           "Intelligent Counselor Workbook",
-           "Maintain evolving student context, goals and milestones."
-          ],
-          [
-           "Personalized Student Planning Engine",
-           "Combine student context and institutional knowledge to recommend feasible actions."
-          ],
-          [
-           "Counsellor review",
-           "Review and approve consequential recommendations."
-          ]
-         ],
-         "caption": "Proposed AI product architecture."
-        }
-       }
-      ]
-     },
-     {
-      "title": "From strategy to implementation",
-      "nav": "From strategy to implementation",
-      "blocks": [
-       {
-        "p": "I developed the product requirements, solution architecture and implementation roadmap, recommending that Athena begin with session documentation before introducing automated student profile updates and personalised planning."
-       }
-      ]
-     }
-    ],
-    "sources": [
-     {
-      "label": "Athena · official admissions journey",
-      "url": "https://athenaeducation.co.in/admissions-journey/"
-     },
-     {
-      "label": "Athena · company website",
-      "url": "https://athenaeducation.co.in/"
-     }
-    ],
-    "referenceTitle": "References",
-    "title": "Scaling personalised counselling through AI.",
-    "category": "AI Strategy · Solution Architecture",
-    "breadcrumb": "Athena Education"
-   }
-  },
-  {
-   "companyUrl": "https://whitetable.ai/",
-   "company": "WhiteTable",
-   "organisation": "WhiteTable",
-   "title": "Building the intelligent backbone of a startup.",
-   "category": "AI Strategy · Agentic Systems",
-   "summary": "I developed a unified AI framework connecting organisational knowledge, business workflows, software development and customer acquisition within an integrated operating model.",
-   "outcomes": [
-    [
-     "Organisational intelligence",
-     "Knowledge base & employee assistant"
-    ],
-    [
-     "Agent backbone",
-     "Business & software development workflows"
-    ],
-    [
-     "GrowthOS",
-     "Customer acquisition"
-    ]
-   ],
-   "case": {
-    "sections": [
-     {
-      "title": "The business challenge",
-      "nav": "The business challenge",
-      "blocks": [
-       {
-        "p": "WhiteTable was developing its product while establishing its internal operating processes. I examined how teams documented decisions, communicated requirements, planned work, collected customer feedback and approached customer acquisition."
-       },
-       {
-        "p": "I identified opportunities to improve these processes through shared organisational knowledge and reusable AI workflows."
-       }
-      ]
-     },
-     {
-      "title": "Understanding the problem",
-      "nav": "Understanding the problem",
-      "blocks": [
-       {
-        "p": "Documentation was fragmented, meetings and decisions were not consistently recorded, and customer feedback lacked a structured collection process. Internal communication, work planning, task ownership and follow-ups required better coordination."
-       },
-       {
-        "p": "Software development lacked standardised PRDs, requirement specifications and consistent development workflows. Customer acquisition involved repetitive prospect discovery, research and outreach preparation."
-       }
-      ]
-     },
-     {
-      "title": "Defining the solutions",
-      "nav": "Defining the solutions",
-      "blocks": [
-       {
-        "item": [
-         "Organisational Intelligence",
-         "I developed a knowledge framework and prototyped an employee assistant to retrieve information about the company, product, technical architecture and internal processes. The proposed knowledge workflows would capture meeting notes, decisions and customer feedback, keeping information accessible across teams."
-        ]
-       },
-       {
-        "figure": {
-         "src": "assets/whitetable/assistant.webp",
-         "caption": "WhiteTable Intelligence — conversational access to organisational knowledge (internal details masked)"
-        }
-       },
-       {
-        "item": [
-         "Agent Backbone — Business Operations",
-         "I defined reusable agent workflows for meeting summaries, action-item tracking, customer feedback classification, work planning and internal reporting. Outputs from one activity could inform subsequent work."
-        ]
-       },
-       {
-        "framework": {
-         "title": "Reusable agent backbone",
-         "steps": [
-          [
-           "Shared context",
-           "Company knowledge, workflow requirements and reusable skills"
-          ],
-          [
-           "Specialised agents",
-           "Research, meeting intelligence, documentation and operational planning"
-          ],
-          [
-           "Structured handoff",
-           "Reviewable outputs and explicit validation requirements"
-          ],
-          [
-           "Approval boundary",
-           "Human decisions before consequential actions"
-          ]
-         ],
-         "caption": "Summary of the agent backbone design."
-        }
-       },
-       {
-        "item": [
-         "Agent Backbone — Software Development",
-         "I designed workflows to translate product requirements into structured PRDs, technical specifications, implementation tasks and acceptance criteria. The PRD Creator and Work Planner workflows connected Google Drive documentation with Jira work items. Agents would work within defined responsibilities, with validation and approval before consequential changes."
-        ]
-       },
-       {
-        "figure": {
-         "src": "assets/whitetable/prd-workflow.webp",
-         "caption": "PRD Creator and Work Planner — requirements, human decisions and structured task planning"
-        }
-       },
-       {
-        "framework": {
-         "title": "From request to engineering work",
-         "steps": [
-          [
-           "Jira request",
-           "Identify the problem and required outcome"
-          ],
-          [
-           "PRD Creator",
-           "Draft specification using team context and templates"
-          ],
-          [
-           "Human review",
-           "Resolve product decisions and approve requirements"
-          ],
-          [
-           "Work Planner",
-           "Decompose requirements into tasks, acceptance criteria and dependencies"
-          ],
-          [
-           "Jira integration",
-           "Approved creation and read-back verification"
-          ]
-         ],
-         "caption": "PRD Creator and Work Planner workflow."
-        }
-       },
-       {
-        "gallery": {
-         "caption": "Software development workflow — supporting delivery evidence",
-         "images": [
-          {
-           "src": "assets/whitetable/work-planner-board.webp",
-           "title": "Work Planner project board"
-          }
-         ]
-        }
-       },
-       {
-        "item": [
-         "GrowthOS — Customer Acquisition",
-         "I prototyped workflows for prospect discovery, company research, prospect qualification and personalised outreach preparation, with structured records to track prospects and previous interactions."
-        ]
-       },
-       {
-        "figure": {
-         "src": "assets/whitetable/architecture.webp",
-         "caption": "GrowthOS orchestration, discovery pipeline and human approval boundaries"
-        }
-       },
-       {
-        "gallery": {
-         "caption": "GrowthOS specialist agent catalogue",
-         "images": [
-          {
-           "src": "assets/whitetable/agent-catalogue-1.webp",
-           "title": "Coordination, market strategy and lead qualification"
-          },
-          {
-           "src": "assets/whitetable/agent-catalogue-2.webp",
-           "title": "Outreach, CRM, onboarding and growth analysis"
-          }
-         ]
-        }
-       }
-      ]
-     },
-     {
-      "title": "Architecture and reliability",
-      "nav": "Architecture and reliability",
-      "blocks": [
-       {
-        "p": "I defined shared components for knowledge retrieval, task orchestration, structured outputs and validation."
-       },
-       {
-        "p": "The prototypes explored how agents could exchange information, prevent duplicate records, validate outputs against requirements and flag failures for human review."
-       },
-       {
-        "gallery": {
-         "caption": "Evaluation evidence and iterative improvement",
-         "images": [
-          {
-           "src": "assets/whitetable/assistant-eval.webp",
-           "title": "Employee assistant evaluation — 26-question test set"
-          },
-          {
-           "src": "assets/whitetable/answer-quality.webp",
-           "title": "Before and after answer quality and retrieval improvements"
-          },
-          {
-           "src": "assets/whitetable/growth-eval.webp",
-           "title": "GrowthOS deterministic guardrail scenarios and evaluation limitations"
-          }
-         ]
-        }
-       }
-      ]
-     },
-     {
-      "title": "My contribution",
-      "nav": "My contribution",
-      "blocks": [
-       {
-        "p": "My work covered business problem identification, AI strategy, solution architecture, workflow definition, functional prototyping and testing. These capabilities were intended for progressive integration into WhiteTable’s operations."
-       }
-      ]
-     }
-    ],
-    "sources": [
-     {
-      "label": "WhiteTable · company website",
-      "url": "https://whitetable.ai/"
-     }
-    ],
-    "referenceTitle": "References",
-    "title": "Building the intelligent backbone of a startup.",
-    "category": "AI Strategy · Agentic Systems",
-    "breadcrumb": "WhiteTable"
-   }
-  },
-  {
-   "companyUrl": "https://byjus.com/",
-   "company": "BYJU’S",
-   "organisation": "BYJU’S",
-   "title": "Building innovative learning products at scale.",
-   "category": "Product Leadership · Innovation & Scale",
-   "summary": "I played a key role in building and scaling BYJU’S learning products during its rapid growth, leading multidisciplinary teams across product development, knowledge architecture, interactive learning and large-scale operations.",
-   "outcomes": [
-    [
-     "Knowledge architecture",
-     "Foundational knowledge systems"
-    ],
-    [
-     "Personalised learning",
-     "Guided learning journeys"
-    ],
-    [
-     "Interactive experiences",
-     "Games, simulations and virtual labs"
-    ]
-   ],
-   "case": {
-    "sections": [
-     {
-      "title": "Building during rapid business growth",
-      "nav": "Building during rapid business growth",
-      "blocks": [
-       {
-        "p": "I joined BYJU’S before the launch of its flagship learning app and contributed to its product expansion over the following five years. As the business expanded across grades, subjects and product formats, my responsibilities grew from specialised team leadership to multidisciplinary product development and operations."
-       },
-       {
-        "figure": {
-         "src": "assets/byjus/product-evolution.webp",
-         "caption": "Visual learning and personalised journeys"
-        }
-       },
-       {
-        "p": "The expanding product portfolio required new capabilities, shared product frameworks and development processes that could support multiple initiatives simultaneously."
-       }
-      ]
-     },
-     {
-      "title": "Establishing a common product foundation",
-      "nav": "Establishing a common product foundation",
-      "blocks": [
-       {
-        "p": "As the product ecosystem grew, connecting learning resources, assessments and individual user journeys became increasingly complex."
-       },
-       {
-        "p": "I led the development of a knowledge architecture across Physics, Chemistry, Mathematics and Biology, defining concept relationships, prerequisites and resource mapping. This provided a common foundation for product personalisation, recommendations, assessments and guided learning journeys."
-       },
-       {
-        "figure": {
-         "src": "assets/byjus/knowledge-graph.webp",
-         "caption": "Concept relationships illustrated through a knowledge graph"
-        }
-       },
-       {
-        "framework": {
-         "title": "Knowledge architecture",
-         "steps": [
-          [
-           "Curriculum structure",
-           "Organise subject areas into meaningful learning concepts."
-          ],
-          [
-           "Concept relationships",
-           "Map prerequisite and related concepts."
-          ],
-          [
-           "Learning assets",
-           "Connect explanations, practice, interactive activities and assessments to concepts."
-          ]
-         ],
-         "caption": "High-level explanatory framework."
-        }
-       },
-       {
-        "p": "The framework allowed different teams to develop products using a shared underlying structure."
-       }
-      ]
-     },
-     {
-      "title": "Developing new product capabilities",
-      "nav": "Developing new product capabilities",
-      "blocks": [
-       {
-        "p": "I led and contributed to initiatives that expanded the capabilities of the learning platform:"
-       },
-       {
-        "item": [
-         "Guided journeys",
-         "Structured pathways connecting instruction, practice, assessment and remediation."
-        ]
-       },
-       {
-        "gallery": {
-         "caption": "Guided learning experiences",
-         "images": [
-          {
-           "src": "assets/byjus/mobile-journeys.webp",
-           "title": "Learning library, concept map and video lessons"
-          },
-          {
-           "src": "assets/byjus/biology-journey.webp",
-           "title": "Biology library and guided journey"
-          }
-         ]
-        }
-       },
-       {
-        "framework": {
-         "title": "Guided learning logic",
-         "steps": [
-          [
-           "Define the learning objective",
-           "Identify the concept to be understood."
-          ],
-          [
-           "Sequence learning activities",
-           "Connect explanations, worked examples and practice."
-          ],
-          [
-           "Assess understanding",
-           "Use responses and feedback to identify learning needs."
-          ],
-          [
-           "Guide the next step",
-           "Continue the structured learning journey."
-          ]
-         ],
-         "caption": "Conceptual representation of guided learning."
-        }
-       },
-       {
-        "item": [
-         "Assessment intelligence",
-         "Performance analysis, identification of knowledge gaps and targeted recommendations."
-        ]
-       },
-       {
-        "item": [
-         "Interactive products",
-         "Educational games, simulations, applets and virtual laboratories."
-        ]
-       },
-       {
-        "gallery": {
-         "caption": "Interactive STEM and virtual laboratories",
-         "images": [
-          {
-           "src": "assets/byjus/interactive-light.webp",
-           "title": "Exploring light reflection through interaction"
-          },
-          {
-           "src": "assets/byjus/interactive-maths.webp",
-           "title": "Interactive mathematics activities"
-          },
-          {
-           "src": "assets/byjus/lab-observation.webp",
-           "title": "Virtual laboratory — observation"
-          },
-          {
-           "src": "assets/byjus/lab-conclusion.webp",
-           "title": "Virtual laboratory — conclusion"
-          },
-          {
-           "src": "assets/byjus/lab-viva.webp",
-           "title": "Virtual laboratory — viva and guided feedback"
-          }
-         ]
-        }
-       },
-       {
-        "item": [
-         "Experiential learning",
-         "Physical learning kits and flipped-classroom pilots connecting digital products with classroom instruction."
-        ]
-       },
-       {
-        "p": "My responsibilities covered defining product requirements, developing experience frameworks and coordinating execution across specialised teams."
-       }
-      ]
-     },
-     {
-      "title": "Building organisational capabilities",
-      "nav": "Building organisational capabilities",
-      "blocks": [
-       {
-        "p": "Rapid product expansion required teams with expertise in subject knowledge, product development, design, media and technology."
-       },
-       {
-        "p": "I established multidisciplinary development workflows, product specifications, resource allocation processes and quality standards. These enabled teams to execute multiple product initiatives in parallel while maintaining consistency across the expanding product portfolio."
-       },
-       {
-        "framework": {
-         "title": "Scaling learning product development",
-         "steps": [
-          [
-           "Curriculum and pedagogy",
-           "Learning objectives and concept mapping."
-          ],
-          [
-           "Product and experience design",
-           "Learning formats and interaction design."
-          ],
-          [
-           "Multidisciplinary production",
-           "Content, design, animation and development."
-          ],
-          [
-           "Quality and delivery",
-           "Review, validation and publishing."
-          ]
-         ],
-         "caption": "High-level product development framework."
-        }
-       }
-      ]
-     },
-     {
-      "title": "Contribution to business expansion",
-      "nav": "Contribution to business expansion",
-      "blocks": [
-       {
-        "p": "Over five years, I played a key role in establishing product capabilities, knowledge systems, teams and development processes that supported BYJU’S rapid growth."
-       },
-       {
-        "p": "My contribution extended across product innovation, capability building and operational execution at scale."
-       }
-      ]
-     }
-    ],
-    "sources": [
-     {
-      "label": "BYJU’S · company website",
-      "url": "https://byjus.com/"
-     }
-    ],
-    "referenceTitle": "References",
-    "title": "Building innovative learning products at scale.",
-    "category": "Product Leadership · Innovation & Scale",
-    "breadcrumb": "BYJU’S"
-   }
-  },
-  {
-   "companyUrl": "https://www.emotorad.com/",
-   "company": "EMotorad",
-   "organisation": "EMotorad",
-   "title": "Simplifying business operations through AI and automation.",
-   "category": "Business Operations · Intelligent Automation",
-   "summary": "I identified inefficiencies in everyday business operations and developed AI-enabled workflows to improve employee access to information, task tracking and internal communication.",
-   "outcomes": [
-    [
-     "Employee enablement",
-     "Training & access to internal SOPs"
-    ],
-    [
-     "Task management",
-     "Pending activities & completion tracking"
-    ],
-    [
-     "Automated communication",
-     "Notifications & follow-ups"
-    ]
-   ],
-   "case": {
-    "sections": [
-     {
-      "title": "Business context",
-      "nav": "Business context",
-      "blocks": [
-       {
-        "p": "As EMotorad expanded its operations, employees needed access to internal processes, training materials and standard operating procedures. Managers also needed visibility into pending work, task ownership and completion deadlines."
-       },
-       {
-        "p": "Through ARCHMATION, I identified opportunities to simplify these activities using existing business tools and automated workflows."
-       }
-      ]
-     },
-     {
-      "title": "Understanding the problem",
-      "nav": "Understanding the problem",
-      "blocks": [
-       {
-        "p": "Employees depended on colleagues and managers for routine questions about internal processes and SOPs. Training materials and process documentation required employees to search through multiple resources. Tracking pending activities, communicating deadlines and following up on incomplete tasks involved repetitive manual coordination."
-       }
-      ]
-     },
-     {
-      "title": "Developing the solutions",
-      "nav": "Developing the solutions",
-      "blocks": [
-       {
-        "item": [
-         "Employee knowledge and training",
-         "I developed a workflow to organise internal documentation, SOPs and training materials into an accessible knowledge base. Employees could retrieve relevant information through natural-language queries, reducing dependence on individual team members."
-        ]
-       },
-       {
-        "figure": {
-         "src": "https://miro.medium.com/v2/resize%3Afit%3A1400/1%2APC7cYhrIRZ1DkdGVDLUZAg.png",
-         "caption": "HR onboarding automation with Google Drive",
-         "kind": "Workflow example"
-        }
-       },
-       {
-        "figure": {
-         "src": "assets/sop-flow.svg",
-         "caption": "Illustrative SOP retrieval workflow",
-         "kind": "Conceptual workflow"
-        }
-       },
-       {
-        "item": [
-         "Task tracking and operational visibility",
-         "I developed workflows to consolidate pending activities, assigned responsibilities, completion dates and task status. Managers could review outstanding work without manually collecting updates from multiple employees."
-        ]
-       },
-       {
-        "item": [
-         "Automated reminders and follow-ups",
-         "I designed automated notifications through WhatsApp and Gmail for upcoming deadlines, incomplete activities and pending responses. Reminders were linked to task status and completion dates."
-        ]
-       },
-       {
-        "figure": {
-         "src": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png",
-         "caption": "Task-tracker alerts using Google Sheets and Gmail",
-         "kind": "Workflow example"
-        }
-       }
-      ]
-     },
-     {
-      "title": "Implementation approach",
-      "nav": "Implementation approach",
-      "blocks": [
-       {
-        "p": "I used n8n to connect existing business applications, organise information and automate recurring activities. The workflows were designed around familiar communication channels to minimise changes to employees’ daily routines."
-       },
-       {
-        "p": "My contribution covered identifying operational gaps, defining workflow requirements, selecting integrations and developing automation solutions."
-       }
-      ]
-     }
-    ],
-    "sources": [
-     {
-      "label": "EMotorad · company website",
-      "url": "https://www.emotorad.com/"
-     },
-     {
-      "label": "Nishanthini · HR onboarding workflow screenshot",
-      "url": "https://medium.com/%40nishasuba996/transforming-hr-onboarding-how-google-adk-and-n8n-power-a-seamless-experience-982651c88492"
-     },
-     {
-      "label": "The AI Operator Method · document retrieval workflow screenshot",
-      "url": "https://learnn8nautomation.com/how-to-build-rag-pipeline-with-n8n"
-     },
-     {
-      "label": "n8n · Google Sheets and Gmail task alerts screenshot",
-      "url": "https://n8n.io/workflows/9324-send-one-time-email-alerts-for-urgent-tasks-with-google-sheets-and-gmail/"
-     },
-     {
-      "label": "n8n · WhatsApp pending-task reminder template",
-      "url": "https://n8n.io/workflows/19104-send-daily-whatsapp-task-reminders-from-google-sheets-via-waha/"
-     }
-    ],
-    "referenceTitle": "References",
-    "title": "Simplifying business operations through AI and automation.",
-    "category": "Business Operations · Intelligent Automation",
-    "breadcrumb": "EMotorad"
-   }
-  },
-  {
-   "companyUrl": "https://archmation.com/about-us",
-   "company": "ARCHMATION",
-   "organisation": "ARCHMATION",
-   "title": "Transforming creative production with generative AI.",
-   "category": "Generative AI · Production Systems",
-   "summary": "I developed generative AI solutions for clients across industries, building reusable production workflows for product photography, video, branding and architectural visualisation.",
-   "outcomes": [
-    [
-     "Generative AI workflows",
-     "Reusable production systems"
-    ],
-    [
-     "Commercial applications",
-     "Client-specific solutions"
-    ],
-    [
-     "Production optimisation",
-     "Cost, quality & turnaround time"
-    ]
-   ],
-   "case": {
-    "sections": [
-     {
-      "title": "Business context",
-      "nav": "Business context",
-      "blocks": [
-       {
-        "p": "Through ARCHMATION, I worked with businesses across industries on creative production requirements, including product photography, commercial videos, branding and architectural visualisation."
-       },
-       {
-        "p": "Conventional production involved photography, location arrangements, physical samples, 3D modelling and multiple rounds of revisions. These requirements affected production costs, turnaround times and the number of creative variations clients could explore."
-       }
-      ]
-     },
-     {
-      "title": "Identifying commercial opportunities",
-      "nav": "Identifying commercial opportunities",
-      "blocks": [
-       {
-        "p": "I identified production activities where generative AI could reduce cost and effort while meeting client requirements."
-       },
-       {
-        "p": "Early experimentation revealed several limitations: inconsistent product appearance, inaccurate proportions, limited control over composition and difficulty maintaining visual consistency across multiple outputs."
-       },
-       {
-        "p": "I focused on developing repeatable workflows that addressed these limitations and could be adapted to different client requirements."
-       }
-      ]
-     },
-     {
-      "title": "Developing commercial solutions",
-      "nav": "Developing commercial solutions",
-      "blocks": [
-       {
-        "item": [
-         "Product photography and virtual try-on",
-         "Developed workflows for generating product photographs, lifestyle imagery and virtual try-on experiences, controlling product appearance, backgrounds, lighting and composition."
-        ]
-       },
-       {
-        "gallery": {
-         "caption": "Virtual photography workflows",
-         "images": [
-          {
-           "src": "assets/archmation-creative/virtual-photoshoot.webp",
-           "title": "Garment inputs to multi-pose output demonstration"
-          },
-          {
-           "src": "assets/archmation-creative/fashion-workflow.webp",
-           "title": "Fashion and animation workflow"
-          },
-          {
-           "src": "assets/archmation-creative/sportswear-workflow.webp",
-           "title": "Multi-angle sportswear generation workflow"
-          },
-          {
-           "title": "Apparel display video",
-           "webm": "assets/archmation-creative/body-4.webm"
-          },
-          {
-           "title": "Fashion motion demonstration",
-           "webm": "assets/archmation-creative/screen-recording-2025-09-20-at-10-20-43-am.webm"
-          }
-         ]
-        }
-       },
-       {
-        "gallery": {
-         "caption": "Product and food imagery",
-         "images": [
-          {
-           "src": "assets/archmation-creative/food-workflow.webp",
-           "title": "End-to-end commercial composition workflow"
-          },
-          {
-           "src": "assets/archmation-creative/ingredient-composition.webp",
-           "title": "Ingredient generation and isolation"
-          },
-          {
-           "src": "assets/archmation-creative/food-refinement.webp",
-           "title": "Relighting and upscaling comparison"
-          },
-          {
-           "src": "assets/archmation-creative/product-refinement.webp",
-           "title": "Composition and output refinement"
-          }
-         ]
-        }
-       },
-       {
-        "item": [
-         "AI video production",
-         "Introduced generative video and AI presenter workflows for commercial videos, product demonstrations and branded communication, reducing dependence on conventional filming."
-        ]
-       },
-       {
-        "gallery": {
-         "caption": "Selected capability demonstrations",
-         "images": [
-          {
-           "src": "assets/archmation-creative/ugc-demo.webp",
-           "title": "UGC-style product placement demonstration"
-          },
-          {
-           "title": "UGC unboxing video workflow",
-           "webm": "assets/archmation-creative/body-3.webm"
-          },
-          {
-           "title": "Character replacement video",
-           "webm": "assets/archmation-creative/body-mp4.webm"
-          },
-          {
-           "title": "Text-to-3D CAD prototype demonstration",
-           "webm": "assets/archmation-creative/body-2.webm"
-          }
-         ]
-        }
-       },
-       {
-        "item": [
-         "Architecture and design visualisation",
-         "Developed workflows for converting floor plans, reference images and design concepts into architectural visualisations, enabling faster exploration of design alternatives."
-        ]
-       },
-       {
-        "gallery": {
-         "caption": "Furniture visualisation",
-         "images": [
-          {
-           "src": "assets/archmation-creative/furniture-workflow.webp",
-           "title": "Product isolation to staged scene and video"
-          },
-          {
-           "src": "assets/archmation-creative/furniture-video.webp",
-           "title": "Alternative furniture staging workflow"
-          },
-          {
-           "title": "Furniture staging workflow recording",
-           "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-4-23-20-pm.webm"
-          }
-         ]
-        }
-       },
-       {
-        "item": [
-         "Branding and creative production",
-         "Developed reusable workflows for campaign imagery, moodboards, branded assets and creative variations while maintaining visual consistency."
-        ]
-       }
-      ]
-     },
-     {
-      "title": "Building reusable production systems",
-      "nav": "Building reusable production systems",
-      "blocks": [
-       {
-        "p": "I established workflows covering client requirements, reference inputs, model selection, generation, quality checks and approval."
-       },
-       {
-        "p": "Depending on the application, I used ComfyUI, FLUX, SDXL, ControlNet and customised model training to improve control over generated outputs."
-       },
-       {
-        "gallery": {
-         "caption": "3D asset generation",
-         "images": [
-          {
-           "src": "assets/archmation-creative/character-3d.webp",
-           "title": "Character views and parallel 3D model outputs"
-          },
-          {
-           "src": "assets/archmation-creative/character-3d-alternative.webp",
-           "title": "Alternative character and model comparison"
-          },
-          {
-           "title": "Multi-view 3D workflow recording",
-           "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-5-05-59-pm.webm"
-          }
-         ]
-        }
-       },
-       {
-        "p": "Standardising these workflows allowed the team to reuse production methods across client engagements and reduce repeated experimentation."
-       }
-      ]
-     },
-     {
-      "title": "My contribution",
-      "nav": "My contribution",
-      "blocks": [
-       {
-        "p": "As co-founder, I managed client requirements, evaluated commercial opportunities, defined solution approaches and coordinated production. My work combined business development, technology experimentation, workflow development and production management."
-       }
-      ]
-     }
-    ],
-    "sources": [
-     {
-      "label": "Archmation",
-      "url": "https://archmation.com/about-us"
-     }
-    ],
-    "referenceTitle": "References",
-    "title": "Transforming creative production with generative AI.",
-    "category": "Generative AI · Production Systems",
-    "breadcrumb": "ARCHMATION"
-   }
-  },
-  {
-   "company": "Amazon",
-   "organisation": "Amazon",
-   "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
-   "title": "Turning product data into actionable insights.",
-   "metric": "",
-   "unit": "",
-   "problem": "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
-   "summary": "I developed a framework to translate learner performance, engagement and mastery data into actionable insights, helping teachers make informed instructional decisions.",
-   "status": "",
-   "images": [],
-   "compact": true,
-   "chapters": [
+  "intro": [
+    "I’m Anand Grandhi. I work at the intersection of product strategy, business operations and <strong class='blue'>applied AI.</strong>",
+    "I joined <strong class='blue'>BYJU’S</strong> in 2015, before its flagship learning app launched, and helped build and scale its learning products during five years of rapid growth. At <strong class='blue'>Amazon</strong>, I worked on product adoption, customer experience and operational transformation.",
+    "Today, I help companies identify where AI can make a difference and how to put it into practice."
+  ],
+  "projects": [
     {
-     "label": "Overview",
-     "title": "Turning complex data into actionable decisions",
-     "paragraphs": [
-      "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
-      "Owned the product requirements, metric definitions, information architecture and dashboard design. Worked with engineering and design teams to connect these insights to lesson planning, cohort-level decisions and individual interventions."
-     ]
+      "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
+      "company": "Amazon",
+      "organisation": "Amazon",
+      "title": "Turning declining engagement into sustained product usage.",
+      "category": "Product Strategy · Engagement & Retention",
+      "summary": "I transformed a declining daily engagement feature into a personalised experience, increasing return visits, retention and adoption of other product features.",
+      "outcomes": [
+        [
+          "35k → 80k+",
+          "Daily active users"
+        ],
+        [
+          "+32%",
+          "Retention uplift"
+        ],
+        [
+          "+64%",
+          "Session duration"
+        ]
+      ],
+      "case": {
+        "sections": [
+          {
+            "title": "Executive summary",
+            "nav": "Executive summary",
+            "blocks": [
+              {
+                "p": "Amazon had built an extensive learning ecosystem, but getting students to return regularly and discover relevant product features remained a challenge."
+              },
+              {
+                "p": "I identified the underlying barriers and proposed Daily Digest, a personalised daily experience combining behavioural science, relevant recommendations and short, actionable activities. I led the definition of the product logic and user journeys, collaborating with cross-functional teams on execution and continuous improvement."
+              }
+            ]
+          },
+          {
+            "title": "Product context",
+            "nav": "Product context",
+            "blocks": [
+              {
+                "p": "Daily active users had declined from approximately 50,000 to 35,000. The existing Question of the Day served as an entry point to the product but lacked personalisation and meaningful connections to other features. I saw an opportunity to transform it into a driver of customer engagement, retention and broader product adoption."
+              },
+              {
+                "figure": {
+                  "src": "assets/daily-digest/product-ecosystem.webp",
+                  "caption": "Daily Digest within the learning ecosystem"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Customer research",
+            "nav": "Customer research",
+            "blocks": [
+              {
+                "p": "I analysed customer behaviour and research findings to understand why students were not engaging consistently despite having access to an extensive learning library."
+              },
+              {
+                "p": "Three primary barriers emerged:"
+              },
+              {
+                "item": [
+                  "Time constraints",
+                  "Students were balancing school, coaching and examination preparation."
+                ]
+              },
+              {
+                "item": [
+                  "Decision friction",
+                  "Students struggled to identify what to study or practise next."
+                ]
+              },
+              {
+                "item": [
+                  "Perceived value",
+                  "Students wanted immediate, relevant assistance with their individual weaknesses and examination preparation."
+                ]
+              },
+              {
+                "p": "These insights informed the core product requirements for Daily Digest."
+              }
+            ]
+          },
+          {
+            "title": "Behavioural science and habit formation",
+            "nav": "Behavioural science",
+            "blocks": [
+              {
+                "p": "I translated customer pain points into specific behavioural interventions:"
+              },
+              {
+                "table": {
+                  "head": [
+                    "Customer barrier",
+                    "Product intervention"
+                  ],
+                  "rows": [
+                    [
+                      "Limited time",
+                      "Short, 7–10-minute daily sessions"
+                    ],
+                    [
+                      "Decision fatigue",
+                      "Curated, personalised daily activities"
+                    ],
+                    [
+                      "Low perceived value",
+                      "Recommendations addressing individual weaknesses"
+                    ],
+                    [
+                      "Inconsistent engagement",
+                      "Streaks, progress indicators and timely nudges"
+                    ],
+                    [
+                      "Limited feature discovery",
+                      "Contextual entry points into relevant product features"
+                    ],
+                    [
+                      "Notification fatigue",
+                      "Segmented notifications and frequency controls"
+                    ]
+                  ]
+                }
+              },
+              {
+                "p": "The objective was to make returning to the product easy, relevant and rewarding."
+              },
+              {
+                "figure": {
+                  "src": "assets/daily-digest/reminder.webp",
+                  "caption": "Contextual nudges to encourage daily participation"
+                }
+              },
+              {
+                "gallery": {
+                  "caption": "Research reference diagrams · Harry Fletcher-Wood, Habits of Success",
+                  "images": [
+                    {
+                      "src": "assets/daily-digest/behaviour-motivation.webp",
+                      "title": "Motivating students to change their behaviour"
+                    },
+                    {
+                      "src": "assets/daily-digest/behaviour-commitment.webp",
+                      "title": "Helping students commit to action"
+                    },
+                    {
+                      "src": "assets/daily-digest/behaviour-initiation.webp",
+                      "title": "Reducing barriers to starting"
+                    },
+                    {
+                      "src": "assets/daily-digest/behaviour-continuation.webp",
+                      "title": "Supporting sustained participation"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "title": "Personalisation and product intelligence",
+            "nav": "Personalisation",
+            "blocks": [
+              {
+                "p": "I defined the recommendation framework around three components:"
+              },
+              {
+                "recframework": {
+                  "columns": [
+                    {
+                      "n": "01",
+                      "title": "User signals",
+                      "items": [
+                        "Recent activity",
+                        "Assessment performance",
+                        "Individual goals",
+                        "Knowledge gaps",
+                        "Preparation stage",
+                        "Learning progress"
+                      ],
+                      "exit": []
+                    },
+                    {
+                      "n": "02",
+                      "title": "Personalisation logic",
+                      "items": [
+                        "Activity relevance",
+                        "Difficulty",
+                        "Time constraints",
+                        "User priorities"
+                      ],
+                      "exit": []
+                    },
+                    {
+                      "n": "03",
+                      "title": "Personalised daily experience",
+                      "items": [
+                        "Conceptual refreshers",
+                        "Accuracy challenges",
+                        "Targeted remediation",
+                        "Revision activities"
+                      ],
+                      "exit": [
+                        "Contextual recommendations to other product features"
+                      ]
+                    }
+                  ],
+                  "caption": "Conceptual representation of the recommendation framework."
+                }
+              },
+              {
+                "p": "The objective was to make each interaction relevant to the individual user while encouraging deeper engagement with the wider product."
+              },
+              {
+                "figure": {
+                  "src": "assets/daily-digest/product-flow.webp",
+                  "caption": "Daily activities and pathways to further practice"
+                }
+              },
+              {
+                "figure": {
+                  "src": "assets/daily-digest/learning-tips.webp",
+                  "caption": "Microlearning through shortcuts, mnemonics and exam strategies"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Cross-functional execution and continuous improvement",
+            "nav": "Execution",
+            "blocks": [
+              {
+                "p": "My responsibilities extended from problem identification and product definition to cross-functional execution and post-launch optimisation."
+              },
+              {
+                "p": "I worked with product, research, design, machine learning and engineering teams to translate customer insights into product requirements, define the personalisation framework and refine the experience based on usage data and customer feedback."
+              }
+            ]
+          },
+          {
+            "title": "Product outcomes",
+            "nav": "Outcomes",
+            "blocks": [
+              {
+                "outcomes": [
+                  [
+                    "Daily active users",
+                    "35k → 80k+"
+                  ],
+                  [
+                    "Retention uplift",
+                    "+32%"
+                  ],
+                  [
+                    "Session duration",
+                    "+64%"
+                  ],
+                  [
+                    "Streak participation",
+                    "+72%"
+                  ],
+                  [
+                    "Practice activity",
+                    "2.5×"
+                  ],
+                  [
+                    "Chapter assessment usage",
+                    "+60%"
+                  ]
+                ]
+              },
+              {
+                "p": "Daily Digest evolved from a standalone engagement feature into an entry point for the wider product ecosystem, helping users discover relevant activities and engage more consistently."
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Amazon · official 2021 product launch announcement",
+            "url": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations"
+          },
+          {
+            "label": "Harry Fletcher-Wood · Habits of Success: Getting Every Student Learning",
+            "url": "https://improvingteaching.co.uk/habits-of-success/"
+          }
+        ],
+        "referenceTitle": "References",
+        "title": "Turning declining engagement into sustained product usage.",
+        "category": "Product Strategy · Engagement & Retention",
+        "breadcrumb": "Amazon · Daily Digest",
+        "stats": [
+          [
+            "35k → 80k+",
+            "Daily active users"
+          ],
+          [
+            "+32%",
+            "Retention uplift"
+          ],
+          [
+            "+64%",
+            "Session duration"
+          ]
+        ]
+      }
     },
     {
-     "label": "Cohort intelligence",
-     "title": "Identify concepts requiring additional instruction",
-     "paragraphs": [
-      "Concept-level proficiency and assessment results provide a basis for identifying common learning gaps and prioritising lesson preparation. The dashboard connects cohort-level patterns to teaching decisions."
-     ]
+      "companyUrl": "https://athenaeducation.co.in/",
+      "company": "Athena Education",
+      "organisation": "Athena Education",
+      "title": "Scaling personalised counselling through AI.",
+      "category": "AI Strategy · Solution Architecture",
+      "summary": "I developed an AI product strategy to increase counselling capacity without compromising personalisation. The strategy focused on reducing repetitive work, leveraging institutional knowledge and enabling better student-specific decisions.",
+      "outcomes": [
+        [
+          "Workflow automation",
+          "Operational efficiency"
+        ],
+        [
+          "Institutional intelligence",
+          "Knowledge utilisation"
+        ],
+        [
+          "Personalised planning",
+          "Decision support"
+        ]
+      ],
+      "case": {
+        "sections": [
+          {
+            "title": "The business challenge",
+            "nav": "The business challenge",
+            "blocks": [
+              {
+                "p": "Athena’s college admissions counselling model relies on understanding each student individually and guiding their academic and extracurricular development over several years. Increasing counselling capacity without compromising this personalisation was the central business challenge."
+              },
+              {
+                "figure": {
+                  "src": "assets/athena/ecosystem.webp",
+                  "caption": "Athena's personalised counselling ecosystem"
+                }
+              },
+              {
+                "gallery": {
+                  "caption": "Grade-specific student development journeys",
+                  "images": [
+                    {
+                      "src": "assets/athena/grade-9.webp",
+                      "title": "Grade 9 · Discover"
+                    },
+                    {
+                      "src": "assets/athena/grade-12.webp",
+                      "title": "Grade 12 · Demonstrate"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "title": "Understanding the problem",
+            "nav": "Understanding the problem",
+            "blocks": [
+              {
+                "p": "I examined the activities surrounding each counselling session. Counsellors spent time reviewing previous discussions, documenting conversations, updating Airtable records, tracking student commitments and researching suitable academic and extracurricular opportunities."
+              },
+              {
+                "gallery": {
+                  "portrait": true,
+                  "caption": "Arete — the student experience",
+                  "images": [
+                    {
+                      "src": "assets/athena/dashboard.webp",
+                      "title": "Personalised plan and dashboard"
+                    },
+                    {
+                      "src": "assets/athena/meeting.webp",
+                      "title": "Meeting scheduling and coordination"
+                    },
+                    {
+                      "src": "assets/athena/projects.webp",
+                      "title": "Project progress tracking"
+                    },
+                    {
+                      "src": "assets/athena/tasks.webp",
+                      "title": "Task management"
+                    }
+                  ]
+                }
+              },
+              {
+                "p": "Another opportunity was Athena’s accumulated knowledge: approximately ten years of counselling recordings, documents and student records that could inform future counselling decisions."
+              }
+            ]
+          },
+          {
+            "title": "Defining the solutions",
+            "nav": "Defining the solutions",
+            "blocks": [
+              {
+                "p": "I identified three specific areas where AI could support counsellors."
+              },
+              {
+                "item": [
+                  "Transcript Intelligence",
+                  "Convert counselling recordings into structured session summaries, extracting student interests, decisions, commitments and deadlines. Counsellors review the extracted information before updating student records."
+                ]
+              },
+              {
+                "item": [
+                  "Intelligent Counsellor Workbook",
+                  "Maintain an evolving student profile covering academic progress, interests, achievements and pending activities. Before each session, counsellors receive a summary of previous discussions, outstanding commitments and changes in student circumstances."
+                ]
+              },
+              {
+                "item": [
+                  "Personalised Student Planning Engine",
+                  "Recommend courses, competitions, internships and research opportunities based on student interests, academic goals, existing skills and availability. Check eligibility, prerequisites and deadlines before generating individual activity plans."
+                ]
+              },
+              {
+                "framework": {
+                  "title": "Personalised planning logic",
+                  "steps": [
+                    [
+                      "Understand student context",
+                      "Aspirations, interests and academic profile."
+                    ],
+                    [
+                      "Retrieve institutional knowledge",
+                      "Relevant programmes, projects and guidance."
+                    ],
+                    [
+                      "Evaluate feasibility",
+                      "Eligibility, prerequisites, commitments and available time."
+                    ],
+                    [
+                      "Recommend next actions",
+                      "Prioritised and actionable student plan."
+                    ],
+                    [
+                      "Counsellor approval",
+                      "Review, refine and approve."
+                    ]
+                  ],
+                  "caption": "Proposed product decision framework."
+                }
+              }
+            ]
+          },
+          {
+            "title": "Architecture and product decisions",
+            "nav": "Architecture and product decisions",
+            "blocks": [
+              {
+                "p": "I proposed structured databases for student records, RAG for retrieving historical counselling knowledge and explicit business rules for eligibility and activity scheduling."
+              },
+              {
+                "p": "The reliability requirements addressed specific failures: invented student information, contradictory records, unsuitable opportunities and unrealistic time commitments. Consequential recommendations and record changes required counsellor approval."
+              },
+              {
+                "framework": {
+                  "title": "Counselling intelligence architecture",
+                  "steps": [
+                    [
+                      "Transcript Intelligence",
+                      "Extract decisions, commitments and follow-ups from counselling conversations."
+                    ],
+                    [
+                      "Intelligent Counselor Workbook",
+                      "Maintain evolving student context, goals and milestones."
+                    ],
+                    [
+                      "Personalized Student Planning Engine",
+                      "Combine student context and institutional knowledge to recommend feasible actions."
+                    ],
+                    [
+                      "Counsellor review",
+                      "Review and approve consequential recommendations."
+                    ]
+                  ],
+                  "caption": "Proposed AI product architecture."
+                }
+              }
+            ]
+          },
+          {
+            "title": "From strategy to implementation",
+            "nav": "From strategy to implementation",
+            "blocks": [
+              {
+                "p": "I developed the product requirements, solution architecture and implementation roadmap, recommending that Athena begin with session documentation before introducing automated student profile updates and personalised planning."
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Athena · official admissions journey",
+            "url": "https://athenaeducation.co.in/admissions-journey/"
+          },
+          {
+            "label": "Athena · company website",
+            "url": "https://athenaeducation.co.in/"
+          }
+        ],
+        "referenceTitle": "References",
+        "title": "Scaling personalised counselling through AI.",
+        "category": "AI Strategy · Solution Architecture",
+        "breadcrumb": "Athena Education"
+      }
     },
     {
-     "label": "Student intelligence",
-     "title": "Connect engagement and progress to interventions",
-     "paragraphs": [
-      "Learning activity and proficiency provide complementary signals for understanding student needs. The aim is to help teachers identify students who may require additional support and plan targeted interventions."
-     ]
+      "companyUrl": "https://whitetable.ai/",
+      "company": "WhiteTable",
+      "organisation": "WhiteTable",
+      "title": "Building the intelligent backbone of a startup.",
+      "category": "AI Strategy · Agentic Systems",
+      "summary": "I developed a unified AI framework connecting organisational knowledge, business workflows, software development and customer acquisition within an integrated operating model.",
+      "outcomes": [
+        [
+          "Organisational intelligence",
+          "Knowledge base & employee assistant"
+        ],
+        [
+          "Agent backbone",
+          "Business & software development workflows"
+        ],
+        [
+          "GrowthOS",
+          "Customer acquisition"
+        ]
+      ],
+      "case": {
+        "sections": [
+          {
+            "title": "The business challenge",
+            "nav": "The business challenge",
+            "blocks": [
+              {
+                "p": "WhiteTable was developing its product while establishing its internal operating processes. I examined how teams documented decisions, communicated requirements, planned work, collected customer feedback and approached customer acquisition."
+              },
+              {
+                "p": "I identified opportunities to improve these processes through shared organisational knowledge and reusable AI workflows."
+              }
+            ]
+          },
+          {
+            "title": "Understanding the problem",
+            "nav": "Understanding the problem",
+            "blocks": [
+              {
+                "p": "Documentation was fragmented, meetings and decisions were not consistently recorded, and customer feedback lacked a structured collection process. Internal communication, work planning, task ownership and follow-ups required better coordination."
+              },
+              {
+                "p": "Software development lacked standardised PRDs, requirement specifications and consistent development workflows. Customer acquisition involved repetitive prospect discovery, research and outreach preparation."
+              }
+            ]
+          },
+          {
+            "title": "Defining the solutions",
+            "nav": "Defining the solutions",
+            "blocks": [
+              {
+                "item": [
+                  "Organisational Intelligence",
+                  "I developed a knowledge framework and prototyped an employee assistant to retrieve information about the company, product, technical architecture and internal processes. The proposed knowledge workflows would capture meeting notes, decisions and customer feedback, keeping information accessible across teams."
+                ]
+              },
+              {
+                "figure": {
+                  "src": "assets/whitetable/assistant.webp",
+                  "caption": "WhiteTable Intelligence — conversational access to organisational knowledge (internal details masked)"
+                }
+              },
+              {
+                "item": [
+                  "Agent Backbone — Business Operations",
+                  "I defined reusable agent workflows for meeting summaries, action-item tracking, customer feedback classification, work planning and internal reporting. Outputs from one activity could inform subsequent work."
+                ]
+              },
+              {
+                "framework": {
+                  "title": "Reusable agent backbone",
+                  "steps": [
+                    [
+                      "Shared context",
+                      "Company knowledge, workflow requirements and reusable skills"
+                    ],
+                    [
+                      "Specialised agents",
+                      "Research, meeting intelligence, documentation and operational planning"
+                    ],
+                    [
+                      "Structured handoff",
+                      "Reviewable outputs and explicit validation requirements"
+                    ],
+                    [
+                      "Approval boundary",
+                      "Human decisions before consequential actions"
+                    ]
+                  ],
+                  "caption": "Summary of the agent backbone design."
+                }
+              },
+              {
+                "item": [
+                  "Agent Backbone — Software Development",
+                  "I designed workflows to translate product requirements into structured PRDs, technical specifications, implementation tasks and acceptance criteria. The PRD Creator and Work Planner workflows connected Google Drive documentation with Jira work items. Agents would work within defined responsibilities, with validation and approval before consequential changes."
+                ]
+              },
+              {
+                "figure": {
+                  "src": "assets/whitetable/prd-workflow.webp",
+                  "caption": "PRD Creator and Work Planner — requirements, human decisions and structured task planning"
+                }
+              },
+              {
+                "framework": {
+                  "title": "From request to engineering work",
+                  "steps": [
+                    [
+                      "Jira request",
+                      "Identify the problem and required outcome"
+                    ],
+                    [
+                      "PRD Creator",
+                      "Draft specification using team context and templates"
+                    ],
+                    [
+                      "Human review",
+                      "Resolve product decisions and approve requirements"
+                    ],
+                    [
+                      "Work Planner",
+                      "Decompose requirements into tasks, acceptance criteria and dependencies"
+                    ],
+                    [
+                      "Jira integration",
+                      "Approved creation and read-back verification"
+                    ]
+                  ],
+                  "caption": "PRD Creator and Work Planner workflow."
+                }
+              },
+              {
+                "gallery": {
+                  "caption": "Software development workflow — supporting delivery evidence",
+                  "images": [
+                    {
+                      "src": "assets/whitetable/work-planner-board.webp",
+                      "title": "Work Planner project board"
+                    }
+                  ]
+                }
+              },
+              {
+                "item": [
+                  "GrowthOS — Customer Acquisition",
+                  "I prototyped workflows for prospect discovery, company research, prospect qualification and personalised outreach preparation, with structured records to track prospects and previous interactions."
+                ]
+              },
+              {
+                "figure": {
+                  "src": "assets/whitetable/architecture.webp",
+                  "caption": "GrowthOS orchestration, discovery pipeline and human approval boundaries"
+                }
+              },
+              {
+                "gallery": {
+                  "caption": "GrowthOS specialist agent catalogue",
+                  "images": [
+                    {
+                      "src": "assets/whitetable/agent-catalogue-1.webp",
+                      "title": "Coordination, market strategy and lead qualification"
+                    },
+                    {
+                      "src": "assets/whitetable/agent-catalogue-2.webp",
+                      "title": "Outreach, CRM, onboarding and growth analysis"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "title": "Architecture and reliability",
+            "nav": "Architecture and reliability",
+            "blocks": [
+              {
+                "p": "I defined shared components for knowledge retrieval, task orchestration, structured outputs and validation."
+              },
+              {
+                "p": "The prototypes explored how agents could exchange information, prevent duplicate records, validate outputs against requirements and flag failures for human review."
+              },
+              {
+                "gallery": {
+                  "caption": "Evaluation evidence and iterative improvement",
+                  "images": [
+                    {
+                      "src": "assets/whitetable/assistant-eval.webp",
+                      "title": "Employee assistant evaluation — 26-question test set"
+                    },
+                    {
+                      "src": "assets/whitetable/answer-quality.webp",
+                      "title": "Before and after answer quality and retrieval improvements"
+                    },
+                    {
+                      "src": "assets/whitetable/growth-eval.webp",
+                      "title": "GrowthOS deterministic guardrail scenarios and evaluation limitations"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "title": "My contribution",
+            "nav": "My contribution",
+            "blocks": [
+              {
+                "p": "My work covered business problem identification, AI strategy, solution architecture, workflow definition, functional prototyping and testing. These capabilities were intended for progressive integration into WhiteTable’s operations."
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "WhiteTable · company website",
+            "url": "https://whitetable.ai/"
+          }
+        ],
+        "referenceTitle": "References",
+        "title": "Building the intelligent backbone of a startup.",
+        "category": "AI Strategy · Agentic Systems",
+        "breadcrumb": "WhiteTable"
+      }
     },
     {
-     "label": "Assessment intelligence",
-     "title": "Understand performance beyond the overall score",
-     "paragraphs": [
-      "Question-level response patterns can help distinguish difficult concepts from questions that may need further review. This is an example of the decision-making capability that assessment analytics can support."
-     ]
-    }
-   ],
-   "article": {
-    "title": "Turning product data into actionable insights.",
-    "subtitle": "Teacher insights, learning analytics and assessment intelligence",
-    "meta": "Product Analytics · Decision Intelligence",
-    "metric": "",
-    "metricLabel": "",
-    "hideReferences": true,
-    "sources": []
-   },
-   "label": "Amazon — Teacher Insights Dashboard",
-   "category": "Product Analytics · Decision Intelligence"
-  },
-  {
-   "company": "Archmation",
-   "organisation": "Archmation",
-   "companyUrl": "https://archmation.com/about-us",
-   "title": "Building an operating system for creative and marketing teams.",
-   "metric": "",
-   "unit": "",
-   "problem": "Fragmented creative briefs, production tracking, approvals and asset storage created coordination overhead and made work difficult to monitor.",
-   "summary": "I built an integrated operating framework connecting creative requests, project execution, approval workflows and digital asset libraries.",
-   "status": "",
-   "images": [],
-   "compact": true,
-   "chapters": [
-    {
-     "label": "Problem",
-     "title": "From fragmented coordination to structured operations",
-     "paragraphs": [
-      "Fragmented creative briefs, production tracking, approvals and asset storage created coordination overhead and made work difficult to monitor.",
-      "The design focused on improving input quality, making ownership and deadlines visible, recording review decisions and reducing duplicated creative work."
-     ]
+      "companyUrl": "https://byjus.com/",
+      "company": "BYJU’S",
+      "organisation": "BYJU’S",
+      "title": "Building innovative learning products at scale.",
+      "category": "Product Leadership · Innovation & Scale",
+      "summary": "I played a key role in building and scaling BYJU’S learning products during its rapid growth, leading multidisciplinary teams across product development, knowledge architecture, interactive learning and large-scale operations.",
+      "outcomes": [
+        [
+          "Knowledge architecture",
+          "Foundational knowledge systems"
+        ],
+        [
+          "Personalised learning",
+          "Guided learning journeys"
+        ],
+        [
+          "Interactive experiences",
+          "Games, simulations and virtual labs"
+        ]
+      ],
+      "case": {
+        "sections": [
+          {
+            "title": "Building during rapid business growth",
+            "nav": "Building during rapid business growth",
+            "blocks": [
+              {
+                "p": "I joined BYJU’S before the launch of its flagship learning app and contributed to its product expansion over the following five years. As the business expanded across grades, subjects and product formats, my responsibilities grew from specialised team leadership to multidisciplinary product development and operations."
+              },
+              {
+                "figure": {
+                  "src": "assets/byjus/product-evolution.webp",
+                  "caption": "Visual learning and personalised journeys"
+                }
+              },
+              {
+                "p": "The expanding product portfolio required new capabilities, shared product frameworks and development processes that could support multiple initiatives simultaneously."
+              }
+            ]
+          },
+          {
+            "title": "Establishing a common product foundation",
+            "nav": "Establishing a common product foundation",
+            "blocks": [
+              {
+                "p": "As the product ecosystem grew, connecting learning resources, assessments and individual user journeys became increasingly complex."
+              },
+              {
+                "p": "I led the development of a knowledge architecture across Physics, Chemistry, Mathematics and Biology, defining concept relationships, prerequisites and resource mapping. This provided a common foundation for product personalisation, recommendations, assessments and guided learning journeys."
+              },
+              {
+                "figure": {
+                  "src": "assets/byjus/knowledge-graph.webp",
+                  "caption": "Concept relationships illustrated through a knowledge graph"
+                }
+              },
+              {
+                "framework": {
+                  "title": "Knowledge architecture",
+                  "steps": [
+                    [
+                      "Curriculum structure",
+                      "Organise subject areas into meaningful learning concepts."
+                    ],
+                    [
+                      "Concept relationships",
+                      "Map prerequisite and related concepts."
+                    ],
+                    [
+                      "Learning assets",
+                      "Connect explanations, practice, interactive activities and assessments to concepts."
+                    ]
+                  ],
+                  "caption": "High-level explanatory framework."
+                }
+              },
+              {
+                "p": "The framework allowed different teams to develop products using a shared underlying structure."
+              }
+            ]
+          },
+          {
+            "title": "Developing new product capabilities",
+            "nav": "Developing new product capabilities",
+            "blocks": [
+              {
+                "p": "I led and contributed to initiatives that expanded the capabilities of the learning platform:"
+              },
+              {
+                "item": [
+                  "Guided journeys",
+                  "Structured pathways connecting instruction, practice, assessment and remediation."
+                ]
+              },
+              {
+                "gallery": {
+                  "caption": "Guided learning experiences",
+                  "images": [
+                    {
+                      "src": "assets/byjus/mobile-journeys.webp",
+                      "title": "Learning library, concept map and video lessons"
+                    },
+                    {
+                      "src": "assets/byjus/biology-journey.webp",
+                      "title": "Biology library and guided journey"
+                    }
+                  ]
+                }
+              },
+              {
+                "framework": {
+                  "title": "Guided learning logic",
+                  "steps": [
+                    [
+                      "Define the learning objective",
+                      "Identify the concept to be understood."
+                    ],
+                    [
+                      "Sequence learning activities",
+                      "Connect explanations, worked examples and practice."
+                    ],
+                    [
+                      "Assess understanding",
+                      "Use responses and feedback to identify learning needs."
+                    ],
+                    [
+                      "Guide the next step",
+                      "Continue the structured learning journey."
+                    ]
+                  ],
+                  "caption": "Conceptual representation of guided learning."
+                }
+              },
+              {
+                "item": [
+                  "Assessment intelligence",
+                  "Performance analysis, identification of knowledge gaps and targeted recommendations."
+                ]
+              },
+              {
+                "item": [
+                  "Interactive products",
+                  "Educational games, simulations, applets and virtual laboratories."
+                ]
+              },
+              {
+                "gallery": {
+                  "caption": "Interactive STEM and virtual laboratories",
+                  "images": [
+                    {
+                      "src": "assets/byjus/interactive-light.webp",
+                      "title": "Exploring light reflection through interaction"
+                    },
+                    {
+                      "src": "assets/byjus/interactive-maths.webp",
+                      "title": "Interactive mathematics activities"
+                    },
+                    {
+                      "src": "assets/byjus/lab-observation.webp",
+                      "title": "Virtual laboratory — observation"
+                    },
+                    {
+                      "src": "assets/byjus/lab-conclusion.webp",
+                      "title": "Virtual laboratory — conclusion"
+                    },
+                    {
+                      "src": "assets/byjus/lab-viva.webp",
+                      "title": "Virtual laboratory — viva and guided feedback"
+                    }
+                  ]
+                }
+              },
+              {
+                "item": [
+                  "Experiential learning",
+                  "Physical learning kits and flipped-classroom pilots connecting digital products with classroom instruction."
+                ]
+              },
+              {
+                "p": "My responsibilities covered defining product requirements, developing experience frameworks and coordinating execution across specialised teams."
+              }
+            ]
+          },
+          {
+            "title": "Building organisational capabilities",
+            "nav": "Building organisational capabilities",
+            "blocks": [
+              {
+                "p": "Rapid product expansion required teams with expertise in subject knowledge, product development, design, media and technology."
+              },
+              {
+                "p": "I established multidisciplinary development workflows, product specifications, resource allocation processes and quality standards. These enabled teams to execute multiple product initiatives in parallel while maintaining consistency across the expanding product portfolio."
+              },
+              {
+                "framework": {
+                  "title": "Scaling learning product development",
+                  "steps": [
+                    [
+                      "Curriculum and pedagogy",
+                      "Learning objectives and concept mapping."
+                    ],
+                    [
+                      "Product and experience design",
+                      "Learning formats and interaction design."
+                    ],
+                    [
+                      "Multidisciplinary production",
+                      "Content, design, animation and development."
+                    ],
+                    [
+                      "Quality and delivery",
+                      "Review, validation and publishing."
+                    ]
+                  ],
+                  "caption": "High-level product development framework."
+                }
+              }
+            ]
+          },
+          {
+            "title": "Contribution to business expansion",
+            "nav": "Contribution to business expansion",
+            "blocks": [
+              {
+                "p": "Over five years, I played a key role in establishing product capabilities, knowledge systems, teams and development processes that supported BYJU’S rapid growth."
+              },
+              {
+                "p": "My contribution extended across product innovation, capability building and operational execution at scale."
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "BYJU’S · company website",
+            "url": "https://byjus.com/"
+          }
+        ],
+        "referenceTitle": "References",
+        "title": "Building innovative learning products at scale.",
+        "category": "Product Leadership · Innovation & Scale",
+        "breadcrumb": "BYJU’S"
+      }
     },
     {
-     "label": "Collateral Flow",
-     "title": "Managing the creative production lifecycle",
-     "paragraphs": [
-      "Structured request forms capture creative briefs, audience, channels, reference assets, priorities and deadlines. Brief completeness scores and missing-information flags help reviewers identify requests that need clarification before production.",
-      "Production boards connect designer assignment, estimated hours and task status. Approval records track review rounds, decisions and feedback, while linked invoices provide payment-status visibility. Status-triggered email notifications were designed to support handoffs."
-     ]
+      "companyUrl": "https://www.emotorad.com/",
+      "company": "EMotorad",
+      "organisation": "EMotorad",
+      "title": "Simplifying business operations through AI and automation.",
+      "category": "Business Operations · Intelligent Automation",
+      "summary": "I identified inefficiencies in everyday business operations and developed AI-enabled workflows to improve employee access to information, task tracking and internal communication.",
+      "outcomes": [
+        [
+          "Employee enablement",
+          "Training & access to internal SOPs"
+        ],
+        [
+          "Task management",
+          "Pending activities & completion tracking"
+        ],
+        [
+          "Automated communication",
+          "Notifications & follow-ups"
+        ]
+      ],
+      "case": {
+        "sections": [
+          {
+            "title": "Business context",
+            "nav": "Business context",
+            "blocks": [
+              {
+                "p": "As EMotorad expanded its operations, employees needed access to internal processes, training materials and standard operating procedures. Managers also needed visibility into pending work, task ownership and completion deadlines."
+              },
+              {
+                "p": "Through ARCHMATION, I identified opportunities to simplify these activities using existing business tools and automated workflows."
+              }
+            ]
+          },
+          {
+            "title": "Understanding the problem",
+            "nav": "Understanding the problem",
+            "blocks": [
+              {
+                "p": "Employees depended on colleagues and managers for routine questions about internal processes and SOPs. Training materials and process documentation required employees to search through multiple resources. Tracking pending activities, communicating deadlines and following up on incomplete tasks involved repetitive manual coordination."
+              }
+            ]
+          },
+          {
+            "title": "Developing the solutions",
+            "nav": "Developing the solutions",
+            "blocks": [
+              {
+                "item": [
+                  "Employee knowledge and training",
+                  "I developed a workflow to organise internal documentation, SOPs and training materials into an accessible knowledge base. Employees could retrieve relevant information through natural-language queries, reducing dependence on individual team members."
+                ]
+              },
+              {
+                "figure": {
+                  "src": "https://miro.medium.com/v2/resize%3Afit%3A1400/1%2APC7cYhrIRZ1DkdGVDLUZAg.png",
+                  "caption": "HR onboarding automation with Google Drive",
+                  "kind": "Workflow example"
+                }
+              },
+              {
+                "figure": {
+                  "src": "assets/sop-flow.svg",
+                  "caption": "Illustrative SOP retrieval workflow",
+                  "kind": "Conceptual workflow"
+                }
+              },
+              {
+                "item": [
+                  "Task tracking and operational visibility",
+                  "I developed workflows to consolidate pending activities, assigned responsibilities, completion dates and task status. Managers could review outstanding work without manually collecting updates from multiple employees."
+                ]
+              },
+              {
+                "item": [
+                  "Automated reminders and follow-ups",
+                  "I designed automated notifications through WhatsApp and Gmail for upcoming deadlines, incomplete activities and pending responses. Reminders were linked to task status and completion dates."
+                ]
+              },
+              {
+                "figure": {
+                  "src": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png",
+                  "caption": "Task-tracker alerts using Google Sheets and Gmail",
+                  "kind": "Workflow example"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Implementation approach",
+            "nav": "Implementation approach",
+            "blocks": [
+              {
+                "p": "I used n8n to connect existing business applications, organise information and automate recurring activities. The workflows were designed around familiar communication channels to minimise changes to employees’ daily routines."
+              },
+              {
+                "p": "My contribution covered identifying operational gaps, defining workflow requirements, selecting integrations and developing automation solutions."
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "EMotorad · company website",
+            "url": "https://www.emotorad.com/"
+          },
+          {
+            "label": "Nishanthini · HR onboarding workflow screenshot",
+            "url": "https://medium.com/%40nishasuba996/transforming-hr-onboarding-how-google-adk-and-n8n-power-a-seamless-experience-982651c88492"
+          },
+          {
+            "label": "The AI Operator Method · document retrieval workflow screenshot",
+            "url": "https://learnn8nautomation.com/how-to-build-rag-pipeline-with-n8n"
+          },
+          {
+            "label": "n8n · Google Sheets and Gmail task alerts screenshot",
+            "url": "https://n8n.io/workflows/9324-send-one-time-email-alerts-for-urgent-tasks-with-google-sheets-and-gmail/"
+          },
+          {
+            "label": "n8n · WhatsApp pending-task reminder template",
+            "url": "https://n8n.io/workflows/19104-send-daily-whatsapp-task-reminders-from-google-sheets-via-waha/"
+          }
+        ],
+        "referenceTitle": "References",
+        "title": "Simplifying business operations through AI and automation.",
+        "category": "Business Operations · Intelligent Automation",
+        "breadcrumb": "EMotorad"
+      }
     },
     {
-     "label": "Visual Library",
-     "title": "Making creative assets discoverable and reusable",
-     "paragraphs": [
-      "A centralised marketing visual library organises assets through categories, tags, gallery views and asset details. Download and shareable links support reuse.",
-      "AI-assisted visual summaries and suggested categories support metadata enrichment and classification."
-     ]
+      "companyUrl": "https://archmation.com/about-us",
+      "company": "ARCHMATION",
+      "organisation": "ARCHMATION",
+      "title": "Transforming creative production with generative AI.",
+      "category": "Generative AI · Production Systems",
+      "summary": "I developed generative AI solutions for clients across industries, building reusable production workflows for product photography, video, branding and architectural visualisation.",
+      "outcomes": [
+        [
+          "Generative AI workflows",
+          "Reusable production systems"
+        ],
+        [
+          "Commercial applications",
+          "Client-specific solutions"
+        ],
+        [
+          "Production optimisation",
+          "Cost, quality & turnaround time"
+        ]
+      ],
+      "case": {
+        "sections": [
+          {
+            "title": "Business context",
+            "nav": "Business context",
+            "blocks": [
+              {
+                "p": "Through ARCHMATION, I worked with businesses across industries on creative production requirements, including product photography, commercial videos, branding and architectural visualisation."
+              },
+              {
+                "p": "Conventional production involved photography, location arrangements, physical samples, 3D modelling and multiple rounds of revisions. These requirements affected production costs, turnaround times and the number of creative variations clients could explore."
+              }
+            ]
+          },
+          {
+            "title": "Identifying commercial opportunities",
+            "nav": "Identifying commercial opportunities",
+            "blocks": [
+              {
+                "p": "I identified production activities where generative AI could reduce cost and effort while meeting client requirements."
+              },
+              {
+                "p": "Early experimentation revealed several limitations: inconsistent product appearance, inaccurate proportions, limited control over composition and difficulty maintaining visual consistency across multiple outputs."
+              },
+              {
+                "p": "I focused on developing repeatable workflows that addressed these limitations and could be adapted to different client requirements."
+              }
+            ]
+          },
+          {
+            "title": "Developing commercial solutions",
+            "nav": "Developing commercial solutions",
+            "blocks": [
+              {
+                "item": [
+                  "Product photography and virtual try-on",
+                  "Developed workflows for generating product photographs, lifestyle imagery and virtual try-on experiences, controlling product appearance, backgrounds, lighting and composition."
+                ]
+              },
+              {
+                "gallery": {
+                  "caption": "Virtual photography workflows",
+                  "images": [
+                    {
+                      "src": "assets/archmation-creative/virtual-photoshoot.webp",
+                      "title": "Garment inputs to multi-pose output demonstration"
+                    },
+                    {
+                      "src": "assets/archmation-creative/fashion-workflow.webp",
+                      "title": "Fashion and animation workflow"
+                    },
+                    {
+                      "src": "assets/archmation-creative/sportswear-workflow.webp",
+                      "title": "Multi-angle sportswear generation workflow"
+                    },
+                    {
+                      "title": "Apparel display video",
+                      "webm": "assets/archmation-creative/body-4.webm"
+                    },
+                    {
+                      "title": "Fashion motion demonstration",
+                      "webm": "assets/archmation-creative/screen-recording-2025-09-20-at-10-20-43-am.webm"
+                    }
+                  ]
+                }
+              },
+              {
+                "gallery": {
+                  "caption": "Product and food imagery",
+                  "images": [
+                    {
+                      "src": "assets/archmation-creative/food-workflow.webp",
+                      "title": "End-to-end commercial composition workflow"
+                    },
+                    {
+                      "src": "assets/archmation-creative/ingredient-composition.webp",
+                      "title": "Ingredient generation and isolation"
+                    },
+                    {
+                      "src": "assets/archmation-creative/food-refinement.webp",
+                      "title": "Relighting and upscaling comparison"
+                    },
+                    {
+                      "src": "assets/archmation-creative/product-refinement.webp",
+                      "title": "Composition and output refinement"
+                    }
+                  ]
+                }
+              },
+              {
+                "item": [
+                  "AI video production",
+                  "Introduced generative video and AI presenter workflows for commercial videos, product demonstrations and branded communication, reducing dependence on conventional filming."
+                ]
+              },
+              {
+                "gallery": {
+                  "caption": "Selected capability demonstrations",
+                  "images": [
+                    {
+                      "src": "assets/archmation-creative/ugc-demo.webp",
+                      "title": "UGC-style product placement demonstration"
+                    },
+                    {
+                      "title": "UGC unboxing video workflow",
+                      "webm": "assets/archmation-creative/body-3.webm"
+                    },
+                    {
+                      "title": "Character replacement video",
+                      "webm": "assets/archmation-creative/body-mp4.webm"
+                    },
+                    {
+                      "title": "Text-to-3D CAD prototype demonstration",
+                      "webm": "assets/archmation-creative/body-2.webm"
+                    },
+                    {
+                      "src": "assets/archmation-creative/character-replacement.webp",
+                      "title": "Character replacement workflow"
+                    },
+                    {
+                      "src": "assets/archmation-creative/cad-prototype.webp",
+                      "title": "CAD prototype workflow"
+                    }
+                  ]
+                }
+              },
+              {
+                "item": [
+                  "Architecture and design visualisation",
+                  "Developed workflows for converting floor plans, reference images and design concepts into architectural visualisations, enabling faster exploration of design alternatives."
+                ]
+              },
+              {
+                "gallery": {
+                  "caption": "Furniture visualisation",
+                  "images": [
+                    {
+                      "src": "assets/archmation-creative/furniture-workflow.webp",
+                      "title": "Product isolation to staged scene and video"
+                    },
+                    {
+                      "src": "assets/archmation-creative/furniture-video.webp",
+                      "title": "Alternative furniture staging workflow"
+                    },
+                    {
+                      "title": "Furniture staging workflow recording",
+                      "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-4-23-20-pm.webm"
+                    }
+                  ]
+                }
+              },
+              {
+                "item": [
+                  "Branding and creative production",
+                  "Developed reusable workflows for campaign imagery, moodboards, branded assets and creative variations while maintaining visual consistency."
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Building reusable production systems",
+            "nav": "Building reusable production systems",
+            "blocks": [
+              {
+                "p": "I established workflows covering client requirements, reference inputs, model selection, generation, quality checks and approval."
+              },
+              {
+                "p": "Depending on the application, I used ComfyUI, FLUX, SDXL, ControlNet and customised model training to improve control over generated outputs."
+              },
+              {
+                "gallery": {
+                  "caption": "3D asset generation",
+                  "images": [
+                    {
+                      "src": "assets/archmation-creative/character-3d.webp",
+                      "title": "Character views and parallel 3D model outputs"
+                    },
+                    {
+                      "src": "assets/archmation-creative/character-3d-alternative.webp",
+                      "title": "Alternative character and model comparison"
+                    },
+                    {
+                      "title": "Multi-view 3D workflow recording",
+                      "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-5-05-59-pm.webm"
+                    }
+                  ]
+                }
+              },
+              {
+                "p": "Standardising these workflows allowed the team to reuse production methods across client engagements and reduce repeated experimentation."
+              }
+            ]
+          },
+          {
+            "title": "My contribution",
+            "nav": "My contribution",
+            "blocks": [
+              {
+                "p": "As co-founder, I managed client requirements, evaluated commercial opportunities, defined solution approaches and coordinated production. My work combined business development, technology experimentation, workflow development and production management."
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Archmation",
+            "url": "https://archmation.com/about-us"
+          }
+        ],
+        "referenceTitle": "References",
+        "title": "Transforming creative production with generative AI.",
+        "category": "Generative AI · Production Systems",
+        "breadcrumb": "ARCHMATION"
+      }
     },
     {
-     "label": "Operating model",
-     "title": "A single view of work and reusable assets",
-     "paragraphs": [
-      "The two systems address complementary needs: coordination of work in progress and management of reusable creative outputs. The design brings structured information and review checkpoints into everyday creative operations."
-     ]
-    }
-   ],
-   "article": {
-    "title": "Building an operating system for creative and marketing teams.",
-    "subtitle": "Collateral Flow and Marketing Visual Library",
-    "meta": "Internal Products · Operational Design",
-    "metric": "",
-    "metricLabel": "",
-    "hideReferences": true,
-    "sources": [],
-    "galleries": {
-     "1": {
-      "caption": "Collateral Flow — request intake, production and approvals",
-      "images": [
-       {
-        "src": "assets/archmation-operations/request-form.webp",
-        "title": "Structured request intake"
-       },
-       {
-        "src": "assets/archmation-operations/brief-validation.webp",
-        "title": "Brief completeness and missing information"
-       },
-       {
-        "src": "assets/archmation-operations/request-review.webp",
-        "title": "Flagged requests for review"
-       },
-       {
-        "src": "assets/archmation-operations/production-board.webp",
-        "title": "Production status and estimated effort"
-       },
-       {
-        "src": "assets/archmation-operations/approval-management.webp",
-        "title": "Linked approval rounds and invoicing"
-       }
-      ]
-     },
-     "2": {
-      "caption": "Marketing Visual Library — discovery and AI enrichment",
-      "images": [
-       {
-        "src": "assets/archmation-operations/asset-gallery.webp",
-        "title": "Visual asset gallery"
-       },
-       {
-        "src": "assets/archmation-operations/asset-categories.webp",
-        "title": "Category-based browsing"
-       },
-       {
-        "src": "assets/archmation-operations/asset-enrichment.webp",
-        "title": "AI-assisted summaries and suggested categories"
-       }
-      ]
-     }
-    }
-   },
-   "label": "ARCHMATION — Creative operations",
-   "category": "Internal Products · Operational Design"
-  },
-  {
-   "company": "Amazon",
-   "organisation": "Amazon",
-   "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
-   "title": "Building personalised and adaptive user journeys.",
-   "metric": "",
-   "unit": "",
-   "problem": "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
-   "summary": "I defined the product logic for adaptive user journeys, connecting behavioural data, user segmentation and knowledge architecture to personalise individual experiences.",
-   "status": "",
-   "images": [],
-   "compact": true,
-   "chapters": [
-    {
-     "label": "Overview",
-     "title": "Designing personalised and adaptive user journeys",
-     "paragraphs": [
-      "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
-      "Defined diagnostic assessments, recommendation logic, content sequencing, mastery requirements and intervention rules. Used knowledge graphs to map prerequisites and guide progression through different learning pathways."
-     ]
+      "company": "Amazon",
+      "organisation": "Amazon",
+      "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
+      "title": "Turning product data into actionable insights.",
+      "metric": "",
+      "unit": "",
+      "problem": "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
+      "summary": "I developed a framework to translate learner performance, engagement and mastery data into actionable insights, helping teachers make informed instructional decisions.",
+      "status": "",
+      "images": [],
+      "compact": true,
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Turning complex data into actionable decisions",
+          "paragraphs": [
+            "Designed a dashboard combining assessment results, engagement data and concept-level proficiency.",
+            "Owned the product requirements, metric definitions, information architecture and dashboard design. Worked with engineering and design teams to connect these insights to lesson planning, cohort-level decisions and individual interventions."
+          ]
+        },
+        {
+          "label": "Cohort intelligence",
+          "title": "Identify concepts requiring additional instruction",
+          "paragraphs": [
+            "Concept-level proficiency and assessment results provide a basis for identifying common learning gaps and prioritising lesson preparation. The dashboard connects cohort-level patterns to teaching decisions."
+          ]
+        },
+        {
+          "label": "Student intelligence",
+          "title": "Connect engagement and progress to interventions",
+          "paragraphs": [
+            "Learning activity and proficiency provide complementary signals for understanding student needs. The aim is to help teachers identify students who may require additional support and plan targeted interventions."
+          ]
+        },
+        {
+          "label": "Assessment intelligence",
+          "title": "Understand performance beyond the overall score",
+          "paragraphs": [
+            "Question-level response patterns can help distinguish difficult concepts from questions that may need further review. This is an example of the decision-making capability that assessment analytics can support."
+          ]
+        }
+      ],
+      "article": {
+        "title": "Turning product data into actionable insights.",
+        "subtitle": "Teacher insights, learning analytics and assessment intelligence",
+        "meta": "Product Analytics · Decision Intelligence",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": []
+      },
+      "label": "Amazon — Teacher Insights Dashboard",
+      "category": "Product Analytics · Decision Intelligence"
     },
     {
-     "label": "Learning pathways",
-     "title": "Different routes for different learning needs",
-     "paragraphs": [
-      "Defined persona-based pathways for Momentum, Consolidator, Explorer and Struggler learners, adapting the sequence and difficulty of learning activities to their needs.",
-      "Used diagnostic checkpoints, prerequisite relationships and remediation rules to guide progression. Strict mastery requirements and softer checkpoints served different learning objectives."
-     ]
-    }
-   ],
-   "article": {
-    "title": "Building personalised and adaptive user journeys.",
-    "subtitle": "Knowledge graphs, diagnostic assessments and personalised pathways",
-    "meta": "Product Intelligence · Personalisation",
-    "metric": "",
-    "metricLabel": "",
-    "hideReferences": true,
-    "sources": [],
-    "artifacts": {
-     "0": {
-      "src": "assets/daily-digest/product-flow.webp",
-      "caption": "Learning activities and pathways to further practice — Amazon product context"
-     }
-    }
-   },
-   "label": "Amazon — Adaptive user journeys",
-   "category": "Product Intelligence · Personalisation"
-  },
-  {
-   "company": "Amazon",
-   "organisation": "Amazon",
-   "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
-   "title": "Improving speed, quality and efficiency at scale.",
-   "metric": "",
-   "unit": "",
-   "problem": "Redesigned editorial production and quality assessment processes across multiple content formats.",
-   "summary": "I transformed complex operational workflows by introducing structured quality frameworks, automated validation and continuous feedback mechanisms.",
-   "status": "",
-   "images": [],
-   "compact": true,
-   "chapters": [
+      "company": "Archmation",
+      "organisation": "Archmation",
+      "companyUrl": "https://archmation.com/about-us",
+      "title": "Building an operating system for creative and marketing teams.",
+      "metric": "",
+      "unit": "",
+      "problem": "Fragmented creative briefs, production tracking, approvals and asset storage created coordination overhead and made work difficult to monitor.",
+      "summary": "I built an integrated operating framework connecting creative requests, project execution, approval workflows and digital asset libraries.",
+      "status": "",
+      "images": [],
+      "compact": true,
+      "chapters": [
+        {
+          "label": "Problem",
+          "title": "From fragmented coordination to structured operations",
+          "paragraphs": [
+            "Fragmented creative briefs, production tracking, approvals and asset storage created coordination overhead and made work difficult to monitor.",
+            "The design focused on improving input quality, making ownership and deadlines visible, recording review decisions and reducing duplicated creative work."
+          ]
+        },
+        {
+          "label": "Collateral Flow",
+          "title": "Managing the creative production lifecycle",
+          "paragraphs": [
+            "Structured request forms capture creative briefs, audience, channels, reference assets, priorities and deadlines. Brief completeness scores and missing-information flags help reviewers identify requests that need clarification before production.",
+            "Production boards connect designer assignment, estimated hours and task status. Approval records track review rounds, decisions and feedback, while linked invoices provide payment-status visibility. Status-triggered email notifications were designed to support handoffs."
+          ]
+        },
+        {
+          "label": "Visual Library",
+          "title": "Making creative assets discoverable and reusable",
+          "paragraphs": [
+            "A centralised marketing visual library organises assets through categories, tags, gallery views and asset details. Download and shareable links support reuse.",
+            "AI-assisted visual summaries and suggested categories support metadata enrichment and classification."
+          ]
+        },
+        {
+          "label": "Operating model",
+          "title": "A single view of work and reusable assets",
+          "paragraphs": [
+            "The two systems address complementary needs: coordination of work in progress and management of reusable creative outputs. The design brings structured information and review checkpoints into everyday creative operations."
+          ]
+        }
+      ],
+      "article": {
+        "title": "Building an operating system for creative and marketing teams.",
+        "subtitle": "Collateral Flow and Marketing Visual Library",
+        "meta": "Internal Products · Operational Design",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": [],
+        "galleries": {
+          "1": {
+            "caption": "Collateral Flow — request intake, production and approvals",
+            "images": [
+              {
+                "src": "assets/archmation-operations/request-form.webp",
+                "title": "Structured request intake"
+              },
+              {
+                "src": "assets/archmation-operations/brief-validation.webp",
+                "title": "Brief completeness and missing information"
+              },
+              {
+                "src": "assets/archmation-operations/request-review.webp",
+                "title": "Flagged requests for review"
+              },
+              {
+                "src": "assets/archmation-operations/production-board.webp",
+                "title": "Production status and estimated effort"
+              },
+              {
+                "src": "assets/archmation-operations/approval-management.webp",
+                "title": "Linked approval rounds and invoicing"
+              }
+            ]
+          },
+          "2": {
+            "caption": "Marketing Visual Library — discovery and AI enrichment",
+            "images": [
+              {
+                "src": "assets/archmation-operations/asset-gallery.webp",
+                "title": "Visual asset gallery"
+              },
+              {
+                "src": "assets/archmation-operations/asset-categories.webp",
+                "title": "Category-based browsing"
+              },
+              {
+                "src": "assets/archmation-operations/asset-enrichment.webp",
+                "title": "AI-assisted summaries and suggested categories"
+              }
+            ]
+          }
+        }
+      },
+      "label": "ARCHMATION — Creative operations",
+      "category": "Internal Products · Operational Design"
+    },
     {
-     "label": "Overview",
-     "title": "Streamlining operations and improving efficiency at scale",
-     "paragraphs": [
-      "Redesigned editorial production and quality assessment processes across multiple content formats.",
-      "Developed evaluation rubrics, error taxonomies, automated validation rules and structured feedback mechanisms. Explored ML-assisted defect classification and used recurring quality issues to inform creator training.",
-      "35% → 82% — First-draft acceptance",
-      "8 → 3 — Review iterations",
-      "40% — Reduction in publishing turnaround time",
-      "98% — Editorial accuracy"
-     ]
+      "company": "Amazon",
+      "organisation": "Amazon",
+      "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
+      "title": "Building personalised and adaptive user journeys.",
+      "metric": "",
+      "unit": "",
+      "problem": "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
+      "summary": "I defined the product logic for adaptive user journeys, connecting behavioural data, user segmentation and knowledge architecture to personalise individual experiences.",
+      "status": "",
+      "images": [],
+      "compact": true,
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Designing personalised and adaptive user journeys",
+          "paragraphs": [
+            "Developed personalised learning pathways based on user behaviour, proficiency and learning goals.",
+            "Defined diagnostic assessments, recommendation logic, content sequencing, mastery requirements and intervention rules. Used knowledge graphs to map prerequisites and guide progression through different learning pathways."
+          ]
+        },
+        {
+          "label": "Learning pathways",
+          "title": "Different routes for different learning needs",
+          "paragraphs": [
+            "Defined persona-based pathways for Momentum, Consolidator, Explorer and Struggler learners, adapting the sequence and difficulty of learning activities to their needs.",
+            "Used diagnostic checkpoints, prerequisite relationships and remediation rules to guide progression. Strict mastery requirements and softer checkpoints served different learning objectives."
+          ]
+        }
+      ],
+      "article": {
+        "title": "Building personalised and adaptive user journeys.",
+        "subtitle": "Knowledge graphs, diagnostic assessments and personalised pathways",
+        "meta": "Product Intelligence · Personalisation",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": [],
+        "artifacts": {
+          "0": {
+            "src": "assets/daily-digest/product-flow.webp",
+            "caption": "Learning activities and pathways to further practice — Amazon product context"
+          }
+        }
+      },
+      "label": "Amazon — Adaptive user journeys",
+      "category": "Product Intelligence · Personalisation"
+    },
+    {
+      "company": "Amazon",
+      "organisation": "Amazon",
+      "companyUrl": "https://press.aboutamazon.com/in/2021/1/amazon-india-launches-amazon-academy-to-help-students-prepare-for-competitive-entrance-examinations",
+      "title": "Improving speed, quality and efficiency at scale.",
+      "metric": "",
+      "unit": "",
+      "problem": "Redesigned editorial production and quality assessment processes across multiple content formats.",
+      "summary": "I transformed complex operational workflows by introducing structured quality frameworks, automated validation and continuous feedback mechanisms.",
+      "status": "",
+      "images": [],
+      "compact": true,
+      "chapters": [
+        {
+          "label": "Overview",
+          "title": "Streamlining operations and improving efficiency at scale",
+          "paragraphs": [
+            "Redesigned editorial production and quality assessment processes across multiple content formats.",
+            "Developed evaluation rubrics, error taxonomies, automated validation rules and structured feedback mechanisms. Explored ML-assisted defect classification and used recurring quality issues to inform creator training.",
+            "35% → 82% — First-draft acceptance",
+            "8 → 3 — Review iterations",
+            "40% — Reduction in publishing turnaround time",
+            "98% — Editorial accuracy"
+          ]
+        }
+      ],
+      "article": {
+        "title": "Improving speed, quality and efficiency at scale.",
+        "subtitle": "Quality systems and scalable editorial operations",
+        "meta": "Process Innovation · Operational Excellence",
+        "metric": "",
+        "metricLabel": "",
+        "hideReferences": true,
+        "sources": [],
+        "stats": [
+          [
+            "35% → 82%",
+            "First-draft acceptance"
+          ],
+          [
+            "8 → 3",
+            "Review iterations"
+          ],
+          [
+            "40%",
+            "Reduction in publishing turnaround time"
+          ],
+          [
+            "98%",
+            "Editorial accuracy"
+          ]
+        ],
+        "artifacts": {
+          "0": {
+            "src": "assets/daily-digest/learning-tips.webp",
+            "caption": "Example of Amazon learning content"
+          }
+        }
+      },
+      "label": "Amazon — Operational efficiency",
+      "category": "Process Innovation · Operational Excellence"
     }
-   ],
-   "article": {
-    "title": "Improving speed, quality and efficiency at scale.",
-    "subtitle": "Quality systems and scalable editorial operations",
-    "meta": "Process Innovation · Operational Excellence",
-    "metric": "",
-    "metricLabel": "",
-    "hideReferences": true,
-    "sources": [],
-    "stats": [
-     [
-      "35% → 82%",
-      "First-draft acceptance"
-     ],
-     [
-      "8 → 3",
-      "Review iterations"
-     ],
-     [
-      "40%",
-      "Reduction in publishing turnaround time"
-     ],
-     [
-      "98%",
-      "Editorial accuracy"
-     ]
+  ],
+  "jobs": [
+    [
+      "Archmation",
+      "Consulting & AI solutions",
+      "Current"
     ],
-    "artifacts": {
-     "0": {
-      "src": "assets/daily-digest/learning-tips.webp",
-      "caption": "Example of Amazon learning content"
-     }
+    [
+      "Amazon",
+      "Product initiatives & operations",
+      "2020–2023"
+    ],
+    [
+      "BYJU’S",
+      "Product development & learning systems",
+      "2015–2020"
+    ],
+    [
+      "IIT Kanpur",
+      "Integrated MSc, Chemistry",
+      ""
+    ]
+  ],
+  "books": [
+    [
+      "Thinking in Systems",
+      "Donella Meadows",
+      "#e4f7d3"
+    ],
+    [
+      "The Design of Everyday Things",
+      "Don Norman",
+      "#cfe0ff"
+    ],
+    [
+      "The Goal",
+      "Eliyahu Goldratt",
+      "#ffc0a4"
+    ],
+    [
+      "Inspired",
+      "Marty Cagan",
+      "#f0dcff"
+    ],
+    [
+      "Designing Machine Learning Systems",
+      "Chip Huyen",
+      "#e6eef6"
+    ],
+    [
+      "The Myth of Sisyphus",
+      "Albert Camus",
+      "#fff6d3"
+    ]
+  ],
+  "notes": [
+    [
+      "AI Tutor Notes",
+      "https://anandgrandhi.github.io/ai-tutor/"
+    ],
+    [
+      "Building effective agents",
+      "https://www.anthropic.com/research/building-effective-agents"
+    ]
+  ],
+  "editorial": {
+    "source": "archive/Portfolio_Editorial_Master.docx (27 November 2026)",
+    "verify": {
+      "WhiteTable": [
+        "Prototype testing evidence to verify: 26/26 assistant scenarios; 45/45 GrowthOS deterministic scenarios (five additional scenarios not run); one Jira Epic and two Tasks created in an integration test. These are not production outcomes."
+      ],
+      "BYJU’S": [
+        "Programme-level figures to verify: 50k–75k knowledge graph nodes; 450+ interactive product experiences; 60+ multidisciplinary specialists involved."
+      ],
+      "ARCHMATION": [
+        "Potential figures to verify before publishing: 11 workflows; 45% reduction in video production costs; 4+ commercial application areas."
+      ]
     }
-   },
-   "label": "Amazon — Operational efficiency",
-   "category": "Process Innovation · Operational Excellence"
   }
- ],
- "jobs": [
-  [
-   "Archmation",
-   "Consulting & AI solutions",
-   "Current"
-  ],
-  [
-   "Amazon",
-   "Product initiatives & operations",
-   "2020–2023"
-  ],
-  [
-   "BYJU’S",
-   "Product development & learning systems",
-   "2015–2020"
-  ],
-  [
-   "IIT Kanpur",
-   "Integrated MSc, Chemistry",
-   ""
-  ]
- ],
- "books": [
-  [
-   "Thinking in Systems",
-   "Donella Meadows",
-   "#e4f7d3"
-  ],
-  [
-   "The Design of Everyday Things",
-   "Don Norman",
-   "#cfe0ff"
-  ],
-  [
-   "The Goal",
-   "Eliyahu Goldratt",
-   "#ffc0a4"
-  ],
-  [
-   "Inspired",
-   "Marty Cagan",
-   "#f0dcff"
-  ],
-  [
-   "Designing Machine Learning Systems",
-   "Chip Huyen",
-   "#e6eef6"
-  ],
-  [
-   "The Myth of Sisyphus",
-   "Albert Camus",
-   "#fff6d3"
-  ]
- ],
- "notes": [
-  [
-   "AI Tutor Notes",
-   "https://anandgrandhi.github.io/ai-tutor/"
-  ],
-  [
-   "Building effective agents",
-   "https://www.anthropic.com/research/building-effective-agents"
-  ]
- ],
- "editorial": {
-  "source": "archive/Portfolio_Editorial_Master.docx (27 November 2026)",
-  "verify": {
-   "WhiteTable": [
-    "Prototype testing evidence to verify: 26/26 assistant scenarios; 45/45 GrowthOS deterministic scenarios (five additional scenarios not run); one Jira Epic and two Tasks created in an integration test. These are not production outcomes."
-   ],
-   "BYJU’S": [
-    "Programme-level figures to verify: 50k–75k knowledge graph nodes; 450+ interactive product experiences; 60+ multidisciplinary specialists involved."
-   ],
-   "ARCHMATION": [
-    "Potential figures to verify before publishing: 11 workflows; 45% reduction in video production costs; 4+ commercial application areas."
-   ]
-  }
- }
 }
