@@ -187,9 +187,17 @@ img,video,svg{display:block;max-width:100%}img,video{height:auto}
 .split .word{display:inline-block;white-space:pre}
 .js .split .word{opacity:0;filter:blur(8px);transform:translateY(.3em);transition:opacity var(--slow) var(--ease),filter var(--long) var(--spring),transform var(--long) var(--spring);transition-delay:calc(var(--base,.15s) + var(--i) * .035s)}
 .js .intro-animation .split .word,.js .reveal-visible .split .word{opacity:1;filter:none;transform:none}
-.js .hero .eyebrow,.js .hero .actions{opacity:0;filter:blur(6px);transform:translateY(10px);transition:opacity var(--slow) var(--ease),filter var(--long) var(--spring),transform var(--long) var(--spring)}
-.js .hero .actions{transition-delay:1.3s}
-.js .hero.intro-animation .eyebrow,.js .hero.intro-animation .actions{opacity:1;filter:none;transform:none}
+/* One entrance timeline: eyebrow, headline words, then individual actions.
+   Opacity and translation only, so the canvas and text do not compete for blur rendering. */
+.js .hero .split .word{opacity:0;filter:none;transform:translateY(.22em);transition:opacity .48s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1);transition-delay:0s}
+.js .hero.intro-animation .split .word{opacity:1;transform:none;transition-delay:calc(var(--base,.34s) + var(--i) * .042s)}
+.js .hero .eyebrow,.js .hero .actions>.button{opacity:0;filter:none;transform:translateY(8px);transition:opacity .42s cubic-bezier(.22,1,.36,1),transform .58s cubic-bezier(.22,1,.36,1);transition-delay:0s}
+.js .hero .actions{opacity:1;filter:none;transform:none}
+.js .hero.intro-animation .eyebrow{opacity:1;transform:none;transition-delay:.16s}
+.js .hero.intro-animation .actions>.button{opacity:1;transform:none;transition-delay:1.48s}
+.js .hero.intro-animation .actions>.button:nth-child(2){transition-delay:1.59s}
+.js .hero .actions>.button:focus-visible{opacity:1;transform:none;transition-delay:0s}
+@media(prefers-reduced-motion:reduce){.js .hero .actions>.button{opacity:1!important;transform:none!important;transition:none!important}}
 @keyframes settle{from{opacity:0;filter:blur(6px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
 .reveal-pending>*{opacity:0}
 .reveal-visible>*{animation:settle var(--long) var(--spring) backwards;animation-delay:calc(var(--order,0) * 70ms)}
@@ -502,3 +510,5 @@ dialog .button.secondary{min-height:30px;padding:0 12px;font-family:var(--mono);
 .case-overview dt{font-size:.8125rem;font-weight:500;color:var(--ink-3);line-height:1.65}
 .case-overview dd{margin:0;font-size:1rem;line-height:1.65;color:var(--body-ink)}
 @media(max-width:600px){.case-overview dl>div{grid-template-columns:1fr;gap:4px}.case-overview{padding:20px 0}}
+
+.js .hero.intro-reset .split .word,.js .hero.intro-reset .eyebrow,.js .hero.intro-reset .actions>.button{transition:none!important}

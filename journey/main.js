@@ -233,7 +233,7 @@ function observeReveals(){
 }
 /* Text: hero title and body, then each section title. */
 const heroEl=$('.hero');
-splitWords($('#hero-title'),'title','.2s');splitWords($('.bridge .statement'),'body','.1s');
+splitWords($('#hero-title'),'title','.34s');splitWords($('.bridge .statement'),'body','.1s');
 $$('.section-heading h2').forEach(h=>splitWords(h,'title','.1s'));
 requestAnimationFrame(()=>requestAnimationFrame(()=>heroEl?.classList.add('intro-animation')));
 observeReveals();queue();

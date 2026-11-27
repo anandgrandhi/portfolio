@@ -59,7 +59,7 @@ function project(x,y,z){
 }
 
 /* Text motion is CSS (styles.css, Google timings); this module only restarts it on replay. */
-function replayText(){hero.classList.remove('intro-animation');void hero.offsetWidth;hero.classList.add('intro-animation')}
+function replayText(){hero.classList.remove('intro-animation');hero.classList.add('intro-reset');void hero.offsetWidth;requestAnimationFrame(()=>{hero.classList.remove('intro-reset');void hero.offsetWidth;hero.classList.add('intro-animation')})}
 
 /* Loop: build (0–7 s) → hold the structure → dissolve → build again from the start.
    The performance only ever runs forwards; the cycle never plays in reverse. */
