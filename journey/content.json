@@ -53,6 +53,36 @@
           "paragraphs": [
             "I translated customer pain points into specific behavioural interventions:",
             "The objective was to make returning to the product easy, relevant and rewarding."
+          ],
+          "table": [
+            [
+              "Customer barrier",
+              "Product intervention"
+            ],
+            [
+              "Limited time",
+              "Short, 7–10-minute daily sessions"
+            ],
+            [
+              "Decision fatigue",
+              "Curated, personalised daily activities"
+            ],
+            [
+              "Low perceived value",
+              "Recommendations addressing individual weaknesses"
+            ],
+            [
+              "Inconsistent engagement",
+              "Streaks, progress indicators and timely nudges"
+            ],
+            [
+              "Limited feature discovery",
+              "Contextual entry points into relevant product features"
+            ],
+            [
+              "Notification fatigue",
+              "Segmented notifications and frequency controls"
+            ]
           ]
         },
         {
@@ -61,7 +91,25 @@
           "paragraphs": [
             "I defined the recommendation framework around three components:",
             "The objective was to make each interaction relevant to the individual user while encouraging deeper engagement with the wider product."
-          ]
+          ],
+          "framework": {
+            "title": "Recommendation framework",
+            "steps": [
+              [
+                "01 — User signals",
+                "Recent activity · Assessment performance · Individual goals · Knowledge gaps · Preparation stage · Learning progress"
+              ],
+              [
+                "02 — Personalisation logic",
+                "Activity relevance · Difficulty · Time constraints · User priorities"
+              ],
+              [
+                "03 — Personalised daily experience",
+                "Conceptual refreshers · Accuracy challenges · Targeted remediation · Revision activities\nContextual recommendations to other product features"
+              ]
+            ],
+            "caption": "Conceptual representation of the recommendation framework."
+          }
         },
         {
           "label": "Cross-functional execution and continuous improvement",
@@ -128,60 +176,6 @@
         ],
         "referenceTitle": "References",
         "supporting": [
-          {
-            "title": "Behavioural science and habit formation",
-            "table": [
-              [
-                "Customer barrier",
-                "Product intervention"
-              ],
-              [
-                "Limited time",
-                "Short, 7–10-minute daily sessions"
-              ],
-              [
-                "Decision fatigue",
-                "Curated, personalised daily activities"
-              ],
-              [
-                "Low perceived value",
-                "Recommendations addressing individual weaknesses"
-              ],
-              [
-                "Inconsistent engagement",
-                "Streaks, progress indicators and timely nudges"
-              ],
-              [
-                "Limited feature discovery",
-                "Contextual entry points into relevant product features"
-              ],
-              [
-                "Notification fatigue",
-                "Segmented notifications and frequency controls"
-              ]
-            ]
-          },
-          {
-            "title": "Personalisation and product intelligence",
-            "frameworks": {
-              "title": "Recommendation framework",
-              "steps": [
-                [
-                  "01 — User signals",
-                  "Recent activity · Assessment performance · Individual goals · Knowledge gaps · Preparation stage · Learning progress"
-                ],
-                [
-                  "02 — Personalisation logic",
-                  "Activity relevance · Difficulty · Time constraints · User priorities"
-                ],
-                [
-                  "03 — Personalised daily experience",
-                  "Conceptual refreshers · Accuracy challenges · Targeted remediation · Revision activities\nContextual recommendations to other product features"
-                ]
-              ],
-              "caption": "Conceptual representation of the recommendation framework."
-            }
-          },
           {
             "title": "Product context",
             "artifacts": {
@@ -272,7 +266,7 @@
       ]
     },
     {
-      "company": "Athena Education · AI product strategy",
+      "company": "Athena Education",
       "title": "Scaling personalised counselling through AI.",
       "metric": "",
       "unit": "",
@@ -466,7 +460,7 @@
       ]
     },
     {
-      "company": "WhiteTable · AI product & solutions",
+      "company": "WhiteTable",
       "title": "Building the intelligent backbone of a startup.",
       "metric": "",
       "unit": "",
@@ -682,7 +676,7 @@
       ]
     },
     {
-      "company": "BYJU’S · Product innovation & scale",
+      "company": "BYJU’S",
       "title": "Building innovative learning products at scale.",
       "metric": "",
       "unit": "",
@@ -920,7 +914,7 @@
       ]
     },
     {
-      "company": "EMotorad · Internal operations",
+      "company": "EMotorad",
       "title": "Simplifying business operations through AI and automation.",
       "metric": "",
       "unit": "",

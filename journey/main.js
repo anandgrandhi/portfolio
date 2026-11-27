@@ -8,13 +8,13 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
    working unchanged. Touch keeps the platform's own momentum. Off under reduced motion. */
 const smooth=!!window.Lenis&&!reduced.matches;
 const lenis=smooth?new Lenis({lerp:.085,wheelMultiplier:1,autoRaf:true,anchors:{offset:-32},prevent:n=>!!n.closest?.('dialog')}):null;
-let caseLenis=null;
+let caseLenis=null, caseVideoObserver=null;
 const ns='http://www.w3.org/2000/svg';
 const clamp=n=>Math.max(0,Math.min(1,n));
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rich=s=>esc(s).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
 const num=i=>String(i+1).padStart(2,'0');
-const featured=[0,1,2,5,3,4], secondary=[6,7,8,9];
+const featured=[0,1,2,3,4,5], secondary=[6,7,8,9];
 /* Era colour per project, matching the career journey: BYJU’S green, Amazon yellow, Archmation red, applied-AI consulting blue. */
 const eras={0:'yellow',1:'blue',2:'blue',5:'red',3:'green',4:'blue',6:'yellow',7:'red',8:'yellow',9:'yellow'};
 const covers={
@@ -81,7 +81,7 @@ function flip(el,value){
 }
 const dialog=$('#case-dialog'), scroll=$('#case-scroll');
 function figure(a){return a?.src?'<figure class="case-figure">'+media(a.src,a.caption)+'<figcaption>'+esc(a.caption)+(a.kind?' · '+esc(a.kind):'')+'</figcaption></figure>':''}
-function gallery(g){if(!g?.images?.length)return '';return '<figure class="case-figure"><div class="gallery">'+g.images.map(a=>'<div class="gallery-item">'+(a.webm?'<video autoplay muted loop playsinline preload="metadata" width="800" height="600" aria-label="'+esc(a.title)+'"><source src="'+esc(a.webm)+'" type="video/webm"></video>':media(a.src,a.title))+'<span>'+esc(a.title)+'</span></div>').join('')+'</div><figcaption>'+esc(g.caption)+'</figcaption></figure>'}
+function gallery(g){if(!g?.images?.length)return '';return '<figure class="case-figure"><div class="gallery">'+g.images.map(a=>'<div class="gallery-item">'+(a.webm?'<video controls muted loop playsinline preload="metadata" width="800" height="600" aria-label="'+esc(a.title)+'"><source src="'+esc(a.webm)+'" type="video/webm"></video>':media(a.src,a.title))+'<span>'+esc(a.title)+'</span></div>').join('')+'</div><figcaption>'+esc(g.caption)+'</figcaption></figure>'}
 function framework(f){if(!f)return '';return '<div class="framework"><h4>'+esc(f.title)+'</h4><ol>'+f.steps.map(([a,b])=>'<li><strong>'+esc(a)+'</strong> — '+esc(b)+'</li>').join('')+'</ol><p class="eyebrow">'+esc(f.caption)+'</p></div>'}
 function stats(a){return a?.length?'<div class="stats">'+a.map(([v,l])=>'<div class="stat"><b>'+esc(v)+'</b><span>'+esc(l)+'</span></div>').join('')+'</div>':''}
 function cardHighlights(a){return a?.length?'<div class="card-highlights">'+a.map(([v,l])=>'<div><p class="metric">'+esc(v)+'</p><p class="metric-label">'+esc(l)+'</p></div>').join('')+'</div>':''}
@@ -93,21 +93,26 @@ function openCase(id,trigger){
   dialog.dataset.era=eras[id]||'blue';
   $('#case-company').textContent=p.company;
   const groups=a.supporting||[];
-  const sections=chapters.map((c,i)=>'<section id="case-section-'+i+'"><h3>'+esc(c.title)+'</h3>'+paragraphs(c.paragraphs)+caseTable(c.table)+stats(c.stats)+'</section>').join('');
+  const sections=chapters.map((c,i)=>'<section id="case-section-'+i+'"><h3>'+esc(c.title)+'</h3>'+paragraphs(c.paragraphs)+caseTable(c.table)+framework(c.framework)+stats(c.stats)+'</section>').join('');
   const support=groups.length?'<section id="case-supporting"><h3>Supporting artifacts</h3>'+groups.map(g=>'<div class="artifact-group"><h4>'+esc(g.title)+'</h4>'+figure(g.artifacts)+framework(g.frameworks)+gallery(g.galleries)+(g.slideshows?gallery({caption:'Research reference diagrams',images:g.slideshows}):'')+stats(g.stats)+caseTable(g.table)+paragraphs(g.paragraphs)+(g.caption?'<p class="artifact-caption">'+esc(g.caption)+'</p>':'')+'</div>').join('')+'</section>':'';
-  scroll.innerHTML='<article class="case-article"><div class="case-intro"><p class="eyebrow">'+esc(a.meta||p.engagement||p.company)+'</p><h2 id="case-title">'+esc(a.title||p.title)+'</h2>'+company(p)+'</div><nav class="case-contents" aria-label="Case study contents">'+chapters.map((c,i)=>'<a href="#case-section-'+i+'">'+esc(c.label)+'</a>').join('')+(groups.length?'<a href="#case-supporting">Supporting artifacts</a>':'')+'</nav>'+sections+support+(a.sources?.length?'<section class="sources"><h3>'+esc(a.referenceTitle||'References')+'</h3>'+a.sources.map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.label)+' ↗</a>').join('')+'</section>':'')+'</article>';
+  const contents='<nav class="case-contents" aria-label="Case study contents">'+chapters.map((c,i)=>'<a href="#case-section-'+i+'">'+esc(c.label)+'</a>').join('')+(groups.length?'<a href="#case-supporting">Supporting artifacts</a>':'')+'</nav>';
+  const refs=a.sources?.length?'<section class="sources"><h3>'+esc(a.referenceTitle||'References')+'</h3>'+a.sources.map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.label)+' ↗</a>').join('')+'</section>':'';
+  scroll.innerHTML='<article class="case-article">'+contents+'<div class="case-body"><div class="case-intro"><p class="eyebrow">'+esc(a.meta||p.engagement||p.company)+'</p><h2 id="case-title">'+esc(a.title||p.title)+'</h2>'+company(p)+'</div>'+sections+support+refs+'</div></article>';
+
 
   bindMedia(scroll);
   /* Landscape media spans the full width of the case; portrait media pairs up two per row. */
   $$('.gallery-item',scroll).forEach(item=>{const m=$('img,video',item);if(!m)return;const mark=()=>{const w=m.naturalWidth||m.videoWidth,h=m.naturalHeight||m.videoHeight;if(w&&h&&h>w*1.05)item.classList.add('is-portrait')};if(m.tagName==='VIDEO')m.addEventListener('loadedmetadata',mark,{once:true});else if(m.complete)mark();else m.addEventListener('load',mark,{once:true})});
-  $$('video',scroll).forEach(v=>{v.muted=true;if(reduced.matches){v.removeAttribute('autoplay');v.controls=true}else v.play?.().catch(()=>{v.controls=true})});
+  caseVideoObserver?.disconnect();
+  caseVideoObserver=(!reduced.matches&&'IntersectionObserver' in window)?new IntersectionObserver(entries=>{entries.forEach(({target,isIntersecting})=>{if(isIntersecting){target.play().catch(()=>{target.controls=true})}else target.pause()})},{root:scroll,threshold:.25}):null;
+  $$('video',scroll).forEach(v=>{v.muted=true;v.controls=true;if(caseVideoObserver)caseVideoObserver.observe(v)});
   dialog.showModal();scroll.scrollTop=0;caseProgress();$('#close-case').focus();
   /* The case view scrolls inside the dialog: the page stops, and the case gets its own instance. */
   if(smooth){lenis.stop();caseLenis=new Lenis({wrapper:scroll,content:scroll.firstElementChild,lerp:.085,autoRaf:true})}
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-case]');if(b)openCase(Number(b.dataset.case),b)});
 $('#close-case').addEventListener('click',()=>dialog.close());
-dialog.addEventListener('close',()=>{ caseLenis?.destroy();caseLenis=null;lenis?.start();$$('video',scroll).forEach(v=>v.pause());scroll.replaceChildren();opener?.focus();});
+dialog.addEventListener('close',()=>{ caseVideoObserver?.disconnect();caseVideoObserver=null;caseLenis?.destroy();caseLenis=null;lenis?.start();$$('video',scroll).forEach(v=>v.pause());scroll.replaceChildren();opener?.focus();});
 /* Reading progress across the case. */
 const caseBar=$('#case-progress-bar');
 function caseProgress(){const r=scroll.scrollHeight-scroll.clientHeight;caseBar.style.transform='scaleX('+(r>0?Math.min(1,scroll.scrollTop/r):0).toFixed(4)+')'}
@@ -223,7 +228,8 @@ splitWords($('#hero-title'),'title','.2s');splitWords($('.bridge .statement'),'b
 $$('.section-heading h2').forEach(h=>splitWords(h,'title','.1s'));
 requestAnimationFrame(()=>requestAnimationFrame(()=>heroEl?.classList.add('intro-animation')));
 observeReveals();queue();
-fetch('content.json').then(r=>{if(!r.ok)throw Error('Content unavailable');return r.json()}).then(render).catch(()=>{$('#chapters').innerHTML='<p role="alert">Case studies could not be loaded. Please refresh the page or contact me directly.</p>'});
+const embedded=$('#portfolio-data');
+Promise.resolve().then(()=>embedded?JSON.parse(embedded.textContent):fetch('content.json').then(r=>{if(!r.ok)throw Error('Content unavailable');return r.json()})).then(render).catch(error=>{console.error(error);$('#chapters').innerHTML='<p role="alert">Case studies could not be loaded. Please refresh the page or contact me directly.</p>'});
 
 /* ——— Interaction layer (Framer University patterns, adapted) ———————————————— */
 const fine=matchMedia('(hover:hover) and (pointer:fine)');
