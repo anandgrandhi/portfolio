@@ -746,38 +746,6 @@
                 "p": "I prototyped agent coordination, duplicate prevention, output validation and human-review mechanisms. The design distinguished generating a recommendation from executing a consequential action: the latter required appropriate permissions, validation and approval."
               },
               {
-                "p": "I defined evaluation requirements around retrieval relevance, answer accuracy, actionability and follow-through. For agent workflows, the focus extended to tool execution, valid structured outputs, duplicate-action prevention and escalation on failure."
-              },
-              {
-                "table": {
-                  "head": [
-                    "Evaluation area",
-                    "What the system must demonstrate"
-                  ],
-                  "rows": [
-                    [
-                      "Retrieval and context",
-                      "Retrieve relevant organisational knowledge and ground responses in it."
-                    ],
-                    [
-                      "Answer quality",
-                      "Respond accurately to the request and provide useful next steps."
-                    ],
-                    [
-                      "Workflow execution",
-                      "Produce valid outputs and respect tool permissions."
-                    ],
-                    [
-                      "Reliability",
-                      "Prevent duplicate actions, flag exceptions and request human approval where required."
-                    ]
-                  ]
-                }
-              },
-              {
-                "p": "The employee assistant was evaluated using a 26-question test set. The associated prototype artifacts document retrieval improvements and guardrail scenarios for the agent workflows."
-              },
-              {
                 "gallery": {
                   "caption": "Evaluation and continuous improvement",
                   "images": [
@@ -853,7 +821,7 @@
             "nav": "Building during rapid business growth",
             "blocks": [
               {
-                "p": "During BYJU’S rapid expansion across grades, subjects and product formats, my responsibilities grew from specialised team leadership to multidisciplinary product development and operations. The challenge was to build new experiences while maintaining consistent product standards across a growing portfolio."
+                "p": "From 2015 to 2020, during BYJU’S rapid expansion across grades, subjects and product formats, my responsibilities grew from specialised team leadership to multidisciplinary product development and operations. The challenge was to build new experiences while maintaining consistent product standards across a growing portfolio."
               },
               {
                 "figure": {
@@ -1288,20 +1256,8 @@
                       "title": "Multi-pose apparel generation"
                     },
                     {
-                      "src": "assets/archmation-creative/fashion-workflow.webp",
-                      "title": "Fashion and animation workflow"
-                    },
-                    {
-                      "src": "assets/archmation-creative/sportswear-workflow.webp",
-                      "title": "Multi-angle sportswear generation workflow"
-                    },
-                    {
                       "title": "Apparel display video",
                       "webm": "assets/archmation-creative/body-4.webm"
-                    },
-                    {
-                      "title": "Fashion animation",
-                      "webm": "assets/archmation-creative/screen-recording-2025-09-20-at-10-20-43-am.webm"
                     }
                   ]
                 }
@@ -1313,10 +1269,6 @@
                     {
                       "src": "assets/archmation-creative/food-workflow.webp",
                       "title": "End-to-end commercial composition workflow"
-                    },
-                    {
-                      "src": "assets/archmation-creative/ingredient-composition.webp",
-                      "title": "Ingredient generation and isolation"
                     },
                     {
                       "src": "assets/archmation-creative/food-refinement.webp",
@@ -1356,10 +1308,6 @@
                       "webm": "assets/archmation-creative/body-2.webm"
                     },
                     {
-                      "src": "assets/archmation-creative/character-replacement.webp",
-                      "title": "Character replacement workflow"
-                    },
-                    {
                       "src": "assets/archmation-creative/cad-prototype.webp",
                       "title": "CAD prototype workflow"
                     }
@@ -1377,15 +1325,7 @@
                   "caption": "Furniture visualisation",
                   "images": [
                     {
-                      "src": "assets/archmation-creative/furniture-workflow.webp",
-                      "title": "Product isolation to staged scene and video"
-                    },
-                    {
-                      "src": "assets/archmation-creative/furniture-video.webp",
-                      "title": "Alternative furniture staging workflow"
-                    },
-                    {
-                      "title": "Furniture staging workflow recording",
+                      "title": "Product isolation to staged scene and video",
                       "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-4-23-20-pm.webm"
                     }
                   ]
@@ -1414,15 +1354,7 @@
                   "caption": "3D asset generation",
                   "images": [
                     {
-                      "src": "assets/archmation-creative/character-3d.webp",
-                      "title": "Character views and parallel 3D model outputs"
-                    },
-                    {
-                      "src": "assets/archmation-creative/character-3d-alternative.webp",
-                      "title": "Alternative character and model comparison"
-                    },
-                    {
-                      "title": "Multi-view 3D workflow recording",
+                      "title": "Character views and parallel 3D model outputs",
                       "webm": "assets/archmation-creative/screen-recording-2025-09-26-at-5-05-59-pm.webm"
                     }
                   ]
