@@ -273,7 +273,7 @@
                   ],
                   [
                     "Product rating",
-                    "4.6/5"
+                    "4.8/5"
                   ]
                 ]
               },
@@ -1840,12 +1840,7 @@
         "metricLabel": "",
         "hideReferences": true,
         "sources": [],
-        "artifacts": {
-          "0": {
-            "src": "assets/daily-digest/product-flow.webp",
-            "caption": "Learning activities and pathways to further practice — Amazon product context"
-          }
-        }
+        "artifacts": {}
       },
       "label": "Amazon — Adaptive user journeys",
       "category": "Product Intelligence · Personalisation",
@@ -1868,12 +1863,6 @@
               },
               {
                 "p": "I connected recommendation logic, content sequencing, prerequisite relationships and intervention rules through knowledge architecture. Entry diagnostics identified gaps and informed where a user should begin, what to practise and when to progress."
-              },
-              {
-                "figure": {
-                  "src": "assets/daily-digest/product-flow.webp",
-                  "caption": "Learning activities and pathways to further practice — Amazon product context"
-                }
               }
             ]
           },

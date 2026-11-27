@@ -23,7 +23,7 @@ const covers={
   2:[['assets/whitetable/architecture.webp','GrowthOS architecture'],['assets/whitetable/assistant.webp','WhiteTable Intelligence interface']],
   5:[['assets/archmation-creative/fashion-workflow.webp','Fashion generation workflow'],['assets/archmation-creative/furniture-workflow.webp','Furniture visualisation workflow']],
   3:[['assets/byjus/mobile-journeys.webp','BYJU’S guided learning journeys'],['assets/byjus/interactive-light.webp','Interactive light reflection']],
-  4:[['assets/sop-flow.svg','SOP retrieval workflow']]
+  4:[["https://miro.medium.com/v2/resize%3Afit%3A1400/1%2APC7cYhrIRZ1DkdGVDLUZAg.png","HR onboarding automation with Google Drive — n8n workflow reference"],["https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png","Task-tracker alerts using Google Sheets and Gmail — n8n workflow reference"]]
 };
 /* Card copy comes from content.json (Editorial Master). */
 /* Short-lived effects register a ticker; update() runs them and keeps a frame queued only while any is live. */
