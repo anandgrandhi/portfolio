@@ -27,7 +27,7 @@ function readPalette(){
  solid=palette.map(c=>tint(c,0));lineColor=tint(lineRGB,0);
 }
 readPalette();
-document.addEventListener('themechange',()=>{readPalette();if(reduced.matches)still();else draw(timeline(clock),clock)});
+document.addEventListener('themechange',()=>{readPalette();if(reduced.matches)still();else if(started)draw(timeline(clock),clock)});
 
 /* Particle model — identical to the original. */
 const count=192,per=48,rand=i=>{const x=Math.sin(i*127.1+78.233)*43758.5453;return x-Math.floor(x)};
@@ -46,7 +46,9 @@ for(let g=0;g<4;g++)for(let k=0;k<per;k++){
 const TILT=[-1.1781,-.3927,.3927,1.1781],RING=96;
 /* Screen-space buffers, reused every frame (no per-frame allocation). */
 const SX=new Float32Array(count),SY=new Float32Array(count),SD=new Float32Array(count),SF=new Float32Array(count);
-const order=Array.from({length:count},(_,i)=>i);
+const SL=new Uint8Array(count),LC=new Uint16Array(LEVELS*4),LI=new Uint16Array(LEVELS*4*count);
+const AQ=32,EMAX=edges.length,EB=new Uint16Array(5*2*AQ),EL=new Uint16Array(5*2*AQ*EMAX),EX=new Float32Array(EMAX),EY=new Float32Array(EMAX);
+const PK=[0,1,2,3].map(g=>edges.map((e,n)=>n).filter(n=>edges[n].kind===0&&edges[n].i%4===0&&P[edges[n].i].g===g));
 
 let w=0,h=0,dpr=1,raf=0,clock=0,last=0,visible=true;
 let px=0,py=0,tx=0,ty=0,fx=-1e4,fy=-1e4,field=0,fieldTarget=0,scrollP=0,scrollS=0;
@@ -57,9 +59,6 @@ function project(x,y,z){
  const X=x*ca+z*sa,Z=-x*sa+z*ca,Y=y*cb-Z*sb,D=y*sb+Z*cb,f=dist/Math.max(140,dist+D);
  PX=cx+(X*cr-Y*sr)*scale*f;PY=cy+(X*sr+Y*cr)*scale*f;PD=D;PF=f;
 }
-
-/* Text motion is CSS (styles.css, Google timings); this module only restarts it on replay. */
-function replayText(){hero.classList.remove('intro-animation');hero.classList.add('intro-reset');void hero.offsetWidth;requestAnimationFrame(()=>{hero.classList.remove('intro-reset');void hero.offsetWidth;hero.classList.add('intro-animation')})}
 
 /* Loop: build (0–7 s) → hold the structure → dissolve → build again from the start.
    The performance only ever runs forwards; the cycle never plays in reverse. */
@@ -119,22 +118,35 @@ function draw(t,c){
   for(let k=0;k<=96;k++){const a=k/96*TAU,band=radius+7*Math.sin(a*2+g*.55)*(1-settled);project(band*Math.cos(a),band*Math.sin(a)*Math.cos(tilt),band*Math.sin(a)*Math.sin(tilt));if(k)ctx.lineTo(PX,PY);else ctx.moveTo(PX,PY)}
   ctx.strokeStyle=solid[g];ctx.globalAlpha=assemble*.2*alpha;ctx.lineWidth=.8*scale;ctx.stroke();
  }
- /* Connections draw in, with depth-attenuated opacity; packets travel the ring links. */
- const maxD=Math.min(w,h)*.83;
- for(const e of edges){
-  const ai=e.i,bi=e.j,ax=SX[ai],ay=SY[ai],bx=SX[bi],by=SY[bi];
+ /* Connections draw in, with depth-attenuated opacity; packets travel the ring links.
+    Batched: edges are bucketed by colour, width and a quantised alpha, then each bucket is stroked once
+    (≈280 strokes per frame become a few dozen). The quantisation step (1/32) is below visible resolution. */
+ const maxD=Math.min(w,h)*.83;EB.fill(0);
+ for(let n=0;n<edges.length;n++){
+  const e=edges[n],ai=e.i,bi=e.j,ax=SX[ai],ay=SY[ai],bx=SX[bi],by=SY[bi];
   if(Math.hypot(ax-bx,ay-by)>maxD)continue;
   const fe=e.kind===0?mix(.16,.48,assemble)*organise:e.kind===1?.16*organise*(1-.7*assemble):.12*assemble;
   const rv=ease((t-1.35-e.phase*1.2)/1.8),depth=clamp(1-(SD[ai]+SD[bi])/520);
   const o=fe*rv*alpha*depth;if(o<.004)continue;
-  ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(mix(ax,bx,rv),mix(ay,by,rv));ctx.lineWidth=e.kind===0?.8:.55;ctx.strokeStyle=e.kind===2?lineColor:solid[P[ai].g];ctx.globalAlpha=o;ctx.stroke();
+  const q=Math.min(AQ-1,Math.round(o*AQ)),col=e.kind===2?4:P[ai].g,key=((col*2+(e.kind===0?0:1))*AQ+q);
+  EX[n]=mix(ax,bx,rv);EY[n]=mix(ay,by,rv);EL[key*EMAX+EB[key]++]=n;
+ }
+ for(let key=0;key<EB.length;key++){
+  const cnt=EB[key];if(!cnt)continue;
+  const q=key%AQ,wk=(key/AQ|0)%2,col=(key/AQ/2|0);
+  ctx.beginPath();
+  for(let m=0;m<cnt;m++){const n=EL[key*EMAX+m],e=edges[n];ctx.moveTo(SX[e.i],SY[e.i]);ctx.lineTo(EX[n],EY[n])}
+  ctx.lineWidth=wk?.55:.8;ctx.strokeStyle=col===4?lineColor:solid[col];ctx.globalAlpha=q/AQ;ctx.stroke();
  }
  if(assemble>.15){
-  for(const e of edges){
-   if(e.kind!==0||e.i%4)continue;
-   const f=(c*.25+e.phase)%1,x=mix(SX[e.i],SX[e.j],f),y=mix(SY[e.i],SY[e.j],f),col=solid[P[e.i].g];
-   ctx.fillStyle=col;ctx.globalAlpha=assemble*.12*alpha;ctx.beginPath();ctx.arc(x,y,5.2*scale,0,TAU);ctx.fill();
-   ctx.globalAlpha=assemble*.9*alpha;ctx.beginPath();ctx.arc(x,y,2*scale,0,TAU);ctx.fill();
+  const f0=c*.25;
+  for(let g=0;g<4;g++){
+   ctx.fillStyle=solid[g];
+   for(const pass of [0,1]){
+    const rr=(pass?2:5.2)*scale;ctx.beginPath();
+    for(const n of PK[g]){const e=edges[n],f=(f0+e.phase)%1,x=mix(SX[e.i],SX[e.j],f),y=mix(SY[e.i],SY[e.j],f);ctx.moveTo(x+rr,y);ctx.arc(x,y,rr,0,TAU)}
+    ctx.globalAlpha=assemble*(pass?.9:.12)*alpha;ctx.fill();
+   }
   }
  }
  /* The core: a decision made from distributed information — a small lit sphere with a quiet halo. */
@@ -145,13 +157,20 @@ function draw(t,c){
   const cg=ctx.createRadialGradient(PX-r*.4,PY-r*.45,r*.1,PX,PY,r);cg.addColorStop(0,'rgb(92,104,128)');cg.addColorStop(1,'rgb('+inkRGB+')');
   ctx.globalAlpha=coreA;ctx.fillStyle=cg;ctx.beginPath();ctx.arc(PX,PY,r,0,TAU);ctx.fill();
  }
- /* Particles back-to-front; size and tint follow depth. */
- order.sort((a,b)=>SD[b]-SD[a]);
- for(const i of order){
-  const n=P[i],d=clamp((SD[i]+170)/340),lv=Math.min(LEVELS-1,Math.round(d*(LEVELS-1)));
-  const r=Math.max(1.1,n.size*scale*(.55+.6*SF[i]));
-  ctx.globalAlpha=alpha*(1-.35*d);ctx.fillStyle=ramps[n.g][lv];ctx.beginPath();ctx.arc(SX[i],SY[i],r,0,TAU);ctx.fill();
-  if(r>2.6&&d<.4){ctx.globalAlpha=alpha*.45;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(SX[i]-r*.32,SY[i]-r*.34,r*.32,0,TAU);ctx.fill()}
+ /* Particles back to front in 8 depth layers; size and tint follow depth. One fill per layer and group
+    replaces 192 individual fills and the per-frame depth sort. */
+ LC.fill(0);
+ for(let i=0;i<count;i++){const d=clamp((SD[i]+170)/340),lv=Math.min(LEVELS-1,Math.round(d*(LEVELS-1)));SL[i]=lv;const key=lv*4+P[i].g;LI[key*count+LC[key]++]=i}
+ for(let lv=LEVELS-1;lv>=0;lv--){
+  const a=alpha*(1-.35*lv/(LEVELS-1));let hl=false;
+  for(let g=0;g<4;g++){
+   const key=lv*4+g,cnt=LC[key];if(!cnt)continue;ctx.beginPath();
+   for(let m=0;m<cnt;m++){const i=LI[key*count+m],r=Math.max(1.1,P[i].size*scale*(.55+.6*SF[i]));ctx.moveTo(SX[i]+r,SY[i]);ctx.arc(SX[i],SY[i],r,0,TAU);if(r>2.6&&lv<3)hl=true}
+   ctx.globalAlpha=a;ctx.fillStyle=ramps[g][lv];ctx.fill();
+  }
+  if(hl){ctx.beginPath();
+   for(let g=0;g<4;g++){const key=lv*4+g;for(let m=0;m<LC[key];m++){const i=LI[key*count+m],r=Math.max(1.1,P[i].size*scale*(.55+.6*SF[i]));if(r>2.6){const x=SX[i]-r*.32,y=SY[i]-r*.34;ctx.moveTo(x+r*.32,y);ctx.arc(x,y,r*.32,0,TAU)}}}
+   ctx.globalAlpha=alpha*.45;ctx.fillStyle='#fff';ctx.fill()}
  }
  ctx.globalAlpha=1;
 }
@@ -159,22 +178,101 @@ function draw(t,c){
 function resize(){
  const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,1.5);
  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
- if(reduced.matches)still();else draw(timeline(clock),clock);
+ if(reduced.matches)still();else if(started)draw(timeline(clock),clock);
 }
 function still(){scrollS=0;px=py=field=0;loopFade=1;loopIdle=0;draw(7,20);}
+
+/* ── Choreography ─────────────────────────────────────────────────────────────────────────────
+   One composition on one clock. Nothing moves until the type is loaded and the main thread is quiet,
+   so the first frames are never dropped; then the canvas performance and the text entrance start on
+   the same frame. Text is a sequence of overlapping phases (eyebrow → headline lines → actions), each
+   starting while the previous is still decelerating. Only opacity and transform are animated, through
+   the Web Animations API, so the text runs on the compositor even while the canvas draws. */
+const copy=hero.querySelector('.hero-copy'),eyebrow=hero.querySelector('.hero .eyebrow'),title=hero.querySelector('h1');
+const actions=[...hero.querySelectorAll('.actions>.button')],statement=document.querySelector('.bridge .statement');
+const OUT='cubic-bezier(.16,1,.3,1)';            // long, soft deceleration (expo-out family)
+const T={eyebrow:120,title:260,line:90,actions:380,action:80,dur:1000,durShort:820};
+let started=false,introAnims=[],introEnd=0;
+const escH=x=>x.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* Masked line reveal: the text is measured as laid out (same wrap, same balance), each rendered line is
+   wrapped in a clipping row, and the row's content rises into place. The original text node is restored
+   as soon as the reveal ends, so wrapping stays fully responsive and nothing is left in the DOM. */
+function splitLines(el){
+ const text=el.dataset.introText??(el.dataset.introText=el.textContent.trim().replace(/\s+/g,' '));
+ const words=text.split(' ');
+ el.style.width=el.getBoundingClientRect().width+'px'; /* hold the box: the split must not change the layout */
+ el.innerHTML=words.map(x=>'<span class="intro-w">'+escH(x)+'</span>').join(' ');
+ const rows=[];let top=null;
+ el.querySelectorAll('.intro-w').forEach((sp,k)=>{const y=sp.offsetTop;if(top===null||Math.abs(y-top)>3){rows.push([]);top=y}rows[rows.length-1].push(words[k])});
+ el.innerHTML='<span class="sr-only">'+escH(text)+'</span>'+rows.map(r=>'<span class="intro-ln" aria-hidden="true"><span class="intro-li">'+escH(r.join(' '))+'</span></span>').join('');
+ return [...el.querySelectorAll('.intro-li')];
+}
+function unsplit(el){if(el&&el.dataset.introText&&el.querySelector('.intro-ln')){el.textContent=el.dataset.introText;el.style.width=''}}
+const rise=(el,dist,dur,delay)=>el.animate([{opacity:0,transform:'translate3d(0,'+dist+',0)'},{opacity:1,offset:.45},{opacity:1,transform:'none'}],{duration:dur,delay,easing:OUT,fill:'backwards'});
+
+function playText(){
+ introAnims.forEach(a=>a.cancel());introAnims=[];
+ if(reduced.matches){hero.dataset.intro='done';unsplit(title);return}
+ const lines=splitLines(title);hero.dataset.intro='play';
+ introAnims.push(rise(eyebrow,'12px',T.durShort,T.eyebrow));
+ lines.forEach((l,k)=>introAnims.push(rise(l,'108%',T.dur,T.title+k*T.line)));
+ const a0=T.title+(lines.length-1)*T.line+T.actions;
+ actions.forEach((b,k)=>introAnims.push(rise(b,'16px',T.durShort,a0+k*T.action)));
+ introEnd=performance.now()+a0+(actions.length-1)*T.action+T.durShort;
+ const mine=introAnims;
+ Promise.all(mine.map(a=>a.finished)).then(()=>{if(introAnims!==mine)return;hero.dataset.intro='done';unsplit(title);introAnims=[]},()=>{});
+}
+
+/* Hand-off: the supporting statement uses the same masked line reveal when it enters, and never
+   before the hero's own entrance has finished, so the two read as one continuous sequence. */
+function watchStatement(){
+ if(!statement)return;
+ if(reduced.matches||!('IntersectionObserver'in window)){statement.dataset.intro='done';return}
+ const io=new IntersectionObserver(([e])=>{
+  if(!e.isIntersecting)return;io.disconnect();
+  const lines=splitLines(statement),wait=Math.max(0,introEnd-performance.now()-T.dur*.5);statement.dataset.intro='play';
+  const anims=lines.map((l,k)=>rise(l,'108%',T.dur,wait+k*T.line));
+  Promise.all(anims.map(a=>a.finished)).then(()=>{statement.dataset.intro='done';unsplit(statement)},()=>{});
+ },{rootMargin:'0px 0px -12% 0px'});
+ io.observe(statement);
+}
+
+/* Scroll exit: as the page moves on, the copy drifts up slightly faster than the scroll and fades, while
+   the particles open out (scrollS, above). Driven from this module's existing frame loop: no scroll listener. */
+let exitK=-1;
+function exit(p){
+ const k=clamp((p-.04)/.62);if(Math.abs(k-exitK)<.001)return;exitK=k;
+ if(k<=0){copy.style.transform='';copy.style.opacity='';return}
+ copy.style.transform='translate3d(0,'+(-k*56).toFixed(2)+'px,0)';copy.style.opacity=(1-k*k).toFixed(3);
+}
+
 function frame(now){
- raf=0;if(!visible||document.hidden||reduced.matches){last=0;return}
- const dt=last?Math.min(.05,(now-last)/1000):0;last=now;clock+=dt;
- /* Frame-rate independent damping (Google-style lerps): pointer .1-ish, field fades in/out, scroll eases. */
+ raf=0;if(!visible||document.hidden||reduced.matches||!started){last=0;return}
+ /* Clamp the step to two frames: a late frame slows the performance for a moment instead of jumping. */
+ const dt=last?Math.min(1/30,(now-last)/1000):0;last=now;clock+=dt;
  const k=1-Math.exp(-dt*5),kf=1-Math.exp(-dt*6),ks=1-Math.exp(-dt*9);
  px=mix(px,tx,k);py=mix(py,ty,k);field=mix(field,fieldTarget,kf);
  scrollP=clamp(-hero.getBoundingClientRect().top/Math.max(1,hero.offsetHeight));scrollS=mix(scrollS,scrollP,ks);
- draw(timeline(clock),clock);
+ exit(scrollP);
+ if(artVisible)draw(timeline(clock),clock);
  raf=requestAnimationFrame(frame);
 }
-function activate(){if(!raf&&visible&&!document.hidden&&!reduced.matches){last=0;raf=requestAnimationFrame(frame)}}
+let artVisible=true;
+function activate(){if(!raf&&started&&visible&&!document.hidden&&!reduced.matches){last=0;raf=requestAnimationFrame(frame)}}
 function stop(){if(raf)cancelAnimationFrame(raf);raf=0;last=0}
-function setMode(){stop();if(reduced.matches)still();else activate()}
+function setMode(){stop();if(reduced.matches){copy.style.transform=copy.style.opacity='';introAnims.forEach(a=>a.finish());still()}else activate()}
+
+/* Start gate: fonts that shape the composition are loaded (so lines are measured once, with no reflow
+   mid-reveal) and three consecutive frames have arrived on time (so the opening is not cut by the page's
+   own start-up work). Both are capped, so a slow network or device never holds the intro back for long. */
+function calmFrames(){return new Promise(res=>{let prev=0,calm=0;const t0=performance.now();const tick=t=>{calm=prev&&t-prev<22?calm+1:0;prev=t;if(calm>=3||t-t0>900)res();else requestAnimationFrame(tick)};requestAnimationFrame(tick)})}
+function fontsReady(){
+ if(!document.fonts)return Promise.resolve();
+ const want=['400 1em "Libre Baskerville"','400 1em "Google Sans"'].map(f=>document.fonts.load(f).catch(()=>{}));
+ return Promise.race([Promise.all(want),new Promise(r=>setTimeout(r,1400))]);
+}
+function begin(){started=true;clock=0;exitK=-1;playText();activate()}
 
 hero.addEventListener('pointermove',e=>{
  if(e.pointerType==='touch')return;const b=hero.getBoundingClientRect(),m=mount.getBoundingClientRect();
@@ -182,11 +280,18 @@ hero.addEventListener('pointermove',e=>{
  fx=e.clientX-m.left;fy=e.clientY-m.top;fieldTarget=(fx>-40&&fy>-40&&fx<m.width+40&&fy<m.height+40)?1:0;
 },{passive:true});
 hero.addEventListener('pointerleave',()=>{tx=ty=0;fieldTarget=0});
-/* Click the scene to replay the performance. */
-mount.addEventListener('click',()=>{if(reduced.matches)return;clock=0;replayText();activate()});
+/* Click the scene to replay the whole composition, text included. */
+mount.addEventListener('click',()=>{if(reduced.matches||!started)return;begin()});
 if('ResizeObserver'in window)new ResizeObserver(resize).observe(mount);else addEventListener('resize',resize,{passive:true});
-if('IntersectionObserver'in window)new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible)activate();else stop()},{rootMargin:'40px'}).observe(mount);
+/* The loop runs while any part of the hero is on screen (the copy's exit needs it); the canvas only draws while the art is. */
+if('IntersectionObserver'in window){
+ new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible)activate();else stop()},{rootMargin:'40px'}).observe(hero);
+ new IntersectionObserver(([e])=>{artVisible=e.isIntersecting},{rootMargin:'40px'}).observe(mount);
+}
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else activate()});
 reduced.addEventListener?.('change',setMode);
-resize();setMode();
+hero.dataset.intro='wait';if(statement&&!reduced.matches)statement.dataset.intro='wait';
+resize();
+if(reduced.matches){started=true;hero.dataset.intro='done';watchStatement();still()}
+else fontsReady().then(calmFrames).then(()=>{begin();watchStatement()});
 })();

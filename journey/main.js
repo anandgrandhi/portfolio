@@ -226,16 +226,15 @@ if('ResizeObserver'in window)new ResizeObserver(()=>{layout=true;queue()}).obser
 /* Reveals: blocks below the fold rise in with Google timings; anything already in view plays immediately. */
 let revealObserver;
 function observeReveals(){
-  const els=$$('.bridge,.section-heading,.chapter,.more-row,.topics article,.contact-email');
+  const els=$$('.section-heading,.chapter,.more-row,.topics article,.contact-email'); /* .bridge is revealed by hero.js */
   if(reduced.matches||!('IntersectionObserver'in window)){els.forEach(el=>el.classList.add('reveal-visible'));return}
   revealObserver??=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('reveal-pending');e.target.classList.add('reveal-visible');revealObserver.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -10% 0px'});
   els.forEach(el=>{if(el.dataset.observed)return;el.dataset.observed='true';[...el.children].forEach((c,i)=>c.style.setProperty('--order',i));if(el.getBoundingClientRect().top<innerHeight){el.classList.add('reveal-visible');return}el.classList.add('reveal-pending');revealObserver.observe(el)});
 }
 /* Text: hero title and body, then each section title. */
 const heroEl=$('.hero');
-/* Reveal the headline as one typographic composition, not separate jumping words. */splitWords($('.bridge .statement'),'body','.1s');
+/* The hero and the statement below it are one composition, choreographed in hero.js. */
 $$('.section-heading h2').forEach(h=>splitWords(h,'title','.1s'));
-requestAnimationFrame(()=>requestAnimationFrame(()=>heroEl?.classList.add('intro-animation')));
 observeReveals();queue();
 fetch('content.json').then(r=>{if(!r.ok)throw Error('Content unavailable');return r.json()}).then(render).catch(()=>{$('#chapters').innerHTML='<p role="alert">Case studies could not be loaded. Please refresh the page or contact me directly.</p>'});
 

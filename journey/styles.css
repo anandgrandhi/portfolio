@@ -187,17 +187,14 @@ img,video,svg{display:block;max-width:100%}img,video{height:auto}
 .split .word{display:inline-block;white-space:pre}
 .js .split .word{opacity:0;transform:translateY(.18em);transition:opacity .42s var(--spring),transform .52s var(--spring);transition-delay:calc(var(--base,.1s) + var(--i) * .018s)}
 .js .intro-animation .split .word,.js .reveal-visible .split .word{opacity:1;filter:none;transform:none}
-/* One entrance timeline: eyebrow, headline words, then individual actions.
-   Opacity and translation only, so the canvas and text do not compete for blur rendering. */
-.js .hero .split .word{opacity:0;filter:none;transform:translateY(.22em);transition:opacity .48s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1);transition-delay:0s}
-.js .hero.intro-animation .split .word{opacity:1;transform:none;transition-delay:calc(var(--base,.34s) + var(--i) * .042s)}
-.js .hero .eyebrow,.js .hero .actions>.button{opacity:0;filter:none;transform:translateY(8px);transition:opacity .42s cubic-bezier(.22,1,.36,1),transform .58s cubic-bezier(.22,1,.36,1);transition-delay:0s}
-.js .hero .actions{opacity:1;filter:none;transform:none}
-.js .hero.intro-animation .eyebrow{opacity:1;transform:none;transition-delay:.16s}
-.js .hero.intro-animation .actions>.button{opacity:1;transform:none;transition-delay:1.48s}
-.js .hero.intro-animation .actions>.button:nth-child(2){transition-delay:1.59s}
-.js .hero .actions>.button:focus-visible{opacity:1;transform:none;transition-delay:0s}
-@media(prefers-reduced-motion:reduce){.js .hero .actions>.button{opacity:1!important;transform:none!important;transition:none!important}}
+/* Intro composition (hero.js drives it with the Web Animations API; this only holds the pre-start state).
+   Until the start gate opens the copy is invisible; a 3 s failsafe reveals it if the script never runs. */
+@keyframes intro-failsafe{to{opacity:1}}
+.js .hero[data-intro="wait"] :is(.eyebrow,h1,.actions>.button),.js .hero:not([data-intro]) :is(.eyebrow,h1,.actions>.button){opacity:0;animation:intro-failsafe 0s 3s forwards}
+.js .bridge .statement[data-intro="wait"]{opacity:0}
+.intro-ln{display:block;overflow:clip;overflow-clip-margin:.08em;padding-bottom:.1em;margin-bottom:-.1em}
+.intro-li{display:inline-block;will-change:transform,opacity}
+.hero-copy{will-change:transform,opacity}
 @keyframes settle{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .reveal-pending>*{opacity:0}
 .reveal-visible>*{animation:settle var(--long) var(--spring) backwards;animation-delay:calc(var(--order,0) * 70ms)}
@@ -498,6 +495,7 @@ dialog .button.secondary{min-height:30px;padding:0 12px;font-family:var(--mono);
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal-pending>*,.js .split .word,.js .hero .eyebrow,.js .hero .actions,.js .milestone .milestone-copy,.js .milestone-copy>*{opacity:1!important;filter:none!important;transform:none!important}
+  .js .hero :is(.eyebrow,h1,.actions>.button),.js .bridge .statement,.hero-copy{opacity:1!important;transform:none!important}
   .flip.animate .flip-col,.case-progress>i{transition:none!important}
   .roll-b{display:none}.roll-a{transform:none!important}.button::after{display:none}.arr>span+span{display:none}.follow{display:none}
 }
@@ -511,15 +509,7 @@ dialog .button.secondary{min-height:30px;padding:0 12px;font-family:var(--mono);
 .case-overview dd{margin:0;font-size:1rem;line-height:1.65;color:var(--body-ink)}
 @media(max-width:600px){.case-overview dl>div{grid-template-columns:1fr;gap:4px}.case-overview{padding:20px 0}}
 
-.js .hero.intro-reset .split .word,.js .hero.intro-reset .eyebrow,.js .hero.intro-reset .actions>.button{transition:none!important}
 
 /* Motion refinement: one readable headline, compact stagger, composited stage transitions. */
-.js .hero h1{opacity:0;transform:translateY(14px);transition:opacity .56s cubic-bezier(.05,.7,.1,1),transform .76s cubic-bezier(.05,.7,.1,1);transition-delay:0s}
-.js .hero.intro-animation h1{opacity:1;transform:none;transition-delay:.24s}
-.js .hero.intro-animation .eyebrow{transition-delay:.08s}
-.js .hero.intro-animation .actions>.button{transition-delay:.80s}
-.js .hero.intro-animation .actions>.button:nth-child(2){transition-delay:.88s}
-.js .hero.intro-reset h1{transition:none!important}
 .stage-frame .visual{transition:opacity .38s cubic-bezier(.2,0,0,1),transform .58s cubic-bezier(.05,.7,.1,1)}
 .stage-frame .visual.current{transition:opacity .38s cubic-bezier(.2,0,0,1),transform .58s cubic-bezier(.05,.7,.1,1)}
-@media(prefers-reduced-motion:reduce){.js .hero h1{opacity:1!important;transform:none!important;transition:none!important}}
