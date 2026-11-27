@@ -140,7 +140,7 @@
               },
               {
                 "gallery": {
-                  "caption": "Research reference diagrams · Harry Fletcher-Wood, Habits of Success",
+                  "caption": "Behavioural science principles · Harry Fletcher-Wood, Habits of Success",
                   "images": [
                     {
                       "src": "assets/daily-digest/behaviour-motivation.webp",
@@ -211,7 +211,7 @@
                       ]
                     }
                   ],
-                  "caption": "Conceptual representation of the recommendation framework."
+                  "caption": "Daily Digest recommendation framework."
                 }
               },
               {
@@ -410,7 +410,7 @@
             "nav": "Defining the solutions",
             "blocks": [
               {
-                "p": "I identified three specific areas where AI could support counsellors."
+                "p": "I defined three AI product capabilities to support counsellors."
               },
               {
                 "item": [
@@ -455,7 +455,7 @@
                       "Review, refine and approve."
                     ]
                   ],
-                  "caption": "Proposed product decision framework."
+                  "caption": "Product decision framework."
                 }
               }
             ]
@@ -465,7 +465,7 @@
             "nav": "Architecture and product decisions",
             "blocks": [
               {
-                "p": "I proposed structured databases for student records, RAG for retrieving historical counselling knowledge and explicit business rules for eligibility and activity scheduling."
+                "p": "I defined a solution architecture combining structured student records, retrieval-augmented generation and business rules for eligibility and activity scheduling."
               },
               {
                 "p": "The reliability requirements addressed specific failures: invented student information, contradictory records, unsuitable opportunities and unrealistic time commitments. Consequential recommendations and record changes required counsellor approval."
@@ -491,7 +491,7 @@
                       "Review and approve consequential recommendations."
                     ]
                   ],
-                  "caption": "Proposed AI product architecture."
+                  "caption": "AI solution architecture."
                 }
               }
             ]
@@ -558,7 +558,7 @@
                 "p": "WhiteTable was developing its product while establishing its internal operating processes. I examined how teams documented decisions, communicated requirements, planned work, collected customer feedback and approached customer acquisition."
               },
               {
-                "p": "I identified opportunities to improve these processes through shared organisational knowledge and reusable AI workflows."
+                "p": "I defined shared organisational knowledge and reusable AI workflows as the foundation for improving these processes."
               }
             ]
           },
@@ -581,19 +581,19 @@
               {
                 "item": [
                   "Organisational Intelligence",
-                  "I developed a knowledge framework and prototyped an employee assistant to retrieve information about the company, product, technical architecture and internal processes. The proposed knowledge workflows would capture meeting notes, decisions and customer feedback, keeping information accessible across teams."
+                  "I developed a knowledge framework and prototyped an employee assistant to retrieve information about the company, product, technical architecture and internal processes. I designed knowledge capture workflows for meeting notes, decisions and customer feedback to connect organisational information across teams."
                 ]
               },
               {
                 "figure": {
                   "src": "assets/whitetable/assistant.webp",
-                  "caption": "WhiteTable Intelligence — conversational access to organisational knowledge (internal details masked)"
+                  "caption": "WhiteTable Intelligence — conversational access to organisational knowledge"
                 }
               },
               {
                 "item": [
                   "Agent Backbone — Business Operations",
-                  "I defined reusable agent workflows for meeting summaries, action-item tracking, customer feedback classification, work planning and internal reporting. Outputs from one activity could inform subsequent work."
+                  "I defined reusable agent workflows for meeting summaries, action-item tracking, customer feedback classification, work planning and internal reporting. I designed these workflows to pass structured outputs from one activity into subsequent tasks."
                 ]
               },
               {
@@ -623,7 +623,7 @@
               {
                 "item": [
                   "Agent Backbone — Software Development",
-                  "I designed workflows to translate product requirements into structured PRDs, technical specifications, implementation tasks and acceptance criteria. The PRD Creator and Work Planner workflows connected Google Drive documentation with Jira work items. Agents would work within defined responsibilities, with validation and approval before consequential changes."
+                  "I designed workflows to translate product requirements into structured PRDs, technical specifications, implementation tasks and acceptance criteria. The PRD Creator and Work Planner workflows connected Google Drive documentation with Jira work items. I specified agent responsibilities, validation requirements and approval checkpoints before consequential changes."
                 ]
               },
               {
@@ -662,7 +662,7 @@
               },
               {
                 "gallery": {
-                  "caption": "Software development workflow — supporting delivery evidence",
+                  "caption": "Software development workflow",
                   "images": [
                     {
                       "src": "assets/whitetable/work-planner-board.webp",
@@ -708,11 +708,11 @@
                 "p": "I defined shared components for knowledge retrieval, task orchestration, structured outputs and validation."
               },
               {
-                "p": "The prototypes explored how agents could exchange information, prevent duplicate records, validate outputs against requirements and flag failures for human review."
+                "p": "I prototyped agent coordination, duplicate prevention, output validation and human-review mechanisms to improve workflow reliability."
               },
               {
                 "gallery": {
-                  "caption": "Evaluation evidence and iterative improvement",
+                  "caption": "Evaluation and continuous improvement",
                   "images": [
                     {
                       "src": "assets/whitetable/assistant-eval.webp",
@@ -724,7 +724,7 @@
                     },
                     {
                       "src": "assets/whitetable/growth-eval.webp",
-                      "title": "GrowthOS deterministic guardrail scenarios and evaluation limitations"
+                      "title": "GrowthOS — deterministic guardrail evaluation"
                     }
                   ]
                 }
@@ -736,7 +736,7 @@
             "nav": "My contribution",
             "blocks": [
               {
-                "p": "My work covered business problem identification, AI strategy, solution architecture, workflow definition, functional prototyping and testing. These capabilities were intended for progressive integration into WhiteTable’s operations."
+                "p": "My work covered business problem identification, AI strategy, solution architecture, workflow definition, functional prototyping and testing. I established the solution framework and functional prototypes for phased integration across WhiteTable’s operations."
               }
             ]
           }
@@ -812,7 +812,7 @@
               {
                 "figure": {
                   "src": "assets/byjus/knowledge-graph.webp",
-                  "caption": "Concept relationships illustrated through a knowledge graph"
+                  "caption": "Knowledge architecture and concept relationships"
                 }
               },
               {
@@ -889,7 +889,7 @@
                       "Continue the structured learning journey."
                     ]
                   ],
-                  "caption": "Conceptual representation of guided learning."
+                  "caption": "Guided learning framework."
                 }
               },
               {
@@ -1039,7 +1039,7 @@
                 "p": "As EMotorad expanded its operations, employees needed access to internal processes, training materials and standard operating procedures. Managers also needed visibility into pending work, task ownership and completion deadlines."
               },
               {
-                "p": "Through ARCHMATION, I identified opportunities to simplify these activities using existing business tools and automated workflows."
+                "p": "Through ARCHMATION, I identified the coordination bottlenecks and designed automated workflows around existing business tools."
               }
             ]
           },
@@ -1066,14 +1066,14 @@
                 "figure": {
                   "src": "https://miro.medium.com/v2/resize%3Afit%3A1400/1%2APC7cYhrIRZ1DkdGVDLUZAg.png",
                   "caption": "HR onboarding automation with Google Drive",
-                  "kind": "Workflow example"
+                  "kind": "Third-party workflow reference"
                 }
               },
               {
                 "figure": {
                   "src": "assets/sop-flow.svg",
-                  "caption": "Illustrative SOP retrieval workflow",
-                  "kind": "Conceptual workflow"
+                  "caption": "SOP retrieval — workflow design",
+                  "kind": "Workflow design"
                 }
               },
               {
@@ -1092,7 +1092,7 @@
                 "figure": {
                   "src": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/image_6d2f4eb981.png",
                   "caption": "Task-tracker alerts using Google Sheets and Gmail",
-                  "kind": "Workflow example"
+                  "kind": "Third-party workflow reference"
                 }
               }
             ]
@@ -1183,13 +1183,13 @@
             "nav": "Identifying commercial opportunities",
             "blocks": [
               {
-                "p": "I identified production activities where generative AI could reduce cost and effort while meeting client requirements."
+                "p": "I evaluated creative production activities against cost, effort and client quality requirements to identify suitable applications of generative AI."
               },
               {
                 "p": "Early experimentation revealed several limitations: inconsistent product appearance, inaccurate proportions, limited control over composition and difficulty maintaining visual consistency across multiple outputs."
               },
               {
-                "p": "I focused on developing repeatable workflows that addressed these limitations and could be adapted to different client requirements."
+                "p": "I developed repeatable workflows to address these limitations and adapt production methods to different client requirements."
               }
             ]
           },
@@ -1209,7 +1209,7 @@
                   "images": [
                     {
                       "src": "assets/archmation-creative/virtual-photoshoot.webp",
-                      "title": "Garment inputs to multi-pose output demonstration"
+                      "title": "Multi-pose apparel generation"
                     },
                     {
                       "src": "assets/archmation-creative/fashion-workflow.webp",
@@ -1224,7 +1224,7 @@
                       "webm": "assets/archmation-creative/body-4.webm"
                     },
                     {
-                      "title": "Fashion motion demonstration",
+                      "title": "Fashion animation",
                       "webm": "assets/archmation-creative/screen-recording-2025-09-20-at-10-20-43-am.webm"
                     }
                   ]
@@ -1261,11 +1261,11 @@
               },
               {
                 "gallery": {
-                  "caption": "Selected capability demonstrations",
+                  "caption": "Generative AI applications",
                   "images": [
                     {
                       "src": "assets/archmation-creative/ugc-demo.webp",
-                      "title": "UGC-style product placement demonstration"
+                      "title": "AI-generated product placement"
                     },
                     {
                       "title": "UGC unboxing video workflow",
@@ -1276,7 +1276,7 @@
                       "webm": "assets/archmation-creative/body-mp4.webm"
                     },
                     {
-                      "title": "Text-to-3D CAD prototype demonstration",
+                      "title": "Text-to-3D CAD prototype",
                       "webm": "assets/archmation-creative/body-2.webm"
                     },
                     {
@@ -1416,14 +1416,14 @@
           "label": "Student intelligence",
           "title": "Connect engagement and progress to interventions",
           "paragraphs": [
-            "Learning activity and proficiency provide complementary signals for understanding student needs. The aim is to help teachers identify students who may require additional support and plan targeted interventions."
+            "Learning activity and proficiency provide complementary signals for understanding student needs. I designed the dashboard to connect engagement and proficiency signals to targeted student interventions."
           ]
         },
         {
           "label": "Assessment intelligence",
           "title": "Understand performance beyond the overall score",
           "paragraphs": [
-            "Question-level response patterns can help distinguish difficult concepts from questions that may need further review. This is an example of the decision-making capability that assessment analytics can support."
+            "Question-level analytics help distinguish concept-level learning gaps from questions requiring further review, supporting instructional decisions."
           ]
         }
       ],
@@ -1470,7 +1470,7 @@
           "title": "Managing the creative production lifecycle",
           "paragraphs": [
             "Structured request forms capture creative briefs, audience, channels, reference assets, priorities and deadlines. Brief completeness scores and missing-information flags help reviewers identify requests that need clarification before production.",
-            "Production boards connect designer assignment, estimated hours and task status. Approval records track review rounds, decisions and feedback, while linked invoices provide payment-status visibility. Status-triggered email notifications were designed to support handoffs."
+            "Production boards connect designer assignment, estimated hours and task status. Approval records track review rounds, decisions and feedback, while linked invoices provide payment-status visibility. I designed status-triggered email notifications to support handoffs."
           ]
         },
         {
@@ -1658,7 +1658,7 @@
         "artifacts": {
           "0": {
             "src": "assets/daily-digest/learning-tips.webp",
-            "caption": "Example of Amazon learning content"
+            "caption": "Amazon learning content"
           }
         }
       },
