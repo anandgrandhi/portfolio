@@ -32,7 +32,7 @@ function animate(fn){tickers.add(fn);queue()}
 let data=null, chapters=[], stageLayers=[], progress=[], marker=null, markerX=null, markerTarget=0, active=-1, raf=0, layout=true, opener=null, copyTimer=0;
 /* Google text motion: split a block into word spans; CSS staggers them by --i. Text content is unchanged. */
 function splitWords(el,kind,base){if(!el||el.dataset.split)return;el.dataset.split=kind;const words=el.textContent.trim().split(/\s+/);el.setAttribute('aria-label',el.textContent.trim());el.innerHTML=words.map((w,i)=>'<span class="word" aria-hidden="true" style="--i:'+i+'">'+esc(w)+(i<words.length-1?' ':'')+'</span>').join('');el.classList.add('split','split-'+kind);if(base)el.style.setProperty('--base',base)}
-const media=(src,alt,first=false)=>'<img src="'+esc(src)+'" alt="'+esc(alt)+'" width="800" height="600" loading="eager" decoding="async">';
+const media=(src,alt,first=false)=>'<img src="'+esc(src)+'" alt="'+esc(alt)+'" width="800" height="600" loading="'+(first?'eager':'lazy')+'" decoding="async">';
 const cover=(id,first=false)=>'<div class="visual '+(covers[id].length>1?'pair':'')+'">'+covers[id].map(([s,a])=>media(s,a,first)).join('')+'</div>';
 const company=p=>p.companyUrl?'<a class="company-link" href="'+esc(p.companyUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(p.organisation||p.company)+' ↗</a>':'<span class="company-name">'+esc(p.organisation||p.company)+'</span>';
 function bindMedia(root){
@@ -55,7 +55,7 @@ function setActive(i){
   const prev=active,dir=prev<0||i>prev?'down':'up';active=i;
   $('#stage-frame').dataset.dir=dir;
   stageLayers.forEach((el,n)=>{el.classList.toggle('current',i===n);el.classList.toggle('leaving',n===prev);el.setAttribute('aria-hidden',String(i!==n))});
-  if(prev>=0)splitSwap(stageLayers[prev],stageLayers[i],dir);
+  /* Existing stage layers transition directly; no image clones or extra 3D surfaces. */
   progress.forEach((el,n)=>{if(i===n)el.setAttribute('aria-current','true');else el.removeAttribute('aria-current')});
   $('.stage').dataset.era=eras[featured[i]];placeMarker();
   scramble($('#stage-company'),data.projects[featured[i]].company);
@@ -185,14 +185,14 @@ function update(t){
     const target=targetLength(h*.5-careerRect.top);
     if(ballL===null||snap||needsLayout&&Math.abs(target-ballL)>h)ballL=target;
     else{ballL+=(target-ballL)*k;if(Math.abs(target-ballL)>.3)again=true;else ballL=target}
-    const p=pointAt(ballL);ball.setAttribute('cx',p.x.toFixed(2));ball.setAttribute('cy',p.y.toFixed(2));
+    const p=pointAt(ballL),key=p.x.toFixed(2)+','+p.y.toFixed(2);if(ball.dataset.position!==key){ball.setAttribute('cx',p.x.toFixed(2));ball.setAttribute('cy',p.y.toFixed(2));ball.dataset.position=key}
     let near=0;stationL.forEach((l,i)=>{if(Math.abs(l-ballL)<Math.abs(stationL[near]-ballL))near=i});
     const at=Math.abs(stationL[near]-ballL)<3?near:-1;
     if(near!==ballEra){ballEra=near;ball.style.fill=eraColors[near]}
     if(at!==arrived){arrived=at;milestones.forEach((m,i)=>{m.el.classList.toggle('arrived',i===at);stations[i].o1.classList.toggle('on',i===at);stations[i].o2.classList.toggle('on',i===at)})}
   }
   /* Illustrations build with the scroll: 0 when the milestone's centre enters the viewport, complete when it reaches the middle — the moment the ball arrives. */
-  milestones.forEach((m,i)=>{const r=eraRects[i],c=r.top+r.height/2,p=snap?1:clamp((h-c)/(h*.46));m.p=p;m.draw(p)});
+  milestones.forEach((m,i)=>{const r=eraRects[i],c=r.top+r.height/2,p=snap?1:clamp((h-c)/(h*.46));if(m.renderedP!==p){m.p=p;m.draw(p);m.renderedP=p}});
   if(!snap&&!ambientOn&&milestones.some((m,i)=>m.p>=1&&eraRects[i].bottom>0&&eraRects[i].top<h)){ambientOn=true;animate(ambient)}
   /* Era copy: one scroll-driven state per milestone (no second controller). Fully on while its centre is inside the viewport band, fully off outside; hysteresis stops flicker at the edges. */
   milestones.forEach((m,i)=>{const r=eraRects[i],c=r.top+r.height/2,on=m.el.classList.contains('in');const show=snap||(on?(c<h*.86&&c>h*.06):(c<h*.74&&c>h*.14));if(show!==on)m.el.classList.toggle('in',show)});
@@ -233,7 +233,7 @@ function observeReveals(){
 }
 /* Text: hero title and body, then each section title. */
 const heroEl=$('.hero');
-splitWords($('#hero-title'),'title','.34s');splitWords($('.bridge .statement'),'body','.1s');
+/* Reveal the headline as one typographic composition, not separate jumping words. */splitWords($('.bridge .statement'),'body','.1s');
 $$('.section-heading h2').forEach(h=>splitWords(h,'title','.1s'));
 requestAnimationFrame(()=>requestAnimationFrame(()=>heroEl?.classList.add('intro-animation')));
 observeReveals();queue();

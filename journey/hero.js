@@ -157,7 +157,7 @@ function draw(t,c){
 }
 
 function resize(){
- const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,2);
+ const r=mount.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,1.5);
  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
  if(reduced.matches)still();else draw(timeline(clock),clock);
 }
