@@ -309,7 +309,12 @@
             "Session duration"
           ]
         ]
-      }
+      },
+      "overview": [
+        "Daily usage had fallen from approximately 50,000 to 35,000, and the existing daily question offered little personalisation or connection to other product features.",
+        "I identified customer barriers, defined the Daily Digest experience and recommendation logic, and worked with product, research, design, ML and engineering on execution and optimisation.",
+        "Daily active users rose to 80,000+, alongside reported improvements in retention, session duration and adoption of other learning features."
+      ]
     },
     {
       "companyUrl": "https://athenaeducation.co.in/",
@@ -515,7 +520,12 @@
         "title": "Scaling personalised counselling through AI.",
         "category": "AI Strategy · Solution Architecture",
         "breadcrumb": "Athena Education"
-      }
+      },
+      "overview": [
+        "Athena needed to increase counselling capacity without losing the individual attention that its multi-year student guidance model depends on.",
+        "I defined the AI product strategy, prioritised three use cases and specified their requirements, architecture and reliability safeguards.",
+        "Delivered product requirements and an implementation roadmap for transcript intelligence, a counsellor workbook and personalised student planning."
+      ]
     },
     {
       "companyUrl": "https://whitetable.ai/",
@@ -741,7 +751,12 @@
         "title": "Building the intelligent backbone of a startup.",
         "category": "AI Strategy · Agentic Systems",
         "breadcrumb": "WhiteTable"
-      }
+      },
+      "overview": [
+        "Fragmented knowledge, inconsistent work planning and repetitive customer acquisition activities were creating coordination overhead in an early-stage startup.",
+        "I defined a shared AI operating framework and developed functional prototypes for knowledge retrieval, agent workflows and prospect discovery.",
+        "Delivered a knowledge-assistant prototype, agent workflow designs and GrowthOS prototypes, with validation and human-review mechanisms for progressive integration."
+      ]
     },
     {
       "companyUrl": "https://byjus.com/",
@@ -986,7 +1001,12 @@
         "title": "Building innovative learning products at scale.",
         "category": "Product Leadership · Innovation & Scale",
         "breadcrumb": "BYJU’S"
-      }
+      },
+      "overview": [
+        "Rapid expansion across grades, subjects and product formats required shared product foundations and the ability to execute multiple initiatives in parallel.",
+        "I led knowledge architecture development and multidisciplinary product initiatives spanning guided journeys, assessment intelligence and interactive learning, alongside team and process development.",
+        "Established reusable product frameworks, new learning capabilities and development processes that supported BYJU’S expansion."
+      ]
     },
     {
       "companyUrl": "https://www.emotorad.com/",
@@ -1116,7 +1136,12 @@
         "title": "Simplifying business operations through AI and automation.",
         "category": "Business Operations · Intelligent Automation",
         "breadcrumb": "EMotorad"
-      }
+      },
+      "overview": [
+        "Employees struggled to find internal procedures, while managers relied on manual follow-ups to track pending work and deadlines.",
+        "I identified operational gaps and developed n8n-based workflows connecting existing tools for knowledge access, task tracking and automated communication.",
+        "Developed employee knowledge and training workflows, consolidated task tracking, and WhatsApp and Gmail reminders designed to reduce manual coordination."
+      ]
     },
     {
       "companyUrl": "https://archmation.com/about-us",
@@ -1352,7 +1377,12 @@
         "title": "Transforming creative production with generative AI.",
         "category": "Generative AI · Production Systems",
         "breadcrumb": "ARCHMATION"
-      }
+      },
+      "overview": [
+        "Conventional creative production required expensive shoots, physical samples and repeated revisions; early generative AI outputs lacked consistency and control.",
+        "As co-founder, I translated client requirements into repeatable generative AI production workflows, combining model selection, reference inputs, quality checks and approvals.",
+        "Established reusable workflows for product photography, virtual try-on, commercial video, branding and architectural visualisation."
+      ]
     },
     {
       "company": "Amazon",
@@ -1407,7 +1437,12 @@
         "sources": []
       },
       "label": "Amazon — Teacher Insights Dashboard",
-      "category": "Product Analytics · Decision Intelligence"
+      "category": "Product Analytics · Decision Intelligence",
+      "overview": [
+        "Teachers needed to turn assessment, engagement and concept-level proficiency data into meaningful instructional decisions.",
+        "I owned dashboard requirements, metric definitions and information architecture, working with design and engineering to connect insights to classroom decisions.",
+        "Designed a dashboard framework for identifying learning gaps, prioritising lesson preparation and targeting student interventions."
+      ]
     },
     {
       "company": "Archmation",
@@ -1508,7 +1543,12 @@
         }
       },
       "label": "ARCHMATION — Creative operations",
-      "category": "Internal Products · Operational Design"
+      "category": "Internal Products · Operational Design",
+      "overview": [
+        "Fragmented briefs, approvals, production tracking and asset storage increased coordination overhead and duplicated work.",
+        "I built an integrated operating framework linking structured creative requests, production ownership, review decisions and searchable marketing assets.",
+        "Developed Collateral Flow and Marketing Visual Library capabilities for managing creative work and discovering reusable assets."
+      ]
     },
     {
       "company": "Amazon",
@@ -1556,7 +1596,12 @@
         }
       },
       "label": "Amazon — Adaptive user journeys",
-      "category": "Product Intelligence · Personalisation"
+      "category": "Product Intelligence · Personalisation",
+      "overview": [
+        "Learners with different levels of proficiency, engagement and preparation needed different pathways rather than a uniform learning sequence.",
+        "I defined persona-based journeys, diagnostics, recommendation logic, prerequisite rules and mastery checkpoints using knowledge architecture.",
+        "Developed adaptive product logic that connected learning activities, targeted remediation and progression to individual needs."
+      ]
     },
     {
       "company": "Amazon",
@@ -1618,7 +1663,12 @@
         }
       },
       "label": "Amazon — Operational efficiency",
-      "category": "Process Innovation · Operational Excellence"
+      "category": "Process Innovation · Operational Excellence",
+      "overview": [
+        "Complex production and review processes created quality issues, repeated review cycles and slow publishing turnaround.",
+        "I redesigned quality assessment and production workflows, introducing evaluation rubrics, error taxonomies, automated validation and structured feedback.",
+        "Reported first-draft acceptance improved from 35% to 82%, review rounds fell from eight to three, and publishing turnaround time reduced by 40%."
+      ]
     }
   ],
   "jobs": [

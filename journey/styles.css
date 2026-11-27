@@ -493,3 +493,12 @@ dialog .button.secondary{min-height:30px;padding:0 12px;font-family:var(--mono);
   .flip.animate .flip-col,.case-progress>i{transition:none!important}
   .roll-b{display:none}.roll-a{transform:none!important}.button::after{display:none}.arr>span+span{display:none}.follow{display:none}
 }
+
+/* Executive overview: shared by both case readers, without changing the approved narrative. */
+.case-overview{max-width:46rem;padding:24px 0 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:var(--s4)}
+.case-overview h3{font-family:var(--font);font-size:1.125rem;font-weight:500;line-height:1.4;color:var(--head);margin:0 0 20px}
+.case-overview dl{display:grid;gap:16px;margin:0}
+.case-overview dl>div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px}
+.case-overview dt{font-size:.8125rem;font-weight:500;color:var(--ink-3);line-height:1.65}
+.case-overview dd{margin:0;font-size:1rem;line-height:1.65;color:var(--body-ink)}
+@media(max-width:600px){.case-overview dl>div{grid-template-columns:1fr;gap:4px}.case-overview{padding:20px 0}}
